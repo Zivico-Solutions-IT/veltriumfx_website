@@ -1,0 +1,74 @@
+/* Mobile shine animation - This WILL work */
+@media (max-width: 768px) {
+  .mobile-shine-button {
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* The shine effect */
+  .mobile-shine-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
+    transition: none;
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  /* Shine on tap - this is the key */
+  .mobile-shine-button:active::after {
+    left: 100%;
+    transition: left 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  }
+  
+  /* Keep text above shine */
+  .mobile-shine-button span {
+    position: relative;
+    z-index: 20;
+  }
+}
+
+/* Desktop shine */
+@media (min-width: 769px) {
+  .mobile-shine-button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .mobile-shine-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    transition: left 0.5s ease;
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  .mobile-shine-button:hover::after {
+    left: 100%;
+  }
+  
+  .mobile-shine-button span {
+    position: relative;
+    z-index: 20;
+  }
+}

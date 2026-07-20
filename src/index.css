@@ -1,0 +1,782 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+
+:root {
+  font-family: "Montserrat",;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0f172a;
+  background-color: #eef4ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+.reveal-section {
+  animation: reveal-section 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-up {
+  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.reveal-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.reveal-delay-3 {
+  animation-delay: 0.36s;
+}
+
+.letter-reveal {
+  display: inline;
+}
+
+.letter-reveal-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.22em);
+  animation: letter-reveal 0.42s cubic-bezier(0.16, 1, 0.3, 1) var(--letter-delay) both;
+  will-change: transform, opacity;
+}
+
+.hero-trust-badge {
+  animation: hero-trust-badge-down 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.85s both;
+  will-change: transform, opacity;
+}
+
+.hero-trade-cta {
+  animation: hero-trade-cta-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) 1.85s both;
+  will-change: transform, opacity;
+}
+
+.methods-slider {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.methods-slider-track {
+  animation: methods-slide 80s linear infinite;
+}
+
+.methods-slider-track-reverse {
+  animation-name: methods-slide-reverse;
+}
+
+.methods-slider:hover .methods-slider-track {
+  animation-play-state: paused;
+}
+
+.interactive-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 45px rgb(15 23 42 / 0.12);
+}
+
+.process-card {
+  overflow: visible;
+}
+
+.process-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgb(1 68 33 / 0.1), transparent 48%, rgb(212 175 55 / 0.12));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgb(1 68 33 / 0.55);
+  box-shadow: 0 26px 48px rgb(1 68 33 / 0.16);
+}
+
+.process-card:hover::before {
+  opacity: 1;
+}
+
+.process-icon {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
+}
+
+.process-card:hover .process-icon {
+  transform: translateY(-3px) scale(1.08);
+  background-color: #014421;
+  box-shadow: 0 18px 30px rgb(1 68 33 / 0.35);
+}
+
+.deposit-feature-card {
+  isolation: isolate;
+  transform-origin: center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.deposit-feature-card::before {
+  content: "";
+  position: absolute;
+  inset: auto -12% -38% -12%;
+  z-index: -1;
+  height: 56%;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgb(1 68 33 / 0.16), transparent 70%);
+  opacity: 0;
+  transform: scale(0.72);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.deposit-feature-card:hover {
+  transform: translateY(-12px) rotateX(2deg);
+  border-color: rgb(212 175 55 / 0.45);
+  box-shadow: 0 26px 55px rgb(1 68 33 / 0.16);
+}
+
+.deposit-feature-card:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.deposit-feature-card:hover img {
+  animation: deposit-image-float 1.8s ease-in-out infinite;
+}
+
+.deposit-feature-card:hover .deposit-feature-icon {
+  box-shadow: 0 14px 28px rgb(212 175 55 / 0.28);
+}
+
+.account-plan-card {
+  --account-border-color: #d4af37;
+  --account-border-rgb: 212 175 55;
+  isolation: isolate;
+  transform-origin: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.account-plan-card.crypto-green-border {
+  --account-border-color: #014421;
+  --account-border-rgb: 1 68 33;
+}
+
+.account-plan-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent 20%, var(--account-border-color), transparent 80%);
+  background-size: 220% 220%;
+  opacity: 0;
+  padding: 1px;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.account-plan-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 0%, rgb(var(--account-border-rgb) / 0.08) 42%, rgb(255 255 255 / 0.5) 50%, transparent 62%);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-80%);
+}
+
+.account-plan-card:hover::before {
+  opacity: 1;
+  animation: gold-border-flow 1.5s linear infinite;
+}
+
+.account-plan-card:hover::after {
+  opacity: 1;
+  animation: account-card-sheen 1.25s ease;
+}
+
+.account-plan-card:hover {
+  transform: translateY(-10px) scale(1.015);
+  border-color: transparent;
+  box-shadow: 0 24px 45px rgb(1 68 33 / 0.12);
+}
+
+.account-plan-card.crypto-green-border:hover {
+  border-bottom-color: #014421;
+}
+
+.account-plan-icon {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.account-plan-card:hover .account-plan-icon {
+  transform: scale(1.08);
+  box-shadow: 0 12px 24px rgb(1 68 33 / 0.24);
+}
+
+.account-plan-price {
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.account-plan-card:hover .account-plan-price {
+  transform: translateX(3px);
+  color: #01351a;
+}
+
+.account-popular-badge {
+  animation: popular-badge-pulse 2.4s ease-in-out infinite;
+}
+
+.process-gold-tab {
+  transform-origin: center;
+  animation: process-gold-tab-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes gold-border-flow {
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: 220% 50%;
+  }
+}
+
+@keyframes account-card-sheen {
+  from {
+    transform: translateX(-85%);
+  }
+
+  to {
+    transform: translateX(85%);
+  }
+}
+
+@keyframes popular-badge-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(212 175 55 / 0.28);
+  }
+
+  50% {
+    box-shadow: 0 0 0 7px rgb(212 175 55 / 0);
+  }
+}
+
+@keyframes process-gold-tab-pulse {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleX(1);
+    box-shadow: 0 0 0 rgb(212 175 55 / 0);
+  }
+
+  50% {
+    transform: translateX(-50%) scaleX(1.18);
+    box-shadow: 0 0 18px rgb(212 175 55 / 0.45);
+  }
+}
+
+@keyframes deposit-image-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1.02);
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.04);
+  }
+}
+
+.market-hero-image {
+  animation: market-hero-zoom 1.5s ease-out both;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.market-hero-content {
+  animation: market-hero-fade-up 0.8s ease-out both;
+}
+
+.market-hero-title {
+  animation: market-hero-fade-down 0.85s ease-out both;
+}
+
+.market-hero-copy {
+  animation: market-hero-fade-up 0.85s ease-out 0.18s both;
+}
+
+@keyframes market-hero-zoom {
+  from {
+    opacity: 0.92;
+    transform: scale(1.08);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes market-hero-fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes market-hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.button-shine {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.button-shine::after {
+  content: "";
+  position: absolute;
+  inset: -120% auto -120% -45%;
+  width: 38%;
+  pointer-events: none;
+  transform: rotate(18deg);
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.45), transparent);
+  transition: left 0.6s ease;
+}
+
+.button-shine:hover::after {
+  left: 120%;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  border-radius: 9999px;
+  background: #014421;
+  transition: transform 0.28s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-dropdown {
+  animation: nav-dropdown-in 0.34s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transform-origin: top center;
+}
+
+.nav-float-in {
+  animation: nav-float-in 0.58s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transform-origin: top center;
+}
+
+.animate-slideDown {
+  animation: slide-down 0.26s ease both;
+}
+
+.auth-card {
+  animation: auth-card-in 0.55s ease both;
+}
+
+.chat-panel {
+  animation: chat-panel-in 0.28s ease both;
+}
+
+.chat-toggle {
+  animation: chat-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes reveal-section {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes letter-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.22em);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-trust-badge-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-64px) scale(0.96);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(5px) scale(1.01);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-trade-cta-up {
+  0% {
+    opacity: 0;
+    transform: translateY(42px) scale(0.96);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes methods-slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes methods-slide-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nav-dropdown-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(-8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes nav-float-in {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(-18px) scale(0.94);
+  }
+
+  55% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(4px) scale(1.015);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+@keyframes auth-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes chat-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes chat-pulse {
+  0%,
+  100% {
+    box-shadow: 0 18px 35px rgb(1 68 33 / 0.25);
+  }
+
+  50% {
+    box-shadow: 0 18px 45px rgb(1 68 33 / 0.45);
+  }
+}
+
+.hero-circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
+  background: rgba(217, 219, 223, 0.416);
+  /* filter: drop-shadow(0 24px 45px rgb(15 23 42 / 0.08)); */
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.hero-circle-left {
+  clip-path: inset(0 50% 0 0);
+  animation: hero-circle-left 5.8s cubic-bezier(0.16, 1, 0.3, 1) 2.8s both,
+    hero-circle-breathe-left 8s ease-in-out 8.6s infinite;
+}
+
+.hero-circle-right {
+  clip-path: inset(0 0 0 50%);
+  animation: hero-circle-right 5.8s cubic-bezier(0.16, 1, 0.3, 1) 2.8s both,
+    hero-circle-breathe-right 8s ease-in-out 8.6s infinite;
+}
+
+.account-hero-image {
+  animation: account-hero-image-in 1.8s cubic-bezier(0.16, 1, 0.3, 1) both,
+    account-hero-image-pan 18s ease-in-out 1.8s infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes hero-circle-left {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.55);
+  }
+
+  28% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  46% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  68% {
+    opacity: 1;
+    transform: translate(calc(-18vw - 50%), -50%) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(calc(50vw - 50%), -50%) scale(1);
+  }
+}
+
+@keyframes hero-circle-right {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.55);
+  }
+
+  28% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  46% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  68% {
+    opacity: 1;
+    transform: translate(calc(18vw - 50%), -50%) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(calc(-50vw - 50%), -50%) scale(1);
+  }
+}
+
+@keyframes hero-circle-breathe-left {
+  0%,
+  100% {
+    transform: translate(calc(50vw - 50%), -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(calc(50vw - 50%), -50%) scale(1.035);
+  }
+}
+
+@keyframes hero-circle-breathe-right {
+  0%,
+  100% {
+    transform: translate(calc(-50vw - 50%), -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(calc(-50vw - 50%), -50%) scale(1.035);
+  }
+}
+
+@keyframes account-hero-image-in {
+  from {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes account-hero-image-pan {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08) translate3d(-1.5%, -1.5%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-circle-left,
+  .hero-circle-right,
+  .hero-trust-badge,
+  .hero-trade-cta,
+  .letter-reveal-char,
+  .methods-slider-track,
+  .account-hero-image,
+  .market-hero-image,
+  .market-hero-content,
+  .market-hero-title,
+  .market-hero-copy {
+    animation: none;
+    opacity: 1;
+  }
+
+  .letter-reveal-char {
+    transform: none;
+  }
+
+  .hero-circle-left {
+    transform: translate(calc(50vw - 50%), -50%);
+  }
+
+  .hero-circle-right {
+    transform: translate(calc(-50vw - 50%), -50%);
+  }
+}
