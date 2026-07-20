@@ -182,7 +182,7 @@ export default function DepositWithdrawSection() {
     <section className="w-full bg-[#f4f1ea] overflow-hidden">
       
       {/* HERO SECTION WITH FADE IN UP ANIMATIONS */}
-      <div className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-10 text-center sm:min-h-[calc(100vh-80px)] sm:px-6 sm:py-12 lg:min-h-[calc(100vh-84px)]">
+      <div className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-[#00674F] px-4 py-10 text-center sm:min-h-[calc(100vh-80px)] sm:px-6 sm:py-12 lg:min-h-[calc(100vh-84px)]">
         
         {/* Animated Background Image with Zoom Effect */}
         <div className="absolute inset-0 overflow-hidden">
@@ -201,7 +201,7 @@ export default function DepositWithdrawSection() {
         </div>
 
         {/* Fade-in Overlays */}
-        <div className="absolute inset-0 bg-black/50 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-[#00674F]/65 animate-[fadeIn_1.5s_ease-out]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)] animate-[fadeIn_1.8s_ease-out]"></div>
 
         {/* Hero Content */}
@@ -209,8 +209,8 @@ export default function DepositWithdrawSection() {
           
           {/* Badge - Fade In Up */}
           <div className="animate-[fadeInUp_0.6s_ease-out]">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-5 sm:px-5">
-              <span className="h-2 w-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
+            <span className="mb-4 inline-flex items-center gap-2 rounded-md border border-[#D3D3D3]/40 px-4 py-2 text-xs text-[#D3D3D3] sm:mb-5 sm:px-5">
+              <span className="h-2 w-2 rounded-full bg-[#D3D3D3] animate-pulse"></span>
               Deposits and Withdrawals
             </span>
           </div>
@@ -221,7 +221,7 @@ export default function DepositWithdrawSection() {
               Move Money on
             </span>
             <br className="hidden sm:block" />
-            <span className="inline-block animate-[fadeInUp_1s_ease-out] text-[#D4AF37]">
+            <span className="inline-block animate-[fadeInUp_1s_ease-out] text-[#D3D3D3]">
               Your Terms
             </span>
           </h1>
@@ -229,16 +229,16 @@ export default function DepositWithdrawSection() {
           {/* Description - Fade In Up */}
           <div className="animate-[fadeInUp_1.2s_ease-out]">
             <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-gray-200 sm:mt-4 sm:text-base sm:leading-relaxed">
-              Deposit and withdraw funds quickly and securely with NOVAFXM.
+              Manage deposits and withdrawals through a secure VeltriumFX payment flow.
               <br className="hidden sm:block" />
-              Enjoy smooth transactions with trusted payment methods.
+              Choose trusted methods and keep every transaction simple to track.
             </p>
           </div>
 
           {/* Button - Fade In Up with Pulse */}
           <div className="animate-[fadeInUp_1.4s_ease-out]">
             <button
-              className="button-shine mt-6 w-full max-w-[200px] rounded-full bg-[#014421] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:mt-6 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm animate-[gentlePulse_3s_ease-in-out_infinite] hover:animate-none"
+              className="button-shine mt-6 w-full max-w-[200px] rounded-full bg-[#00674F] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:mt-6 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm animate-[gentlePulse_3s_ease-in-out_infinite] hover:animate-none"
               onClick={() => {
                 document.getElementById("payment-methods")?.scrollIntoView({
                   behavior: "smooth",
@@ -246,7 +246,7 @@ export default function DepositWithdrawSection() {
                 });
               }}
             >
-              View Payment Methods
+              Explore Payment Options
             </button>
           </div>
         </div>
@@ -303,18 +303,18 @@ export default function DepositWithdrawSection() {
         <ScrollRevealUp delay={0}>
           <div className="mx-auto mb-6 max-w-2xl text-center">
             <h2 className="text-2xl font-bold leading-tight text-[#0b1f16] sm:text-3xl md:text-4xl">
-              Tailor Your
+              Control Your
               <br />
-              <span className="text-[#014421]">
-                Earnings and Spendings
+              <span className="text-[#00674F]">
+                Funding Experience
               </span>
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-gray-700 sm:text-base">
-              With NOVAFXM, you're in control. Customize your trading strategy
-              to maximize earnings and manage spending efficiently.
+              VeltriumFX keeps funding practical and transparent, so you can move money
+              with less friction and keep your trading plan on schedule.
             </p>
-            <p className="mt-2 text-sm italic text-[#D4AF37]">
-              Your financial journey, your rules!
+            <p className="mt-2 text-sm italic text-[#D3D3D3]">
+              Clear movement of funds, built around your pace.
             </p>
           </div>
         </ScrollRevealUp>
@@ -324,20 +324,20 @@ export default function DepositWithdrawSection() {
           
           {/* CARD 1 */}
           <FeatureCardReveal index={0} delay={100}>
-            <div className="deposit-feature-card group relative overflow-hidden rounded-2xl border border-[#014421]/20 border-b-[4px] border-b-[#014421] bg-white px-5 pb-5 pt-6 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-8 sm:pt-7">
-              <div className="deposit-feature-icon mx-auto mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-[#014421] text-sm text-white transition-all duration-300 group-hover:scale-110">
+            <div className="deposit-feature-card group relative overflow-hidden rounded-2xl border border-[#00674F]/20 border-b-[4px] border-b-[#00674F] bg-white px-5 pb-5 pt-6 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-8 sm:pt-7">
+              <div className="deposit-feature-icon mx-auto mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-[#00674F] text-sm text-white transition-all duration-300 group-hover:scale-110">
                 <FaBolt className="text-white" />
               </div>
               <h2 className="text-xl font-bold leading-snug text-[#0b1f16] sm:text-2xl">
-                Swift, Seamless, and
+                Fast, Flexible
                 <br />
-                <span className="text-[#014421]">
-                  Zero-Fee Transactions
+                <span className="text-[#00674F]">
+                  Money Movement
                 </span>
               </h2>
               <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-gray-700">
                 Experience trading without limits—fast, flexible, and completely
-                fee-free. With NOVAFXM, your money moves as quickly as your ideas.
+                fee-free. With VeltriumFX, your money moves as quickly as your ideas.
               </p>
               <div className="mt-5 flex h-32 items-end justify-center overflow-hidden rounded-b-xl sm:mt-6 sm:h-36">
                 <img
@@ -351,21 +351,20 @@ export default function DepositWithdrawSection() {
 
           {/* CARD 2 */}
           <FeatureCardReveal index={1} delay={250}>
-            <div className="deposit-feature-card group relative overflow-hidden rounded-2xl border border-[#014421]/20 border-b-[4px] border-b-[#014421] bg-white px-5 pb-5 pt-6 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-8 sm:pt-7">
-              <div className="deposit-feature-icon mx-auto mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-[#014421] text-sm text-white transition-all duration-300 group-hover:scale-110">
+            <div className="deposit-feature-card group relative overflow-hidden rounded-2xl border border-[#00674F]/20 border-b-[4px] border-b-[#00674F] bg-white px-5 pb-5 pt-6 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-8 sm:pt-7">
+              <div className="deposit-feature-icon mx-auto mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-[#00674F] text-sm text-white transition-all duration-300 group-hover:scale-110">
                 <FaLock className="text-white" />
               </div>
               <h2 className="text-xl font-bold leading-snug text-[#0b1f16] sm:text-2xl">
-                Your Security,
+                Protected Payments,
                 <br />
-                <span className="text-[#014421]">
-                  Our Commitment
+                <span className="text-[#00674F]">
+                  Clear Controls
                 </span>
               </h2>
               <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-gray-700">
-                At NOVAFXM, safeguarding your funds is our top priority. With
-                advanced encryption and robust protection technologies, every
-                transaction is secure.
+                VeltriumFX applies strong protection standards to help keep every
+                payment request, account movement and transaction record secure.
               </p>
               <div className="mt-5 flex h-32 items-end justify-center overflow-hidden rounded-b-xl sm:mt-6 sm:h-36">
                 <img
@@ -410,7 +409,7 @@ export default function DepositWithdrawSection() {
             <div className="mb-7 text-center sm:mb-9">
               <h2 className="text-2xl font-bold leading-tight sm:text-3xl md:text-4xl">
                 <span className="text-black">Deposits</span>{" "}
-                <span className="text-[#014421]">& Withdrawals</span>
+                <span className="text-[#00674F]">& Withdrawals</span>
               </h2>
               <div className="mt-2 flex items-center justify-center gap-3">
                 <div className="w-14 h-[2px] bg-[#d6c49d]"></div>
@@ -427,7 +426,7 @@ export default function DepositWithdrawSection() {
                 <div className="account-plan-card relative rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:p-6">
                   
                   <div className="mb-4 flex items-center gap-3">
-                    <div className="account-plan-icon flex h-9 w-9 items-center justify-center rounded-md bg-[#014421] text-sm text-white transition-all duration-300 hover:scale-110">
+                    <div className="account-plan-icon flex h-9 w-9 items-center justify-center rounded-md bg-[#00674F] text-sm text-white transition-all duration-300 hover:scale-110">
                       {item.icon}
                     </div>
                     <h2 className="text-lg font-bold leading-snug text-[#0b1f16] sm:text-xl">
@@ -446,25 +445,25 @@ export default function DepositWithdrawSection() {
                   <div className="space-y-2.5">
                     <div className="flex items-start justify-between gap-3 border-b border-gray-100 pb-3 text-xs sm:text-sm">
                       <span className="max-w-[52%] text-gray-500">Supported Currencies</span>
-                      <span className="max-w-[48%] text-right font-semibold text-[#014421]">
+                      <span className="max-w-[48%] text-right font-semibold text-[#00674F]">
                         {item.currencies}
                       </span>
                     </div>
                     <div className="flex items-start justify-between gap-3 border-b border-gray-100 pb-3 text-xs sm:text-sm">
                       <span className="max-w-[52%] text-gray-500">Type</span>
-                      <span className="max-w-[48%] text-right font-semibold text-[#014421]">
+                      <span className="max-w-[48%] text-right font-semibold text-[#00674F]">
                         {item.type}
                       </span>
                     </div>
                     <div className="flex items-start justify-between gap-3 border-b border-gray-100 pb-3 text-xs sm:text-sm">
                       <span className="max-w-[52%] text-gray-500">Fees</span>
-                      <span className="max-w-[48%] text-right font-semibold text-[#014421]">
+                      <span className="max-w-[48%] text-right font-semibold text-[#00674F]">
                         {item.fees}
                       </span>
                     </div>
                     <div className="flex items-start justify-between gap-3 text-xs sm:text-sm">
                       <span className="max-w-[52%] text-gray-500">Processing Time</span>
-                      <span className="max-w-[48%] text-right font-semibold text-[#014421]">
+                      <span className="max-w-[48%] text-right font-semibold text-[#00674F]">
                         {item.time}
                       </span>
                     </div>
@@ -473,7 +472,7 @@ export default function DepositWithdrawSection() {
                   <button
                     type="button"
                     onClick={() => navigate("/signup")}
-                    className="button-shine mt-5 w-full rounded-md border border-[#014421] bg-[#014421] py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0"
+                    className="button-shine mt-5 w-full rounded-md border border-[#00674F] bg-[#00674F] py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0"
                   >
                     Open Your Account
                   </button>

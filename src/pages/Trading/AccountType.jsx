@@ -142,30 +142,30 @@ const AnimatedAccountCard = ({ account, index }) => {
   return (
     <ScrollReveal delay={index * 150} threshold={0.1}>
       <div className={`account-plan-card relative rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6 ${
-        accountData.popular ? 'ring-2 ring-[#D4AF37] ring-opacity-50 relative' : ''
+        accountData.popular ? 'ring-2 ring-[#D3D3D3] ring-opacity-50 relative' : ''
       }`}>
         {/* POPULAR Badge */}
         {accountData.popular && (
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
-            <span className="bg-gradient-to-r from-[#D4AF37] to-[#F4D35E] text-black text-xs font-bold px-6 py-1.5 rounded-full shadow-lg whitespace-nowrap">
+            <span className="bg-gradient-to-r from-[#D3D3D3] to-[#D3D3D3] text-black text-xs font-bold px-6 py-1.5 rounded-full shadow-lg whitespace-nowrap">
               POPULAR
             </span>
           </div>
         )}
 
         <div className="flex items-center gap-3 mb-5 mt-2">
-          <div className="account-plan-icon flex h-9 w-9 items-center justify-center rounded-md bg-[#014421] text-sm text-white transition duration-300">
+          <div className="account-plan-icon flex h-9 w-9 items-center justify-center rounded-md bg-[#00674F] text-sm text-white transition duration-300">
             <Icon />
           </div>
           <h2 className="text-lg font-bold leading-snug text-gray-900 sm:text-xl">{accountData.title}</h2>
         </div>
 
-        <h2 className="account-plan-price mb-5 text-2xl font-extrabold text-[#014421]">{accountData.price}</h2>
+        <h2 className="account-plan-price mb-5 text-2xl font-extrabold text-[#00674F]">{accountData.price}</h2>
 
         <ul className="space-y-3 text-sm text-gray-700 mb-6">
           {accountData.features.map((feature, idx) => (
             <li key={idx} className="flex items-start gap-2">
-              <FaCheck className="mt-1 h-3 w-3 shrink-0 text-[#014421]" />
+              <FaCheck className="mt-1 h-3 w-3 shrink-0 text-[#00674F]" />
               <span>{feature}</span>
             </li>
           ))}
@@ -176,8 +176,8 @@ const AnimatedAccountCard = ({ account, index }) => {
   onClick={() => navigate("/signup")}
   className={`button-shine w-full rounded-md border py-3 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 ${
     accountData.popular
-      ? "border-[#014421] bg-[#014421] text-white hover:shadow-[#014421]/20"
-      : "border-[#014421] bg-white text-[#014421] hover:bg-[#014421] hover:text-white hover:shadow-[#014421]/20"
+      ? "border-[#00674F] bg-[#00674F] text-white hover:shadow-[#00674F]/20"
+      : "border-[#00674F] bg-white text-[#00674F] hover:bg-[#00674F] hover:text-white hover:shadow-[#00674F]/20"
   }`}
 >
   Open Account
@@ -194,28 +194,28 @@ const AnimatedStepCard = ({ step, index, Icon }) => {
         {/* Connector Dots */}
         {index !== 2 && (
           <div className="hidden md:flex absolute top-16 -right-8 items-center gap-2 z-10">
-            <span className="w-2 h-2 bg-[#014421] rounded-full"></span>
-            <span className="w-2 h-2 bg-[#014421] rounded-full"></span>
+            <span className="w-2 h-2 bg-[#00674F] rounded-full"></span>
+            <span className="w-2 h-2 bg-[#00674F] rounded-full"></span>
           </div>
         )}
 
         {/* Card */}
-        <div className="process-card relative w-full max-w-[320px] rounded-2xl border border-[#014421]/20 border-b-[4px] border-b-[#014421] bg-white px-5 pb-8 pt-14 text-center shadow-md transition-all duration-500 hover:-translate-y-1 hover:shadow-lg sm:px-6">
+        <div className="process-card relative w-full max-w-[320px] rounded-2xl border border-[#00674F]/20 border-b-[4px] border-b-[#00674F] bg-white px-5 pb-8 pt-14 text-center shadow-md transition-all duration-500 hover:-translate-y-1 hover:shadow-lg sm:px-6">
           
           {/* Top Circle Icon */}
           <div className="absolute -top-7 left-1/2 -translate-x-1/2">
-            <div className="process-icon w-14 h-14 rounded-full bg-[#014421] text-white flex items-center justify-center text-xl shadow-lg shadow-[#014421]/20 transition-all duration-500">
+            <div className="process-icon w-14 h-14 rounded-full bg-[#00674F] text-white flex items-center justify-center text-xl shadow-lg shadow-[#00674F]/20 transition-all duration-500">
               <Icon />
             </div>
           </div>
 
           {/* Number Badge */}
-          <div className="absolute top-5 left-5 w-7 h-7 rounded-full bg-[#014421] text-white text-xs font-bold flex items-center justify-center">
+          <div className="absolute top-5 left-5 w-7 h-7 rounded-full bg-[#00674F] text-white text-xs font-bold flex items-center justify-center">
             {step.number}
           </div>
 
           {/* Content */}
-          <h3 className="text-lg font-bold text-[#014421] mb-3">
+          <h3 className="text-lg font-bold text-[#00674F] mb-3">
             {step.title}
           </h3>
 
@@ -266,7 +266,7 @@ export default function AccountTypesPage() {
   return (
     <div className="min-h-screen bg-[#f7faf7] text-[#0b1f16] overflow-hidden">
       {/* Hero Section */}
-      <section className="relative flex min-h-[calc(100vh-72px)] items-start justify-center overflow-hidden bg-black px-4 pb-16 pt-24 text-center sm:min-h-[calc(100vh-80px)] sm:items-center sm:px-6 sm:py-16 lg:min-h-[calc(100vh-84px)]">
+      <section className="relative flex min-h-[calc(100vh-72px)] items-start justify-center overflow-hidden bg-[#00674F] px-4 pb-16 pt-24 text-center sm:min-h-[calc(100vh-80px)] sm:items-center sm:px-6 sm:py-16 lg:min-h-[calc(100vh-84px)]">
         
         {/* Animated Background Image with Zoom Effect */}
         <div className="absolute inset-0 overflow-hidden">
@@ -285,14 +285,14 @@ export default function AccountTypesPage() {
         </div>
 
         {/* Fade-in Overlays */}
-        <div className="absolute inset-0 bg-black/50 animate-[fadeIn_1.5s_ease-out]" />
+        <div className="absolute inset-0 bg-[#00674F]/65 animate-[fadeIn_1.5s_ease-out]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)] animate-[fadeIn_1.8s_ease-out]" />
 
         <div className="relative z-10 w-full max-w-4xl">
           {/* Badge - Slide In From Top */}
           <div className="animate-[slideInDown_0.6s_ease-out]">
-            <span className="mb-5 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-6 sm:px-5">
-              <span className="h-2 w-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
+            <span className="mb-5 inline-flex items-center gap-2 rounded-md border border-[#D3D3D3]/40 px-4 py-2 text-xs text-[#D3D3D3] sm:mb-6 sm:px-5">
+              <span className="h-2 w-2 rounded-full bg-[#D3D3D3] animate-pulse"></span>
               Account Type
             </span>
           </div>
@@ -303,7 +303,7 @@ export default function AccountTypesPage() {
               Find Your Perfect
             </span>
             <br className="hidden sm:block" />
-            <span className="inline-block animate-[fadeInUp_1s_ease-out] text-[#D4AF37]">
+            <span className="inline-block animate-[fadeInUp_1s_ease-out] text-[#D3D3D3]">
               Trading Account
             </span>
           </h1>
@@ -320,7 +320,7 @@ export default function AccountTypesPage() {
          {/* Button - Fade In Up with Shine Effect */}
 <div className="animate-[fadeInUp_1.4s_ease-out]">
   <button
-    className="button-shine mt-8 w-full max-w-[260px] rounded-full bg-[#014421] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm"
+    className="button-shine mt-8 w-full max-w-[260px] rounded-full bg-[#00674F] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm"
     onClick={() => {
       document.getElementById("account-cards")?.scrollIntoView({
         behavior: "smooth",
@@ -328,7 +328,7 @@ export default function AccountTypesPage() {
       });
     }}
   >
-    Choose Your Account Plan
+    Compare Account Plans
   </button>
 </div>
         </div>
@@ -458,19 +458,19 @@ export default function AccountTypesPage() {
         {/* Top Small Heading - Fade In Up */}
         <ScrollReveal delay={0}>
           <div className="mb-4 flex items-center justify-center gap-3">
-            <span className="h-[2px] w-8 bg-[#014421] sm:w-10"></span>
+            <span className="h-[2px] w-8 bg-[#00674F] sm:w-10"></span>
             <p className="text-sm font-semibold text-gray-700">
               How It Works
             </p>
-            <span className="h-[2px] w-8 bg-[#014421] sm:w-10"></span>
+            <span className="h-[2px] w-8 bg-[#00674F] sm:w-10"></span>
           </div>
         </ScrollReveal>
 
         {/* Main Heading - Fade In Up */}
         <ScrollReveal delay={100}>
           <h2 className="mb-12 text-2xl font-bold text-gray-900 sm:text-3xl md:mb-14 md:text-4xl">
-            Trading Made Simple with{" "}
-            <span className="text-[#014421]">NOVAFXM</span>
+            Start with a Structured Plan from{" "}
+            <span className="text-[#00674F]">VeltriumFX</span>
           </h2>
         </ScrollReveal>
 
@@ -484,7 +484,7 @@ export default function AccountTypesPage() {
         {/* Bottom Text - Fade In Up */}
         <ScrollReveal delay={500}>
           <p className="mx-auto mt-12 max-w-md text-sm leading-relaxed text-gray-700 sm:mt-14 sm:text-base">
-            Everything you need to trade Forex in one place.
+            Account options, funding access and trading tools organized in one place.
           </p>
         </ScrollReveal>
 
@@ -493,7 +493,7 @@ export default function AccountTypesPage() {
         <button
   type="button"
   onClick={() => navigate("/login")}
-  className="button-shine mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#014421] hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0 sm:w-auto"
+  className="button-shine mt-5 w-full max-w-[220px] rounded-full bg-[#00674F] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:w-auto"
 >
   Trade Now
 </button>
@@ -533,7 +533,7 @@ export default function AccountTypesPage() {
 
         .process-card:hover .process-icon {
           transform: scale(1.05);
-          background-color: #D4AF37;
+          background-color: #D3D3D3;
           transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 

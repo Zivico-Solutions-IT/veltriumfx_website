@@ -179,7 +179,7 @@ export default function IntroducingBrokers() {
     <div className="w-full bg-[#f7f8fc] overflow-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative flex min-h-[520px] items-center justify-center overflow-hidden bg-black px-4 py-10 sm:min-h-[560px] sm:px-6 lg:min-h-[600px]">
+      <section className="relative flex min-h-[520px] items-center justify-center overflow-hidden bg-[#00674F] px-4 py-10 sm:min-h-[560px] sm:px-6 lg:min-h-[600px]">
         {/* Animated Background with Zoom */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
@@ -194,13 +194,13 @@ export default function IntroducingBrokers() {
           </div>
         </div>
         {/* Fade-in Overlay */}
-        <div className="absolute inset-0 bg-black/45 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-[#00674F]/60 animate-[fadeIn_1.5s_ease-out]"></div>
 
         {/* Hero Content */}
         <div className="market-hero-content relative z-10 mx-auto max-w-5xl text-center">
           <ScrollReveal delay={0} threshold={0.1} direction="up">
-            <p className="market-hero-copy mb-5 text-sm font-semibold uppercase tracking-[6px] text-[#D4AF37] md:text-base">
-              NOVAFXM Partnership Program
+            <p className="market-hero-copy mb-5 text-sm font-semibold uppercase tracking-[6px] text-[#D3D3D3] md:text-base">
+              VeltriumFX Partnership Program
             </p>
           </ScrollReveal>
 
@@ -213,7 +213,7 @@ export default function IntroducingBrokers() {
           <ScrollReveal delay={200} threshold={0.1} direction="up">
             <p className="market-hero-copy mt-6 text-base font-regular font-light leading-relaxed text-white/90">
               Build a powerful passive income stream by referring traders
-              to NOVAFXM and earning commissions from every successful trade.
+              to VeltriumFX and earning commissions from every successful trade.
             </p>
           </ScrollReveal>
         </div>
@@ -227,24 +227,24 @@ export default function IntroducingBrokers() {
             {/* Left Side */}
             <div>
               <ScrollReveal delay={0} threshold={0.3} direction="left">
-                <p className="text-[#D4AF37] font-semibold uppercase tracking-[4px] mb-4">
+                <p className="text-[#D3D3D3] font-semibold uppercase tracking-[4px] mb-4">
                   Partnership Benefits
                 </p>
               </ScrollReveal>
 
               <ScrollReveal delay={100} threshold={0.3} direction="left">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#014421] leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#00674F] leading-tight">
                   Refer Traders & Build Passive Income
                 </h2>
               </ScrollReveal>
 
               <ScrollReveal delay={150} threshold={0.3} direction="left">
-                <div className="mt-4 mb-5 h-1 w-24 rounded-full bg-[#D4AF37]"></div>
+                <div className="mt-4 mb-5 h-1 w-24 rounded-full bg-[#D3D3D3]"></div>
               </ScrollReveal>
 
               <ScrollReveal delay={200} threshold={0.3} direction="left">
                 <p className="mb-4 text-justify font-regular text-base leading-relaxed text-gray-600">
-                  Join the NOVAFXM Introducing Broker program and unlock
+                  Join the VeltriumFX Introducing Broker program and unlock
                   unlimited earning opportunities by referring traders
                   to our trusted platform.
                 </p>
@@ -263,18 +263,18 @@ export default function IntroducingBrokers() {
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
               {features.map((feature, index) => (
                 <StaggeredCard key={index} index={index}>
-                  <div className="group relative overflow-hidden rounded-[32px] border border-[#014421]/10 bg-white p-6 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                  <div className="group relative overflow-hidden rounded-[32px] border border-[#00674F]/10 bg-white p-6 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
                     {/* Background Glow */}
-                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
+                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#D3D3D3]/10 rounded-full blur-3xl"></div>
                     
                     {/* Title */}
-                    <h3 className="mb-3 text-2xl font-semibold text-[#014421] transition duration-300 group-hover:text-[#012a15]">
+                    <h3 className="mb-3 text-2xl font-semibold text-[#00674F] transition duration-300 group-hover:text-[#00674F]">
                       {feature.title}
                     </h3>
 
                     {/* Divider */}
                     <div className="relative mb-4 h-[2px] w-full overflow-hidden bg-gray-100">
-                      <div className="absolute left-0 top-0 h-full w-20 bg-[#D4AF37] group-hover:w-full transition-all duration-500"></div>
+                      <div className="absolute left-0 top-0 h-full w-20 bg-[#D3D3D3] group-hover:w-full transition-all duration-500"></div>
                     </div>
 
                     {/* Description */}
@@ -296,25 +296,25 @@ export default function IntroducingBrokers() {
           {/* Heading */}
           <div className="mb-8 text-center sm:mb-10">
             <ScrollReveal delay={0} threshold={0.2} direction="up">
-              <p className="mb-3 font-semibold uppercase tracking-[4px] text-[#D4AF37]">
+              <p className="mb-3 font-semibold uppercase tracking-[4px] text-[#D3D3D3]">
                 Partnership Process
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={100} threshold={0.2} direction="up">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#014421]">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#00674F]">
                 Start Earning in 3 Steps
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={150} threshold={0.2} direction="up">
-              <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-[#D4AF37]"></div>
+              <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-[#D3D3D3]"></div>
             </ScrollReveal>
           </div>
 
           {/* HORIZONTAL SLIDES */}
 <ScrollReveal delay={200} threshold={0.2} direction="up">
-  <div className="overflow-hidden rounded-2xl border-y-2 border-[#D4AF37] bg-[#04100b] shadow-2xl">
+  <div className="overflow-hidden rounded-2xl border-y-2 border-[#D3D3D3] bg-[#04100b] shadow-2xl">
     <div
       className="flex transition-transform duration-700 ease-out"
       style={{ transform: `translateX(-${activeStep * 100}%)` }}
@@ -323,7 +323,7 @@ export default function IntroducingBrokers() {
         <article
           key={step.number}
           className={`group relative min-h-[250px] min-w-full overflow-hidden rounded-2xl bg-[#04100b] transition-all duration-500 ${
-            activeStep === index ? "shadow-[#014421]/25" : "opacity-95"
+            activeStep === index ? "shadow-[#00674F]/25" : "opacity-95"
           }`}
         >
 
@@ -332,11 +332,11 @@ export default function IntroducingBrokers() {
                       alt={step.title}
                       className="absolute inset-y-0 right-0 h-full w-full object-cover opacity-75 transition duration-500 group-hover:scale-105 md:w-[58%]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#012414] via-[#014421]/95 to-[#014421]/20"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#00674F] via-[#00674F]/95 to-[#00674F]/20"></div>
                     <div className="relative z-10 flex min-h-[230px] flex-col justify-center px-6 py-6 text-white sm:px-10 lg:px-14">
                       <div className="flex max-w-3xl flex-col gap-4 md:max-w-xl">
                         <div className="flex items-center gap-5">
-                          <span className="flex h-14 min-w-20 items-center justify-center rounded-l-[18px] rounded-r-sm bg-[#D4AF37] px-5 text-3xl font-black text-black">
+                          <span className="flex h-14 min-w-20 items-center justify-center rounded-l-[18px] rounded-r-sm bg-[#D3D3D3] px-5 text-3xl font-black text-black">
                             {step.number}
                           </span>
                           <h3 className="text-2xl font-bold leading-tight text-[#f8d27a] md:text-3xl">
@@ -349,7 +349,7 @@ export default function IntroducingBrokers() {
                         </p>
                         <Link
                           to="/signup"
-                          className="button-shine group/action w-fit rounded-full bg-[#D4AF37] px-9 py-3 text-16px font-semibold text-black shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#D4AF37]/80 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0"
+                          className="button-shine group/action w-fit rounded-full bg-[#D3D3D3] px-9 py-3 text-16px font-semibold text-black shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#D3D3D3]/80 hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0"
                         >
                           <span className="inline-block transition-transform duration-300 ease-out group-hover/action:translate-x-0.5">
                             {step.action}
@@ -368,7 +368,7 @@ export default function IntroducingBrokers() {
               type="button"
               onClick={goToPreviousStep}
               aria-label="Previous step"
-              className="text-[#014421] transition hover:text-[#D4AF37]"
+              className="text-[#00674F] transition hover:text-[#D3D3D3]"
             >
               <ChevronLeft size={28} strokeWidth={3} />
             </button>
@@ -381,7 +381,7 @@ export default function IntroducingBrokers() {
                   aria-label={`Show step ${index + 1}`}
                   onClick={() => setActiveStep(index)}
                   className={`h-4 w-4 rounded-full transition ${
-                    activeStep === index ? "bg-[#014421]" : "bg-[#014421]/25"
+                    activeStep === index ? "bg-[#00674F]" : "bg-[#00674F]/25"
                   }`}
                 />
               ))}
@@ -391,7 +391,7 @@ export default function IntroducingBrokers() {
               type="button"
               onClick={goToNextStep}
               aria-label="Next step"
-              className="text-[#014421] transition hover:text-[#D4AF37]"
+              className="text-[#00674F] transition hover:text-[#D3D3D3]"
             >
               <ChevronRight size={28} strokeWidth={3} />
             </button>

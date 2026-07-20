@@ -33,7 +33,7 @@ export default function ChatBox({ embedded = false, initialOpen = false }) {
     {
       id: 1,
       sender: "bot",
-      text: "Hi! Welcome to NOVAFXM. What is your name?",
+      text: "Hi! Welcome to VeltriumFX. What is your name?",
     },
   ]);
 
@@ -121,11 +121,11 @@ export default function ChatBox({ embedded = false, initialOpen = false }) {
         >
           
           {/* Header */}
-          <div className="flex items-center justify-between bg-[#014421] px-4 py-4 text-white">
+          <div className="flex items-center justify-between bg-[#00674F] px-4 py-4 text-white">
             <div className="flex items-center gap-3">
               <Bot size={22} />
               <div>
-                <h3 className="text-sm font-semibold">NOVAFXM Assistant</h3>
+                <h3 className="text-sm font-semibold">VeltriumFX Assistant</h3>
                 <p className="text-xs text-white/75">Online now</p>
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function ChatBox({ embedded = false, initialOpen = false }) {
                 <div
                   className={`max-w-[82%] rounded-2xl px-4 py-2 text-sm ${
                     msg.sender === "user"
-                      ? "bg-[#014421] text-white"
+                      ? "bg-[#00674F] text-white"
                       : "bg-white text-gray-700 shadow"
                   }`}
                 >
@@ -199,7 +199,7 @@ export default function ChatBox({ embedded = false, initialOpen = false }) {
                 className="flex-1 rounded-full border px-4 py-2 text-sm"
               />
 
-              <button className="bg-[#014421] text-white px-4 rounded-full">
+              <button className="bg-[#00674F] text-white px-4 rounded-full">
                 <Send size={16} />
               </button>
             </form>
@@ -211,7 +211,7 @@ export default function ChatBox({ embedded = false, initialOpen = false }) {
       {!embedded && (
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="h-14 w-14 rounded-full bg-[#014421] text-white flex items-center justify-center"
+          className="h-14 w-14 rounded-full bg-[#00674F] text-white flex items-center justify-center"
         >
           {isOpen ? <X size={24} /> : <MessageCircle size={26} />}
         </button>

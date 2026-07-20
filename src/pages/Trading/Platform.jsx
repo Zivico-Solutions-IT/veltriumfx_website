@@ -57,16 +57,16 @@ const ScrollReveal = ({ children, delay = 0, threshold = 0.2 }) => {
 const AnimatedCard = ({ card, index }) => {
   return (
     <ScrollReveal delay={index * 150} threshold={0.1}>
-      <div className="flex h-full flex-col rounded-2xl border-b-4 border-[#014421] bg-white p-5 transition duration-300 hover:-translate-y-1 sm:p-8">
+      <div className="flex h-full flex-col rounded-2xl border-b-4 border-[#00674F] bg-white p-5 transition duration-300 hover:-translate-y-1 sm:p-8">
         {/* Header */}
         <div className="flex min-h-[72px] items-center gap-4 mb-4">
           <div
             className={`w-12 h-12 rounded-full flex items-center justify-center border ${
               card.color === "green"
-                ? "border-[#014421] text-[#014421] bg-[#014421]/10"
+                ? "border-[#00674F] text-[#00674F] bg-[#00674F]/10"
                 : card.color === "gold"
-                ? "border-[#014421] border-[#014421] bg-[#D4AF37]/10"
-                : "border-[#014421] text-[#014421] bg-[#014421]/10"
+                ? "border-[#00674F] border-[#00674F] bg-[#D3D3D3]/10"
+                : "border-[#00674F] text-[#00674F] bg-[#00674F]/10"
             }`}
           >
             {card.icon}
@@ -90,10 +90,10 @@ const AnimatedCard = ({ card, index }) => {
                 size={18}
                 className={`mt-1 ${
                   card.color === "green"
-                    ? "text-[#014421]"
+                    ? "text-[#00674F]"
                     : card.color === "gold"
-                    ? "text-[#D4AF37]"
-                    : "text-[#014421]"
+                    ? "text-[#D3D3D3]"
+                    : "text-[#00674F]"
                 }`}
               />
               <p className="text-justify text-sm text-gray-700 sm:text-left">
@@ -129,7 +129,7 @@ export default function TradingPage() {
       icon: <BarChart3 size={22} />,
       color: "green",
       description:
-        "At Novafxm we equip you with cutting-edge tools and data to make smart trading decisions with ease.",
+        "At VeltriumFX we equip you with cutting-edge tools and data to make smart trading decisions with ease.",
       points: [
         "Real-time data updates",
         "Advanced charting solutions",
@@ -142,7 +142,7 @@ export default function TradingPage() {
       icon: <UserRound size={22} />,
       color: "green",
       description:
-        "Designed to enhance your trading journey, Novafxm provides an intuitive experience for both beginners and pros.",
+        "Designed to enhance your trading journey, VeltriumFX provides an intuitive experience for both beginners and pros.",
       points: [
         "Customizable dashboard options",
         "Quick access to preferred tools",
@@ -155,7 +155,7 @@ export default function TradingPage() {
       icon: <Zap size={22} />,
       color: "green",
       description:
-        "Experience unmatched speed and dependability in every trade with Novafxm.",
+        "Experience unmatched speed and dependability in every trade with VeltriumFX.",
       points: [
         "Ultra-fast execution speeds",
         "Minimal delays or slippage",
@@ -167,7 +167,7 @@ export default function TradingPage() {
   return (
     <div className="w-full bg-white overflow-hidden">
       {/* ================= HERO SECTION WITH ANIMATIONS ================= */}
-      <section className="relative flex min-h-[calc(100svh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-10 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 sm:py-16 lg:min-h-[calc(100svh-84px)]">
+      <section className="relative flex min-h-[calc(100svh-72px)] items-center justify-center overflow-hidden bg-[#00674F] px-4 py-10 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 sm:py-16 lg:min-h-[calc(100svh-84px)]">
         
         {/* Animated Background Image with Zoom Effect */}
         <div className="absolute inset-0 overflow-hidden">
@@ -186,15 +186,15 @@ export default function TradingPage() {
         </div>
 
         {/* Fade-in Overlays */}
-        <div className="absolute inset-0 bg-black/50 animate-[fadeIn_1.5s_ease-out]" />
+        <div className="absolute inset-0 bg-[#00674F]/65 animate-[fadeIn_1.5s_ease-out]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)] animate-[fadeIn_1.8s_ease-out]" />
 
         <div className="relative z-10 w-full max-w-4xl -translate-y-4 sm:translate-y-0">
           
           {/* Platform Badge - Slide In From Top */}
           <div className="animate-[slideInDown_0.6s_ease-out]">
-            <span className="mb-2 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-6 sm:px-5">
-              <span className="h-2 w-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
+            <span className="mb-2 inline-flex items-center gap-2 rounded-md border border-[#D3D3D3]/40 px-4 py-2 text-xs text-[#D3D3D3] sm:mb-6 sm:px-5">
+              <span className="h-2 w-2 rounded-full bg-[#D3D3D3] animate-pulse"></span>
               Platform
             </span>
           </div>
@@ -205,7 +205,7 @@ export default function TradingPage() {
               Navigate Your
             </span>
             <br className="hidden sm:block" />
-            <span className="inline-block animate-[fadeInUp_1s_ease-out] text-[#D4AF37]">
+            <span className="inline-block animate-[fadeInUp_1s_ease-out] text-[#D3D3D3]">
               Trading Success!
             </span>
           </h1>
@@ -223,7 +223,7 @@ export default function TradingPage() {
           <div className="animate-[fadeInUp_1.4s_ease-out]">
             <button
               ref={buttonRef}
-              className={`explore-button ${shineActive ? 'shine-active' : ''} mt-4 w-full max-w-[200px] rounded-full bg-[#014421] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm`}
+              className={`explore-button ${shineActive ? 'shine-active' : ''} mt-4 w-full max-w-[200px] rounded-full bg-[#00674F] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm`}
               onClick={() => {
                 document.getElementById("platform-overview")?.scrollIntoView({
                   behavior: "smooth",
@@ -409,35 +409,34 @@ export default function TradingPage() {
                 The Perfect Map
               </p>
 
-              <h2 className="text-2xl md:text-4xl font-bold leading-tight text-[#014421]">
-                Navigate Your
+              <h2 className="text-2xl md:text-4xl font-bold leading-tight text-[#00674F]">
+                Built for
                 <br />
-                <span className="text-[#014421]">
-                  Trading Success!
+                <span className="text-[#00674F]">
+                  Market Precision
                 </span>
               </h2>
 
-              <div className="w-24 h-1 bg-[#014421] rounded-full mt-6 mb-8"></div>
+              <div className="w-24 h-1 bg-[#00674F] rounded-full mt-6 mb-8"></div>
 
               <p className="mt-4 text-justify text-sm leading-relaxed text-gray-600 sm:mt-5 sm:text-left sm:text-lg md:text-justify">
-                <span className="font-bold text-black">NOVAFXM</span> is your
-                gateway to mastering the financial markets. Whether you're an
-                experienced trader or just starting your journey, our
-                cutting-edge platform offers a smooth and intuitive trading
-                experience designed to adapt to your unique needs.
+                <span className="font-bold text-black">VeltriumFX</span> gives traders
+                a streamlined workspace for reading markets, placing orders and
+                managing opportunities. Whether you are experienced or still building
+                confidence, the platform keeps essential tools close and easy to use.
               </p>
 
               {/* Features with staggered animation */}
               <div className="mt-12 space-y-6 text-sm">
                 {[
-                  "Real-Time Market Insights & Analytics",
-                  "Seamless and User-Friendly Interface",
-                  "Swift and Reliable Execution",
+                  "Live Market Intelligence",
+                  "Clean Platform Navigation",
+                  "Fast, Dependable Execution",
                 ].map((item, index) => (
                   <ScrollReveal key={index} delay={index * 100} threshold={0.3}>
                     <div className="flex items-center gap-3 bg-white shadow-md rounded-full px-3 py-1 hover:shadow-xl transition duration-300">
-                      <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
-                        <span className="text-[#014421] text-lg">✓</span>
+                      <div className="w-8 h-8 rounded-full bg-[#D3D3D3] flex items-center justify-center">
+                        <span className="text-[#00674F] text-lg">✓</span>
                       </div>
                       <p className="text-left font-medium text-gray-700">
                         {item}
@@ -462,20 +461,20 @@ export default function TradingPage() {
         </div>
       </section>
 
-      {/* ================= THIRD SECTION - WHY NOVAFXM (WITH SCROLL ANIMATION) ================= */}
+      {/* ================= THIRD SECTION - WHY VeltriumFX (WITH SCROLL ANIMATION) ================= */}
       <section className="w-full bg-[#efefe7] px-4 py-10 sm:px-6 sm:py-20">
         <div className="max-w-7xl mx-auto">
           {/* Heading - Animated */}
           <ScrollReveal delay={0} threshold={0.2}>
             <div className="mb-9 text-center sm:mb-14">
               <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">
-                Why NOVAFXM is Your Perfect Trading Partner?
+                Why Traders Build with VeltriumFX
               </h2>
 
               <div className="flex items-center justify-center gap-3 mt-5">
-                <div className="w-16 h-[2px] bg-[#014421]"></div>
-                <div className="w-2 h-2 rounded-full bg-[#D4AF37]"></div>
-                <div className="w-16 h-[2px] bg-[#D4AF37]"></div>
+                <div className="w-16 h-[2px] bg-[#00674F]"></div>
+                <div className="w-2 h-2 rounded-full bg-[#D3D3D3]"></div>
+                <div className="w-16 h-[2px] bg-[#D3D3D3]"></div>
               </div>
             </div>
           </ScrollReveal>
@@ -491,10 +490,10 @@ export default function TradingPage() {
           <ScrollReveal delay={500} threshold={0.2}>
             <div className="text-center mt-14">
               <p className="text-base md:text-xl font-medium text-[#1f1f1f] leading-relaxed">
-                NOVAFXM is where innovation meets precision helping you thrive in
+                VeltriumFX brings technology and practical market access together for
                 the{" "}
-                <span className="text-[#D4AF37] font-semibold">
-                  fast-paced world of trading!
+                <span className="text-[#D3D3D3] font-semibold">
+                  pace of modern trading.
                 </span>
               </p>
             </div>

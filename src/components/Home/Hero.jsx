@@ -76,6 +76,16 @@ export default function Hero() {
         <div className="absolute inset-[24%] rounded-full bg-gray-100"></div>
       </div>
 
+      <div className="hero-market-visual" aria-hidden="true">
+        <img
+          src="/hero-market-visual.jpg"
+          alt=""
+          className="h-full w-full object-cover"
+          loading="eager"
+        />
+        <div className="hero-market-visual__overlay"></div>
+      </div>
+
       <div className="relative z-10 mx-auto w-full max-w-[21rem] text-center sm:max-w-3xl md:max-w-5xl">
 
         {/* Badge */}
@@ -99,14 +109,14 @@ export default function Hero() {
           </div>
 
           <span className="min-w-0 text-xs font-medium leading-none text-gray-600 sm:text-sm">
-            Trusted by 450K Users
+            Chosen by 450K+ Traders
           </span>
         </div>
 
         {/* Heading */}
         <h1
           className="leading-[1.34] sm:leading-tight"
-          aria-label="Your Gateway to Smarter Trading"
+          aria-label="Trade Global Markets with Clarity"
         >
          <span
           className="
@@ -114,7 +124,7 @@ export default function Hero() {
             text-[2.05rem]
             leading-tight
             font-bold
-            text-[#014421]
+            text-[#00674F]
             xs:text-[2.5rem]
             sm:text-5xl
             md:text-6xl
@@ -122,35 +132,35 @@ export default function Hero() {
             xl:text-8xl
           "
         >
-          <LetterReveal text="Your Gateway " />
+          <LetterReveal text="Trade Global " />
 
           <span className="font-light text-gray-900">
-            <LetterReveal text="to" delay={0.46} />
+            <LetterReveal text="Markets" delay={0.46} />
           </span>
         </span>
 
           <span className="mt-2 block text-[2rem] font-light leading-tight text-gray-900 sm:mt-4 sm:text-5xl md:text-7xl">
-            <LetterReveal text="Smarter Trading" delay={0.76} />
+            <LetterReveal text="with Clarity" delay={0.76} />
           </span>
         </h1>
 
         {/* Description */}
         <p
           className="mx-auto mt-3 hidden max-w-[19rem] text-sm leading-9 text-justify text-gray-500 sm:mt-4 sm:block sm:max-w-2xl sm:px-2 sm:text-center sm:text-base sm:leading-relaxed md:text-lg"
-          aria-label="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
+          aria-label="Access forex, commodities, indices and digital assets through a refined trading environment built for confident decisions."
         >
           <LetterReveal
-            text="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
+            text="Access forex, commodities, indices and digital assets through a refined trading environment built for confident decisions."
             delay={1.85}
             step={0.018}
           />
         </p>
         <p
           className="mx-auto mt-3 w-full max-w-sm px-3 text-center text-[0.95rem] leading-7 text-gray-500 sm:hidden"
-          aria-label="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
+          aria-label="Access forex, commodities, indices and digital assets through a refined trading environment built for confident decisions."
         >
           <LetterReveal
-            text="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
+            text="Access forex, commodities, indices and digital assets through a refined trading environment built for confident decisions."
             delay={1.85}
             step={0.018}
           />
@@ -163,7 +173,7 @@ export default function Hero() {
     ref={buttonRef}
     type="button"
     onClick={() => navigate("/login")}
-    className="mobile-shine-button relative w-auto cursor-pointer overflow-hidden rounded-4xl bg-[#014421] px-5 py-2.5 text-xs text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-[#01351a] hover:shadow-xl active:scale-95 active:shadow-lg sm:w-auto sm:max-w-none sm:px-10 sm:py-3 sm:text-base"
+    className="mobile-shine-button relative w-auto cursor-pointer overflow-hidden rounded-4xl bg-[#00674F] px-5 py-2.5 text-xs text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-[#00674F] hover:shadow-xl active:scale-95 active:shadow-lg sm:w-auto sm:max-w-none sm:px-10 sm:py-3 sm:text-base"
     style={{
       WebkitTapHighlightColor: 'transparent',
       touchAction: 'manipulation',
@@ -172,7 +182,7 @@ export default function Hero() {
     }}
   >
     <span className="relative z-20 block text-center text-white font-semibold tracking-wide sm:tracking-normal">
-      Trade Now
+      Start Trading
     </span>
   </button>
 </div>

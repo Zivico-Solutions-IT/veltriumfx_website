@@ -219,28 +219,28 @@ export default function FaqPage() {
           </div>
         </div>
         
-        <div className="absolute inset-0 bg-black/60 animate-[fadeIn_1.5s_ease-out]" />
+        <div className="absolute inset-0 bg-[#00674F]/70 animate-[fadeIn_1.5s_ease-out]" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-7xl justify-start">
           <div className="max-w-2xl text-left text-white">
-            <p className="animate-[fadeInUp_0.6s_ease-out] mb-5 text-sm font-medium uppercase tracking-[4px] text-yellow-400 md:text-base">
-              Welcome To NOVAFXM
+            <p className="animate-[fadeInUp_0.6s_ease-out] mb-5 text-sm font-medium uppercase tracking-[4px] text-[#D3D3D3] md:text-base">
+              Help Center
             </p>
 
             <h1 className="animate-[fadeInUp_0.8s_ease-out] text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl">
               Frequently Asked <br />
-              <span className="text-[#014421] text-2xl md:text-4xl">
+              <span className="text-[#00674F] text-2xl md:text-4xl">
                 Questions
               </span>
             </h1>
 
             <p className="animate-[fadeInUp_1s_ease-out] mt-6 max-w-xl text-base leading-relaxed text-gray-200 md:text-lg">
-              Find clear answers about trading, accounts, platforms, and support at NOVAFXM.
+              Browse practical answers for accounts, platforms, payments and trading services.
             </p>
 
             <button
               type="button"
-              className="button-shine animate-[fadeInUp_1.2s_ease-out] mt-7 rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#c89b1d] sm:px-9 sm:text-base"
+              className="button-shine animate-[fadeInUp_1.2s_ease-out] mt-7 rounded-full bg-[#D3D3D3] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#D3D3D3] sm:px-9 sm:text-base"
               onClick={() => {
                 document.getElementById("faq-questions")?.scrollIntoView({
                   behavior: "smooth",
@@ -258,13 +258,13 @@ export default function FaqPage() {
         <div className="mx-auto w-full max-w-5xl">
           <div className="mb-8 text-center sm:mb-10">
             <ScrollReveal delay={0} threshold={0.2} direction="up">
-              <span className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-[#014421] sm:text-sm">
+              <span className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-[#00674F] sm:text-sm">
                 FAQ's
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100} threshold={0.2} direction="up">
-              <h2 className="mx-auto max-w-2xl text-2xl font-bold leading-tight text-[#014421] sm:text-3xl md:text-4xl">
-                Find <span className="text-[#D4AF37]">Answers</span> to Common
+              <h2 className="mx-auto max-w-2xl text-2xl font-bold leading-tight text-[#00674F] sm:text-3xl md:text-4xl">
+                Find <span className="text-[#D3D3D3]">Answers</span> to Common
                 Questions
               </h2>
             </ScrollReveal>
@@ -281,8 +281,8 @@ export default function FaqPage() {
                     onClick={() => toggle(i)}
                     className={`w-full rounded-xl border p-4 text-left shadow-sm transition-all duration-300 sm:p-5 ${
                       isOpen
-                        ? "border-[#014421] bg-[#014421] shadow-[#014421]/15"
-                        : "border-gray-200 bg-white hover:border-[#014421]/30"
+                        ? "border-[#00674F] bg-[#00674F] shadow-[#00674F]/15"
+                        : "border-gray-200 bg-white hover:border-[#00674F]/30"
                     }`}
                     aria-expanded={isOpen}
                   >
@@ -291,7 +291,7 @@ export default function FaqPage() {
                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[11px] font-bold transition-all duration-300 sm:h-9 sm:w-9 sm:text-xs ${
                           isOpen
                             ? "bg-white/20 text-white"
-                            : "bg-green-100 text-[#014421]"
+                            : "bg-[#D3D3D3] text-[#00674F]"
                         }`}
                       >
                         {faq.num}

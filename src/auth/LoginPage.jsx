@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import logo from "../assets/images/logo.png";
+import BrandLogo from "../components/brand/BrandLogo";
 import axios from "axios";
 
 // Add this style to hide browser's native password visibility toggle
@@ -67,7 +67,7 @@ const LoginPage = ({ onSignUpClick }) => {
       <main className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-10">
         <section className="auth-card interactive-card relative w-full max-w-md rounded-2xl bg-white px-6 py-8 text-center shadow-xl sm:px-8">
           <div className="absolute -top-7 left-1/2 -translate-x-1/2 rounded-xl bg-white px-3 py-2 shadow-md">
-            <img src={logo} alt="NOVAFX Logo" className="h-9 object-contain" />
+            <BrandLogo />
           </div>
 
           <div className="mt-5">
@@ -93,7 +93,7 @@ const LoginPage = ({ onSignUpClick }) => {
               <input
                 type="email"
                 placeholder="example@gmail.com"
-                className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-700 outline-none transition focus:border-green-700 focus:ring-2 focus:ring-green-700/10"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-700 outline-none transition focus:border-[#00674F] focus:ring-2 focus:ring-[#00674F]/10"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -109,7 +109,7 @@ const LoginPage = ({ onSignUpClick }) => {
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="****"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-2.5 pr-10 text-sm text-gray-700 outline-none transition focus:border-green-700 focus:ring-2 focus:ring-green-700/10"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-2.5 pr-10 text-sm text-gray-700 outline-none transition focus:border-[#00674F] focus:ring-2 focus:ring-[#00674F]/10"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -131,10 +131,10 @@ const LoginPage = ({ onSignUpClick }) => {
             {/* Remember Me & Forgot Password */}
             <div className="flex items-center justify-between gap-3 text-sm text-gray-600">
               <label className="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" className="accent-green-700" />
+                <input type="checkbox" className="accent-[#00674F]" />
                 Remember me
               </label>
-              <a href="#" className="font-medium text-green-700 hover:underline">
+              <a href="#" className="font-medium text-[#00674F] hover:underline">
                 Forgot password?
               </a>
             </div>
@@ -147,7 +147,7 @@ const LoginPage = ({ onSignUpClick }) => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="button-shine w-full rounded-lg bg-[#014421] py-2.5 text-sm font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg active:translate-y-0"
+              className="button-shine w-full rounded-lg bg-[#00674F] py-2.5 text-sm font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg active:translate-y-0"
               disabled={loading}
             >
               {loading ? "Logging in..." : "Login"}
@@ -191,7 +191,7 @@ const LoginPage = ({ onSignUpClick }) => {
               rel="noopener noreferrer"
               className="transition-transform hover:-translate-y-1"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white shadow-md">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#00674F] text-white shadow-md">
                 <FaXTwitter size={18} />
               </div>
             </a>
@@ -203,7 +203,7 @@ const LoginPage = ({ onSignUpClick }) => {
             <button
               type="button"
               onClick={onSignUpClick}
-              className="font-semibold text-[#014421] hover:text-[#014421]"
+              className="font-semibold text-[#00674F] hover:text-[#00674F]"
             >
               Sign up
             </button>

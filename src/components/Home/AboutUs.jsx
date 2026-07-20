@@ -53,10 +53,10 @@ export default function AboutUs() {
         >
           
           <h2 className="text-2xl font-medium leading-tight text-gray-900 sm:text-4xl">
-            Discover NOVAFXM
+            Inside VeltriumFX
           </h2>
 
-          <div className="mx-auto mt-3 h-1 w-14 rounded-full bg-[#014421] sm:mt-4 sm:w-16 md:mx-0"></div>
+          <div className="mx-auto mt-3 h-1 w-14 rounded-full bg-[#00674F] sm:mt-4 sm:w-16 md:mx-0"></div>
 
           <p
   className="
@@ -76,22 +76,21 @@ export default function AboutUs() {
     md:text-justify
   "
 >
-  We are a technology-driven broker committed to providing exceptional
-  trading conditions. Our platform bridges the gap between retail and
-  institutional trading, offering unparalleled access to global financial
-  markets.
+  VeltriumFX brings market access, execution technology and client support
+  together in one refined trading environment. The experience is built for
+  traders who value speed, clarity and control across global instruments.
 </p>
           <p className="mt-4 text-justify text-sm leading-7 text-gray-600 sm:mt-5 sm:text-base md:text-lg">
-            Built by traders for traders, our mission is to empower your financial decisions with
-            cutting-edge tools, transparent pricing and robust security.
+            From transparent pricing to practical platform tools, every detail is shaped to
+            help you plan carefully, respond faster and trade with greater confidence.
           </p>
 
           <div className="mt-5 flex justify-center sm:mt-6 md:justify-start">
             <Link
               to="/why-us"
-              className="button-shine inline-flex  items-center justify-center rounded-full bg-[#014421] px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-green-800 hover:shadow-lg sm:text-base"
+              className="button-shine inline-flex  items-center justify-center rounded-full bg-[#00674F] px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-[#00674F] hover:shadow-lg sm:text-base"
             >
-              More About Us 
+              Explore Our Story
             </Link>
           </div>
         </motion.div>

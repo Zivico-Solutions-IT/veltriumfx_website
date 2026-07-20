@@ -37,6 +37,56 @@ const CATEGORY_DETAILS = {
 
 const PAYMENT_METHODS = [
   {
+    name: "USDT",
+    src: "https://cdn.simpleicons.org/tether/26A17B",
+    imageClass: "h-7 sm:h-11",
+  },
+  {
+    name: "Bitcoin",
+    src: "https://cdn.simpleicons.org/bitcoin/F7931A",
+    imageClass: "h-7 sm:h-11",
+  },
+  {
+    name: "Ethereum",
+    src: "https://cdn.simpleicons.org/ethereum/3C3C3D",
+    imageClass: "h-7 sm:h-11",
+  },
+  {
+    name: "TRC20",
+    src: "/TRC20.png",
+    imageClass: "h-7 sm:h-11",
+  },
+  {
+    name: "ERC20",
+    src: "https://cdn.simpleicons.org/ethereum/3C3C3D",
+    imageClass: "h-7 sm:h-11",
+  },
+  {
+    name: "Bank Transfer",
+    src: "/Banktransfer.png",
+    imageClass: "h-8 sm:h-14",
+  },
+  {
+    name: "Net Banking",
+    src: "/NetBanking.png",
+    imageClass: "h-6 sm:h-10",
+  },
+  {
+    name: "IMPS",
+    src: "IMPS.png",
+    imageClass: "h-5 sm:h-9",
+  },
+  {
+    name: "NEFT",
+    src: "/NEFT.png",
+    imageClass: "h-8 sm:h-14",
+  },
+  {
+    name: "RTGS",
+    src: "/RTGS.png",
+    imageClass: "h-8 sm:h-14",
+  },
+  {
     name: "UPI",
     src: "https://commons.wikimedia.org/wiki/Special:FilePath/UPI-Logo-vector.svg",
     imageClass: "h-4 sm:h-6",
@@ -65,56 +115,6 @@ const PAYMENT_METHODS = [
     name: "Mastercard",
     src: "https://www.pngmart.com/files/22/Mastercard-Logo-PNG-HD-Isolated.png",
     imageClass: "h-6 sm:h-10",
-  },
-  {
-    name: "Net Banking",
-    src: "/NetBanking.png",
-    imageClass: "h-6 sm:h-10",
-  },
-  {
-    name: "IMPS",
-    src: "IMPS.png",
-    imageClass: "h-5 sm:h-9",
-  },
-  {
-    name: "NEFT",
-    src: "/NEFT.png",
-    imageClass: "h-8 sm:h-14",
-  },
-  {
-    name: "RTGS",
-    src: "/RTGS.png",
-    imageClass: "h-8 sm:h-14",
-  },
-  {
-    name: "Bank Transfer",
-    src: "/Banktransfer.png",
-    imageClass: "h-8 sm:h-14",
-  },
-  {
-    name: "USDT",
-    src: "https://cdn.simpleicons.org/tether/26A17B",
-    imageClass: "h-7 sm:h-11",
-  },
-  {
-    name: "Bitcoin",
-    src: "https://cdn.simpleicons.org/bitcoin/F7931A",
-    imageClass: "h-7 sm:h-11",
-  },
-  {
-    name: "Ethereum",
-    src: "https://cdn.simpleicons.org/ethereum/3C3C3D",
-    imageClass: "h-7 sm:h-11",
-  },
-  {
-    name: "TRC20",
-    src: "/TRC20.png",
-    imageClass: "h-7 sm:h-11",
-  },
-  {
-    name: "ERC20",
-    src: "https://cdn.simpleicons.org/ethereum/3C3C3D",
-    imageClass: "h-7 sm:h-11",
   },
 ];
 
@@ -219,8 +219,8 @@ const CircularChartButton = ({ symbol, tradingViewSymbol }) => {
   return (
     <button
       onClick={handleOpenChart}
-      className={`relative flex items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#F4D35E] shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 ${
-        isShining ? 'ring-4 ring-yellow-400 ring-opacity-50' : ''
+      className={`relative flex items-center justify-center rounded-full bg-gradient-to-br from-[#D3D3D3] to-[#D3D3D3] shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 ${
+        isShining ? 'ring-4 ring-[#D3D3D3] ring-opacity-50' : ''
       }`}
       style={{
         width: '28px',
@@ -245,7 +245,6 @@ const CircularChartButton = ({ symbol, tradingViewSymbol }) => {
 
 const Methords = () => {
   const [activeTab, setActiveTab] = useState("Metals");
-  const reversedPaymentMethods = [...PAYMENT_METHODS].reverse();
 
   useEffect(() => {
     const autoPlayInterval = setInterval(() => {
@@ -271,68 +270,46 @@ const Methords = () => {
       <div className="mx-auto max-w-7xl">
         <div className="mb-4 text-center sm:mb-10 md:mb-12">
           <h2 className="px-1 pb-2 text-base font-semibold leading-snug text-black sm:text-2xl md:text-3xl">
-            Secure <span className="text-[#D4AF37]">Methods</span> for Deposits & Withdrawals
+            Secure <span className="text-[#D3D3D3]">Methods</span> for Deposits & Withdrawals
           </h2>
 
-          {/* Payment Methods Sliders - Smaller on mobile */}
-          <div className="methods-slider mx-auto mt-4 max-w-6xl overflow-hidden sm:mt-8 md:mt-10">
-            <div className="methods-slider-track flex w-max items-center gap-1.5 sm:gap-4">
-              {[...PAYMENT_METHODS, ...PAYMENT_METHODS].map((method, index) => (
+          {/* Payment Methods - Static grid */}
+          <div className="mx-auto mt-4 grid max-w-6xl grid-cols-3 gap-3 sm:mt-8 sm:grid-cols-4 sm:gap-5 md:mt-10 lg:grid-cols-8">
+              {PAYMENT_METHODS.map((method) => (
                 <a
-                  key={`${method.name}-${index}`}
+                  key={method.name}
                   href="/deposit"
                   aria-label={`View ${method.name} deposit and withdrawal details`}
-                  className="group flex min-h-[44px] w-[70px] shrink-0 flex-col items-center justify-center gap-0.5 rounded-lg bg-white/80 px-1.5 py-1.5 text-center transition-all duration-300 hover:-translate-y-1 sm:min-h-[76px] sm:w-[136px] sm:gap-2 sm:px-3 sm:py-2"
+                  className="group flex min-h-[74px] flex-col items-center justify-center gap-1.5 rounded-xl border border-[#D3D3D3]/60 bg-white px-2 py-3 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#00674F]/40 hover:shadow-md sm:min-h-[92px] sm:gap-2 sm:px-3 sm:py-4"
                 >
-                  <div className="flex h-6 items-center justify-center transition duration-300 group-hover:scale-105 sm:h-11">
+                  <div className="flex h-8 items-center justify-center transition duration-300 group-hover:scale-105 sm:h-11">
                     <PaymentLogo method={method} />
                   </div>
-                  <span className="text-[8px] font-medium leading-tight text-gray-900 sm:text-xs">
+                  <span className="text-[11px] font-medium leading-tight text-gray-900 sm:text-xs">
                     {method.name}
                   </span>
                 </a>
               ))}
-            </div>
-          </div>
-
-          <div className="methods-slider mx-auto mt-3 max-w-6xl overflow-hidden sm:mt-6">
-            <div className="methods-slider-track methods-slider-track-reverse flex w-max items-center gap-1.5 sm:gap-4">
-              {[...reversedPaymentMethods, ...reversedPaymentMethods].map((method, index) => (
-                <a
-                  key={`${method.name}-reverse-${index}`}
-                  href="/deposit"
-                  aria-label={`View ${method.name} deposit and withdrawal details`}
-                  className="group flex min-h-[44px] w-[70px] shrink-0 flex-col items-center justify-center gap-0.5 rounded-lg bg-white/80 px-1.5 py-1.5 text-center transition-all duration-300 hover:-translate-y-1 sm:min-h-[76px] sm:w-[136px] sm:gap-2 sm:px-3 sm:py-2"
-                >
-                  <div className="flex h-6 items-center justify-center transition duration-300 group-hover:scale-105 sm:h-11">
-                    <PaymentLogo method={method} />
-                  </div>
-                  <span className="text-[8px] font-medium leading-tight text-gray-900 sm:text-xs">
-                    {method.name}
-                  </span>
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 
         {/* Main Trading Section - Smaller card size on mobile */}
-        <div className="relative w-full overflow-hidden rounded-xl border border-[#D4AF37]/25 bg-black px-2 py-3 shadow-xl sm:left-1/2 sm:w-screen sm:-translate-x-1/2 sm:px-6 sm:py-12 md:rounded-[56px] lg:px-8">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.16),transparent_32%),radial-gradient(circle_at_bottom,rgba(1,68,33,0.26),transparent_38%)]"></div>
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/70 to-transparent"></div>
+        <div className="relative w-full overflow-hidden rounded-2xl border border-white bg-[#D3D3D3] px-2 py-3 shadow-[0_26px_70px_rgba(0,103,79,0.22),inset_0_1px_0_rgba(255,255,255,0.88)] sm:left-1/2 sm:w-screen sm:-translate-x-1/2 sm:px-6 sm:py-12 md:rounded-[36px] lg:px-8">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.55),transparent_32%),radial-gradient(circle_at_bottom,rgba(0,103,79,0.22),transparent_42%)]"></div>
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D3D3D3]/70 to-transparent"></div>
 
           <div className="relative z-10 mx-auto max-w-7xl">
             {/* Header Section - Smaller on mobile */}
             <div className="mb-3 flex items-center gap-2 md:mb-9 md:gap-4">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#D4AF37] bg-black/80 text-[#D4AF37] shadow-[0_0_28px_rgba(212,175,55,0.16)] sm:h-16 sm:w-16">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-white bg-[#00674F] text-white shadow-[0_12px_28px_rgba(0,103,79,0.24)] sm:h-16 sm:w-16">
                 <ActiveIcon size={16} strokeWidth={1.9} />
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white sm:text-4xl">
+                <h3 className="text-lg font-bold text-[#00674F] sm:text-4xl">
                   {activeTab}
                 </h3>
-                <p className="mt-0.5 text-justify text-[10px] text-white/70 sm:text-left sm:text-base">
+                <p className="mt-0.5 text-justify text-[10px] text-gray-700 sm:text-left sm:text-base">
                   {activeDetails.description}
                 </p>
               </div>
@@ -343,16 +320,16 @@ const Methords = () => {
               {visibleData.map((item) => (
                 <div
                   key={item.symbol}
-                  className="group relative min-h-[100px] overflow-hidden rounded-lg border border-[#D4AF37]/80 bg-[#060606] p-2 shadow-[0_18px_46px_rgba(0,0,0,0.34)] transition-all duration-300 hover:-translate-y-1 hover:border-[#F4D35E] hover:shadow-[0_24px_60px_rgba(212,175,55,0.14)] sm:min-h-[200px] sm:p-2"
+                  className="group relative min-h-[100px] overflow-hidden rounded-2xl border border-white bg-[#00674F] p-2 shadow-[0_18px_38px_rgba(0,103,79,0.24),inset_0_1px_0_rgba(255,255,255,0.35)] transition-all duration-300 hover:-translate-y-1.5 hover:border-white hover:shadow-[0_28px_58px_rgba(0,103,79,0.30),inset_0_1px_0_rgba(255,255,255,0.42)] sm:min-h-[200px] sm:p-2"
                 >
                   <div className="absolute inset-0 bg-[url('/m2.png')] bg-cover bg-center opacity-35"></div>
                   <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),transparent_26%),radial-gradient(circle_at_78%_48%,rgba(212,175,55,0.11),transparent_34%)]"></div>
-                  <div className="absolute inset-0 bg-black/45"></div>
+                  <div className="absolute inset-0 bg-[#00674F]/60"></div>
 
                   <div className="relative z-10 flex h-full flex-col">
                     {/* Card Header - Smaller on mobile */}
                     <div className="mb-2 flex items-start justify-between gap-1 sm:mb-8 sm:gap-4">
-                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-[#D4AF37] bg-black/70 text-[#F4D35E] shadow-[inset_0_0_24px_rgba(212,175,55,0.1),0_0_24px_rgba(212,175,55,0.12)] sm:h-16 sm:w-16 sm:rounded-2xl">
+                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-xl border border-white/80 bg-[#00674F]/85 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_12px_26px_rgba(0,103,79,0.22)] sm:h-16 sm:w-16 sm:rounded-2xl">
                         <ActiveIcon size={14} strokeWidth={1.9} />
                       </div>
 
@@ -395,8 +372,8 @@ const Methords = () => {
                     onClick={() => setActiveTab(tab)}
                     className={`flex items-center gap-0.5 whitespace-nowrap rounded-full border px-2 py-0.5 text-[8px] font-medium transition-all duration-300 ${
                       activeTab === tab
-                        ? "border-[#D4AF37] bg-[#014421] text-white shadow-[0_8px_20px_rgba(212,175,55,0.24)]"
-                        : "border-white/20 bg-black/55 text-white/85 hover:border-[#D4AF37]/70 hover:text-white"
+                        ? "border-white bg-[#00674F] text-white shadow-[0_8px_20px_rgba(0,103,79,0.24)]"
+                        : "border-white bg-white/75 text-[#00674F] shadow-sm hover:border-[#00674F]/40 hover:bg-white"
                     }`}
                   >
                     {React.createElement(CATEGORY_DETAILS[tab].icon, {
@@ -417,8 +394,8 @@ const Methords = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`flex min-h-[42px] items-center gap-2.5 whitespace-nowrap rounded-full border px-5 py-2 text-sm transition-all duration-300 hover:scale-105 md:text-base ${
                     activeTab === tab
-                      ? "scale-105 border-[#D4AF37] bg-[#014421] text-white shadow-[0_14px_34px_rgba(212,175,55,0.28)]"
-                      : "border-white/20 bg-black/55 text-white/85 hover:border-[#D4AF37]/70 hover:text-white"
+                      ? "scale-105 border-white bg-[#00674F] text-white shadow-[0_14px_34px_rgba(0,103,79,0.28)]"
+                      : "border-white bg-white/75 text-[#00674F] shadow-[0_10px_24px_rgba(15,23,42,0.08)] hover:border-[#00674F]/40 hover:bg-white"
                   }`}
                 >
                   {React.createElement(CATEGORY_DETAILS[tab].icon, {

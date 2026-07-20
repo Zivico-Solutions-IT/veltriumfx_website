@@ -5,20 +5,20 @@ import { FaChartLine, FaCreditCard, FaUserAlt } from "react-icons/fa";
 const steps = [
   {
     number: "01",
-    title: "Choose Account",
-    desc: "Choose the account that suits you best",
+    title: "Select Account",
+    desc: "Pick a trading setup that matches your goals",
     Icon: FaUserAlt,
   },
   {
     number: "02",
-    title: "Fund",
-    desc: "Fund your account securely",
+    title: "Add Funds",
+    desc: "Move capital with protected payment options",
     Icon: FaCreditCard,
   },
   {
     number: "03",
-    title: "Start Trading",
-    desc: "Start trading and achieve your goals.",
+    title: "Enter Markets",
+    desc: "Open positions and manage every move with precision.",
     Icon: FaChartLine,
   },
 ];
@@ -77,43 +77,43 @@ const StepCard = ({ step, index, isActive, onActivate }) => {
       <button
         type="button"
         onClick={() => onActivate(index)}
-        className={`process-card relative z-10 flex min-h-[280px] w-full max-w-[360px] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl border bg-white px-8 py-12 text-center shadow-[0_18px_42px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-3 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-4 md:min-h-[300px] mx-auto ${
+        className={`process-card relative z-10 flex min-h-[280px] w-full max-w-[360px] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl border bg-white px-8 py-12 text-center shadow-[0_18px_42px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-3 focus:outline-none focus:ring-2 focus:ring-[#D3D3D3] focus:ring-offset-4 md:min-h-[300px] mx-auto ${
           isActive
-            ? "border-[#D4AF37] shadow-[0_28px_48px_rgba(212,175,55,0.2)]"
-            : "border-[#014421]/15 hover:border-[#014421]/40 hover:shadow-[0_28px_60px_rgba(1,68,33,0.16)]"
+            ? "border-[#D3D3D3] shadow-[0_28px_48px_rgba(212,175,55,0.2)]"
+            : "border-[#00674F]/15 hover:border-[#00674F]/40 hover:shadow-[0_28px_60px_rgba(1,68,33,0.16)]"
         }`}
         aria-pressed={isActive}
       >
         {/* Top Progress Bar */}
         <span
           className={`absolute left-0 top-0 h-1.5 w-full origin-left rounded-t-2xl transition-all duration-300 ${
-            isActive ? "scale-x-100 bg-[#D4AF37]" : "scale-x-0 bg-[#D4AF37]"
+            isActive ? "scale-x-100 bg-[#D3D3D3]" : "scale-x-0 bg-[#D3D3D3]"
           }`}
         ></span>
 
         {/* Step Number Badge */}
-        <div className="absolute left-5 top-5 flex h-8 w-8 items-center justify-center rounded-md border border-[#014421]/15 bg-[#f5f7f2] text-xs font-bold text-[#014421] transition-all duration-300">
+        <div className="absolute left-5 top-5 flex h-8 w-8 items-center justify-center rounded-md border border-[#00674F]/15 bg-[#D3D3D3] text-xs font-bold text-[#00674F] transition-all duration-300">
           {number}
         </div>
 
         {/* Selected Badge */}
         {isActive && (
-          <div className="absolute right-5 top-5 rounded-full bg-[#D4AF37] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-md">
+          <div className="absolute right-5 top-5 rounded-full bg-[#D3D3D3] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-md">
             Selected
           </div>
         )}
 
         {/* Icon Container */}
         <div
-          className={`process-icon mb-5 flex h-16 w-16 items-center justify-center rounded-lg bg-[#014421] text-2xl text-white shadow-sm transition-all duration-300 ${
-            isActive ? "scale-110 bg-[#0d6b36]" : ""
+          className={`process-icon mb-5 flex h-16 w-16 items-center justify-center rounded-lg bg-[#00674F] text-2xl text-white shadow-sm transition-all duration-300 ${
+            isActive ? "scale-110 bg-[#00674F]" : ""
           }`}
         >
           <Icon />
         </div>
 
         {/* Title */}
-        <h3 className="mb-3 text-lg font-bold text-[#014421] transition-all duration-300 sm:text-xl">
+        <h3 className="mb-3 text-lg font-bold text-[#00674F] transition-all duration-300 sm:text-xl">
           {title}
         </h3>
 
@@ -171,9 +171,9 @@ export default function Account() {
               : "translate-y-8 opacity-0"
           }`}
         >
-          <span className="h-[2px] w-8 bg-[#014421] sm:w-10"></span>
-          <p className="text-sm font-semibold text-gray-700">How It Works</p>
-          <span className="h-[2px] w-8 bg-[#014421] sm:w-10"></span>
+          <span className="h-[2px] w-8 bg-[#00674F] sm:w-10"></span>
+          <p className="text-sm font-semibold text-gray-700">Getting Started</p>
+          <span className="h-[2px] w-8 bg-[#00674F] sm:w-10"></span>
         </div>
 
         {/* Main Heading */}
@@ -184,16 +184,16 @@ export default function Account() {
               : "translate-y-8 opacity-0"
           }`}
         >
-          Trading Made Simple with{" "}
-          <span className="text-[#014421]">NOVAFXM</span>
+          A Cleaner Way to Begin with{" "}
+          <span className="text-[#00674F]">VeltriumFX</span>
         </h2>
 
         {/* Steps with Scroll Animation */}
         <div className="relative grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-3 md:gap-8">
           {/* Animated Progress Line - Desktop Only */}
-          <div className="absolute left-[18%] right-[18%] top-1/2 hidden h-[3px] -translate-y-1/2 overflow-hidden rounded-full bg-[#014421]/15 md:block">
+          <div className="absolute left-[18%] right-[18%] top-1/2 hidden h-[3px] -translate-y-1/2 overflow-hidden rounded-full bg-[#00674F]/15 md:block">
             <span
-              className="step-line-progress block h-full rounded-full bg-[#D4AF37] transition-all duration-500 ease-out"
+              className="step-line-progress block h-full rounded-full bg-[#D3D3D3] transition-all duration-500 ease-out"
               style={{
                 width: activeStep !== null ? "33.333%" : "0%",
                 transform: activeStep !== null ? `translateX(${activeStep * 100}%)` : "translateX(-100%)",
@@ -219,19 +219,19 @@ export default function Account() {
             hasAnimated ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
-          Everything you need to trade Forex in one place.
+          One guided flow for account setup, funding and market access.
         </p>
 
         {/* CTA Button */}
         <button
           type="button"
           onClick={() => navigate("/login")}
-          className={`button-shine relative mt-5 w-full max-w-[220px] overflow-hidden rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#014421] hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0 sm:w-auto ${
+          className={`button-shine relative mt-5 w-full max-w-[220px] overflow-hidden rounded-full bg-[#00674F] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:w-auto ${
             hasAnimated ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
           style={{ transitionDelay: "600ms" }}
         >
-          Trade Now
+          Open Platform
         </button>
       </div>
 

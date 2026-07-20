@@ -4,28 +4,28 @@ import { useNavigate } from "react-router-dom";
 const faqData = [
   {
     id: 1,
-    question: "What is Forex Trading?",
+    question: "What does forex trading involve?",
     answer:
-      "Forex trading is the process of buying and selling currencies in the global Forex Market to make a profit. Traders exchange one currency for another and earn by predicting price movements based on market trends and global events.",
+      "Forex trading means exchanging one currency against another in the global currency market. Traders study price movement, economic news and market sentiment to identify potential opportunities.",
   },
   {
     id: 2,
-    question: "How Does Forex Trading Work?",
+    question: "How are currency trades placed?",
     answer:
-      "Forex trading works by exchanging one currency for another in the global Forex Market, where currencies are always traded in pairs like EUR/USD or GBP/USD. When a trader believes that one currency will increase in value compared to another, they place a buy (long) trade and if they expect it to decrease, they place a sell (short) trade.",
+      "Currencies are quoted in pairs such as EUR/USD or GBP/USD. If a trader expects the first currency to strengthen, they may buy; if they expect weakness, they may sell.",
   },
   {
     id: 3,
-    question: "What is a Pip in Forex?",
+    question: "What does a pip measure?",
     answer:
-      "A pip in forex is the smallest price movement in a currency pair within the Forex Market. It is usually the fourth decimal place in most currency pairs.",
+      "A pip is a small unit used to measure movement in a currency pair. For most major pairs, it is represented by the fourth decimal place.",
   
   },
   {
     id: 4,
-    question: "What is Leverage in Forex Trading?",
+    question: "How does leverage work?",
     answer:
-      "Leverage in forex trading allows traders to control a larger position with a smaller amount of money.",
+      "Leverage allows traders to control a larger market position with a smaller margin amount. It can increase both potential gains and potential losses.",
   
   },
 ];
@@ -44,7 +44,7 @@ export default function FAQ() {
         
         {/* Heading */}
         <h2 className="mb-6 text-center text-xl font-semibold leading-tight sm:mb-6 sm:text-2xl md:text-3xl">
-          Find <span className="text-[#014421]">Answers</span> to Common Questions
+          Clear <span className="text-[#00674F]">Guidance</span> for New Traders
         </h2>
 
         {/* FAQ */}
@@ -59,7 +59,7 @@ export default function FAQ() {
               >
                 
                 {/* Number */}
-                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#014421] text-xs font-medium text-white sm:h-7 sm:w-7 sm:text-sm">
+                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#00674F] text-xs font-medium text-white sm:h-7 sm:w-7 sm:text-sm">
                   {item.id}
                 </div>
 
@@ -103,9 +103,9 @@ export default function FAQ() {
           <button
             type="button"
             onClick={() => navigate("/faq")}
-            className="button-shine w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#014421] hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0 sm:w-auto"
+            className="button-shine w-full max-w-[220px] rounded-full bg-[#00674F] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:w-auto"
           >
-            Read More
+            More Questions
           </button>
         </div>
 

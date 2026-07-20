@@ -23,9 +23,9 @@ const additionalTermsContent = `
 11.1.1. A copy of a valid passport with the signature page, Government-issued ID card, or Driving License.
 11.2. Optional - Additional documents may be requested to verify the Client's identity and the source of funds in case of suspected fraudulent activity.
 11.2.2. A signed history of online transactions.
-11.3. For any questions, the Client can contact customer support at support@novafxm.com.
+11.3. For any questions, the Client can contact customer support at support@veltriumfx.com.
 11.4. The Client must provide all required documents promptly to avoid delays in processing transactions. The Company may require the documents before processing deposits, trades, or withdrawals. If the required documents are not received, any pending withdrawals will be canceled and credited back to the trading account, with notification via the system.
-11.5. The Client must scan or take high-quality pictures of documents and upload them via the trader's room or send them to support@novafxm.com.
+11.5. The Client must scan or take high-quality pictures of documents and upload them via the trader's room or send them to support@veltriumfx.com.
 11.6. The Company ensures that personal data is protected from unauthorized access, alteration, destruction, or misuse. Strong security measures are in place to prevent data breaches.
 
 12. FEES AND CHARGES
@@ -64,11 +64,11 @@ const additionalTermsContent = `
 17.3. The Client acknowledges the potential for loss of the entire margin deposit in leveraged transactions.
 17.4. The Company does not provide investment advice and the Client is solely responsible for their investment decisions.
 17.5. The Client fully acknowledges and understands that trading in Financial Instruments carries a high risk of incurring substantial losses. By engaging in such activities, the Client accepts and affirms their willingness to assume this risk.
-17.6. The Client acknowledges that NOVAFXM does not offer investment advice. NOVAFXM does not act as a fiduciary or advisor, and expressly disclaims any obligations or duties of that nature.
-17.7. NOVAFXM provides margin-traded products that carry the risk of losing the entire initial deposit. Before trading such products, the Client should carefully consider their investment goals, risk tolerance, and experience level. These products may not be suitable for every investor, and the Client should seek independent financial advice if necessary.
+17.6. The Client acknowledges that VeltriumFX does not offer investment advice. VeltriumFX does not act as a fiduciary or advisor, and expressly disclaims any obligations or duties of that nature.
+17.7. VeltriumFX provides margin-traded products that carry the risk of losing the entire initial deposit. Before trading such products, the Client should carefully consider their investment goals, risk tolerance, and experience level. These products may not be suitable for every investor, and the Client should seek independent financial advice if necessary.
 
 18. ROLLOVER AND SWAPS
-18.1. Positions may be subject to rollover, during which amounts will be debited or credited to your account based on interest rate differentials between currencies and/or swap rates provided by our liquidity providers. Please note that daily swap rates are not fixed and may be adjusted by NOVAFXM without prior notice, in line with prevailing market conditions. It is your responsibility to monitor the swap rates for the instruments you are trading by checking the contract specifications and details available on NOVAFXM' website and trading platforms. In the event of any discrepancies, the information displayed within the trading platforms will take precedence.
+18.1. Positions may be subject to rollover, during which amounts will be debited or credited to your account based on interest rate differentials between currencies and/or swap rates provided by our liquidity providers. Please note that daily swap rates are not fixed and may be adjusted by VeltriumFX without prior notice, in line with prevailing market conditions. It is your responsibility to monitor the swap rates for the instruments you are trading by checking the contract specifications and details available on VeltriumFX' website and trading platforms. In the event of any discrepancies, the information displayed within the trading platforms will take precedence.
 
 19. DISCLAIMER OF WARRANTIES / LIMITATION OF LIABILITY
 19.1. If the Client is an individual, they confirm that they are over the age of 18 and possess the full legal capacity to enter into this Agreement.
@@ -77,17 +77,17 @@ const additionalTermsContent = `
 19.4. This Agreement and each Transaction entered into are binding and enforceable against the Client, in accordance with applicable laws, and do not violate any existing obligations, regulations, or agreements to which the Client is bound.
 19.5. No Event of Default or Potential Event of Default has occurred with respect to the Client.
 19.6. The Client is acting on their own behalf (unless otherwise agreed in writing) and not as a trustee in entering into this Agreement and any Transactions.
-19.7. Any information provided by the Client to NOVAFXM concerning their financial situation or other relevant matters is accurate and not misleading in any material respect.
+19.7. Any information provided by the Client to VeltriumFX concerning their financial situation or other relevant matters is accurate and not misleading in any material respect.
 19.8. The Client acknowledges their financial ability to sustain the total loss of funds as a result of trading.
-19.9. Unless otherwise agreed, the Client is the sole beneficial owner of all Margin transferred to NOVAFXM, free from any third-party security interests.
+19.9. Unless otherwise agreed, the Client is the sole beneficial owner of all Margin transferred to VeltriumFX, free from any third-party security interests.
 
 20. MARKET RECOMMENDATIONS AND INFORMATION
 20.1. The Client acknowledges that:
-20.1.2. Such recommendations and information are based on sources that NOVAFXM believes to be reliable; however, these are not guaranteed and may be incomplete or unverified.
-20.1.3. NOVAFXM makes no guarantees regarding the accuracy or completeness of any market information or recommendations provided and shall not be held responsible for any loss or damage arising from reliance on such information, including the loss of margin or profits.
-20.2. The Client understands that they are solely responsible for assessing the merits and risks of any trade they enter into, regardless of whether the trade is based on information from NOVAFXM.
-20.3. The Client acknowledges that NOVAFXM, its officers, directors, affiliates, or representatives may hold positions in or may intend to buy or sell the same financial instruments discussed in recommendations provided to the Client, and that these positions may not align with the recommendations offered.
-20.4. The Client understands that NOVAFXM does not provide advice on the tax implications of any trading activities.
+20.1.2. Such recommendations and information are based on sources that VeltriumFX believes to be reliable; however, these are not guaranteed and may be incomplete or unverified.
+20.1.3. VeltriumFX makes no guarantees regarding the accuracy or completeness of any market information or recommendations provided and shall not be held responsible for any loss or damage arising from reliance on such information, including the loss of margin or profits.
+20.2. The Client understands that they are solely responsible for assessing the merits and risks of any trade they enter into, regardless of whether the trade is based on information from VeltriumFX.
+20.3. The Client acknowledges that VeltriumFX, its officers, directors, affiliates, or representatives may hold positions in or may intend to buy or sell the same financial instruments discussed in recommendations provided to the Client, and that these positions may not align with the recommendations offered.
+20.4. The Client understands that VeltriumFX does not provide advice on the tax implications of any trading activities.
 
 21. ANTI-MONEY LAUNDERING LEGISLATION
 21.1. The Client acknowledges that the Company may require additional information from time to time to comply with Anti-Money Laundering (AML) Legislation. By opening the Trading Account or engaging in transactions, the Client agrees to provide all required information, documents, and cooperation to help the Company comply with AML/Counter-Terrorism Financing (CTF) Laws.
@@ -175,16 +175,16 @@ const TermsConditions = () => {
     .filter(Boolean);
 
   const sectionHeadingClass =
-    "mb-5 text-2xl font-bold leading-tight text-[#014421] sm:mb-8 sm:text-3xl";
+    "mb-5 text-2xl font-bold leading-tight text-[#00674F] sm:mb-8 sm:text-3xl";
   const subHeadingClass =
-    "mb-3 text-lg font-semibold leading-snug text-[#014421] sm:mb-4 sm:text-xl";
+    "mb-3 text-lg font-semibold leading-snug text-[#00674F] sm:mb-4 sm:text-xl";
   const paragraphClass =
     "break-words text-justify text-sm leading-7 text-gray-700 sm:text-[15px] sm:leading-8";
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-white font-sans">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-black">
+      <section className="relative overflow-hidden bg-[#00674F]">
   
   {/* Animated Background Image */}
   <img
@@ -194,17 +194,17 @@ const TermsConditions = () => {
   />
 
   {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-black/60"></div>
+  <div className="absolute inset-0 bg-[#00674F]/70"></div>
 
   {/* Green Glow Animation */}
-  <div className="absolute top-10 right-0 h-64 w-64 rounded-full bg-green-500/20 blur-3xl animate-pulse sm:right-10 sm:h-[500px] sm:w-[500px]"></div>
+  <div className="absolute top-10 right-0 h-64 w-64 rounded-full bg-[#D3D3D3]0/20 blur-3xl animate-pulse sm:right-10 sm:h-[500px] sm:w-[500px]"></div>
 
   {/* Floating Particles */}
   <div className="absolute inset-0 overflow-hidden">
-    <span className="absolute top-[15%] right-[15%] w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
-    <span className="absolute top-[20%] right-[25%] w-3 h-3 bg-green-500 rounded-full animate-ping"></span>
-    {/* <span className="absolute bottom-[20%] left-[25%] w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span> */}
-    {/* <span className="absolute bottom-[35%] right-[15%] w-2 h-2 bg-green-400 rounded-full animate-bounce"></span> */}
+    <span className="absolute top-[15%] right-[15%] w-2 h-2 bg-[#D3D3D3]0 rounded-full animate-ping"></span>
+    <span className="absolute top-[20%] right-[25%] w-3 h-3 bg-[#D3D3D3]0 rounded-full animate-ping"></span>
+    {/* <span className="absolute bottom-[20%] left-[25%] w-2 h-2 bg-[#D3D3D3] rounded-full animate-pulse"></span> */}
+    {/* <span className="absolute bottom-[35%] right-[15%] w-2 h-2 bg-[#00674F] rounded-full animate-bounce"></span> */}
   </div>
 
   {/* Content */}
@@ -214,7 +214,7 @@ const TermsConditions = () => {
     <div className="max-w-2xl text-white animate-fadeInUp">
       
       {/* Badge */}
-      <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full bg-[#D4AF37] px-4 py-2.5 text-xs font-semibold text-black shadow-lg animate-float sm:mb-8 sm:gap-3 sm:px-5 sm:py-3 sm:text-sm">
+      <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full bg-[#D3D3D3] px-4 py-2.5 text-xs font-semibold text-black shadow-lg animate-float sm:mb-8 sm:gap-3 sm:px-5 sm:py-3 sm:text-sm">
         <svg
           className="h-4 w-4 shrink-0 sm:h-5 sm:w-5"
           fill="currentColor"
@@ -228,11 +228,11 @@ const TermsConditions = () => {
 
       {/* Title */}
       <h1 className="max-w-[12ch] text-4xl font-bold leading-tight sm:max-w-none sm:text-5xl md:text-6xl lg:text-7xl">
-        <span className="text-green-500">Terms</span> & Conditions
+        <span className="text-[#00674F]">Terms</span> & Conditions
       </h1>
 
       {/* Line */}
-      <div className="my-6 h-1 w-20 rounded-full bg-[#D4AF37] animate-pulse sm:my-8 sm:w-28"></div>
+      <div className="my-6 h-1 w-20 rounded-full bg-[#D3D3D3] animate-pulse sm:my-8 sm:w-28"></div>
 
       {/* Description */}
       <p className="max-w-xl text-base leading-relaxed text-gray-200 sm:text-lg md:text-xl">
@@ -296,27 +296,27 @@ const TermsConditions = () => {
         
         {/* Introduction */}
         <div className="mb-14">
-          <h2 className="text-3xl font-bold text-[#014421] mb-6">
+          <h2 className="text-3xl font-bold text-[#00674F] mb-6">
             INTRODUCTION
           </h2>
 
           <p className="text-gray-700 leading-8 text-[15px]">
-            This agreement is a legal contract between NOVAFXM (referred to as “NOVAFXM,” “us,” or “we”),
+            This agreement is a legal contract between VeltriumFX (referred to as “VeltriumFX,” “us,” or “we”),
             its successors and assigns, and the party/parties (referred to as the “Customer,” “client,” 
             or “you”) executing this document. Along with our Risk Disclosure Statement and Privacy Policy,
-            this document outlines the terms and conditions under which NOVAFXM will conduct business with 
+            this document outlines the terms and conditions under which VeltriumFX will conduct business with 
             the Customer. By accepting these terms and completing the application form, both parties agree 
             to be bound by these conditions.
-            By opening an account with NOVAFXM to trade in Forex, Contracts for Differences (CFDs),
-            and other products or services that NOVAFXM may offer, the Customer acknowledges that they have been 
+            By opening an account with VeltriumFX to trade in Forex, Contracts for Differences (CFDs),
+            and other products or services that VeltriumFX may offer, the Customer acknowledges that they have been 
             informed of and understand the risks involved in trading in the Over-the-Counter (OTC) and/or Spread Betting markets. This understanding includes the information provided in the Risk Disclosure Statement that the Customer has received.
           </p>
 
           <p className="text-gray-700 leading-8 text-[15px] mt-5">
-            In consideration of NOVAFXM agreeing to provide services for trading 
+            In consideration of VeltriumFX agreeing to provide services for trading 
             in Forex, CFDs, Options, and Spread Betting in commodities, currencies, 
             metals, indices, and other financial products, the Customer agrees to 
-            the rights and obligations governing the relationship between NOVAFXM 
+            the rights and obligations governing the relationship between VeltriumFX 
             and the Customer. These terms will apply to all transactions, including 
             purchases or sales made on behalf of the Customer’s account(s).
           </p>
@@ -324,18 +324,18 @@ const TermsConditions = () => {
 
         {/* Principles */}
         <div>
-          <h2 className="text-3xl font-bold text-[#014421] mb-8">
+          <h2 className="text-3xl font-bold text-[#00674F] mb-8">
             1. PRINCIPLES OF INTERACTION
           </h2>
 
           {/* Trading Accounts */}
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               1.1 Trading Accounts
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              NOVAFXM offers various types of Trading Accounts, each with distinct 
+              VeltriumFX offers various types of Trading Accounts, each with distinct 
               features and characteristics. The Company reserves the right to modify 
               the features and eligibility criteria of these accounts or make any account 
               type unavailable at any time. Any such changes will be communicated via our 
@@ -345,30 +345,30 @@ const TermsConditions = () => {
 
           {/* Principal Relationship */}
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               1.2 Principal Relationship
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
               Unless agreed otherwise in writing, the Client will engage with 
-              NOVAFXM as a principal and not as an agent or representative of 
+              VeltriumFX as a principal and not as an agent or representative of 
               another party. This means that, unless specifically agreed, 
-              NOVAFXM will consider you, the Client, as the primary party 
+              VeltriumFX will consider you, the Client, as the primary party 
               responsible for fulfilling obligations under any contract entered
-              0into, whether directly with NOVAFXM or through an agent.
+              0into, whether directly with VeltriumFX or through an agent.
             </p>
           </div>
 
           {/* Additional Section */}
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               1.3 User Responsibilities
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
               If the Client is acting on behalf of a third party, whether 
               or not the Client discloses this, the third party will not be 
-              considered a Client of NOVAFXM. NOVAFXM will only have 
+              considered a Client of VeltriumFX. VeltriumFX will only have 
               a contractual relationship with the Client and will not be 
               obligated to engage with any principal unless otherwise 
               agreed upon to meet specific requirements.
@@ -376,37 +376,37 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               1.4. Execution-Only Basis
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              Unless otherwise agreed in writing, NOVAFXM will interact with 
-              the Client on an execution-only basis. This means that NOVAFXM 
+              Unless otherwise agreed in writing, VeltriumFX will interact with 
+              the Client on an execution-only basis. This means that VeltriumFX 
               will execute orders as directed by the Client without providing 
               any advisory or decision-making services.
             </p>
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               1.5. Right to Refuse Service
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              NOVAFXM reserves the right to refuse service to the Client at any 
-              time. The Client acknowledges that NOVAFXM is under no obligation 
+              VeltriumFX reserves the right to refuse service to the Client at any 
+              time. The Client acknowledges that VeltriumFX is under no obligation 
               to provide any reasons for such a decision.
             </p>
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               1.6. Tax Responsibility
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              NOVAFXM does not act as a tax agent. The Client is solely responsible 
+              VeltriumFX does not act as a tax agent. The Client is solely responsible 
               for managing their own tax obligations, including submitting all necessary 
               documents, tax returns, and reports to relevant authorities, whether 
               governmental or otherwise. The Client is also responsible for paying 
@@ -415,12 +415,12 @@ const TermsConditions = () => {
           </div>
         </div>
         <div>
-          <h2 className="text-3xl font-bold text-[#014421] mb-8">
+          <h2 className="text-3xl font-bold text-[#00674F] mb-8">
             1. PLACING AN ORDER
           </h2>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               1.7. Trading Platform Access
             </h3>
 
@@ -434,7 +434,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               1.8. Responsibility for Orders
             </h3>
 
@@ -445,7 +445,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               1.9. Order Validation
             </h3>
 
@@ -458,20 +458,20 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               1.10. No Automatic Binding Contract
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
               The transmission of an order does not automatically create a binding contract. Orders are 
-              subject to NOVAFXM accepting the offer, and only when the Company has confirmed and 
+              subject to VeltriumFX accepting the offer, and only when the Company has confirmed and 
               recorded the acceptance of the order will it become binding. If you expect a 
               confirmation for a transaction but do not receive it, you are responsible for contacting us.
             </p>
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               1.11. No Liability for Delays or Errors
             </h3>
 
@@ -482,7 +482,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               1.12. Shared IP Addresses or Devices
             </h3>
 
@@ -497,25 +497,25 @@ const TermsConditions = () => {
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold text-[#014421] mb-8">
+          <h2 className="text-3xl font-bold text-[#00674F] mb-8">
             2. TRADING ACCOUNT
           </h2>
 
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               2.1. Registration and Account Opening
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              To begin using NOVAFXM, the Client must register on the Trader’s Room by providing 
+              To begin using VeltriumFX, the Client must register on the Trader’s Room by providing 
               an email address, which must be confirmed. The Trader’s Room provides all necessary 
               data to manage your Trading Account.
             </p>
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               2.2. Account Verification
             </h3>
 
@@ -527,30 +527,30 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               2.3. Accuracy of Information
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              The Client warrants that all information provided to NOVAFXM is correct. The 
+              The Client warrants that all information provided to VeltriumFX is correct. The 
               Client agrees to notify the Company of any significant changes, including 
               changes to contact details or financial status, immediately.
             </p>
           </div>
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               2.4. Notification of Changes
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
               If personal data changes or identification documents expire, the Client must notify the Company 
-              within three (3) business days. Notifications should be sent to support@novafxm.com from the 
+              within three (3) business days. Notifications should be sent to support@veltriumfx.com from the 
               email used during registration. The Company may request additional verification documents to 
               comply with Anti-Money Laundering Legislation.
             </p>
           </div>
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               2.5. Username and Password Security
             </h3>
 
@@ -559,7 +559,7 @@ const TermsConditions = () => {
               system. These credentials are personal and confidential. The Client is solely responsible 
               for safeguarding this information and is liable for all actions performed in the Trading 
               Account. If there is unauthorized use of your account or a security breach, you agree to 
-              inform NOVAFXM immediately.
+              inform VeltriumFX immediately.
             </p>
           </div>
           
@@ -567,11 +567,11 @@ const TermsConditions = () => {
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold text-[#014421] mb-8">
+          <h2 className="text-3xl font-bold text-[#00674F] mb-8">
             3. DEPOSIT AND WITHDRAWALS
           </h2>
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               3.1.  Deposit and Withdrawal Methods
             </h3>
 
@@ -584,7 +584,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               3.2. Payment Method Consistency
             </h3>
 
@@ -596,7 +596,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               3.3. Refusal of Deposits and Withdrawals
             </h3>
 
@@ -610,7 +610,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               3.4. Deposit Processing
             </h3>
 
@@ -621,7 +621,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               3.5. Withdrawal Processing
             </h3>
 
@@ -633,7 +633,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               3.6. Withdrawal Restrictions
             </h3>
 
@@ -644,7 +644,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               3.7. Minimum Deposit and Withdrawal Amounts
             </h3>
 
@@ -658,11 +658,11 @@ const TermsConditions = () => {
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold text-[#014421] mb-8">
+          <h2 className="text-3xl font-bold text-[#00674F] mb-8">
             4. CONFLICTS OF INTEREST
           </h2>
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               4.1. Conflict Management
             </h3>
 
@@ -680,11 +680,11 @@ const TermsConditions = () => {
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold text-[#014421] mb-8">
+          <h2 className="text-3xl font-bold text-[#00674F] mb-8">
             5. MARGIN LEVERAGE LEVELS
           </h2>
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               5.1. Margin Requirement and Leverage
             </h3>
 
@@ -697,7 +697,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               5.2. Margin Adjustments
             </h3>
 
@@ -711,7 +711,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               5.3. Maintaining Margin   
             </h3>
 
@@ -726,7 +726,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               5.4. Margin Monitoring
             </h3>
 
@@ -736,7 +736,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               5.5. Account Type Changes
             </h3>
 
@@ -750,11 +750,11 @@ const TermsConditions = () => {
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold text-[#014421] mb-8">
+          <h2 className="text-3xl font-bold text-[#00674F] mb-8">
             6. COMMUNICATION BETWEEN CLIENT AND THE COMPANY
           </h2>
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               6.1. Primary Communication Method
             </h3>
 
@@ -765,18 +765,18 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
                6.2. Contacting the Company
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
               Any notices, instructions, requests, or communications from the Client must be sent via email to 
-              support@novafxm.com, unless otherwise specified.
+              support@veltriumfx.com, unless otherwise specified.
             </p>
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               6.3. Language of Communication  
             </h3>
 
@@ -789,21 +789,21 @@ const TermsConditions = () => {
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold text-[#014421] mb-8">
+          <h2 className="text-3xl font-bold text-[#00674F] mb-8">
             7. COMPLAINTS HANDLING PROCEDURE
           </h2>
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               7.1. Internal Dispute Resolution
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              The Company has established an internal dispute resolution system for addressing complaints or concerns. Clients who are dissatisfied with any aspect of the service should contact the Customer Support Department at support@novafxm.com.
+              The Company has established an internal dispute resolution system for addressing complaints or concerns. Clients who are dissatisfied with any aspect of the service should contact the Customer Support Department at support@veltriumfx.com.
             </p>
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
                7.2. Review of Complaints
             </h3>
 
@@ -816,11 +816,11 @@ const TermsConditions = () => {
           
     </div>
     <div>
-          <h2 className="text-3xl font-bold text-[#014421] mb-8">
+          <h2 className="text-3xl font-bold text-[#00674F] mb-8">
             8. CONFIDENTIALITY
           </h2>
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
               8.1. Confidential Information
             </h3>
 
@@ -831,7 +831,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
                8.2. Company Intellectual Property
             </h3>
 
@@ -842,7 +842,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
                8.3. Protection of IP
             </h3>
 
@@ -853,7 +853,7 @@ const TermsConditions = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-[#014421] mb-4">
+            <h3 className="text-xl font-semibold text-[#00674F] mb-4">
                8.4. Restrictions on Use of IP
             </h3>
 

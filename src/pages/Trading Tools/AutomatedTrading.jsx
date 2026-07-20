@@ -82,7 +82,7 @@ export default function AutomatedTradingPage() {
     <div className="bg-[#f7f7f5] text-gray-800 font-sans overflow-hidden">
       
       {/* HERO SECTION */}
-      <section className="relative min-h-[calc(100svh-72px)] w-full overflow-hidden bg-black sm:min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-84px)]">
+      <section className="relative min-h-[calc(100svh-72px)] w-full overflow-hidden bg-[#00674F] sm:min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-84px)]">
         <div className="absolute inset-0 hero-parallax">
           <img
             src={heroBg}
@@ -90,7 +90,7 @@ export default function AutomatedTradingPage() {
             className="h-full w-full object-cover object-center hero-image"
           />
         </div>
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-[#00674F]/65"></div>
 
         <div className="relative z-10 flex min-h-[calc(100svh-72px)] flex-col items-center justify-center px-4 py-14 text-center hero-content sm:min-h-[calc(100vh-80px)] md:px-6 lg:min-h-[calc(100vh-84px)]">
           <h1 className="animate-fade-down text-3xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
@@ -107,8 +107,8 @@ export default function AutomatedTradingPage() {
 
       {/* INTRO SECTION */}
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f3f8f4_100%)] px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#014421]/20 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#00674F]/20 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#D3D3D3]/30 to-transparent" />
         <div className="mx-auto max-w-7xl">
           <FadeInUp delay={0}>
             <div className="mx-auto max-w-5xl text-center">
@@ -130,7 +130,7 @@ export default function AutomatedTradingPage() {
           {/* TITLE */}
           <FadeInUp delay={0}>
             <div className="mx-auto max-w-3xl text-center">
-              <p className="text-xs font-semibold uppercase tracking-wide text-[#014421] sm:text-sm">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#00674F] sm:text-sm">
                 How Does Automated Trading Work?
               </p>
 
@@ -165,13 +165,13 @@ export default function AutomatedTradingPage() {
             ].map((card, index) => (
               <FadeInUp key={index} delay={index * 150}>
                 <div className="relative flex justify-center">
-                  <div className="process-card relative w-full max-w-[320px] rounded-2xl border border-[#014421]/20 border-b-[4px] border-b-[#014421] bg-white px-5 pb-8 pt-14 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-6">
+                  <div className="process-card relative w-full max-w-[320px] rounded-2xl border border-[#00674F]/20 border-b-[4px] border-b-[#00674F] bg-white px-5 pb-8 pt-14 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-6">
                     <div className="absolute -top-7 left-1/2 -translate-x-1/2">
-                      <div className="process-icon flex h-14 w-14 items-center justify-center rounded-full bg-[#014421] text-xl text-white shadow-lg shadow-[#014421]/20">
+                      <div className="process-icon flex h-14 w-14 items-center justify-center rounded-full bg-[#00674F] text-xl text-white shadow-lg shadow-[#00674F]/20">
                         {card.icon}
                       </div>
                     </div>
-                    <h3 className="mb-3 text-lg font-bold text-[#014421]">
+                    <h3 className="mb-3 text-lg font-bold text-[#00674F]">
                       {card.title}
                     </h3>
                     <p className="text-sm leading-relaxed text-gray-500">
@@ -200,7 +200,7 @@ export default function AutomatedTradingPage() {
                 {/* CONTENT */}
                 <div className="bg-white p-5 sm:p-8 lg:p-10">
                   <div className="flex items-start gap-3 sm:items-center sm:gap-4">
-                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-green-100 text-green-700 sm:h-12 sm:w-12">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-[#D3D3D3] text-[#00674F] sm:h-12 sm:w-12">
                       <Users className="h-6 w-6" />
                     </div>
                     <h3 className="text-xl font-bold leading-tight sm:text-3xl">
@@ -225,7 +225,7 @@ export default function AutomatedTradingPage() {
         <div className="mx-auto flex max-w-4xl justify-center">
           <div className="w-full bg-white p-0 sm:p-6 lg:p-7">
             <FadeInUp delay={0}>
-              <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-[#014421]">
+              <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-[#00674F]">
                 Why Choose Automated Trading?
               </p>
 
@@ -258,12 +258,12 @@ export default function AutomatedTradingPage() {
                 },
               ].map((item, index) => (
                 <FadeInUp key={index} delay={index * 100}>
-                  <div className="group flex gap-3 rounded-xl border border-gray-100 bg-[#f7faf7] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#014421]/20 hover:bg-white hover:shadow-md sm:gap-4 sm:p-5">
-                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#014421]/10 text-[#014421] transition-all duration-300 group-hover:bg-[#014421] group-hover:text-white group-hover:scale-110 sm:h-12 sm:w-12">
+                  <div className="group flex gap-3 rounded-xl border border-gray-100 bg-[#f7faf7] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#00674F]/20 hover:bg-white hover:shadow-md sm:gap-4 sm:p-5">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#00674F]/10 text-[#00674F] transition-all duration-300 group-hover:bg-[#00674F] group-hover:text-white group-hover:scale-110 sm:h-12 sm:w-12">
                       {item.icon}
                     </div>
                     <div>
-                      <h3 className="text-base font-semibold text-gray-950 transition-all duration-300 group-hover:text-[#014421]">
+                      <h3 className="text-base font-semibold text-gray-950 transition-all duration-300 group-hover:text-[#00674F]">
                         {item.title}
                       </h3>
                       <p className="mt-2 text-sm leading-relaxed text-gray-600">

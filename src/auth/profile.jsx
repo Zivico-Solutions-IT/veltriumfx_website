@@ -58,7 +58,7 @@ const ProfilePage = () => {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-2xl font-bold text-gray-900">
-            My <span className="text-green-700">Profile</span>
+            My <span className="text-[#00674F]">Profile</span>
           </h1>
           <button
             onClick={handleLogout}
@@ -72,14 +72,14 @@ const ProfilePage = () => {
         <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 space-y-6">
           {/* Avatar + Name */}
           <div className="flex items-center gap-5">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-800 text-2xl font-bold select-none">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#D3D3D3] text-[#00674F] text-2xl font-bold select-none">
               {user?.firstName?.[0]?.toUpperCase()}{user?.lastName?.[0]?.toUpperCase()}
             </div>
             <div>
               <p className="text-lg font-semibold text-gray-900">
                 {user?.firstName} {user?.lastName}
               </p>
-              <span className="inline-block mt-1 rounded-full bg-green-100 px-3 py-0.5 text-xs font-medium text-green-800 capitalize">
+              <span className="inline-block mt-1 rounded-full bg-[#D3D3D3] px-3 py-0.5 text-xs font-medium text-[#00674F] capitalize">
                 {user?.role || "user"}
               </span>
             </div>

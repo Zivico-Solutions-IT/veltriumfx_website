@@ -229,7 +229,7 @@ const IndicesPage = () => {
         </div>
 
         {/* Fade-in Overlays */}
-        <div className="absolute inset-0 bg-black/70 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-[#00674F]/75 animate-[fadeIn_1.5s_ease-out]"></div>
 
         <div className="market-hero-content relative z-10 mx-auto max-w-5xl">
           
@@ -243,9 +243,9 @@ const IndicesPage = () => {
           {/* Divider Line - Animated */}
           <div className="animate-[fadeInUp_1s_ease-out]">
             <div className="mx-auto mt-4 flex w-24 items-center justify-center gap-1">
-              <span className="h-[2px] flex-1 bg-[#D4AF37]" />
-              <span className="h-2 w-2 rounded-full bg-[#D4AF37]" />
-              <span className="h-[2px] flex-1 bg-[#D4AF37]" />
+              <span className="h-[2px] flex-1 bg-[#D3D3D3]" />
+              <span className="h-2 w-2 rounded-full bg-[#D3D3D3]" />
+              <span className="h-[2px] flex-1 bg-[#D3D3D3]" />
             </div>
           </div>
 
@@ -253,7 +253,7 @@ const IndicesPage = () => {
           <div className="animate-[fadeInUp_1.2s_ease-out]">
             <p className="market-hero-copy mx-auto mt-4 max-w-3xl text-sm leading-7 text-gray-200 md:text-base md:leading-8">
               Unlock a Wide Range of Indices from the World's Leading
-              Economies with NOVAFXM
+              Economies with VeltriumFX
             </p>
           </div>
         </div>
@@ -284,8 +284,8 @@ const IndicesPage = () => {
                 <span className="block text-base font-bold text-[#111827] sm:text-lg">
                   Elevate Your Trading Experience with
                 </span>
-                <span className="mt-2 block text-2xl font-semibold text-[#014421] sm:text-3xl">
-                  Key Global Indices at NOVAFXM
+                <span className="mt-2 block text-2xl font-semibold text-[#00674F] sm:text-3xl">
+                  Key Global Indices at VeltriumFX
                 </span>
               </h2>
             </ScrollReveal>
@@ -299,15 +299,15 @@ const IndicesPage = () => {
             <ScrollReveal delay={300} threshold={0.3} direction="up">
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4 lg:flex-nowrap">
                 <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
-                  <span className="text-[#014421] text-xl">✔</span>
+                  <span className="text-[#00674F] text-xl">✔</span>
                   Market Exposure
                 </div>
                 <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
-                  <span className="text-[#014421] text-xl">✔</span>
+                  <span className="text-[#00674F] text-xl">✔</span>
                   Simplicity
                 </div>
                 <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
-                  <span className="text-[#014421] text-xl">✔</span>
+                  <span className="text-[#00674F] text-xl">✔</span>
                   High Liquidity
                 </div>
               </div>
@@ -320,7 +320,7 @@ const IndicesPage = () => {
           MARKET OVERVIEW WITH TRADINGVIEW
       ========================================= */}
 
-      <section className="bg-[#f8faf9] px-4 pb-8 pt-5 sm:px-6 sm:pb-10 sm:pt-6 lg:pb-12 lg:pt-7">
+      <section className="bg-[#D3D3D3] px-4 pb-8 pt-5 sm:px-6 sm:pb-10 sm:pt-6 lg:pb-12 lg:pt-7">
         
         {/* TRADINGVIEW WIDGET CARD */}
         <ScrollReveal delay={0} threshold={0.2} direction="up">
@@ -334,8 +334,8 @@ const IndicesPage = () => {
         {/* WHAT ARE INDICES */}
         <ScrollReveal delay={100} threshold={0.2} direction="up">
           <div className="mx-auto mt-8 max-w-7xl rounded-2xl border border-gray-100 bg-white px-5 py-6 shadow-sm sm:mt-10 sm:px-8 sm:py-8 lg:px-12">
-            <div className="max-w-5xl border-l-4 border-[#014421] pl-5 sm:pl-7">
-              <h2 className="text-2xl font-bold leading-tight text-[#014421] sm:text-3xl">
+            <div className="max-w-5xl border-l-4 border-[#00674F] pl-5 sm:pl-7">
+              <h2 className="text-2xl font-bold leading-tight text-[#00674F] sm:text-3xl">
                 What Are Indices?
               </h2>
               <p className="mt-4 text-sm leading-7 text-gray-700 sm:text-base sm:leading-8">
@@ -357,7 +357,7 @@ const IndicesPage = () => {
         <ScrollReveal delay={200} threshold={0.2} direction="up">
           <div className="mt-10 text-center sm:mt-12">
             <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
-              Popular <span className="text-[#014421]">Indices</span>
+              Popular <span className="text-[#00674F]">Indices</span>
             </h2>
             <p className="max-w-2xl mx-auto mt-4 text-sm leading-7 text-gray-500 sm:text-base">
               Track major market benchmarks and stay updated with key index
@@ -370,9 +370,9 @@ const IndicesPage = () => {
         <div className="grid grid-cols-1 gap-4 mx-auto mt-6 max-w-6xl sm:grid-cols-2 lg:mt-8 lg:grid-cols-4 lg:gap-5">
           {indices.map((item, index) => (
             <StaggeredCard key={index} index={index}>
-              <div className="relative w-full overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] lg:p-5">
-                <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] transition-all duration-300 group-hover:scale-110 sm:h-16 sm:w-16">
-                  <Star className="fill-[#014421] text-[#014421]" size={28} />
+              <div className="relative w-full overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#00674F] bg-white p-5 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] lg:p-5">
+                <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#D3D3D3] transition-all duration-300 group-hover:scale-110 sm:h-16 sm:w-16">
+                  <Star className="fill-[#00674F] text-[#00674F]" size={28} />
                 </div>
                 <h3 className="relative z-10 text-lg font-bold leading-snug text-gray-800">
                   {item.title}
@@ -399,7 +399,7 @@ const IndicesPage = () => {
     <div className="text-center">
       <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
         How Are Indices{" "}
-        <span className="text-[#014421]">Calculated?</span>
+        <span className="text-[#00674F]">Calculated?</span>
       </h2>
       <p className="mt-4 text-sm text-gray-500 sm:text-base">
         Indices are calculated in two primary ways
@@ -411,9 +411,9 @@ const IndicesPage = () => {
   <div className="grid max-w-6xl gap-5 mx-auto mt-8 lg:mt-10 lg:grid-cols-2">
     {topCards.map((card, index) => (
       <ScrollReveal key={index} delay={index * 150} threshold={0.2} direction="up">
-        <div className="rounded-2xl border-b-[4px] border-[#014421] bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:border-b-[6px] h-full min-h-[220px]">
+        <div className="rounded-2xl border-b-[4px] border-[#00674F] bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:border-b-[6px] h-full min-h-[220px]">
           <div className="flex items-start gap-4 p-5 sm:gap-5 sm:p-6 lg:p-8">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] sm:h-16 sm:w-16">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#D3D3D3] text-[#00674F] sm:h-16 sm:w-16">
               {card.icon}
             </div>
             <div className="flex-1">
@@ -445,7 +445,7 @@ const IndicesPage = () => {
       {factors.map((item, index) => (
         <StaggeredCard key={index} index={index}>
           <div className="rounded-2xl bg-white p-6 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:rounded-3xl lg:p-8 h-full min-h-[280px] flex flex-col">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421]">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#D3D3D3] text-[#00674F]">
               {item.icon}
             </div>
             <h3 className="mt-6 text-xl font-bold leading-snug text-gray-800">
@@ -464,9 +464,9 @@ const IndicesPage = () => {
       <div className="lg:pl-10">
         <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
           What Moves an{" "}
-          <span className="text-[#014421]">Index Price</span>
+          <span className="text-[#00674F]">Index Price</span>
         </h2>
-        <div className="mx-auto mb-4 mt-5 h-1 w-20 rounded-full bg-[#014421] sm:mx-0"></div>
+        <div className="mx-auto mb-4 mt-5 h-1 w-20 rounded-full bg-[#00674F] sm:mx-0"></div>
         <p className="text-center text-sm leading-7 text-gray-500 sm:text-justify">
           Several factors influence index prices including economic data,
           political events, corporate announcements and industry trends.

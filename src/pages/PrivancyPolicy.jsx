@@ -6,7 +6,7 @@ import React from "react";
 const sections = [
   {
     title: "1. WHO WE ARE",
-    text: "Suggested text: Our website address is: https://NOVAFXM.com.",
+    text: "Suggested text: Our website address is: https://VeltriumFX.com.",
   },
   {
     title: "2. COMMENTS",
@@ -54,7 +54,7 @@ For users that register on our website (if any), we also store the personal info
 ========================= */
 const PrivacyPolicy = () => {
   const sectionHeadingClass =
-    "mb-5 text-2xl font-bold leading-tight text-[#014421] sm:mb-8 sm:text-3xl";
+    "mb-5 text-2xl font-bold leading-tight text-[#00674F] sm:mb-8 sm:text-3xl";
   const paragraphClass =
     "break-words whitespace-pre-line text-justify text-sm leading-7 text-gray-700 sm:text-[15px] sm:leading-8";
 
@@ -62,24 +62,24 @@ const PrivacyPolicy = () => {
     <div className="w-full bg-[#f5f5f5] overflow-hidden font-sans">
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-black">
+      <section className="relative overflow-hidden bg-[#00674F]">
         <img
           src="/privancy policy.png"
           alt="Privacy Background"
           className="absolute inset-0 h-full w-full scale-105 object-cover animate-[slowZoom_15s_ease-in-out_infinite]"
         />
 
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="absolute top-10 right-0 h-64 w-64 rounded-full bg-green-500/20 blur-3xl animate-pulse sm:right-10 sm:h-[500px] sm:w-[500px]"></div>
+        <div className="absolute inset-0 bg-[#00674F]/70"></div>
+        <div className="absolute top-10 right-0 h-64 w-64 rounded-full bg-[#D3D3D3]0/20 blur-3xl animate-pulse sm:right-10 sm:h-[500px] sm:w-[500px]"></div>
 
         <div className="absolute inset-0 overflow-hidden">
-          <span className="absolute top-[15%] right-[15%] h-2 w-2 rounded-full bg-green-500 animate-ping"></span>
-          <span className="absolute top-[20%] right-[25%] h-3 w-3 rounded-full bg-green-500 animate-ping"></span>
+          <span className="absolute top-[15%] right-[15%] h-2 w-2 rounded-full bg-[#D3D3D3]0 animate-ping"></span>
+          <span className="absolute top-[20%] right-[25%] h-3 w-3 rounded-full bg-[#D3D3D3]0 animate-ping"></span>
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[calc(100vh-72px)] max-w-7xl items-center px-4 py-16 sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)] lg:px-12">
           <div className="max-w-2xl text-white animate-fadeInUp">
-            <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full bg-[#D4AF37] px-4 py-2.5 text-xs font-semibold text-black shadow-lg animate-float sm:mb-8 sm:gap-3 sm:px-5 sm:py-3 sm:text-sm">
+            <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full bg-[#D3D3D3] px-4 py-2.5 text-xs font-semibold text-black shadow-lg animate-float sm:mb-8 sm:gap-3 sm:px-5 sm:py-3 sm:text-sm">
               <svg
                 className="h-4 w-4 shrink-0 sm:h-5 sm:w-5"
                 fill="currentColor"
@@ -92,10 +92,10 @@ const PrivacyPolicy = () => {
             </div>
 
             <h1 className="max-w-[12ch] text-4xl font-bold leading-tight sm:max-w-none sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className="text-green-500">Privacy</span> Policy
+              <span className="text-[#00674F]">Privacy</span> Policy
             </h1>
 
-            <div className="my-6 h-1 w-20 rounded-full bg-[#D4AF37] animate-pulse sm:my-8 sm:w-28"></div>
+            <div className="my-6 h-1 w-20 rounded-full bg-[#D3D3D3] animate-pulse sm:my-8 sm:w-28"></div>
 
             <p className="max-w-xl text-base leading-relaxed text-gray-200 sm:text-lg md:text-xl">
               Your privacy is important to us. This Privacy Policy explains how we

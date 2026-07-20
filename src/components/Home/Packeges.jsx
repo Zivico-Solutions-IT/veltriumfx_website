@@ -63,12 +63,12 @@ export default function PricingSection() {
       <div className="mx-auto text-center max-w-7xl">
 
         {/* Heading */}
-        <h2 className="reveal-up mb-3 text-2xl font-bold leading-tight text-[#014421] sm:mb-4 sm:text-4xl md:text-5xl">
-          Choose Your Account
+        <h2 className="reveal-up mb-3 text-2xl font-bold leading-tight text-[#00674F] sm:mb-4 sm:text-4xl md:text-5xl">
+          Match Your Trading Style
         </h2>
 
         <p className="reveal-up reveal-delay-1 mx-auto mb-7 max-w-2xl text-justify text-sm leading-6 text-gray-600 sm:mb-8 sm:text-center sm:text-base">
-          Tailored trading conditions to suit every trader's style and experience level.
+          Account options designed around different capital levels, strategies and market experience.
         </p>
 
         {/* Cards */}
@@ -90,16 +90,16 @@ export default function PricingSection() {
                 shadow-md
                 transition-all duration-500 ease-out
 
-                ${plan.highlight ? "ring-2 ring-[#D4AF37]" : ""}
+                ${plan.highlight ? "ring-2 ring-[#D3D3D3]" : ""}
               `}
             >
 
               {/* Glow Overlay */}
-              <div className="absolute inset-0 rounded-2xl bg-[#014421]/5 opacity-0 group-hover:opacity-100 transition duration-500 md:rounded-3xl"></div>
+              <div className="absolute inset-0 rounded-2xl bg-[#00674F]/5 opacity-0 group-hover:opacity-100 transition duration-500 md:rounded-3xl"></div>
 
               {/* Badge */}
               {plan.badge && (
-                <div className="account-popular-badge absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#D4AF37] px-3 py-1 text-[11px] font-semibold text-white shadow-lg sm:-top-4 sm:px-4 sm:py-1.5 sm:text-xs">
+                <div className="account-popular-badge absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#D3D3D3] px-3 py-1 text-[11px] font-semibold text-white shadow-lg sm:-top-4 sm:px-4 sm:py-1.5 sm:text-xs">
                   {plan.badge}
                 </div>
               )}
@@ -108,7 +108,7 @@ export default function PricingSection() {
               <div className="relative z-10">
 
                 {/* Title */}
-                <h3 className="mb-4 text-xl font-bold leading-tight text-[#014421] sm:mb-5 sm:text-2xl">
+                <h3 className="mb-4 text-xl font-bold leading-tight text-[#00674F] sm:mb-5 sm:text-2xl">
                   {plan.name}
                 </h3>
 
@@ -129,7 +129,7 @@ export default function PricingSection() {
                       key={i}
                       className="flex items-center gap-3 text-gray-700"
                     >
-                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[#014421]/10 text-[#014421] text-sm font-bold">
+                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[#00674F]/10 text-[#00674F] text-sm font-bold">
                         ✓
                       </div>
                       <span className="text-sm sm:text-base">
@@ -148,11 +148,11 @@ export default function PricingSection() {
                   button-shine
                   relative overflow-hidden
                   w-full rounded-xl py-3.5 sm:py-4
-                  bg-[#014421] text-white
+                  bg-[#00674F] text-white
                   font-semibold text-sm sm:text-base
                   transition-all duration-300 ease-out
 
-                  hover:scale-105 hover:shadow-xl hover:shadow-[#014421]/20
+                  hover:scale-105 hover:shadow-xl hover:shadow-[#00674F]/20
                   active:scale-95
 
                   before:absolute before:top-0 before:left-[-120%]
@@ -163,7 +163,7 @@ export default function PricingSection() {
                   before:transition-all before:duration-700
                 "
               >
-                Get Started
+                Open Account
               </button>
             </motion.div>
           ))}
@@ -177,13 +177,13 @@ export default function PricingSection() {
             onClick={() => navigate("/account-type")}
             className="
               group inline-flex items-center gap-2
-              text-sm font-semibold text-[#014421]
+              text-sm font-semibold text-[#00674F]
               transition-colors duration-300
-              hover:text-[#D4AF37]
-              focus:outline-none focus-visible:text-[#D4AF37]
+              hover:text-[#D3D3D3]
+              focus:outline-none focus-visible:text-[#D3D3D3]
             "
           >
-            See more
+            View all accounts
             <ArrowRight
               size={18}
               strokeWidth={2.2}

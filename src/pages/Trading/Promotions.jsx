@@ -33,7 +33,7 @@ const faqs = [
       "If the threshold is not met within 90 days, the bonus may expire according to the promotion terms.",
   },
   {
-    question: "How can i withdraw the bonus received from NOVAFXM?",
+    question: "How can i withdraw the bonus received from VeltriumFX?",
     answer:
       "You can request a bonus withdrawal after meeting the required trading volume and account conditions.",
   },
@@ -45,15 +45,15 @@ function PromoCard({ promo }) {
   return (
     <article className="bonus-card account-plan-card reveal-up group relative grid min-h-[200px] overflow-hidden rounded-lg bg-white shadow-[0_8px_22px_rgba(15,23,42,0.14)] ring-1 ring-black/10 md:min-h-[260px] md:grid-cols-[1fr_360px]">
       {/* Left side - Content */}
-      <div className="relative overflow-hidden bg-[linear-gradient(135deg,#004b27_0%,#003d20_42%,#012414_100%)] px-5 py-5 text-white sm:px-8 md:px-8 md:py-8">
+      <div className="relative overflow-hidden bg-[linear-gradient(135deg,#004b27_0%,#003d20_42%,#00674F_100%)] px-5 py-5 text-white sm:px-8 md:px-8 md:py-8">
         <div className="absolute inset-y-0 right-[-1px] hidden w-24 bg-white [clip-path:polygon(100%_0,100%_100%,0_100%,48%_50%,0_0)] md:block" />
         <div className="bonus-card-sheen absolute inset-y-0 left-[-45%] w-1/3 rotate-12 bg-white/15 blur-sm" />
         <div className="absolute inset-0 bg-[linear-gradient(125deg,transparent_0_54%,rgba(255,255,255,0.05)_54%_66%,transparent_66%_100%)]" />
         <div className="absolute -bottom-16 left-20 h-48 w-48 rounded-full bg-[#00ad3f]/18 blur-3xl" />
-        <div className="absolute bottom-4 right-20 h-28 w-40 opacity-20 [background-image:radial-gradient(circle,#d4af37_1.2px,transparent_1.8px)] [background-size:8px_8px]" />
+        <div className="absolute bottom-4 right-20 h-28 w-40 opacity-20 [background-image:radial-gradient(circle,#D3D3D3_1.2px,transparent_1.8px)] [background-size:8px_8px]" />
 
-        <span className="relative mb-3 inline-flex items-center gap-2 rounded-full border border-[#014421]/20 bg-[#e9f4e9] px-3 py-1 text-xs font-medium text-[#014421] md:mb-6 md:px-4 md:py-1.5">
-          <FaGift className="text-xs text-[#014421] md:text-sm" />
+        <span className="relative mb-3 inline-flex items-center gap-2 rounded-full border border-[#00674F]/20 bg-[#e9f4e9] px-3 py-1 text-xs font-medium text-[#00674F] md:mb-6 md:px-4 md:py-1.5">
+          <FaGift className="text-xs text-[#00674F] md:text-sm" />
           Promotions
         </span>
 
@@ -67,7 +67,7 @@ function PromoCard({ promo }) {
         <button
           type="button"
           onClick={() => navigate("/signup")}
-          className="button-shine relative mt-4 inline-flex items-center gap-3 rounded-md bg-[#D4AF37] px-4 py-2 text-xs font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#c79f26] md:mt-7 md:gap-4 md:px-7 md:py-3 md:text-sm"
+          className="button-shine relative mt-4 inline-flex items-center gap-3 rounded-md bg-[#D3D3D3] px-4 py-2 text-xs font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#c79f26] md:mt-7 md:gap-4 md:px-7 md:py-3 md:text-sm"
         >
           View Bonus
           <FaArrowRight className="text-xs" />
@@ -77,15 +77,15 @@ function PromoCard({ promo }) {
       {/* Right side - Bonus Badge (hidden on mobile, shown on desktop) */}
       <div className="relative hidden min-h-full items-center justify-center overflow-hidden bg-white md:flex">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_0_48%,rgba(1,68,33,0.12)_48%_49%,transparent_49%_100%)]" />
-        <div className="absolute right-[-34px] top-[-14px] h-52 w-52 rotate-45 border border-[#014421]/15" />
-        <div className="absolute -bottom-16 left-8 h-56 w-56 rotate-45 border border-[#014421]/10" />
-        <div className="absolute bottom-0 right-0 h-44 w-48 opacity-35 [background-image:repeating-linear-gradient(135deg,#014421_0_2px,transparent_2px_12px)]" />
+        <div className="absolute right-[-34px] top-[-14px] h-52 w-52 rotate-45 border border-[#00674F]/15" />
+        <div className="absolute -bottom-16 left-8 h-56 w-56 rotate-45 border border-[#00674F]/10" />
+        <div className="absolute bottom-0 right-0 h-44 w-48 opacity-35 [background-image:repeating-linear-gradient(135deg,#00674F_0_2px,transparent_2px_12px)]" />
         <div className="absolute right-5 top-5 h-24 w-24 opacity-35 [background-image:radial-gradient(circle,#18a044_1.6px,transparent_2px)] [background-size:10px_10px]" />
         <span className="absolute left-16 top-14 h-4 w-4 rounded-full bg-[#18a044]" />
         <span className="absolute bottom-8 left-9 h-28 w-2 rotate-45 rounded-full bg-[#007f3e]" />
         <span className="absolute bottom-4 right-20 h-36 w-3 rotate-45 rounded-full bg-[#8cc99e]" />
 
-        <div className="relative flex h-52 w-52 rotate-45 items-center justify-center rounded-3xl border-[8px] border-white bg-[linear-gradient(135deg,#008743,#014421)] shadow-[0_14px_28px_rgba(1,68,33,0.32)] outline outline-1 outline-[#014421]/25">
+        <div className="relative flex h-52 w-52 rotate-45 items-center justify-center rounded-3xl border-[8px] border-white bg-[linear-gradient(135deg,#008743,#00674F)] shadow-[0_14px_28px_rgba(1,68,33,0.32)] outline outline-1 outline-[#00674F]/25">
           <div className="-rotate-45 text-center text-white">
             <div className="text-2xl font-black italic leading-none">BONUS</div>
             <div className="text-6xl font-black italic leading-none">{promo.bonus}</div>
@@ -129,8 +129,8 @@ function FAQSection() {
       ref={sectionRef}
       className="relative overflow-hidden bg-[#f7f8f7] px-4 pb-8 pt-14 sm:px-6 md:pb-10 md:pt-20"
     >
-      <div className="absolute left-10 top-10 h-12 w-12 opacity-45 [background-image:radial-gradient(circle,#014421_1px,transparent_1.5px)] [background-size:10px_10px]" />
-      <div className="absolute bottom-8 right-8 h-12 w-12 opacity-45 [background-image:radial-gradient(circle,#014421_1px,transparent_1.5px)] [background-size:10px_10px]" />
+      <div className="absolute left-10 top-10 h-12 w-12 opacity-45 [background-image:radial-gradient(circle,#00674F_1px,transparent_1.5px)] [background-size:10px_10px]" />
+      <div className="absolute bottom-8 right-8 h-12 w-12 opacity-45 [background-image:radial-gradient(circle,#00674F_1px,transparent_1.5px)] [background-size:10px_10px]" />
 
       <div className="mx-auto max-w-3xl">
         {/* Header with fade-in animation */}
@@ -141,15 +141,15 @@ function FAQSection() {
               : "translate-y-8 opacity-0"
           }`}
         >
-          <p className="mb-2 text-sm font-semibold text-[#014421]">FAQ's</p>
-          <h2 className="mx-auto max-w-xl text-3xl font-bold leading-none text-[#014421] sm:text-4xl">
+          <p className="mb-2 text-sm font-semibold text-[#00674F]">FAQ's</p>
+          <h2 className="mx-auto max-w-xl text-3xl font-bold leading-none text-[#00674F] sm:text-4xl">
             Find Answers to Common
             <span className="block">Questions</span>
           </h2>
           <div className="mx-auto mt-5 flex w-32 items-center justify-center gap-1">
-            <span className="h-[2px] flex-1 bg-[#014421]" />
-            <span className="h-1.5 w-1.5 rounded-full bg-[#014421]" />
-            <span className="h-[2px] flex-1 bg-[#014421]" />
+            <span className="h-[2px] flex-1 bg-[#00674F]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#00674F]" />
+            <span className="h-[2px] flex-1 bg-[#00674F]" />
           </div>
         </div>
 
@@ -176,15 +176,15 @@ function FAQSection() {
                   <span
                     className={`flex w-14 shrink-0 items-center justify-center font-bold transition-all duration-300 ${
                       isOpen
-                        ? "bg-[#014421] text-xs text-white"
-                        : "bg-white text-[#014421]"
+                        ? "bg-[#00674F] text-xs text-white"
+                        : "bg-white text-[#00674F]"
                     }`}
                   >
                     <span
                       className={`transition-all duration-300 ${
                         isOpen
                           ? ""
-                          : "flex h-7 w-7 items-center justify-center rounded-full bg-[#014421] text-[11px] text-white"
+                          : "flex h-7 w-7 items-center justify-center rounded-full bg-[#00674F] text-[11px] text-white"
                       }`}
                     >
                       {String(index + 1).padStart(2, "0")}
@@ -192,11 +192,11 @@ function FAQSection() {
                   </span>
 
                   <span className="flex min-h-14 flex-1 items-center justify-between gap-4 px-4 py-3">
-                    <span className="text-sm font-extrabold text-[#014421] transition-all duration-300 sm:text-base">
+                    <span className="text-sm font-extrabold text-[#00674F] transition-all duration-300 sm:text-base">
                       {faq.question}
                     </span>
                     <span
-                      className={`shrink-0 text-[#014421] transition-transform duration-300 ${
+                      className={`shrink-0 text-[#00674F] transition-transform duration-300 ${
                         isOpen ? "rotate-180" : "rotate-0"
                       }`}
                     >
@@ -305,7 +305,7 @@ export default function Promotions() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center text-white sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]"
+        className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-[#00674F] px-4 py-16 text-center text-white sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]"
       >
         {/* Animated Background Image with Zoom Effect */}
         <div className="absolute inset-0 overflow-hidden">
@@ -324,14 +324,14 @@ export default function Promotions() {
         </div>
 
         {/* Fade-in Overlays */}
-        <div className="absolute inset-0 bg-black/50 animate-[fadeIn_1.5s_ease-out]" />
+        <div className="absolute inset-0 bg-[#00674F]/65 animate-[fadeIn_1.5s_ease-out]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)] animate-[fadeIn_1.8s_ease-out]" />
 
         <div className="relative z-10 w-full max-w-4xl">
           {/* Badge - Slide In From Top */}
           <div className="animate-[slideInDown_0.6s_ease-out]">
-            <span className="mb-5 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-6 sm:px-5">
-              <span className="h-2 w-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
+            <span className="mb-5 inline-flex items-center gap-2 rounded-md border border-[#D3D3D3]/40 px-4 py-2 text-xs text-[#D3D3D3] sm:mb-6 sm:px-5">
+              <span className="h-2 w-2 rounded-full bg-[#D3D3D3] animate-pulse"></span>
               Promotions
             </span>
           </div>
@@ -342,7 +342,7 @@ export default function Promotions() {
               Trade Smarter
             </span>
             <br className="hidden sm:block" />
-            <span className="inline-block animate-[fadeInUp_1s_ease-out] text-[#D4AF37]">
+            <span className="inline-block animate-[fadeInUp_1s_ease-out] text-[#D3D3D3]">
               With Year-Round Bonuses
             </span>
           </h1>
@@ -357,7 +357,7 @@ export default function Promotions() {
           {/* Button - Fade In Up with Pulse */}
           <div className="animate-[fadeInUp_1.4s_ease-out]">
             <button
-              className="button-shine mt-8 w-full max-w-[200px] rounded-full bg-[#014421] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm animate-[gentlePulse_3s_ease-in-out_infinite] hover:animate-none"
+              className="button-shine mt-8 w-full max-w-[200px] rounded-full bg-[#00674F] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm animate-[gentlePulse_3s_ease-in-out_infinite] hover:animate-none"
               onClick={() => {
                 document.getElementById("promotion-cards")?.scrollIntoView({
                   behavior: "smooth",

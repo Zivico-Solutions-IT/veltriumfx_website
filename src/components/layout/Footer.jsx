@@ -2,10 +2,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import logo from "../../assets/images/logo.png";
+import BrandLogo from "../brand/BrandLogo";
 
 const iconProps = {
-  className: "text-green-700 shrink-0",
+  className: "text-[#00674F] shrink-0",
   fill: "none",
   stroke: "currentColor",
   strokeLinecap: "round",
@@ -30,7 +30,7 @@ const PhoneIcon = () => (
 const MapPinIcon = () => (
   <svg
     {...iconProps}
-    className="mt-1 text-green-700 shrink-0"
+    className="mt-1 text-[#00674F] shrink-0"
     width="14"
     height="14"
     aria-hidden="true"
@@ -71,11 +71,7 @@ const Footer = () => {
         {/* ── Brand ─────────────────────────────────────────────────────────── */}
         <div className="flex flex-col items-start">
           <button onClick={() => handleNav("/")} className="mt-3 sm:mt-10">
-            <img
-              src={logo}
-              alt="Logo"
-              className="h-8 w-32 object-contain sm:h-10 sm:w-40"
-            />
+            <BrandLogo />
           </button>
 
           <p className="mt-3 max-w-sm leading-6 text-gray-700">
@@ -101,7 +97,7 @@ const Footer = () => {
                 <li key={label}>
                   <button
                     onClick={() => handleNav(path)}
-                    className="hover:text-green-700 transition-colors text-left"
+                    className="hover:text-[#00674F] transition-colors text-left"
                   >
                     {label}
                   </button>
@@ -118,7 +114,7 @@ const Footer = () => {
                 <li key={label}>
                   <button
                     onClick={() => handleNav(path)}
-                    className="hover:text-green-700 transition-colors text-left"
+                    className="hover:text-[#00674F] transition-colors text-left"
                   >
                     {label}
                   </button>
@@ -137,7 +133,7 @@ const Footer = () => {
               <MailIcon />
               <a
                 href="mailto:support@fxtrade.com"
-                className="break-all hover:text-green-700"
+                className="break-all hover:text-[#00674F]"
               >
                 support@fxtrade.com
               </a>
@@ -145,7 +141,7 @@ const Footer = () => {
 
             <p className="flex items-center gap-2">
               <PhoneIcon />
-              <a href="tel:+15551234567" className="hover:text-green-700">
+              <a href="tel:+15551234567" className="hover:text-[#00674F]">
                 +1 (555) 123-4567
               </a>
             </p>
@@ -156,7 +152,7 @@ const Footer = () => {
                 href="https://maps.google.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-green-700"
+                className="hover:text-[#00674F]"
               >
                 Global Tech Hub, London
               </a>
@@ -168,7 +164,7 @@ const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-white transition duration-300 hover:-translate-y-1 hover:bg-green-700"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-white transition duration-300 hover:-translate-y-1 hover:bg-[#00674F]"
                 aria-label="Twitter"
               >
                 <FaTwitter size={16} />
@@ -177,7 +173,7 @@ const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-white transition duration-300 hover:-translate-y-1 hover:bg-green-700"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-white transition duration-300 hover:-translate-y-1 hover:bg-[#00674F]"
                 aria-label="Instagram"
               >
                 <FaInstagram size={16} />
@@ -186,7 +182,7 @@ const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-white transition duration-300 hover:-translate-y-1 hover:bg-green-700"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-white transition duration-300 hover:-translate-y-1 hover:bg-[#00674F]"
                 aria-label="LinkedIn"
               >
                 <FaLinkedinIn size={16} />
@@ -200,7 +196,7 @@ const Footer = () => {
       <div className="mx-auto mt-10 max-w-7xl border-t border-gray-400 pt-5 text-left text-xs leading-relaxed text-gray-700">
         <div className="mt-5 space-y-4 text-base text-justify">
           <p>
-            NOVAFXM is operated under Nova Finance Tech Ltd, Registered with the Financial Services Authority (FSA) of
+            VeltriumFX is operated under Veltrium Capital Markets Ltd, Registered with the Financial Services Authority (FSA) of
             EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC.   <br />  (Since 2024)
           </p>
           <p>
@@ -210,16 +206,16 @@ const Footer = () => {
             Trading in financial markets offers potential rewards but also involves significant risk. Do not trade with funds you cannot afford to lose. Certain financial products or services may not be permitted in some jurisdictions. It is the responsibility of each client to ensure that trading activities comply with their local laws and regulations.
           </p>
           <p>
-            Nothing contained on this website should be considered as financial advice, investment advice or a recommendation by NOVAFXM, Nova Finance Tech Ltd or any of its affiliates, directors, officers, employees or representatives.
+            Nothing contained on this website should be considered as financial advice, investment advice or a recommendation by VeltriumFX, Veltrium Capital Markets Ltd or any of its affiliates, directors, officers, employees or representatives.
           </p>
           <p>
-            Restricted Regions: NOVAFXM does not provide services to citizens or residents of jurisdictions where such services would violate local laws or regulations, including but not limited to the United States, Cuba, Iraq, Myanmar, North Korea and Sudan.
+            Restricted Regions: VeltriumFX does not provide services to citizens or residents of jurisdictions where such services would violate local laws or regulations, including but not limited to the United States, Cuba, Iraq, Myanmar, North Korea and Sudan.
           </p>
         </div>
 
         {/* ── Bottom Bar ────────────────────────────────────────────────────── */}
         <div className="flex flex-col gap-3 md:flex-row md:justify-between border-t border-gray-300 pt-5 mt-4 text-base">
-          <p>© 2026 NOVAFXM. All rights reserved.</p>
+          <p>© 2026 VeltriumFX. All rights reserved.</p>
           <p className="max-w-xl md:text-right">
             
           </p>

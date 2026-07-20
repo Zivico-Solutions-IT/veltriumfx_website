@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { ChevronDown, Menu, X } from "lucide-react";
-import logo from "../../assets/images/logo.png"; // adjust path if needed
+import BrandLogo from "../brand/BrandLogo";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ export default function Navbar() {
     // Trading Tool dropdown
     "Economic Calender": "/economic-calendar",
     "Automated Trading": "/tools/automated-trading",
-    // Partners dropdown
+    // Trading Tool dropdown
     "Introducing Brokers": "/partners",
     // About Us dropdown
     "Why Us": "/why-us",
@@ -65,8 +65,7 @@ export default function Navbar() {
       "Promotions"
     ],
     Market: ["Indices", "Crypto", "Stocks", "Forex", "Commodities"],
-    "Trading Tool": ["Economic Calender", "Automated Trading"],
-    Partners: ["Introducing Brokers"],
+    "Trading Tool": ["Economic Calender", "Automated Trading", "Introducing Brokers"],
     "About Us": ["Why Us", "FAQ's", "Contact Us"],
     // "Register Now": ["Open Live Account", "Demo Account", "Islamic Account"],
   };
@@ -121,34 +120,18 @@ export default function Navbar() {
 
   // ─── Render ──────────────────────────────────────────────────────────────────
   return (
-    <header
-      className={`sticky top-0 z-50 px-4 sm:px-6 lg:px-8 relative transition-all duration-500 ${
-        isScrolled
-          ? "bg-transparent py-2"
-          : "bg-gray-100/95 py-4 shadow-sm backdrop-blur-md"
-      }`}
-    >
+    <header className="sticky top-0 z-50 border-b border-[#D3D3D3] bg-white/95 px-4 py-2 shadow-sm backdrop-blur-xl sm:px-6 lg:px-8">
       <div
-        className={`mx-auto flex w-full max-w-7xl items-center justify-between transition-all duration-500 ${
-          isScrolled
-            ? "nav-float-in rounded-full bg-white px-3 py-2 shadow-[0_16px_40px_rgba(1,68,33,0.16)]"
-            : ""
-        }`}
+        className="mx-auto flex min-h-[76px] w-full max-w-7xl items-center justify-between gap-6"
       >
 
         {/* ── Logo ──────────────────────────────────────────────────────────── */}
         <button
           type="button"
-          className="flex items-center transition-all duration-500"
+          className="flex shrink-0 items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00674F]"
           onClick={goHome}
         >
-          <img
-            src={logo}
-            alt="NOVAFX Logo"
-            className={`object-contain transition-all duration-500 ${
-              isScrolled ? "h-6 md:h-7" : "h-6 md:h-9"
-            }`}
-          />
+          <BrandLogo />
         </button>
 
         {/* ── Desktop Menu ──────────────────────────────────────────────────── */}
@@ -164,8 +147,8 @@ export default function Navbar() {
                 type="button"
                 className={`nav-link flex cursor-pointer items-center gap-1.5 rounded-full py-2 transition-all duration-300 ${
                   isMenuActive(item)
-                    ? "bg-[#014421]/10 px-4 font-bold text-[#014421]"
-                    : "px-1 hover:bg-white/70 hover:px-4 hover:text-green-700"
+                    ? "bg-[#00674F]/10 px-4 font-bold text-[#00674F]"
+                    : "px-1 hover:bg-white/70 hover:px-4 hover:text-[#00674F]"
                 }`}
                 onClick={() => {
                   // if (item === "Home") {
@@ -192,7 +175,7 @@ export default function Navbar() {
                       <button
                         type="button"
                         key={index}
-                        className="block w-full rounded-xl px-4 py-2.5 text-left text-sm text-gray-700 transition-all duration-300 hover:translate-x-1 hover:bg-green-50 hover:text-green-700"
+                        className="block w-full rounded-xl px-4 py-2.5 text-left text-sm text-gray-700 transition-all duration-300 hover:translate-x-1 hover:bg-[#D3D3D3] hover:text-[#00674F]"
                         onClick={() => handleDropdownOptionClick(option)}
                       >
                         {option}
@@ -216,7 +199,7 @@ export default function Navbar() {
             className="button-shine px-4 py-2 rounded-full text-xs font-medium
               bg-white/80 backdrop-blur-md border border-gray-300 text-gray-700
               shadow-sm transition-all duration-300 ease-out
-              hover:-translate-y-0.5 hover:border-green-700 hover:bg-green-50 hover:text-green-700 hover:shadow-md
+              hover:-translate-y-0.5 hover:border-[#00674F] hover:bg-[#D3D3D3] hover:text-[#00674F] hover:shadow-md
               active:translate-y-0"
           >
             Sign up
@@ -229,9 +212,9 @@ export default function Navbar() {
               scrollPageTop();
             }}
             className="button-shine px-6 py-2 rounded-full text-xs font-medium
-              bg-[#014421] text-white
+              bg-[#00674F] text-white
               shadow-md transition-all duration-300 ease-out
-              hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20
+              hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20
               active:translate-y-0"
           >
             Login
@@ -269,7 +252,7 @@ export default function Navbar() {
           <>
             {/* Overlay */}
             <div
-              className="fixed inset-0 bg-black/45 z-40 lg:hidden"
+              className="fixed inset-0 bg-[#00674F]/60 z-40 lg:hidden"
               onClick={closeMobileMenu}
             />
 
@@ -279,10 +262,10 @@ export default function Navbar() {
                   <div key={item} className="border-b border-gray-100">
                     <button
                       type="button"
-                      className="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-green-50 active:bg-green-100"
+                      className="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-[#D3D3D3] active:bg-[#D3D3D3]"
                       onClick={() => toggleMobileDropdown(item)}
                     >
-                      <span className="font-medium text-gray-700 hover:text-green-600 active:text-green-700 transition-colors">
+                      <span className="font-medium text-gray-700 hover:text-[#00674F] active:text-[#00674F] transition-colors">
                         {item}
                       </span>
                       <ChevronDown
@@ -295,12 +278,12 @@ export default function Navbar() {
 
                     {/* Mobile Dropdown Items */}
                     {openMobileDropdown === item && (
-                      <div className="bg-green-50 pl-8 animate-slideDown">
+                      <div className="bg-[#D3D3D3] pl-8 animate-slideDown">
                         {dropdownContent[item].map((option, index) => (
                           <button
                             type="button"
                             key={index}
-                            className="block w-full border-l-2 border-transparent px-4 py-3 text-left text-sm text-gray-600 transition-all duration-300 hover:translate-x-1 hover:border-green-700 hover:bg-green-100 hover:text-green-700"
+                            className="block w-full border-l-2 border-transparent px-4 py-3 text-left text-sm text-gray-600 transition-all duration-300 hover:translate-x-1 hover:border-[#00674F] hover:bg-[#D3D3D3] hover:text-[#00674F]"
                             onClick={() => handleDropdownOptionClick(option)}
                           >
                             {option}
@@ -320,7 +303,7 @@ export default function Navbar() {
                       closeMobileMenu();
                       scrollPageTop();
                     }}
-                    className="flex-1 py-2 rounded-full text-xs font-medium border border-gray-300 text-gray-700 hover:border-green-700 hover:text-green-700 transition-colors"
+                    className="flex-1 py-2 rounded-full text-xs font-medium border border-gray-300 text-gray-700 hover:border-[#00674F] hover:text-[#00674F] transition-colors"
                   >
                     Sign up
                   </button>
@@ -331,7 +314,7 @@ export default function Navbar() {
                       closeMobileMenu();
                       scrollPageTop();
                     }}
-                    className="flex-1 py-2 rounded-full text-xs font-medium bg-[#014421] text-white hover:bg-green-800 transition-colors"
+                    className="flex-1 py-2 rounded-full text-xs font-medium bg-[#00674F] text-white hover:bg-[#00674F] transition-colors"
                   >
                     Login
                   </button>

@@ -214,13 +214,13 @@ const CryptocurrencyPage = () => {
       title: "High Volatility",
       description:
         "Leverage the volatility of the crypto market to potentially achieve significant gains, but be mindful of amplified risks.",
-      icon: <FaChartLine className="text-4xl text-green-600" />,
+      icon: <FaChartLine className="text-4xl text-[#00674F]" />,
     },
     {
       title: "Simple & Accessible",
       description:
         "Unlike stocks and commodities, Crypto CFDs are easier to trade, providing straightforward opportunities for both beginners and experienced traders.",
-      icon: <FaBitcoin className="text-4xl text-yellow-500" />,
+      icon: <FaBitcoin className="text-4xl text-[#D3D3D3]" />,
     },
   ];
 
@@ -241,17 +241,17 @@ const CryptocurrencyPage = () => {
             />
           </div>
         </div>
-        <div className="absolute inset-0 bg-black/60 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-[#00674F]/70 animate-[fadeIn_1.5s_ease-out]"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white market-hero-content">
           <h1 className="mb-4 text-4xl font-bold market-hero-title sm:text-5xl md:text-6xl animate-[fadeInUp_0.8s_ease-out]">
             Cryptocurrency
           </h1>
           <p className="mb-2 text-sm market-hero-copy md:text-base animate-[fadeInUp_1s_ease-out]">
-            Step into Crypto CFD Trading with NOVAFXM
+            Access Crypto CFD Markets with VeltriumFX
           </p>
           <p className="text-xs text-gray-300 market-hero-copy md:text-sm animate-[fadeInUp_1.2s_ease-out]">
-            Access the digital asset market with flexibility and confidence.
+            Trade digital asset price movement with flexible platform tools.
           </p>
         </div>
       </div>
@@ -275,52 +275,49 @@ const CryptocurrencyPage = () => {
           <div className="order-1 md:order-2 md:pl-2 lg:pl-4">
             <ScrollReveal delay={100} threshold={0.3} direction="up">
               <h3 className="mb-2 text-base text-gray-700 md:text-lg">
-                Maximize Opportunities, Manage Risk
+                Digital Markets, Practical Risk Control
               </h3>
             </ScrollReveal>
             
             <ScrollReveal delay={200} threshold={0.3} direction="up">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#014421] mb-4">
-                Trade Crypto CFDs with
+              <h2 className="text-2xl md:text-3xl font-bold text-[#00674F] mb-4">
+                Explore Crypto CFDs through
               </h2>
             </ScrollReveal>
             
             <ScrollReveal delay={300} threshold={0.3} direction="up">
-              <p className="text-[#D4AF37] font-bold mb-4 text-2xl">
-                NOVAFXM
+              <p className="text-[#D3D3D3] font-bold mb-4 text-2xl">
+                VeltriumFX
               </p>
             </ScrollReveal>
             
             <ScrollReveal delay={400} threshold={0.3} direction="up">
               <p className="mb-6 text-sm leading-7 text-justify text-gray-600 md:text-base">
-                Gain exposure to leading cryptocurrencies like Bitcoin, Ethereum, Ripple and
-                more through Contract for Difference (CFD) trading. 
-                Trade with advanced market analysis tools, real-time price tracking and
-                secure trading platforms designed for both beginners and experienced traders. 
-                Access global crypto markets anytime, manage risks effectively and explore
-                new investment opportunities with flexible leverage options and seamless
-                portfolio management features.
+                Gain exposure to leading digital assets such as Bitcoin, Ethereum,
+                Ripple and more through CFD trading. Use market analysis, live price
+                tracking and secure platform access to evaluate opportunities, manage
+                risk and trade around fast-moving crypto conditions.
               </p>
             </ScrollReveal>
             
             <div className="mt-5 flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4">
               <ScrollReveal delay={500} threshold={0.3} direction="up">
                 <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
-                  <Check className="shrink-0 text-[#014421] transition-transform duration-300 group-hover:scale-110" size={20} strokeWidth={3} />
+                  <Check className="shrink-0 text-[#00674F] transition-transform duration-300 group-hover:scale-110" size={20} strokeWidth={3} />
                   Potential Returns
                 </div>
               </ScrollReveal>
 
               <ScrollReveal delay={600} threshold={0.3} direction="up">
                 <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
-                  <Check className="shrink-0 text-[#014421] transition-transform duration-300 group-hover:scale-110" size={20} strokeWidth={3} />
+                  <Check className="shrink-0 text-[#00674F] transition-transform duration-300 group-hover:scale-110" size={20} strokeWidth={3} />
                   Simplified Trading
                 </div>
               </ScrollReveal>
              
               <ScrollReveal delay={700} threshold={0.3} direction="up">
                 <div className="flex basis-full items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
-                  <Check className="shrink-0 text-[#014421] transition-transform duration-300 group-hover:scale-110" size={20} strokeWidth={3} />
+                  <Check className="shrink-0 text-[#00674F] transition-transform duration-300 group-hover:scale-110" size={20} strokeWidth={3} />
                   Portfolio Diversification
                 </div>
               </ScrollReveal>
@@ -334,9 +331,9 @@ const CryptocurrencyPage = () => {
 
      {/* What are Crypto CFDs Section */}
 <ScrollReveal delay={0} threshold={0.2} direction="up">
- <div className="mx-auto w-full -mt-2 sm:mt-0 max-w-7xl rounded-2xl bg-[#014421] px-6 py-8 text-white shadow-lg transition-all duration-100 hover:shadow-xl sm:rounded-3xl sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+ <div className="mx-auto w-full -mt-2 sm:mt-0 max-w-7xl rounded-2xl bg-[#00674F] px-6 py-8 text-white shadow-lg transition-all duration-100 hover:shadow-xl sm:rounded-3xl sm:px-8 sm:py-10 lg:px-12 lg:py-12">
   <div className="mx-auto max-w-3xl px-4">
-    <h2 className="mb-4 text-2xl font-bold text-[#D4AF37] md:mb-4 md:text-3xl lg:text-4xl">
+    <h2 className="mb-4 text-2xl font-bold text-[#D3D3D3] md:mb-4 md:text-3xl lg:text-4xl">
       What are Crypto CFDs?
     </h2>
     <p className="mb-3 text-sm leading-7 text-gray-200 md:mb-4 md:text-base md:leading-8">
@@ -362,7 +359,7 @@ const CryptocurrencyPage = () => {
     <div className="mb-12 text-center md:mb-16">
       <h1 className="mb-4 text-2xl font-bold text-black md:text-4xl">
         What Affects the Price of{" "}
-        <span className="text-[#014421]">Crypto CFDs?</span>
+        <span className="text-[#00674F]">Crypto CFDs?</span>
       </h1>
       <p className="max-w-6xl mx-auto text-sm leading-relaxed text-gray-600 md:text-base">
         Several key factors influence the price movements of Crypto CFDs.
@@ -377,15 +374,15 @@ const CryptocurrencyPage = () => {
     {factors.map((factor, index) => (
       <div
         key={index}
-        className={`relative flex min-h-[220px] sm:min-h-[260px] md:min-h-[300px] flex-col overflow-hidden rounded-3xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white px-4 py-5 sm:px-5 sm:py-6 md:px-6 md:py-7 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] animate-[slideInLeft_0.6s_ease-out_forwards] opacity-0`}
+        className={`relative flex min-h-[220px] sm:min-h-[260px] md:min-h-[300px] flex-col overflow-hidden rounded-3xl border border-gray-200 border-b-[4px] border-b-[#00674F] bg-white px-4 py-5 sm:px-5 sm:py-6 md:px-6 md:py-7 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] animate-[slideInLeft_0.6s_ease-out_forwards] opacity-0`}
         style={{ animationDelay: `${index * 0.1}s` }}
       >
         {/* Icon */}
-        <div className="relative z-10 mx-auto mb-4 sm:mb-5 md:mb-6 flex h-16 w-16 sm:h-18 sm:w-18 md:h-20 md:w-20 shrink-0 items-center justify-center rounded-full bg-[#014421] text-white transition-all duration-300 group-hover:scale-110">
+        <div className="relative z-10 mx-auto mb-4 sm:mb-5 md:mb-6 flex h-16 w-16 sm:h-18 sm:w-18 md:h-20 md:w-20 shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white transition-all duration-300 group-hover:scale-110">
           {factor.icon}
         </div>
         {/* Title */}
-        <h3 className="relative z-10 mb-3 sm:mb-4 md:mb-5 flex min-h-[44px] sm:min-h-[48px] md:min-h-[52px] items-center justify-center px-2 text-center text-base sm:text-lg md:text-xl font-bold leading-tight text-[#014421]">
+        <h3 className="relative z-10 mb-3 sm:mb-4 md:mb-5 flex min-h-[44px] sm:min-h-[48px] md:min-h-[52px] items-center justify-center px-2 text-center text-base sm:text-lg md:text-xl font-bold leading-tight text-[#00674F]">
           {factor.title}
         </h3>
         {/* Description */}

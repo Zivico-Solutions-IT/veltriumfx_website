@@ -181,7 +181,7 @@ export default function EconomicCalendar() {
   return (
     <div className="w-full overflow-x-hidden bg-white text-[#0b1f16]">
       {/* Hero Section with Parallax Effect */}
-      <section className="relative h-[calc(100vh-72px)] w-full overflow-hidden bg-black sm:h-[calc(100vh-80px)] lg:h-[calc(100vh-84px)]">
+      <section className="relative h-[calc(100vh-72px)] w-full overflow-hidden bg-[#00674F] sm:h-[calc(100vh-80px)] lg:h-[calc(100vh-84px)]">
         {/* Animated Background with Zoom */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
@@ -196,7 +196,7 @@ export default function EconomicCalendar() {
           </div>
         </div>
         {/* Fade-in Overlay */}
-        <div className="absolute inset-0 bg-black/50 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-[#00674F]/65 animate-[fadeIn_1.5s_ease-out]"></div>
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center hero-content md:px-6">
           <h1 className="text-4xl font-bold text-white animate-[fadeInUp_0.8s_ease-out] sm:text-5xl md:text-6xl">
@@ -205,7 +205,7 @@ export default function EconomicCalendar() {
 
           <p className="mt-4 max-w-3xl px-2 text-sm leading-6 text-white animate-[fadeInUp_1s_ease-out] sm:text-base md:mt-5 md:leading-7">
             Track high-impact market events, economic releases and global
-            announcements with NOVAFXM.
+            announcements with VeltriumFX.
           </p>
         </div>
       </section>
@@ -223,16 +223,16 @@ export default function EconomicCalendar() {
       <section className="mx-auto max-w-6xl bg-white px-4 pb-4 pt-6 text-center sm:px-5 sm:pb-6 sm:pt-8">
         <ScrollReveal delay={0} threshold={0.2} direction="up">
           <div className="mb-4 flex items-center justify-center gap-3">
-            <span className="h-[2px] w-8 bg-[#014421] sm:w-10"></span>
-            <p className="text-sm font-semibold text-gray-700">How It's Work</p>
-            <span className="h-[2px] w-8 bg-[#014421] sm:w-10"></span>
+            <span className="h-[2px] w-8 bg-[#00674F] sm:w-10"></span>
+            <p className="text-sm font-semibold text-gray-700">Market Planning Flow</p>
+            <span className="h-[2px] w-8 bg-[#00674F] sm:w-10"></span>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={100} threshold={0.2} direction="up">
           <h2 className="mb-12 text-2xl font-bold text-gray-900 sm:text-3xl md:mb-14 md:text-4xl">
-            Trading Made Simple with{" "}
-            <span className="text-[#014421]">NOVAFXM</span>
+            Plan Market Moves with{" "}
+            <span className="text-[#00674F]">VeltriumFX</span>
           </h2>
         </ScrollReveal>
 
@@ -242,23 +242,23 @@ export default function EconomicCalendar() {
               <div className="relative flex justify-center">
                 {index !== steps.length - 1 && (
                   <div className="absolute top-16 -right-8 hidden items-center gap-2 md:flex">
-                    <span className="h-2 w-2 rounded-full bg-black"></span>
-                    <span className="h-2 w-2 rounded-full bg-black"></span>
+                    <span className="h-2 w-2 rounded-full bg-[#00674F]"></span>
+                    <span className="h-2 w-2 rounded-full bg-[#00674F]"></span>
                   </div>
                 )}
 
-                <div className="process-card relative w-full max-w-[320px] rounded-2xl border border-[#014421]/20 border-b-[4px] border-b-[#014421] bg-white px-5 pb-8 pt-14 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-6">
+                <div className="process-card relative w-full max-w-[320px] rounded-2xl border border-[#00674F]/20 border-b-[4px] border-b-[#00674F] bg-white px-5 pb-8 pt-14 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-6">
                   <div className="absolute -top-7 left-1/2 -translate-x-1/2">
-                    <div className="process-icon flex h-14 w-14 items-center justify-center rounded-full bg-[#014421] text-xl text-white shadow-lg shadow-[#014421]/20 transition-all duration-300 hover:scale-110 hover:bg-[#D4AF37]">
+                    <div className="process-icon flex h-14 w-14 items-center justify-center rounded-full bg-[#00674F] text-xl text-white shadow-lg shadow-[#00674F]/20 transition-all duration-300 hover:scale-110 hover:bg-[#D3D3D3]">
                       <Icon />
                     </div>
                   </div>
 
-                  <div className="absolute left-5 top-5 flex h-7 w-7 items-center justify-center rounded-full bg-[#014421] text-xs font-bold text-white">
+                  <div className="absolute left-5 top-5 flex h-7 w-7 items-center justify-center rounded-full bg-[#00674F] text-xs font-bold text-white">
                     {step.number}
                   </div>
 
-                  <h3 className="mb-3 text-lg font-bold text-[#014421]">
+                  <h3 className="mb-3 text-lg font-bold text-[#00674F]">
                     {step.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-gray-500">
@@ -280,7 +280,7 @@ export default function EconomicCalendar() {
           <button
             type="button"
             onClick={() => navigate("/login")}
-            className="button-shine mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto"
+            className="button-shine mt-5 w-full max-w-[220px] rounded-full bg-[#00674F] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto"
           >
             Trade Now
           </button>

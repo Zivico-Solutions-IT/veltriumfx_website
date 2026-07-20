@@ -135,30 +135,30 @@ const features = [
   {
     icon: TrendingUp,
     title: "Advanced & Cutting-Edge\nPlatform",
-    color: "text-[#014421]",
-    bg: "bg-green-100",
-    iconColor: "text-[#014421]",
-    border: "bg-[#014421]",
+    color: "text-[#00674F]",
+    bg: "bg-[#D3D3D3]",
+    iconColor: "text-[#00674F]",
+    border: "bg-[#00674F]",
     description:
       "Enjoy a seamless trading experience with our state-of-the-art technology, featuring fast execution and advanced trading tools.",
   },
   {
     icon: Globe,
     title: "Diverse Range of\nProducts",
-    color: "text-[#D4AF37]",
-    bg: "bg-yellow-100",
-    iconColor: "text-[#D4AF37]",
-    border: "bg-[#D4AF37]",
+    color: "text-[#D3D3D3]",
+    bg: "bg-[#D3D3D3]",
+    iconColor: "text-[#D3D3D3]",
+    border: "bg-[#D3D3D3]",
     description:
       "Access global markets including forex, commodities, indices and more with flexible trading solutions.",
   },
   {
     icon: Headphones,
     title: "Expert Support",
-    color: "text-[#014421]",
-    bg: "bg-green-100",
-    iconColor: "text-[#014421]",
-    border: "bg-[#014421]",
+    color: "text-[#00674F]",
+    bg: "bg-[#D3D3D3]",
+    iconColor: "text-[#00674F]",
+    border: "bg-[#00674F]",
     description:
       "Our professional support team is available anytime to assist throughout your trading journey.",
   },
@@ -169,11 +169,11 @@ const features = [
 const SectionTitle = ({ top, title }) => (
   <ScrollReveal delay={0} threshold={0.2} direction="up">
     <div className="text-center mb-10">
-      <p className="text-[#D4AF37] uppercase tracking-[3px] text-sm font-semibold">
+      <p className="text-[#D3D3D3] uppercase tracking-[3px] text-sm font-semibold">
         {top}
       </p>
       <h2 className="text-3xl md:text-4xl font-bold mt-2">{title}</h2>
-      <div className="w-20 h-1 bg-[#D4AF37] rounded-full mx-auto mt-3"></div>
+      <div className="w-20 h-1 bg-[#D3D3D3] rounded-full mx-auto mt-3"></div>
     </div>
   </ScrollReveal>
 );
@@ -281,7 +281,7 @@ const FeatureCard = ({
 const ValueCard = ({ title, description, icon: Icon }) => (
   <div className="bg-white rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-5 flex gap-4 items-start border border-gray-100">
     <div className="min-w-[60px] h-[60px] rounded-full bg-[#e4e4e4] flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-      <Icon className="w-7 h-7 text-[#014421]" />
+      <Icon className="w-7 h-7 text-[#00674F]" />
     </div>
     <div>
       <h3 className="text-xl font-semibold 
@@ -326,44 +326,44 @@ const WhyUs = () => {
         </div>
 
         {/* Soft Overlay */}
-        <div className="absolute inset-0 bg-black/60 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-[#00674F]/70 animate-[fadeIn_1.5s_ease-out]"></div>
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto flex justify-start">
           <div className="max-w-2xl text-left text-white">
             {/* Small Heading */}
             <div className="animate-[fadeInUp_0.6s_ease-out]">
-              <p className="uppercase tracking-[4px] text-[#D4AF37] text-sm md:text-base font-medium mb-4">
-                Welcome To NOVAFXM
+              <p className="uppercase tracking-[4px] text-[#D3D3D3] text-sm md:text-base font-medium mb-4">
+                Built For Focused Traders
               </p>
             </div>
 
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] animate-[fadeInUp_0.8s_ease-out]">
-              Why Choose <br />
-              <span className="text-[#079b4f] text-2xl md:text-4xl">
-                NOVAFXM
+              Trade With <br />
+              <span className="text-[#00674F] text-2xl md:text-4xl">
+                VeltriumFX
               </span>
             </h1>
 
             {/* Description */}
             <div className="animate-[fadeInUp_1s_ease-out]">
               <p className="mt-5 text-gray-200 text-base md:text-lg leading-relaxed max-w-xl">
-                Trusted by traders worldwide, NOVAFXM delivers secure innovative trading solutions designed for confidence and long-term success.
+                VeltriumFX combines secure infrastructure, practical trading tools and responsive support for a more disciplined market experience.
               </p>
             </div>
 
             <div className="animate-[fadeInUp_1.2s_ease-out]">
               <button
                 type="button"
-                className="button-shine mt-6 rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#c89b1d] sm:px-9 sm:text-base"
+                className="button-shine mt-6 rounded-full bg-[#D3D3D3] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#D3D3D3] sm:px-9 sm:text-base"
                 onClick={() => {
                   document.getElementById("why-us-about")?.scrollIntoView({
                     behavior: "smooth",
                   });
                 }}
               >
-                Explore More
+                View Details
               </button>
             </div>
           </div>
@@ -383,7 +383,7 @@ const WhyUs = () => {
                 alt="building"
                 className="rounded-[30px] shadow-2xl w-full h-[380px] md:h-[420px] object-cover transition-all duration-500 group-hover:scale-105"
               />
-              <div className="absolute -bottom-4 -left-4 bg-[#014421] text-white rounded-2xl px-5 py-4 shadow-xl transition-all duration-300 hover:scale-105">
+              <div className="absolute -bottom-4 -left-4 bg-[#00674F] text-white rounded-2xl px-5 py-4 shadow-xl transition-all duration-300 hover:scale-105">
                 <h3 className="text-2xl font-bold">10+</h3>
                 <p className="text-sm mt-0.5">Years Experience</p>
               </div>
@@ -393,37 +393,35 @@ const WhyUs = () => {
           {/* TEXT */}
           <div>
             <ScrollReveal delay={100} threshold={0.3} direction="right">
-              <p className="text-[#D4AF37] uppercase tracking-[2px] text-sm font-semibold">
-                ABOUT NOVAFXM
+              <p className="text-[#D3D3D3] uppercase tracking-[2px] text-sm font-semibold">
+                OUR APPROACH
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={200} threshold={0.3} direction="right">
               <h2 className="text-4xl md:text-5xl font-bold mt-3 leading-tight">
-                Why Choose <br />
-                <span className="text-[#014421] text-3xl">NOVAFXM</span>
+                Designed Around <br />
+                <span className="text-[#00674F] text-3xl">VeltriumFX</span>
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={250} threshold={0.3} direction="right">
-              <div className="w-24 h-[3px] bg-[#D4AF37] rounded-full mt-4"></div>
+              <div className="w-24 h-[3px] bg-[#D3D3D3] rounded-full mt-4"></div>
             </ScrollReveal>
 
             <ScrollReveal delay={300} threshold={0.3} direction="right">
               <div className="mt-5 space-y-3 text-gray-600 leading-relaxed">
                 <p>
-                  At NOVAFXM, our mission is to create a trusted and efficient
-                  trading environment that empowers our clients to achieve their
-                  financial objectives.
+                  VeltriumFX is shaped around a simple goal: give traders a clear,
+                  secure and efficient environment for making market decisions.
                 </p>
                 <p>
-                  We are dedicated to delivering an exceptional trading experience
-                  by continuously innovating our platform, expanding our range of
-                  products and providing world-class customer service.
+                  We continue to improve the platform experience, broaden access to
+                  global instruments and provide support that helps clients move with confidence.
                 </p>
                 <p>
-                  Our vision is to make financial markets accessible to everyone,
-                  fostering a global community of informed and confident traders.
+                  Our vision is to make modern market participation easier to understand,
+                  more transparent to manage and more reliable day to day.
                 </p>
               </div>
             </ScrollReveal>
@@ -436,11 +434,11 @@ const WhyUs = () => {
       <section className="px-6 pt-14 pb-6 md:px-16 md:py-14 bg-[#f7f7f7]">
         <div className="max-w-7xl mx-auto">
           <SectionTitle
-            top="Why Traders Trust Us"
+            top="What Traders Value"
             title={
               <>
-                What Sets{" "}
-                <span className="text-[#014421]">NOVAFXM</span> Apart?
+                What Makes{" "}
+                <span className="text-[#00674F]">VeltriumFX</span> Apart?
               </>
             }
           />
@@ -465,13 +463,13 @@ const WhyUs = () => {
             <div className="relative self-stretch rounded-[22px] bg-[#00552d] overflow-hidden shadow-2xl h-full transition-all duration-300 hover:scale-105">
               <div className="absolute top-0 left-0 w-full h-[120px] bg-[#0d6b3f] rounded-b-[100%]" />
               <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 py-8">
-                <div className="w-16 h-16 rounded-full border border-[#D4AF37] flex items-center justify-center mb-5 transition-all duration-300 hover:scale-110 hover:bg-[#D4AF37]/20">
-                  <Star className="w-8 h-8 text-[#D4AF37]" />
+                <div className="w-16 h-16 rounded-full border border-[#D3D3D3] flex items-center justify-center mb-5 transition-all duration-300 hover:scale-110 hover:bg-[#D3D3D3]/20">
+                  <Star className="w-8 h-8 text-[#D3D3D3]" />
                 </div>
                 <h2 className="text-white text-3xl font-bold">
-                  Our <span className="block text-[#D4AF37]">Core Values</span>
+                  Our <span className="block text-[#D3D3D3]">Core Values</span>
                 </h2>
-                <div className="w-16 h-[3px] bg-[#D4AF37] rounded-full mt-4"></div>
+                <div className="w-16 h-[3px] bg-[#D3D3D3] rounded-full mt-4"></div>
               </div>
             </div>
           </ScrollReveal>
