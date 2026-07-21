@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function LetterReveal({ text, delay = 0, step = 0.035, className = "" }) {
@@ -33,28 +33,6 @@ function LetterReveal({ text, delay = 0, step = 0.035, className = "" }) {
 
 export default function Hero() {
   const navigate = useNavigate();
-  const buttonRef = useRef(null);
-
-  useEffect(() => {
-    // Add touch feedback for mobile
-    const button = buttonRef.current;
-    if (button) {
-      const handleTouchStart = () => {
-        button.style.transform = 'scale(0.97)';
-      };
-      const handleTouchEnd = () => {
-        button.style.transform = '';
-      };
-      
-      button.addEventListener('touchstart', handleTouchStart);
-      button.addEventListener('touchend', handleTouchEnd);
-      
-      return () => {
-        button.removeEventListener('touchstart', handleTouchStart);
-        button.removeEventListener('touchend', handleTouchEnd);
-      };
-    }
-  }, []);
 
   return (
     <section
@@ -162,13 +140,12 @@ export default function Hero() {
         </p>
         
 
-        {/* Button with shine animation - Fully Mobile Responsive */}
+        {/* Button */}
        <div className="hero-trade-cta mt-5 sm:mt-7">
   <button
-    ref={buttonRef}
     type="button"
     onClick={() => navigate("/login")}
-    className="mobile-shine-button relative w-auto cursor-pointer overflow-hidden rounded-4xl bg-[#00674F] px-5 py-2.5 text-xs text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-[#00674F] hover:shadow-xl active:scale-95 active:shadow-lg sm:w-auto sm:max-w-none sm:px-10 sm:py-3 sm:text-base"
+    className="w-auto max-w-[200px] rounded-full bg-[#D3D3D3] px-5 py-2.5 text-xs font-semibold text-[#00674F] shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#D3D3D3]/90 hover:shadow-lg hover:shadow-[#D3D3D3]/20 active:translate-y-0 sm:w-auto sm:max-w-none sm:px-10 sm:py-3 sm:text-base"
     style={{
       WebkitTapHighlightColor: 'transparent',
       touchAction: 'manipulation',
@@ -176,7 +153,7 @@ export default function Hero() {
       WebkitUserSelect: 'none',
     }}
   >
-    <span className="relative z-20 block text-center text-white font-semibold tracking-wide sm:tracking-normal">
+    <span className="block text-center font-semibold tracking-wide text-[#00674F] sm:tracking-normal">
       Start Trading
     </span>
   </button>

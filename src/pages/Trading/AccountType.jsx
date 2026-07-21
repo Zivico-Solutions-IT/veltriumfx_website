@@ -8,24 +8,11 @@ import {
   FaGem,
   FaMedal,
   FaShieldAlt,
-  FaRegStar,
   FaSignal,
   FaUserAlt,
 } from "react-icons/fa";
 
 const accounts = [
-  {
-    title: "Startup Account",
-    price: "$100",
-    Icon: FaRegStar,
-    features: [
-      "Minimum Deposit $100",
-      "Spreads from 1.5 pips",
-      "No Commission",
-      "Leverage up to 1:400",
-      "Support 24/7",
-    ],
-  },
   {
     title: "Standard Account",
     price: "$200",
@@ -58,7 +45,7 @@ const accounts = [
     features: [
       "Minimum Deposit $5,000",
       "Spreads from 0.8 pips",
-      "Low Commission",
+      "No Commission",
       "Leverage up to 1:500",
       "Support 24/7",
     ],
@@ -70,19 +57,19 @@ const accounts = [
     features: [
       "Minimum Deposit $10,000",
       "Spreads from 0.6 pips",
-      "Low Commission",
+      "No Commission",
       "Leverage up to 1:500",
       "Support 24/7",
     ],
   },
   {
-      title: "RT Account",
+      title: "VVIP Account",
       price: "$15,000",
       Icon: FaSignal,
       features: [
         "Minimum Deposit $15,000",
         "Spreads from 0.2 pips",
-        "Low Commission",
+        "No Commission",
         "Leverage up to 1:500",
         "Support 24/7",
       ],
@@ -134,14 +121,14 @@ const ScrollReveal = ({ children, delay = 0, threshold = 0.2 }) => {
   );
 };
 
-// Animated Account Card Component - WITH SHINE EFFECT ON BUTTONS
+// Animated Account Card Component
 const AnimatedAccountCard = ({ account, index }) => {
   const { Icon, ...accountData } = account;
   const navigate = useNavigate();
   
   return (
     <ScrollReveal delay={index * 150} threshold={0.1}>
-      <div className={`account-plan-card relative rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6 ${
+      <div className={` home-package-card relative rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6 ${
         accountData.popular ? 'ring-2 ring-[#D3D3D3] ring-opacity-50 relative' : ''
       }`}>
         {/* POPULAR Badge */}
@@ -174,7 +161,7 @@ const AnimatedAccountCard = ({ account, index }) => {
       <button
   type="button"
   onClick={() => navigate("/signup")}
-  className={`button-shine w-full rounded-md border py-3 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 ${
+  className={`w-full rounded-md border py-3 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 ${
     accountData.popular
       ? "border-[#00674F] bg-[#00674F] text-white hover:shadow-[#00674F]/20"
       : "border-[#00674F] bg-white text-[#00674F] hover:bg-[#00674F] hover:text-white hover:shadow-[#00674F]/20"
@@ -252,17 +239,6 @@ export default function AccountTypesPage() {
     },
   ];
 
-  useEffect(() => {
-    // On touch devices, trigger a one-time shine animation for buttons so mobile users see the effect
-    if (typeof window !== 'undefined' && 'ontouchstart' in window) {
-      const els = document.querySelectorAll('.button-shine');
-      els.forEach((el, i) => {
-        setTimeout(() => el.classList.add('shine-animate'), i * 250);
-        setTimeout(() => el.classList.remove('shine-animate'), i * 250 + 1200);
-      });
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-[#f7faf7] text-[#0b1f16] overflow-hidden">
       {/* Hero Section */}
@@ -289,14 +265,6 @@ export default function AccountTypesPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)] animate-[fadeIn_1.8s_ease-out]" />
 
         <div className="relative z-10 w-full max-w-4xl">
-          {/* Badge - Slide In From Top */}
-          <div className="animate-[slideInDown_0.6s_ease-out]">
-            <span className="mb-5 inline-flex items-center gap-2 rounded-md border border-[#D3D3D3]/40 px-4 py-2 text-xs text-[#D3D3D3] sm:mb-6 sm:px-5">
-              <span className="h-2 w-2 rounded-full bg-[#D3D3D3] animate-pulse"></span>
-              Account Type
-            </span>
-          </div>
-
           {/* Heading - Staggered Fade In Up */}
           <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-6xl">
             <span className="inline-block animate-[fadeInUp_0.8s_ease-out]">
@@ -317,10 +285,10 @@ export default function AccountTypesPage() {
             </p>
           </div>
 
-         {/* Button - Fade In Up with Shine Effect */}
+         {/* Button - Fade In Up */}
 <div className="animate-[fadeInUp_1.4s_ease-out]">
   <button
-    className="button-shine mt-8 w-full max-w-[260px] rounded-full bg-[#00674F] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm"
+    className="mt-8 w-full max-w-[260px] rounded-full bg-[#D3D3D3] px-4 py-2 text-xs font-semibold text-[#00674F] shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#D3D3D3]/90 hover:shadow-lg hover:shadow-[#D3D3D3]/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm"
     onClick={() => {
       document.getElementById("account-cards")?.scrollIntoView({
         behavior: "smooth",
@@ -388,33 +356,6 @@ export default function AccountTypesPage() {
       transform: translateY(0);
     }
   }
-  
-  /* Button Shine Effect */
-  .button-shine {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .button-shine::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.3),
-      transparent
-    );
-    transition: left 0.5s ease;
-  }
-
-  .button-shine:hover::before {
-    left: 100%;
-  }
-
   /* Pulse Animation for Badge Dot */
   .animate-pulse {
     animation: gentlePulse 2s ease-in-out infinite;
@@ -436,14 +377,11 @@ export default function AccountTypesPage() {
       animation: none !important;
       transition: none !important;
     }
-    .button-shine::before {
-      transition: none;
-    }
   }
 `}</style>
       </section>
 
-      {/* Accounts Section - 6 Cards Fading In Up */}
+      {/* Accounts Section - 5 Cards Fading In Up */}
       <section id="account-cards" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-10 sm:px-5 sm:py-12">
         <div className="grid grid-cols-1 gap-6 sm:gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
           {accounts.map((account, index) => (
@@ -493,7 +431,7 @@ export default function AccountTypesPage() {
         <button
   type="button"
   onClick={() => navigate("/login")}
-  className="button-shine mt-5 w-full max-w-[220px] rounded-full bg-[#00674F] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:w-auto"
+  className="mt-5 w-full max-w-[220px] rounded-full bg-[#00674F] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:w-auto"
 >
   Trade Now
 </button>
@@ -501,8 +439,8 @@ export default function AccountTypesPage() {
       </section>
 
       <style jsx>{`
-        /* Card Hover Effects - SLOWER, NO SHINING */
-        .account-plan-card {
+        /* Card Hover Effects */
+        . home-package-card {
           transition: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
           overflow: visible;
         }
@@ -549,43 +487,6 @@ export default function AccountTypesPage() {
           filter: none;
         }
 
-        /* Re-enable shine for buttons with explicit class (override resets) */
-        .button-shine,
-        .button-shine * {
-          box-shadow: unset !important;
-          text-shadow: unset !important;
-          filter: unset !important;
-        }
-
-        /* Mobile-friendly shine: animate on focus/active and when JS adds .shine-animate */
-        .button-shine::before {
-          content: "";
-          position: absolute;
-          top: -10%;
-          left: -150%;
-          width: 40%;
-          height: 120%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
-          transform: skewX(-20deg);
-          transition: opacity 0.25s ease;
-          opacity: 0;
-          pointer-events: none;
-        }
-
-        .button-shine:hover::before,
-        .button-shine:active::before,
-        .button-shine:focus::before,
-        .button-shine.shine-animate::before {
-          animation: shine 1s ease-in-out 1;
-          opacity: 1;
-        }
-
-        @keyframes shine {
-          0% { left: -150%; opacity: 0; }
-          10% { opacity: 0.6; }
-          100% { left: 150%; opacity: 0; }
-        }
-        
         /* Keep only necessary shadows */
         .account-plan-card:hover {
           box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);

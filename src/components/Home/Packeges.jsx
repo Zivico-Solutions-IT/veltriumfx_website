@@ -1,28 +1,27 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const plans = [
   {
-    name: "Startup",
-    price: "$100",
+    name: "Standard Account",
+    price: "$200",
     deposit: "min. deposit",
     features: [
-      "Spreads from 1.5 pips",
-      "Zero Commission",
+      "Spreads from 1.3 pips",
+      "No Commission",
       "Leverage Up to 1:400",
       "24/7 Support",
     ],
     highlight: false,
   },
   {
-    name: "Silver",
-    price: "$1,000",
+    name: "Gold Account",
+    price: "$5,000",
     deposit: "min. deposit",
     features: [
-      "Spreads from 1 pips",
-      "Zero Commission",
+      "Spreads from 0.8 pips",
+      "No Commission",
       "Leverage Up to 1:500",
       "24/7 Support",
     ],
@@ -30,12 +29,12 @@ const plans = [
     badge: "MOST POPULAR",
   },
   {
-    name: "RT VIP",
+    name: "VVIP Account",
     price: "$15,000",
     deposit: "min. deposit",
     features: [
       "Spreads from 0.2 pips",
-      "Low Commission",
+      "No Commission",
       "Leverage Up to 1:500",
       "24/7 Support",
     ],
@@ -45,18 +44,6 @@ const plans = [
 
 export default function PricingSection() {
   const navigate = useNavigate();
-  const cardReveal = {
-    hidden: { opacity: 0, y: 110 },
-    visible: (index) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: index * 0.18,
-        duration: 1.05,
-        ease: [0.16, 1, 0.3, 1],
-      },
-    }),
-  };
 
   return (
     <section className="overflow-hidden bg-gradient-to-b from-[#f5f9f6] to-white px-4 py-10 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
@@ -75,20 +62,14 @@ export default function PricingSection() {
         <div className="grid grid-cols-1 items-stretch gap-5 sm:gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
 
           {plans.map((plan, index) => (
-            <motion.div
+            <div
               key={index}
-              custom={index}
-              variants={cardReveal}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.18 }}
               className={`
-                account-plan-card
+                home-package-card
                 group relative flex flex-col justify-between
                 rounded-2xl p-5 sm:p-7 md:rounded-3xl md:p-8
                 bg-[#fcfdfc] border border-[#dce9e1]
                 shadow-md
-                transition-all duration-500 ease-out
 
                 ${plan.highlight ? "ring-2 ring-[#D3D3D3]" : ""}
               `}
@@ -142,8 +123,6 @@ export default function PricingSection() {
                 type="button"
                 onClick={() => navigate("/login")}
                 className="
-                  button-shine
-                  relative overflow-hidden
                   w-full rounded-xl py-3.5 sm:py-4
                   bg-[#00674F] text-white
                   font-semibold text-sm sm:text-base
@@ -151,18 +130,11 @@ export default function PricingSection() {
 
                   hover:scale-105 hover:shadow-xl hover:shadow-[#00674F]/20
                   active:scale-95
-
-                  before:absolute before:top-0 before:left-[-120%]
-                  before:w-full before:h-full
-                  before:bg-white/20
-                  before:skew-x-12
-                  hover:before:left-[120%]
-                  before:transition-all before:duration-700
                 "
               >
                 Open Account
               </button>
-            </motion.div>
+            </div>
           ))}
           
         </div>
