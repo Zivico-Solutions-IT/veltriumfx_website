@@ -193,10 +193,15 @@ const faqs = [
 ];
 
 export default function FaqPage() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndices, setOpenIndices] = useState([0]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const toggle = (i) => {
-    setOpenIndex(openIndex === i ? null : i);
+    if (openIndices.includes(i)) {
+      setOpenIndices(openIndices.filter(index => index !== i));
+    } else {
+      setOpenIndices([...openIndices, i]);
+    }
   };
 
   return (
@@ -270,78 +275,77 @@ export default function FaqPage() {
             </ScrollReveal>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="mx-auto w-full max-w-2xl flex flex-col gap-3 sm:gap-4 relative">
             {faqs.map((faq, i) => {
-              const isOpen = openIndex === i;
+              const isOpen = openIndices.includes(i);
+              const isEven = i % 2 === 0;
+              const styleIndex = i % 2;
+              
+              let bgClass, borderClass, textQClass, textAClass, iconClass, numClass, accentLineClass;
+              
+              if (styleIndex === 0) {
+                bgClass = isOpen ? "bg-white border-[#00674F]" : "bg-white border-gray-100 hover:border-[#00674F]/50";
+                textQClass = isOpen ? "text-[#00674F]" : "text-[#0B132B] group-hover:text-[#00674F]";
+                textAClass = "text-gray-600";
+                iconClass = isOpen ? "bg-[#00674F] text-white rotate-180" : "bg-gray-50 text-gray-400 group-hover:bg-[#e6f4ef] group-hover:text-[#00674F]";
+                numClass = isOpen ? "text-[#00674F]" : "text-gray-300";
+                accentLineClass = "bg-[#00674F]/20";
+              } else {
+                bgClass = isOpen ? "bg-[#D3D3D3] border-[#00674F]" : "bg-[#D3D3D3] border-transparent hover:border-[#00674F]/50";
+                textQClass = isOpen ? "text-[#00674F]" : "text-[#0B132B] group-hover:text-[#00674F]";
+                textAClass = "text-gray-800";
+                iconClass = isOpen ? "bg-[#00674F] text-white rotate-180" : "bg-white text-gray-500 group-hover:bg-white group-hover:text-[#00674F]";
+                numClass = isOpen ? "text-[#00674F]" : "text-gray-400";
+                accentLineClass = "bg-[#00674F]/30";
+              }
 
               return (
-                <StaggeredFaq key={faq.num} index={i}>
-                  <button
-                    type="button"
-                    onClick={() => toggle(i)}
-                    className={`w-full rounded-xl border p-4 text-left shadow-sm transition-all duration-300 sm:p-5 ${
-                      isOpen
-                        ? "border-[#00674F] bg-[#00674F] shadow-[#00674F]/15"
-                        : "border-gray-200 bg-white hover:border-[#00674F]/30"
-                    }`}
-                    aria-expanded={isOpen}
-                  >
-                    <div className="flex min-w-0 items-start gap-3 sm:gap-4">
-                      <span
-                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[11px] font-bold transition-all duration-300 sm:h-9 sm:w-9 sm:text-xs ${
-                          isOpen
-                            ? "bg-white/20 text-white"
-                            : "bg-[#D3D3D3] text-[#00674F]"
-                        }`}
-                      >
-                        {faq.num}
-                      </span>
-
-                      <span className="min-w-0 flex-1">
-                        <span className="flex min-w-0 items-start justify-between gap-3">
-                          <span
-                            className={`min-w-0 flex-1 break-words pt-1 text-sm font-semibold leading-snug transition-all duration-300 sm:text-base ${
-                              isOpen ? "text-white" : "text-gray-900"
-                            }`}
-                          >
-                            {faq.question}
-                          </span>
-
-                          <span
-                            className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-all duration-300 sm:h-8 sm:w-8 ${
-                              isOpen
-                                ? "rotate-180 border-white/40 bg-white/10"
-                                : "border-gray-300"
-                            }`}
-                          >
-                            <svg
-                              width="12"
-                              height="12"
-                              viewBox="0 0 12 12"
-                              fill="none"
-                              aria-hidden="true"
-                              className="transition-transform duration-300"
-                            >
-                              <path
-                                d="M2 4L6 8L10 4"
-                                stroke={isOpen ? "#fff" : "#6b7280"}
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </span>
+                <div 
+                  key={faq.num} 
+                  className={`w-full md:w-max md:max-w-[85%] lg:max-w-[80%] ${isEven ? 'self-start' : 'self-end'}`}
+                >
+                  <StaggeredFaq index={i}>
+                    <div
+                      className={`group relative overflow-hidden rounded-[50px] transition-all duration-500 border-2 h-full flex flex-col shadow-sm ${bgClass}`}
+                    >
+                    <button
+                      type="button"
+                      onClick={() => toggle(i)}
+                      className="w-full px-6 py-3 sm:px-8 sm:py-4 flex items-center justify-between gap-5 sm:gap-8 text-left focus:outline-none"
+                      aria-expanded={isOpen}
+                    >
+                      <div className="flex gap-4 sm:gap-6 items-center">
+                        <span className={`text-sm sm:text-base font-extrabold transition-colors duration-300 ${numClass}`}>
+                          {faq.num}
                         </span>
+                        <h3 className={`text-base sm:text-lg font-bold leading-snug transition-colors duration-300 ${textQClass}`}>
+                          {faq.question}
+                        </h3>
+                      </div>
+                      
+                      <div className={`shrink-0 flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 shadow-sm ${iconClass}`}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300">
+                           {isOpen ? <path d="M5 12h14" /> : <path d="M12 5v14M5 12h14" />}
+                        </svg>
+                      </div>
+                    </button>
 
-                        {isOpen && (
-                          <span className="mt-3 block break-words text-sm leading-7 text-white/90 sm:text-[15px]">
+                    <div 
+                      className="grid transition-all duration-500 ease-in-out w-0 min-w-full" 
+                      style={{ gridTemplateRows: isOpen ? "1fr" : "0fr", opacity: isOpen ? 1 : 0 }}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-0 pl-[3.5rem] sm:pl-[4.25rem]">
+                          <div className={`w-10 h-[2px] mb-4 rounded-full ${accentLineClass}`} />
+                          <p className={`leading-relaxed text-[15px] sm:text-[16px] font-medium ${textAClass}`}>
                             {faq.answer}
-                          </span>
-                        )}
-                      </span>
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </button>
-                </StaggeredFaq>
+                    </div>
+                  </StaggeredFaq>
+                </div>
               );
             })}
           </div>

@@ -165,7 +165,7 @@ const TradingViewQuote = ({ symbol }) => {
       symbol,
       width: "100%",
       isTransparent: true,
-      colorTheme: "dark",
+      colorTheme: "light",
       locale: "en",
     });
 
@@ -198,7 +198,6 @@ const PaymentLogo = ({ method }) => {
   );
 };
 
-// Circular Chart Button Component - Smaller on mobile
 const CircularChartButton = ({ symbol, tradingViewSymbol }) => {
   const [isShining, setIsShining] = useState(false);
 
@@ -219,14 +218,13 @@ const CircularChartButton = ({ symbol, tradingViewSymbol }) => {
   return (
     <button
       onClick={handleOpenChart}
-      className={`relative flex items-center justify-center rounded-full bg-gradient-to-br from-[#D3D3D3] to-[#D3D3D3] shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 ${
-        isShining ? 'ring-4 ring-[#D3D3D3] ring-opacity-50' : ''
+      className={`relative flex items-center justify-center rounded-full bg-[#00674F] shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 ${
+        isShining ? 'ring-4 ring-[#00674F] ring-opacity-50' : ''
       }`}
       style={{
-        width: '28px',
-        height: '28px',
+        width: '32px',
+        height: '32px',
         WebkitTapHighlightColor: 'transparent',
-        touchAction: 'manipulation',
       }}
     >
       {isShining && (
@@ -234,10 +232,9 @@ const CircularChartButton = ({ symbol, tradingViewSymbol }) => {
       )}
       
       <LineChart 
-        size={14} 
+        size={16} 
         strokeWidth={2} 
-        className="text-black sm:size-[22px]"
-        style={{ width: '14px', height: '14px' }}
+        className="text-white"
       />
     </button>
   );
@@ -266,26 +263,33 @@ const Methords = () => {
   const ActiveIcon = activeDetails.icon;
 
   return (
-    <section className="w-full bg-white px-2 pb-6 pt-6 sm:px-6 sm:pb-10 sm:pt-16 md:pb-12 md:pt-20 lg:px-8">
+    <section className="w-full bg-white px-4 pb-12 pt-12 sm:px-6 sm:pb-24 sm:pt-24 lg:px-8 border-b border-[#D3D3D3]">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-4 text-center sm:mb-10 md:mb-12">
-          <h2 className="px-1 pb-2 text-base font-semibold leading-snug text-black sm:text-2xl md:text-3xl">
-            Secure <span className="text-[#D3D3D3]">Methods</span> for Deposits & Withdrawals
+        <div className="mb-12 text-center sm:mb-20">
+          
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="w-8 h-[2px] bg-[#00674F]"></span>
+            <span className="text-[#00674F] font-bold uppercase tracking-widest text-[11px]">Funding & Trading</span>
+            <span className="w-8 h-[2px] bg-[#00674F]"></span>
+          </div>
+
+          <h2 className="text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl md:text-5xl">
+            Secure Methods <span className="text-[#00674F]">For Global Access</span>
           </h2>
 
           {/* Payment Methods - Static grid */}
-          <div className="mx-auto mt-4 grid max-w-6xl grid-cols-3 gap-3 sm:mt-8 sm:grid-cols-4 sm:gap-5 md:mt-10 lg:grid-cols-8">
+          <div className="mx-auto mt-12 grid max-w-6xl grid-cols-4 gap-3 sm:mt-16 sm:gap-5 md:mt-16 lg:grid-cols-8">
               {PAYMENT_METHODS.map((method) => (
                 <a
                   key={method.name}
                   href="/deposit"
                   aria-label={`View ${method.name} deposit and withdrawal details`}
-                  className="group flex min-h-[74px] flex-col items-center justify-center gap-1.5 rounded-xl border border-[#D3D3D3]/60 bg-white px-2 py-3 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#00674F]/40 hover:shadow-md sm:min-h-[92px] sm:gap-2 sm:px-3 sm:py-4"
+                  className="group flex flex-col items-center justify-center gap-2 rounded-sm border border-[#D3D3D3] bg-white px-2 py-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#00674F] hover:shadow-lg sm:px-3 sm:py-5"
                 >
-                  <div className="flex h-8 items-center justify-center transition duration-300 group-hover:scale-105 sm:h-11">
+                  <div className="flex h-8 items-center justify-center transition duration-300 sm:h-11">
                     <PaymentLogo method={method} />
                   </div>
-                  <span className="text-[11px] font-medium leading-tight text-gray-900 sm:text-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500 transition-colors group-hover:text-[#00674F] sm:text-xs">
                     {method.name}
                   </span>
                 </a>
@@ -293,66 +297,65 @@ const Methords = () => {
           </div>
         </div>
 
-        {/* Main Trading Section - Smaller card size on mobile */}
-        <div className="relative w-full overflow-hidden rounded-2xl border border-white bg-[#D3D3D3] px-2 py-3 shadow-[0_26px_70px_rgba(0,103,79,0.22),inset_0_1px_0_rgba(255,255,255,0.88)] sm:left-1/2 sm:w-screen sm:-translate-x-1/2 sm:px-6 sm:py-12 md:rounded-[36px] lg:px-8">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.55),transparent_32%),radial-gradient(circle_at_bottom,rgba(0,103,79,0.22),transparent_42%)]"></div>
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D3D3D3]/70 to-transparent"></div>
+        {/* Main Trading Section - Colorful Primary Focus */}
+        <div className="relative w-full overflow-hidden rounded-sm bg-[#00674F] px-4 py-8 shadow-2xl sm:px-10 sm:py-16 lg:px-12">
+          
+          {/* Decorative Background for Colorful effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#003b2a] via-[#00674F] to-[#004233] opacity-90"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 blur-[100px] rounded-full mix-blend-overlay"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D3D3D3] opacity-10 blur-[100px] rounded-full mix-blend-overlay"></div>
 
           <div className="relative z-10 mx-auto max-w-7xl">
-            {/* Header Section - Smaller on mobile */}
-            <div className="mb-3 flex items-center gap-2 md:mb-9 md:gap-4">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-white bg-[#00674F] text-white shadow-[0_12px_28px_rgba(0,103,79,0.24)] sm:h-16 sm:w-16">
-                <ActiveIcon size={16} strokeWidth={1.9} />
+            {/* Header Section */}
+            <div className="mb-6 flex items-center gap-4 md:mb-12">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-[#D3D3D3] text-[#00674F] shadow-lg sm:h-16 sm:w-16">
+                <ActiveIcon size={24} strokeWidth={2.5} />
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-[#00674F] sm:text-4xl">
+                <h3 className="text-2xl font-black uppercase tracking-widest text-white sm:text-4xl">
                   {activeTab}
                 </h3>
-                <p className="mt-0.5 text-justify text-[10px] text-gray-700 sm:text-left sm:text-base">
+                <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-[#D3D3D3] sm:text-sm">
                   {activeDetails.description}
                 </p>
               </div>
             </div>
 
-            {/* Cards Grid - Much smaller on mobile */}
-            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
               {visibleData.map((item) => (
                 <div
                   key={item.symbol}
-                  className="group relative min-h-[100px] overflow-hidden rounded-2xl border border-white bg-[#00674F] p-2 shadow-[0_18px_38px_rgba(0,103,79,0.24),inset_0_1px_0_rgba(255,255,255,0.35)] transition-all duration-300 hover:-translate-y-1.5 hover:border-white hover:shadow-[0_28px_58px_rgba(0,103,79,0.30),inset_0_1px_0_rgba(255,255,255,0.42)] sm:min-h-[200px] sm:p-2"
+                  className="group relative overflow-hidden rounded-sm border border-transparent bg-white p-5 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-[#D3D3D3]"
                 >
-                  <div className="absolute inset-0 bg-[url('/m2.png')] bg-cover bg-center opacity-35"></div>
-                  <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),transparent_26%),radial-gradient(circle_at_78%_48%,rgba(212,175,55,0.11),transparent_34%)]"></div>
-                  <div className="absolute inset-0 bg-[#00674F]/60"></div>
-
                   <div className="relative z-10 flex h-full flex-col">
-                    {/* Card Header - Smaller on mobile */}
-                    <div className="mb-2 flex items-start justify-between gap-1 sm:mb-8 sm:gap-4">
-                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-xl border border-white/80 bg-[#00674F]/85 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_12px_26px_rgba(0,103,79,0.22)] sm:h-16 sm:w-16 sm:rounded-2xl">
-                        <ActiveIcon size={14} strokeWidth={1.9} />
+                    {/* Card Header */}
+                    <div className="mb-4 flex items-start justify-between gap-4 sm:mb-6">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-[#D3D3D3]/20 text-[#00674F] sm:h-12 sm:w-12">
+                        <ActiveIcon size={20} strokeWidth={2} />
                       </div>
 
-                      <div className="min-w-0 pt-0.5 text-right">
-                        <h4 className="text-xs font-black tracking-tight text-white sm:text-2xl">
+                      <div className="text-right">
+                        <h4 className="text-lg font-black text-gray-900 sm:text-2xl">
                           {item.symbol}
                         </h4>
-                        <p className="mt-0.5 text-justify text-[8px] leading-tight text-white/70 sm:text-right sm:text-sm">
+                        <p className="text-xs font-bold uppercase tracking-wider text-gray-500 sm:text-sm">
                           {item.name}
                         </p>
                       </div>
                     </div>
 
-                    {/* Trading View Widget - Smaller on mobile */}
-                    <div className="min-h-[45px] sm:min-h-[88px]">
+                    {/* Trading View Widget */}
+                    <div className="min-h-[60px] sm:min-h-[88px] mb-4">
                       <TradingViewQuote
                         key={`${activeTab}-${item.tradingViewSymbol}`}
                         symbol={item.tradingViewSymbol}
                       />
                     </div>
 
-                    {/* Circular Chart Button - Smaller on mobile */}
-                    <div className="mt-2 flex justify-end sm:mt-4">
+                    {/* Circular Chart Button */}
+                    <div className="mt-auto flex justify-end">
                       <CircularChartButton 
                         symbol={item.symbol}
                         tradingViewSymbol={item.tradingViewSymbol}
@@ -363,44 +366,21 @@ const Methords = () => {
               ))}
             </div>
 
-            {/* ALL TABS VISIBLE ON MOBILE - WRAPPED TO NEXT LINE */}
-            <div className="mt-4 sm:hidden">
-              <div className="flex flex-wrap justify-center gap-1">
-                {tabs.map((tab) => (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`flex items-center gap-0.5 whitespace-nowrap rounded-full border px-2 py-0.5 text-[8px] font-medium transition-all duration-300 ${
-                      activeTab === tab
-                        ? "border-white bg-[#00674F] text-white shadow-[0_8px_20px_rgba(0,103,79,0.24)]"
-                        : "border-white bg-white/75 text-[#00674F] shadow-sm hover:border-[#00674F]/40 hover:bg-white"
-                    }`}
-                  >
-                    {React.createElement(CATEGORY_DETAILS[tab].icon, {
-                      size: 8,
-                      strokeWidth: 1.9,
-                    })}
-                    <span>{tab}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Desktop Tabs - All visible in a row */}
-            <div className="mt-6 hidden justify-center gap-3 overflow-x-auto py-2 sm:flex md:gap-4 md:mt-10">
+            {/* Desktop Tabs */}
+            <div className="mt-12 flex flex-wrap justify-center gap-3 md:gap-4">
               {tabs.map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex min-h-[42px] items-center gap-2.5 whitespace-nowrap rounded-full border px-5 py-2 text-sm transition-all duration-300 hover:scale-105 md:text-base ${
+                  className={`flex items-center gap-2 whitespace-nowrap rounded-sm px-6 py-2.5 text-sm font-bold uppercase tracking-wider transition-all duration-300 ${
                     activeTab === tab
-                      ? "scale-105 border-white bg-[#00674F] text-white shadow-[0_14px_34px_rgba(0,103,79,0.28)]"
-                      : "border-white bg-white/75 text-[#00674F] shadow-[0_10px_24px_rgba(15,23,42,0.08)] hover:border-[#00674F]/40 hover:bg-white"
+                      ? "bg-[#D3D3D3] text-[#00674F] shadow-lg scale-105"
+                      : "bg-white/10 text-white hover:bg-white/20"
                   }`}
                 >
                   {React.createElement(CATEGORY_DETAILS[tab].icon, {
-                    size: 18,
-                    strokeWidth: 1.8,
+                    size: 16,
+                    strokeWidth: 2,
                   })}
                   {tab}
                 </button>
