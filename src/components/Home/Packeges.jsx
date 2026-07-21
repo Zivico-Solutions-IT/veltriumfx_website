@@ -59,20 +59,26 @@ export default function PricingSection() {
   };
 
   return (
-    <section className="overflow-hidden bg-gradient-to-b from-[#f5f9f6] to-white px-4 py-10 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
+    <section className="overflow-hidden bg-white border-b border-[#D3D3D3] px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
       <div className="mx-auto text-center max-w-7xl">
 
         {/* Heading */}
-        <h2 className="reveal-up mb-3 text-2xl font-bold leading-tight text-[#00674F] sm:mb-4 sm:text-4xl md:text-5xl">
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <span className="w-8 h-[2px] bg-[#00674F]"></span>
+          <span className="text-[#00674F] font-bold uppercase tracking-widest text-[11px]">Pricing Plans</span>
+          <span className="w-8 h-[2px] bg-[#00674F]"></span>
+        </div>
+        
+        <h2 className="mb-6 text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl md:text-5xl">
           Match Your Trading Style
         </h2>
 
-        <p className="reveal-up reveal-delay-1 mx-auto mb-7 max-w-2xl text-justify text-sm leading-6 text-gray-600 sm:mb-8 sm:text-center sm:text-base">
-          Account options designed around different capital levels, strategies and market experience.
+        <p className="mx-auto mb-16 max-w-2xl text-center text-sm leading-relaxed text-gray-600 sm:text-base">
+          Account options designed around different capital levels, strategies, and market experience. Choose the tier that gives you the best edge.
         </p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 items-stretch gap-5 sm:gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
 
           {plans.map((plan, index) => (
             <motion.div
@@ -83,20 +89,19 @@ export default function PricingSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.18 }}
               className={`
-                account-plan-card
                 group relative flex flex-col justify-between
-                rounded-2xl p-5 sm:p-7 md:rounded-3xl md:p-8
-                bg-[#fcfdfc] border border-[#dce9e1]
-                shadow-md
-                transition-all duration-500 ease-out
+                rounded-sm p-8
+                border transition-all duration-500 ease-out
 
-                ${plan.highlight ? "ring-2 ring-[#D3D3D3]" : ""}
+                ${plan.highlight 
+                  ? "bg-[#00674F] border-[#00674F] shadow-2xl scale-105 z-10" 
+                  : "bg-white border-[#D3D3D3] shadow-sm hover:border-[#00674F]/50"}
               `}
             >
 
               {/* Badge */}
               {plan.badge && (
-                <div className="account-popular-badge absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#D3D3D3] px-3 py-1 text-[11px] font-semibold text-white shadow-lg sm:-top-4 sm:px-4 sm:py-1.5 sm:text-xs">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-sm bg-[#D3D3D3] px-4 py-1.5 text-[11px] font-bold text-[#00674F] shadow-md uppercase tracking-widest">
                   {plan.badge}
                 </div>
               )}
@@ -105,31 +110,33 @@ export default function PricingSection() {
               <div className="relative z-10">
 
                 {/* Title */}
-                <h3 className="mb-4 text-xl font-bold leading-tight text-[#00674F] sm:mb-5 sm:text-2xl">
+                <h3 className={`mb-6 text-xl font-bold uppercase tracking-widest ${plan.highlight ? "text-[#D3D3D3]" : "text-[#00674F]"}`}>
                   {plan.name}
                 </h3>
 
                 {/* Price */}
-                <div className="mb-4 sm:mb-7">
-                  <span className="account-plan-price inline-block text-3xl font-extrabold leading-none text-gray-900 sm:text-4xl">
+                <div className="mb-8">
+                  <span className={`inline-block text-4xl font-extrabold leading-none ${plan.highlight ? "text-white" : "text-gray-900"}`}>
                     {plan.price}
                   </span>
-                  <div className="mt-1 text-sm text-gray-500">
+                  <div className={`mt-2 text-xs font-semibold uppercase tracking-wider ${plan.highlight ? "text-[#D3D3D3]" : "text-gray-500"}`}>
                     {plan.deposit}
                   </div>
                 </div>
 
                 {/* Features */}
-                <ul className="mb-6 space-y-2.5 text-left sm:mb-10 sm:space-y-4">
+                <ul className="mb-10 space-y-4 text-left">
                   {plan.features.map((feature, i) => (
                     <li
                       key={i}
-                      className="flex items-center gap-3 text-gray-700"
+                      className="flex items-center gap-4"
                     >
-                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[#00674F]/10 text-[#00674F] text-sm font-bold">
+                      <div className={`flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-bold ${
+                        plan.highlight ? "bg-[#D3D3D3] text-[#00674F]" : "bg-[#00674F]/10 text-[#00674F]"
+                      }`}>
                         ✓
                       </div>
-                      <span className="text-sm sm:text-base">
+                      <span className={`text-sm font-medium ${plan.highlight ? "text-white" : "text-gray-700"}`}>
                         {feature}
                       </span>
                     </li>
@@ -141,24 +148,15 @@ export default function PricingSection() {
               <button
                 type="button"
                 onClick={() => navigate("/login")}
-                className="
-                  button-shine
-                  relative overflow-hidden
-                  w-full rounded-xl py-3.5 sm:py-4
-                  bg-[#00674F] text-white
-                  font-semibold text-sm sm:text-base
+                className={`
+                  relative overflow-hidden w-full rounded-sm py-4
+                  font-bold text-sm tracking-widest uppercase
                   transition-all duration-300 ease-out
-
-                  hover:scale-105 hover:shadow-xl hover:shadow-[#00674F]/20
-                  active:scale-95
-
-                  before:absolute before:top-0 before:left-[-120%]
-                  before:w-full before:h-full
-                  before:bg-white/20
-                  before:skew-x-12
-                  hover:before:left-[120%]
-                  before:transition-all before:duration-700
-                "
+                  ${plan.highlight 
+                    ? "bg-[#D3D3D3] text-[#00674F] hover:bg-white" 
+                    : "bg-[#00674F] text-white hover:bg-[#005541]"
+                  }
+                `}
               >
                 Open Account
               </button>
@@ -168,24 +166,21 @@ export default function PricingSection() {
         </div>
 
 
-        <div className="mt-6 flex justify-center sm:justify-end">
+        <div className="mt-16 flex justify-center">
           <button
             type="button"
             onClick={() => navigate("/account-type")}
             className="
               group inline-flex items-center gap-2
-              text-sm font-semibold text-[#00674F]
-              transition-colors duration-300
-              hover:text-[#D3D3D3]
-              focus:outline-none focus-visible:text-[#D3D3D3]
+              text-sm font-bold uppercase tracking-widest text-[#00674F]
+              transition-colors duration-300 hover:text-[#004f3c]
             "
           >
             View all accounts
             <ArrowRight
               size={18}
-              strokeWidth={2.2}
-              className="transition-transform duration-300 group-hover:translate-x-1"
-              aria-hidden="true"
+              strokeWidth={2.5}
+              className="transition-transform duration-300 group-hover:translate-x-2"
             />
           </button>
         </div>
