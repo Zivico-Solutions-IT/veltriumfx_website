@@ -145,10 +145,10 @@ export default function Navbar() {
             >
               <button
                 type="button"
-                className={`nav-link flex cursor-pointer items-center gap-1.5 rounded-full py-2 transition-all duration-300 ${
+                className={`nav-link flex min-w-[96px] cursor-pointer items-center justify-center border border-[#D3D3D3] bg-white px-4 py-3 text-center shadow-[0_7px_0_rgba(0,103,79,0.08),0_14px_30px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00674F] hover:bg-[#00674F] hover:text-[#D3D3D3] hover:shadow-[0_9px_0_rgba(0,103,79,0.10),0_20px_40px_rgba(0,103,79,0.12)] ${
                   isMenuActive(item)
-                    ? "bg-[#00674F]/10 px-4 font-bold text-[#00674F]"
-                    : "px-1 hover:bg-white/70 hover:px-4 hover:text-[#00674F]"
+                    ? "font-bold text-[#00674F]"
+                    : "text-gray-700"
                 }`}
                 onClick={() => {
                   // if (item === "Home") {
@@ -158,13 +158,7 @@ export default function Navbar() {
                   setHoveredMenu((prev) => (prev === item ? null : item));
                 }}
               >
-                {item}
-                <ChevronDown
-                  size={14}
-                  className={`transition-transform duration-300 ${
-                    hoveredMenu === item ? "rotate-180" : ""
-                  }`}
-                />
+                <span className="block w-full text-center">{item}</span>
               </button>
 
               {/* Desktop Dropdown */}
@@ -199,7 +193,7 @@ export default function Navbar() {
             className="button-shine px-4 py-2 rounded-full text-xs font-medium
               bg-white/80 backdrop-blur-md border border-gray-300 text-gray-700
               shadow-sm transition-all duration-300 ease-out
-              hover:-translate-y-0.5 hover:border-[#00674F] hover:bg-[#D3D3D3] hover:text-[#00674F] hover:shadow-md
+              hover:-translate-y-0.5 hover:border-[#00674F] hover:bg-[#00674F] hover:text-[#D3D3D3] hover:shadow-md
               active:translate-y-0"
           >
             Sign up
@@ -214,7 +208,7 @@ export default function Navbar() {
             className="button-shine px-6 py-2 rounded-full text-xs font-medium
               bg-[#00674F] text-white
               shadow-md transition-all duration-300 ease-out
-              hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20
+              hover:-translate-y-0.5 hover:bg-[#D3D3D3] hover:text-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20
               active:translate-y-0"
           >
             Login
@@ -303,7 +297,7 @@ export default function Navbar() {
                       closeMobileMenu();
                       scrollPageTop();
                     }}
-                    className="flex-1 py-2 rounded-full text-xs font-medium border border-gray-300 text-gray-700 hover:border-[#00674F] hover:text-[#00674F] transition-colors"
+                    className="flex-1 py-2 rounded-full text-xs font-medium border border-gray-300 text-gray-700 transition-colors hover:border-[#00674F] hover:bg-[#00674F] hover:text-[#D3D3D3]"
                   >
                     Sign up
                   </button>
@@ -314,7 +308,7 @@ export default function Navbar() {
                       closeMobileMenu();
                       scrollPageTop();
                     }}
-                    className="flex-1 py-2 rounded-full text-xs font-medium bg-[#00674F] text-white hover:bg-[#00674F] transition-colors"
+                    className="flex-1 py-2 rounded-full text-xs font-medium bg-[#00674F] text-white transition-colors hover:bg-[#D3D3D3] hover:text-[#00674F]"
                   >
                     Login
                   </button>
