@@ -279,7 +279,7 @@ function HeroSection() {
           style={{ transformOrigin: 'center' }}
         >
           <img
-            src="/Forex 1.jpeg"
+            src="\src\assets\images\cover-1.jpg"
             alt="Forex Hero"
             className="h-full w-full object-cover object-center market-hero-image"
           />
@@ -304,7 +304,7 @@ function AboutSection() {
       <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-14">
         <ScrollReveal delay={0} threshold={0.3} direction="left">
           <img
-            src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop"
+            src="\src\assets\images\166f997e78024.jpeg"
             alt="forex"
             className="h-[210px] w-full rounded-xl object-cover shadow-md transition-all duration-500 hover:scale-105 sm:h-[320px] sm:rounded-2xl lg:h-[350px] lg:rounded-[30px]"
           />

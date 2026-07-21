@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import heroBg from "../../assets/images/tech-analysis-1024x577 1.png";
-import heroBg2 from "../../assets/images/image 106.png";
+import heroBg from "../../assets/images/ind.bg.png";
+import heroBg2 from "../../assets/images/ind pic1.jpeg";
 import TradingViewWidget from "../../pages/Market/TradingViewWidget";
 
 import {
   Star,
   BarChart3,
   ArrowUp,
+  ArrowRight,
   Clock3,
   Search,
   Landmark,
@@ -101,7 +102,7 @@ const StaggeredCard = ({ children, index }) => {
   return (
     <div
       ref={elementRef}
-      className={`transition-all duration-700 ease-out ${
+      className={`h-full transition-all duration-700 ease-out ${
         isVisible
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-12'
@@ -119,20 +120,40 @@ const StaggeredCard = ({ children, index }) => {
 
 const indices = [
   {
-    title: "Wall Street (Dow Jones)",
+    title: "Wall Street",
+    subtitle: "Dow Jones",
     desc: "Tracks 30 prominent companies on the NYSE.",
+    value: "38,921.23",
+    change: "+412.75",
+    changePercent: "+1.07%",
+    icon: <TrendingUp size={24} />,
   },
   {
     title: "S&P 500",
+    subtitle: "US Stock Market",
     desc: "A comprehensive benchmark for the US stock market.",
+    value: "5,234.18",
+    change: "+52.18",
+    changePercent: "+1.01%",
+    icon: <BarChart3 size={24} />,
   },
   {
     title: "FTSE 100",
+    subtitle: "UK Equities",
     desc: "Measures the top 100 companies by market cap in London.",
+    value: "8,275.63",
+    change: "+68.73",
+    changePercent: "+0.84%",
+    icon: <ArrowUp size={24} />,
   },
   {
-    title: "DAX (Germany 40)",
+    title: "DAX",
+    subtitle: "Germany 40",
     desc: "Reflects the performance of Germany's 40 largest companies.",
+    value: "18,516.65",
+    change: "+148.67",
+    changePercent: "+0.81%",
+    icon: <TrendingUp size={24} />,
   },
 ];
 
@@ -229,7 +250,7 @@ const IndicesPage = () => {
         </div>
 
         {/* Fade-in Overlays */}
-        <div className="absolute inset-0 bg-[#00674F]/75 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-[#00674F]/65 animate-[fadeIn_1.5s_ease-out]"></div>
 
         <div className="market-hero-content relative z-10 mx-auto max-w-5xl">
           
@@ -239,15 +260,6 @@ const IndicesPage = () => {
               Indices
             </span>
           </h1>
-
-          {/* Divider Line - Animated */}
-          <div className="animate-[fadeInUp_1s_ease-out]">
-            <div className="mx-auto mt-4 flex w-24 items-center justify-center gap-1">
-              <span className="h-[2px] flex-1 bg-[#D3D3D3]" />
-              <span className="h-2 w-2 rounded-full bg-[#D3D3D3]" />
-              <span className="h-[2px] flex-1 bg-[#D3D3D3]" />
-            </div>
-          </div>
 
           {/* Description - Fade In Up */}
           <div className="animate-[fadeInUp_1.2s_ease-out]">
@@ -367,19 +379,59 @@ const IndicesPage = () => {
         </ScrollReveal>
 
         {/* INDEX CARDS - Staggered */}
-        <div className="grid grid-cols-1 gap-4 mx-auto mt-6 max-w-6xl sm:grid-cols-2 lg:mt-8 lg:grid-cols-4 lg:gap-5">
+        <div className="grid grid-cols-1 gap-5 mx-auto mt-6 max-w-6xl sm:grid-cols-2 lg:mt-8 lg:grid-cols-4">
           {indices.map((item, index) => (
             <StaggeredCard key={index} index={index}>
-              <div className="relative w-full overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#00674F] bg-white p-5 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] lg:p-5">
-                <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#D3D3D3] transition-all duration-300 group-hover:scale-110 sm:h-16 sm:w-16">
-                  <Star className="fill-[#00674F] text-[#00674F]" size={28} />
+              <div className="relative h-full flex flex-col justify-between w-full overflow-hidden rounded-none border border-slate-200 bg-white p-5 text-left shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div>
+                  {/* Top Header Row */}
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-none bg-[#E7F5EE] text-[#00674F]">
+                        {item.icon}
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-bold uppercase tracking-wider text-[#00674F]">
+                          {item.subtitle}
+                        </p>
+                        <h3 className="text-lg font-bold leading-tight text-[#0f172a]">
+                          {item.title}
+                        </h3>
+                      </div>
+                    </div>
+                    <span className="shrink-0 rounded-none border border-slate-300 bg-slate-200/60 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-600">
+                      LIVE
+                    </span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="mt-4 text-xs sm:text-sm leading-relaxed text-slate-600">
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 className="relative z-10 text-lg font-bold leading-snug text-gray-800">
-                  {item.title}
-                </h3>
-                <p className="relative z-10 mt-3 text-sm leading-6 text-gray-500">
-                  {item.desc}
-                </p>
+
+                <div>
+                  {/* Price Box */}
+                  <div className="mt-4 rounded-none border border-slate-200/80 bg-[#F8F9FA] p-3.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <div>
+                        <p className="text-xl font-bold text-[#0f172a] sm:text-2xl">
+                          {item.value}
+                        </p>
+                        <p className="mt-0.5 text-xs font-semibold text-[#00674F]">
+                          {item.change} <span className="font-normal text-slate-500">{item.changePercent}</span>
+                        </p>
+                      </div>
+                      <div className="h-7 w-14 shrink-0 rounded-none bg-gradient-to-r from-[#00674F]/70 to-[#b2e2d3]" />
+                    </div>
+                  </div>
+
+                  {/* View Details Button */}
+                  <button className="mt-4 inline-flex items-center gap-2 rounded-none bg-[#00674F] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-[#00543e]">
+                    VIEW DETAILS
+                    <ArrowRight size={14} />
+                  </button>
+                </div>
               </div>
             </StaggeredCard>
           ))}
@@ -411,20 +463,22 @@ const IndicesPage = () => {
   <div className="grid max-w-6xl gap-5 mx-auto mt-8 lg:mt-10 lg:grid-cols-2">
     {topCards.map((card, index) => (
       <ScrollReveal key={index} delay={index * 150} threshold={0.2} direction="up">
-        <div className="rounded-2xl border-b-[4px] border-[#00674F] bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:border-b-[6px] h-full min-h-[220px]">
-          <div className="flex items-start gap-4 p-5 sm:gap-5 sm:p-6 lg:p-8">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#D3D3D3] text-[#00674F] sm:h-16 sm:w-16">
+        <div className="rounded-none border border-slate-200 bg-white p-6 shadow-[0_24px_60px_rgba(0,103,79,0.08)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(0,103,79,0.14)] md:p-8 h-full">
+          <div className="flex items-start gap-4">
+            <div className="flex h-14 w-14 items-center justify-center rounded-none bg-[#00674F] text-white shadow-lg shadow-[#00674F]/10 sm:h-16 sm:w-16">
               {card.icon}
             </div>
             <div className="flex-1">
-              <h3 className="text-lg font-bold text-gray-800 sm:text-xl">
+              <h3 className="text-xl font-semibold text-[#0f172a] sm:text-2xl">
                 {card.title}
               </h3>
-              <p className="mt-2 text-sm leading-7 text-gray-600">
-                {card.desc}
-              </p>
+              <div className="mt-3 h-1.5 w-16 rounded-none bg-[#00674F]" />
             </div>
           </div>
+
+          <p className="mt-6 text-sm leading-7 text-[#475569] sm:text-base">
+            {card.desc}
+          </p>
         </div>
       </ScrollReveal>
     ))}
@@ -434,54 +488,54 @@ const IndicesPage = () => {
 </section>
 
       {/* =========================================
-  WHAT MOVES INDEX PRICE
+    WHAT MOVES INDEX PRICE
 ========================================= */}
 
-<section className="bg-[#f6f7f6] px-4 pb-5 pt-8 sm:px-6 sm:pb-6 sm:pt-10 lg:pb-7 lg:pt-12">
-  <div className="grid items-center gap-8 mx-auto max-w-7xl lg:grid-cols-3 lg:gap-10">
+<section className="bg-[#f6f7f6] px-4 py-8 sm:px-6 sm:py-10 lg:py-12">
+  <div className="mx-auto max-w-7xl">
+    {/* HEADER */}
+    <ScrollReveal delay={0} threshold={0.2} direction="up">
+      <div className="text-center mb-8 sm:mb-10">
+        <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
+          What Moves an <span className="text-[#00674F]">Index Price?</span>
+        </h2>
+        <p className="mt-4 text-sm text-gray-500 sm:text-base max-w-2xl mx-auto">
+          Several factors influence index prices including economic data, political events, corporate announcements and industry trends.
+        </p>
+      </div>
+    </ScrollReveal>
 
-    {/* LEFT CARDS - Staggered */}
-    <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2 lg:gap-5">
+    {/* CARDS - 4 Grid Columns */}
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {factors.map((item, index) => (
         <StaggeredCard key={index} index={index}>
-          <div className="rounded-2xl bg-white p-6 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:rounded-3xl lg:p-8 h-full min-h-[280px] flex flex-col">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#D3D3D3] text-[#00674F]">
-              {item.icon}
+          <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-none border border-slate-200 bg-white p-5 text-left shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div>
+              {/* Header: Icon & Title */}
+              <div className="flex items-center gap-3">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-none bg-[#E7F5EE] text-[#00674F]">
+                  {item.icon}
+                </div>
+                <h3 className="text-base font-bold leading-snug text-[#0f172a] sm:text-lg">
+                  {item.title}
+                </h3>
+              </div>
+
+              {/* Description */}
+              <p className="mt-4 text-xs sm:text-sm leading-relaxed text-slate-600">
+                {item.desc}
+              </p>
             </div>
-            <h3 className="mt-6 text-xl font-bold leading-snug text-gray-800">
-              {item.title}
-            </h3>
-            <p className="mt-3 text-sm leading-7 text-gray-600 flex-grow">
-              {item.desc}
-            </p>
+
+            {/* Action Link */}
+            <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-[#00674F]">
+              <span>Learn More</span>
+              <ArrowRight size={15} />
+            </div>
           </div>
         </StaggeredCard>
       ))}
     </div>
-
-    {/* RIGHT TEXT AND IMAGE */}
-    <ScrollReveal delay={0} threshold={0.2} direction="right">
-      <div className="lg:pl-10">
-        <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
-          What Moves an{" "}
-          <span className="text-[#00674F]">Index Price</span>
-        </h2>
-        <div className="mx-auto mb-4 mt-5 h-1 w-20 rounded-full bg-[#00674F] sm:mx-0"></div>
-        <p className="text-center text-sm leading-7 text-gray-500 sm:text-justify">
-          Several factors influence index prices including economic data,
-          political events, corporate announcements and industry trends.
-        </p>
-        
-        {/* ADDED IMAGE HERE */}
-        <div className="mt-8 flex justify-center lg:mt-10">
-          <img
-            src="src/assets/images/image.png"
-            alt="Index Price Movement Chart"
-            className="w-full max-w-[300px] rounded-xl shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl sm:max-w-[350px] lg:max-w-full"
-          />
-        </div>
-      </div>
-    </ScrollReveal>
   </div>
 </section>
 
@@ -517,6 +571,11 @@ const IndicesPage = () => {
             opacity: 1;
             transform: translateY(0);
           }
+        }
+
+        /* Ensure card accent lines are always green */
+        .group > div[className*="bottom-0"] {
+          background-color: #00674F !important;
         }
         
         /* Reduced Motion Support */
