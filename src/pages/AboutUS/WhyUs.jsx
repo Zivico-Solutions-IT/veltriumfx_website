@@ -11,6 +11,7 @@ import {
   Lock,
   CheckCircle2
 } from "lucide-react";
+import whyUsImg from "../../assets/images/why us.png";
 
 /* ================= DATA ================= */
 const values = [
@@ -106,7 +107,7 @@ const WhyUs = () => {
           transition={{ duration: 1, ease: institutionalEasing }}
           className="absolute inset-0 z-0"
         >
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop" alt="Corporate" className="w-full h-full object-cover" />
+          <img src={whyUsImg} alt="Corporate" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#001f16] via-[#003b2a]/95 to-[#00674F]/90"></div>
         </motion.div>
 
@@ -152,7 +153,7 @@ const WhyUs = () => {
             >
               <div className="rounded-sm overflow-hidden border border-gray-200 lg:border-white/20 p-2 shadow-sm bg-white lg:bg-white/10">
                 <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" 
+                  src={whyUsImg} 
                   alt="Corporate Office" 
                   className="w-full h-[300px] lg:h-auto object-cover rounded-sm" 
                 />
