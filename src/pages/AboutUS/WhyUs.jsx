@@ -100,7 +100,7 @@ const WhyUs = () => {
     <div className="font-sans bg-[#F9FAFB] text-gray-900 overflow-hidden">
       
       {/* ================= HERO ================= */}
-      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden flex items-center min-h-[50vh] bg-white border-b border-gray-200">
+      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden flex items-center min-h-[calc(100vh-72px)] sm:min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-84px)] bg-white border-b border-gray-200">
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -140,7 +140,7 @@ const WhyUs = () => {
       </section>
 
       {/* ================= ABOUT ================= */}
-      <section id="why-us-about" className="py-12 lg:py-16 bg-white lg:bg-gradient-to-r lg:from-[#001f16] lg:via-[#003b2a]/95 lg:to-[#00674F]/90 border-b border-gray-200 lg:border-none">
+      <section id="why-us-about" className="py-12 lg:py-16 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             
@@ -151,7 +151,7 @@ const WhyUs = () => {
               variants={imageVariants}
               className="relative"
             >
-              <div className="rounded-sm overflow-hidden border border-gray-200 lg:border-white/20 p-2 shadow-sm bg-white lg:bg-white/10">
+              <div className="rounded-sm overflow-hidden border border-gray-200 p-2 shadow-sm bg-white">
                 <img 
                   src={whyUsImg} 
                   alt="Corporate Office" 
@@ -160,7 +160,7 @@ const WhyUs = () => {
               </div>
               <motion.div 
                 variants={fadeUpVariants}
-                className="absolute -bottom-6 -right-6 bg-[#00674F] text-white p-6 rounded-sm shadow-sm border border-[#005541] lg:border-[#D3D3D3]/30 hidden md:block"
+                className="absolute -bottom-6 -right-6 bg-[#00674F] text-white p-6 rounded-sm shadow-sm border border-[#005541] hidden md:block"
               >
                 <div className="text-2xl font-bold mb-1">10+</div>
                 <div className="text-[10px] font-semibold uppercase tracking-widest text-white/80">Years Experience</div>
@@ -174,14 +174,14 @@ const WhyUs = () => {
               variants={containerVariants}
             >
               <motion.div variants={fadeUpVariants} className="flex items-center gap-3 mb-4">
-                <span className="w-8 h-px bg-[#00674F] lg:bg-[#D3D3D3]"></span>
-                <span className="text-[#00674F] lg:text-[#D3D3D3] font-semibold uppercase tracking-widest text-[11px]">Our Approach</span>
+                <span className="w-8 h-px bg-[#00674F]"></span>
+                <span className="text-[#00674F] font-semibold uppercase tracking-widest text-[11px]">Our Approach</span>
               </motion.div>
-              <motion.h2 variants={fadeUpVariants} className="text-2xl lg:text-3xl font-bold text-gray-900 lg:text-white mb-6 leading-snug">
+              <motion.h2 variants={fadeUpVariants} className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 leading-snug">
                 Designed Around VeltriumFX
               </motion.h2>
               
-              <motion.div variants={fadeUpVariants} className="space-y-4 text-gray-600 lg:text-gray-300 text-sm sm:text-base leading-relaxed">
+              <motion.div variants={fadeUpVariants} className="space-y-4 text-gray-600 text-sm sm:text-base leading-relaxed">
                 <p>
                   VeltriumFX is shaped around a simple goal: give traders a clear, secure, and efficient environment for making market decisions.
                 </p>
