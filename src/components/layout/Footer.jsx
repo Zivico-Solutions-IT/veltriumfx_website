@@ -1,7 +1,6 @@
 // src/components/layout/Footer.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import BrandLogo from "../brand/BrandLogo";
 
 const iconProps = {
@@ -79,11 +78,6 @@ const Footer = () => {
             spreads and uncompromising security.
           </p>
 
-          <img
-            src="/QR.PNG"
-            alt="QR Code"
-            className="mt-5 hidden h-14 w-14 md:block"
-          />
         </div>
 
         {/* ── Quick Links + Support ─────────────────────────────────────────── */}
@@ -125,69 +119,38 @@ const Footer = () => {
         </div>
 
         {/* ── Contact ───────────────────────────────────────────────────────── */}
-        <div className="md:mt-10">
+        <div className="md:mt-10 md:text-left">
           <h3 className="mb-4 font-semibold">Contact</h3>
 
           <div className="space-y-3 text-gray-700">
-            <p className="flex items-center gap-2">
+            <p className="grid grid-cols-[18px_1fr] items-center gap-2">
               <MailIcon />
               <a
                 href="mailto:support@fxtrade.com"
-                className="break-all hover:text-[#00674F]"
+                className="break-all leading-6 hover:text-[#00674F]"
               >
                 support@fxtrade.com
               </a>
             </p>
 
-            <p className="flex items-center gap-2">
+            <p className="grid grid-cols-[18px_1fr] items-center gap-2">
               <PhoneIcon />
-              <a href="tel:+15551234567" className="hover:text-[#00674F]">
+              <a href="tel:+15551234567" className="leading-6 hover:text-[#00674F]">
                 +1 (555) 123-4567
               </a>
             </p>
 
-            <p className="flex items-start gap-2">
+            <p className="grid grid-cols-[18px_1fr] items-start gap-2">
               <MapPinIcon />
               <a
                 href="https://maps.google.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-[#00674F]"
+                className="leading-6 hover:text-[#00674F]"
               >
                 Global Tech Hub, London
               </a>
             </p>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-4 pt-3">
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-white transition duration-300 hover:-translate-y-1 hover:bg-[#00674F]"
-                aria-label="Twitter"
-              >
-                <FaTwitter size={16} />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-white transition duration-300 hover:-translate-y-1 hover:bg-[#00674F]"
-                aria-label="Instagram"
-              >
-                <FaInstagram size={16} />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-white transition duration-300 hover:-translate-y-1 hover:bg-[#00674F]"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedinIn size={16} />
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -197,7 +160,7 @@ const Footer = () => {
         <div className="mt-5 space-y-4 text-base text-justify">
           <p>
             VeltriumFX is operated under Veltrium Capital Markets Ltd, Registered with the Financial Services Authority (FSA) of
-            EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC.   <br />  (Since 2024)
+            EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC. 
           </p>
           <p>
             Risk Statement: Trading derivatives, CFDs, forex, commodities, stocks and other financial instruments carries a high level of risk and may not be suitable for all investors. Investors may lose part or all of their invested capital and in some cases losses may exceed the original investment amount. Before engaging in trading activities, clients should carefully consider their investment objectives, level of experience and risk appetite. It is strongly recommended to seek independent financial, legal and tax advice before making any investment decisions.

@@ -41,11 +41,6 @@ export default function Hero() {
     if (button) {
       const handleTouchStart = () => {
         button.style.transform = 'scale(0.97)';
-        // Add shine class on touch start
-        button.classList.add('mobile-shine-active');
-        setTimeout(() => {
-          button.classList.remove('mobile-shine-active');
-        }, 300);
       };
       const handleTouchEnd = () => {
         button.style.transform = '';
@@ -64,7 +59,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[calc(100svh-64px)] scroll-mt-20 items-center justify-center overflow-hidden bg-gray-100 px-4 py-10 sm:min-h-[calc(100vh-72px)] sm:px-6 sm:py-8 lg:px-8"
+      className="hero-with-custom-banner relative flex min-h-[calc(100svh-64px)] scroll-mt-20 items-center justify-center overflow-hidden bg-gray-100 px-4 py-10 sm:min-h-[calc(100vh-72px)] sm:px-6 sm:py-8 lg:px-8"
     >
 
       {/* Background circles */}

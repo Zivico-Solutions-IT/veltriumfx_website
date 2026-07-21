@@ -94,9 +94,6 @@ export default function PricingSection() {
               `}
             >
 
-              {/* Glow Overlay */}
-              <div className="absolute inset-0 rounded-2xl bg-[#00674F]/5 opacity-0 group-hover:opacity-100 transition duration-500 md:rounded-3xl"></div>
-
               {/* Badge */}
               {plan.badge && (
                 <div className="account-popular-badge absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#D3D3D3] px-3 py-1 text-[11px] font-semibold text-white shadow-lg sm:-top-4 sm:px-4 sm:py-1.5 sm:text-xs">
