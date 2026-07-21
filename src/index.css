@@ -125,6 +125,24 @@ img {
   animation-play-state: paused;
 }
 
+.market-ticker-track {
+  animation: market-ticker-right 90s linear infinite;
+}
+
+.market-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes market-ticker-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 .interactive-card {
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
@@ -291,12 +309,12 @@ img {
 }
 
 .account-popular-badge {
-  animation: popular-badge-pulse 2.4s ease-in-out infinite;
+  animation: none !important;
 }
 
 .process-gold-tab {
   transform-origin: center;
-  animation: process-gold-tab-pulse 2.2s ease-in-out infinite;
+  animation: none !important;
 }
 
 @keyframes gold-border-flow {
@@ -938,6 +956,40 @@ header.sticky > div {
   color: white !important;
 }
 
+@media (min-width: 768px) {
+  #hero.hero-with-custom-banner {
+    min-height: calc(100svh - 76px);
+    background:
+      linear-gradient(90deg, rgb(0 103 79 / 0.04), rgb(0 103 79 / 0.04)),
+      url("/home-hero-banner.png") center center / cover no-repeat !important;
+  }
+
+  #hero.hero-with-custom-banner::before,
+  #hero.hero-with-custom-banner .hero-market-visual,
+  #hero.hero-with-custom-banner .hero-trust-badge,
+  #hero.hero-with-custom-banner h1,
+  #hero.hero-with-custom-banner p {
+    display: none !important;
+  }
+
+  #hero.hero-with-custom-banner .hero-trade-cta {
+    margin-top: min(42vh, 360px);
+  }
+
+  #hero.hero-with-custom-banner .mobile-shine-button {
+    min-width: 190px;
+    min-height: 64px;
+    border-radius: 10px !important;
+    background: #D3D3D3 !important;
+    color: #00674F !important;
+    box-shadow: 0 18px 42px rgb(0 103 79 / 0.22) !important;
+  }
+
+  #hero.hero-with-custom-banner .mobile-shine-button span {
+    color: #00674F !important;
+  }
+}
+
 .button-shine,
 .mobile-shine-button,
 button[class*="bg-[#00674F]"],
@@ -1060,4 +1112,18 @@ select {
 
 img {
   filter: saturate(0.9) contrast(1.08);
+}
+
+.button-shine::before,
+.button-shine::after,
+.mobile-shine-button::before,
+.mobile-shine-button::after,
+.animate-shine,
+.mobile-shine-active::before,
+.mobile-shine-active::after,
+.shine-animate::before,
+.shine-animate::after {
+  display: none !important;
+  animation: none !important;
+  transition: none !important;
 }

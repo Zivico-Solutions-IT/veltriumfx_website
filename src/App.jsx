@@ -83,10 +83,11 @@ function HomePage() {
     <>
       <Hero />
       <AboutUs />
-      <Methords />
+      <Methords variant="market" />
       <Account />
       <Packeges />
       <Review />
+      <Methords variant="payments" />
       <Quiz />
      
       <Footer />
