@@ -108,21 +108,6 @@ const AnimatedCard = ({ card, index }) => {
 };
 
 export default function TradingPage() {
-  const [shineActive, setShineActive] = useState(false);
-  const buttonRef = useRef(null);
-
-  const triggerShine = (e) => {
-    // Prevent multiple rapid triggers
-    if (shineActive) return;
-    
-    setShineActive(true);
-    
-    // Remove the class after animation completes
-    setTimeout(() => {
-      setShineActive(false);
-    }, 800);
-  };
-
   const cards = [
     {
       title: "Real-Time Market Insights & Analytics",
@@ -190,15 +175,6 @@ export default function TradingPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)] animate-[fadeIn_1.8s_ease-out]" />
 
         <div className="relative z-10 w-full max-w-4xl -translate-y-4 sm:translate-y-0">
-          
-          {/* Platform Badge - Slide In From Top */}
-          <div className="animate-[slideInDown_0.6s_ease-out]">
-            <span className="mb-2 inline-flex items-center gap-2 rounded-md border border-[#D3D3D3]/40 px-4 py-2 text-xs text-[#D3D3D3] sm:mb-6 sm:px-5">
-              <span className="h-2 w-2 rounded-full bg-[#D3D3D3] animate-pulse"></span>
-              Platform
-            </span>
-          </div>
-
           {/* Main Heading - Staggered Fade In Up */}
           <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-6xl">
             <span className="inline-block animate-[fadeInUp_0.8s_ease-out]">
@@ -219,22 +195,16 @@ export default function TradingPage() {
             </p>
           </div>
 
-          {/* Button - Fade In Up with Pulse & Shine Effect - MOBILE RESPONSIVE */}
+          {/* Button - Fade In Up */}
           <div className="animate-[fadeInUp_1.4s_ease-out]">
             <button
-              ref={buttonRef}
-              className={`explore-button ${shineActive ? 'shine-active' : ''} mt-4 w-full max-w-[200px] rounded-full bg-[#00674F] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm`}
+              className="mt-4 w-full max-w-[200px] rounded-full bg-[#D3D3D3] px-4 py-2 text-xs font-semibold text-[#00674F] shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#D3D3D3]/90 hover:shadow-lg hover:shadow-[#D3D3D3]/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm"
               onClick={() => {
                 document.getElementById("platform-overview")?.scrollIntoView({
                   behavior: "smooth",
                   block: "start",
                 });
               }}
-              onTouchStart={triggerShine}
-              onTouchEnd={() => {
-                // Optional: handle touch end
-              }}
-              onMouseDown={triggerShine}
             >
               Explore Platform
             </button>

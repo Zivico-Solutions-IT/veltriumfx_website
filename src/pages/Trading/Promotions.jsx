@@ -43,53 +43,63 @@ function PromoCard({ promo }) {
   const navigate = useNavigate();
 
   return (
-    <article className="bonus-card account-plan-card reveal-up group relative grid min-h-[200px] overflow-hidden rounded-lg bg-white shadow-[0_8px_22px_rgba(15,23,42,0.14)] ring-1 ring-black/10 md:min-h-[260px] md:grid-cols-[1fr_360px]">
-      {/* Left side - Content */}
-      <div className="relative overflow-hidden bg-[linear-gradient(135deg,#004b27_0%,#003d20_42%,#00674F_100%)] px-5 py-5 text-white sm:px-8 md:px-8 md:py-8">
-        <div className="absolute inset-y-0 right-[-1px] hidden w-24 bg-white [clip-path:polygon(100%_0,100%_100%,0_100%,48%_50%,0_0)] md:block" />
-        <div className="bonus-card-sheen absolute inset-y-0 left-[-45%] w-1/3 rotate-12 bg-white/15 blur-sm" />
-        <div className="absolute inset-0 bg-[linear-gradient(125deg,transparent_0_54%,rgba(255,255,255,0.05)_54%_66%,transparent_66%_100%)]" />
-        <div className="absolute -bottom-16 left-20 h-48 w-48 rounded-full bg-[#00ad3f]/18 blur-3xl" />
-        <div className="absolute bottom-4 right-20 h-28 w-40 opacity-20 [background-image:radial-gradient(circle,#D3D3D3_1.2px,transparent_1.8px)] [background-size:8px_8px]" />
+    <article className="promotion-offer-card group relative overflow-hidden rounded-2xl border border-[#00674F]/15 bg-[#fbfdfb] p-5 shadow-[0_18px_45px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_58px_rgba(0,103,79,0.14)] sm:p-6 md:p-7">
+      <div className="absolute left-0 top-0 h-1.5 w-full bg-[linear-gradient(90deg,#00674F,#D3D3D3,#20a060)]" />
+      <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full border-[24px] border-[#00674F]/10" />
+      <div className="absolute -bottom-20 -left-20 h-52 w-52 rounded-full bg-[#00674F]/[0.06]" />
 
-        <span className="relative mb-3 inline-flex items-center gap-2 rounded-full border border-[#00674F]/20 bg-[#e9f4e9] px-3 py-1 text-xs font-medium text-[#00674F] md:mb-6 md:px-4 md:py-1.5">
-          <FaGift className="text-xs text-[#00674F] md:text-sm" />
-          Promotions
-        </span>
+      <div className="relative flex min-h-[260px] flex-col">
+        <div className="flex items-start justify-between gap-4">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#00674F]/20 bg-white px-3 py-1 text-xs font-semibold text-[#00674F] shadow-sm">
+            <FaGift className="text-xs text-[#00674F]" />
+            Promotions
+          </span>
+          <span className="rounded-full bg-[#D3D3D3]/70 px-3 py-1 text-xs font-bold text-[#00674F]">
+            Limited Offer
+          </span>
+        </div>
 
-        <h2 className="relative text-2xl font-black leading-none tracking-normal text-white sm:text-3xl md:text-4xl md:text-5xl">
-          {promo.title}
-        </h2>
-        <p className="relative mt-3 max-w-md text-sm leading-relaxed text-white/90 sm:text-base md:mt-5 md:text-lg">
-          {promo.description}
-        </p>
-
-        <button
-          type="button"
-          onClick={() => navigate("/signup")}
-          className="button-shine relative mt-4 inline-flex items-center gap-3 rounded-md bg-[#D3D3D3] px-4 py-2 text-xs font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#c79f26] md:mt-7 md:gap-4 md:px-7 md:py-3 md:text-sm"
-        >
-          View Bonus
-          <FaArrowRight className="text-xs" />
-        </button>
-      </div>
-
-      {/* Right side - Bonus Badge (hidden on mobile, shown on desktop) */}
-      <div className="relative hidden min-h-full items-center justify-center overflow-hidden bg-white md:flex">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_0_48%,rgba(1,68,33,0.12)_48%_49%,transparent_49%_100%)]" />
-        <div className="absolute right-[-34px] top-[-14px] h-52 w-52 rotate-45 border border-[#00674F]/15" />
-        <div className="absolute -bottom-16 left-8 h-56 w-56 rotate-45 border border-[#00674F]/10" />
-        <div className="absolute bottom-0 right-0 h-44 w-48 opacity-35 [background-image:repeating-linear-gradient(135deg,#00674F_0_2px,transparent_2px_12px)]" />
-        <div className="absolute right-5 top-5 h-24 w-24 opacity-35 [background-image:radial-gradient(circle,#18a044_1.6px,transparent_2px)] [background-size:10px_10px]" />
-        <span className="absolute left-16 top-14 h-4 w-4 rounded-full bg-[#18a044]" />
-        <span className="absolute bottom-8 left-9 h-28 w-2 rotate-45 rounded-full bg-[#007f3e]" />
-        <span className="absolute bottom-4 right-20 h-36 w-3 rotate-45 rounded-full bg-[#8cc99e]" />
-
-        <div className="relative flex h-52 w-52 rotate-45 items-center justify-center rounded-3xl border-[8px] border-white bg-[linear-gradient(135deg,#008743,#00674F)] shadow-[0_14px_28px_rgba(1,68,33,0.32)] outline outline-1 outline-[#00674F]/25">
-          <div className="-rotate-45 text-center text-white">
-            <div className="text-2xl font-black italic leading-none">BONUS</div>
-            <div className="text-6xl font-black italic leading-none">{promo.bonus}</div>
+        <div className="mt-7 grid flex-1 gap-6 sm:grid-cols-[1fr_auto] sm:items-center">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#00674F]/70">
+              Deposit Bonus
+            </p>
+            <h2 className="mt-2 text-4xl font-black leading-none text-[#07140d] sm:text-5xl">
+              {promo.title}
+            </h2>
+            <p className="mt-4 max-w-md text-sm leading-6 text-gray-600 sm:text-base">
+              {promo.description}
+            </p>
           </div>
+
+          <div className="relative mx-auto flex h-36 w-36 shrink-0 items-center justify-center rounded-full bg-white shadow-[inset_0_0_0_10px_rgba(0,103,79,0.08),0_18px_34px_rgba(0,103,79,0.14)] sm:h-44 sm:w-44">
+            <div className="absolute inset-3 rounded-full border border-[#D3D3D3]" />
+            <div className="text-center">
+              <div className="text-xs font-black uppercase tracking-[0.22em] text-[#00674F]">
+                Bonus
+              </div>
+              <div className="mt-1 text-4xl font-black leading-none text-[#00674F] sm:text-5xl">
+                {promo.bonus}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-7 flex items-center justify-between gap-4 border-t border-[#00674F]/10 pt-5">
+          <div className="flex gap-1.5">
+            <span className="h-2 w-8 rounded-full bg-[#00674F]" />
+            <span className="h-2 w-2 rounded-full bg-[#D3D3D3]" />
+            <span className="h-2 w-2 rounded-full bg-[#20a060]" />
+          </div>
+
+          <button
+            type="button"
+            onClick={() => navigate("/signup")}
+            className="inline-flex items-center gap-2 rounded-md bg-[#00674F] px-5 py-2.5 text-xs font-bold text-white shadow-md shadow-[#00674F]/15 transition hover:-translate-y-0.5 hover:bg-[#005640] sm:text-sm"
+          >
+            View Bonus
+            <FaArrowRight className="text-xs" />
+          </button>
         </div>
       </div>
     </article>
@@ -328,14 +338,6 @@ export default function Promotions() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)] animate-[fadeIn_1.8s_ease-out]" />
 
         <div className="relative z-10 w-full max-w-4xl">
-          {/* Badge - Slide In From Top */}
-          <div className="animate-[slideInDown_0.6s_ease-out]">
-            <span className="mb-5 inline-flex items-center gap-2 rounded-md border border-[#D3D3D3]/40 px-4 py-2 text-xs text-[#D3D3D3] sm:mb-6 sm:px-5">
-              <span className="h-2 w-2 rounded-full bg-[#D3D3D3] animate-pulse"></span>
-              Promotions
-            </span>
-          </div>
-
           {/* Heading - Staggered Fade In Up */}
           <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-6xl">
             <span className="inline-block animate-[fadeInUp_0.8s_ease-out]">
@@ -357,7 +359,7 @@ export default function Promotions() {
           {/* Button - Fade In Up with Pulse */}
           <div className="animate-[fadeInUp_1.4s_ease-out]">
             <button
-              className="button-shine mt-8 w-full max-w-[200px] rounded-full bg-[#00674F] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm animate-[gentlePulse_3s_ease-in-out_infinite] hover:animate-none"
+              className="mt-8 w-full max-w-[200px] rounded-full bg-[#D3D3D3] px-4 py-2 text-xs font-semibold text-[#00674F] shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#D3D3D3]/90 hover:shadow-lg hover:shadow-[#D3D3D3]/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm"
               onClick={() => {
                 document.getElementById("promotion-cards")?.scrollIntoView({
                   behavior: "smooth",
@@ -372,8 +374,8 @@ export default function Promotions() {
       </section>
 
       {/* Promo Cards Section */}
-      <section id="promotion-cards" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-6 sm:px-6 md:py-9">
-        <div className="grid gap-5 sm:gap-6 md:gap-8">
+      <section id="promotion-cards" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-8 sm:px-6 md:py-12">
+        <div className="grid gap-5 sm:gap-6 lg:grid-cols-2">
           {promotions.map((promo, index) => (
             <div
               key={promo.bonus}
