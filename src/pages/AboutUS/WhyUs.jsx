@@ -127,9 +127,9 @@ const WhyUs = () => {
             <motion.div variants={fadeUpVariants}>
               <button
                 onClick={() => document.getElementById("why-us-about")?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex items-center justify-center bg-white text-[#00674F] px-8 py-3 rounded-sm font-semibold text-sm transition-colors hover:bg-gray-100"
+                className="button-shine mt-2 rounded-full bg-[#D3D3D3] px-5 py-2 text-[11px] font-bold text-[#00674F] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-white sm:px-6 sm:text-xs"
               >
-                View Details
+                Explore More
               </button>
             </motion.div>
           </motion.div>

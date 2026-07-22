@@ -306,7 +306,7 @@ export default function FaqPage() {
 
             <button
               type="button"
-              className="button-shine animate-[fadeInUp_1.2s_ease-out] mt-7 rounded-full bg-[#D3D3D3] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#D3D3D3] sm:px-9 sm:text-base"
+              className="button-shine mt-6 animate-[fadeInUp_1.2s_ease-out] rounded-full bg-[#D3D3D3] px-5 py-2 text-[11px] font-bold text-black shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-white sm:px-6 sm:text-xs"
               onClick={() => {
                 document.getElementById("faq-questions")?.scrollIntoView({
                   behavior: "smooth",

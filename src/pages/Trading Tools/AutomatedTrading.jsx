@@ -101,6 +101,12 @@ export default function AutomatedTradingPage() {
             algorithmic strategies, intelligent market analysis, and
             lightning-fast execution designed for modern traders.
           </p>
+          <button
+            onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+            className="button-shine mt-6 animate-[fadeInUp_1.2s_ease-out] rounded-full bg-[#D3D3D3] px-5 py-2 text-[11px] font-bold text-[#00674F] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-white sm:px-6 sm:text-xs"
+          >
+            Explore More
+          </button>
         </div>
       </section>
 
@@ -306,6 +312,30 @@ export default function AutomatedTradingPage() {
             opacity: 1;
             transform: translateY(0);
           }
+        }
+
+        /* Button Shine Effect */
+        .button-shine {
+          position: relative;
+          overflow: hidden;
+        }
+        .button-shine::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+          );
+          transition: left 0.5s ease;
+        }
+        .button-shine:hover::before {
+          left: 100%;
         }
 
         .hero-image {

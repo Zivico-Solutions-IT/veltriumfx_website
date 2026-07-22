@@ -208,6 +208,12 @@ export default function EconomicCalendar() {
             Track high-impact market events, economic releases and global
             announcements with VeltriumFX.
           </p>
+          <button
+            onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+            className="button-shine mt-6 animate-[fadeInUp_1.2s_ease-out] rounded-full bg-[#D3D3D3] px-5 py-2 text-[11px] font-bold text-[#00674F] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-white sm:px-6 sm:text-xs"
+          >
+            Explore More
+          </button>
         </div>
       </section>
 
