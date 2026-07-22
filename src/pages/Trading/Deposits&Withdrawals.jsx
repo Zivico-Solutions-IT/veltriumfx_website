@@ -206,15 +206,6 @@ export default function DepositWithdrawSection() {
 
         {/* Hero Content */}
         <div className="relative z-10 mx-auto w-full max-w-4xl text-center">
-          
-          {/* Badge - Fade In Up */}
-          <div className="animate-[fadeInUp_0.6s_ease-out]">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-md border border-[#D3D3D3]/40 px-4 py-2 text-xs text-[#D3D3D3] sm:mb-5 sm:px-5">
-              <span className="h-2 w-2 rounded-full bg-[#D3D3D3] animate-pulse"></span>
-              Deposits and Withdrawals
-            </span>
-          </div>
-
           {/* Heading - Staggered Fade In Up */}
           <h1 className="text-3xl font-extrabold leading-[1.12] text-white sm:text-4xl sm:leading-tight md:text-6xl">
             <span className="inline-block animate-[fadeInUp_0.8s_ease-out]">
@@ -238,7 +229,7 @@ export default function DepositWithdrawSection() {
           {/* Button - Fade In Up with Pulse */}
           <div className="animate-[fadeInUp_1.4s_ease-out]">
             <button
-              className="button-shine mt-6 w-full max-w-[200px] rounded-full bg-[#00674F] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:mt-6 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm animate-[gentlePulse_3s_ease-in-out_infinite] hover:animate-none"
+              className="mt-6 w-full max-w-[200px] rounded-full bg-[#D3D3D3] px-4 py-2 text-xs font-semibold text-[#00674F] shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#D3D3D3]/90 hover:shadow-lg hover:shadow-[#D3D3D3]/20 active:translate-y-0 sm:mt-6 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm"
               onClick={() => {
                 document.getElementById("payment-methods")?.scrollIntoView({
                   behavior: "smooth",
@@ -341,7 +332,7 @@ export default function DepositWithdrawSection() {
               </p>
               <div className="mt-5 flex h-32 items-end justify-center overflow-hidden rounded-b-xl sm:mt-6 sm:h-36">
                 <img
-                  src="/Deposits1.png.PNG"
+                  src="/Deposits1-veltriumfx.png"
                   alt="Fast deposits and withdrawals illustration"
                   className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
                 />
@@ -423,7 +414,7 @@ export default function DepositWithdrawSection() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-5">
             {paymentMethods.map((item, index) => (
               <PaymentCardReveal key={index} index={index}>
-                <div className="account-plan-card relative rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:p-6">
+                <div className=" home-package-card relative rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:p-6">
                   
                   <div className="mb-4 flex items-center gap-3">
                     <div className="account-plan-icon flex h-9 w-9 items-center justify-center rounded-md bg-[#00674F] text-sm text-white transition-all duration-300 hover:scale-110">
