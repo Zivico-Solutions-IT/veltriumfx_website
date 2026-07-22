@@ -163,14 +163,14 @@ export default function CommoditiesSection() {
 
           <p className="max-w-3xl px-2 mt-4 text-sm leading-6 text-white market-hero-copy animate-[fadeInUp_1s_ease-out] sm:text-base md:mt-5 md:leading-7">
             Access gold, oil, silver and other essential markets with VeltriumFX.
-            Build exposure to real-world resources and respond to global demand shifts.
+            
           </p>
           <div className="mt-8 animate-[fadeInUp_1.2s_ease-out]">
             <button 
               onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-              className="bg-[#D3D3D3] hover:bg-white text-[#00674F] font-semibold tracking-wider text-sm px-8 py-3 rounded transition-colors duration-300 shadow-md"
+              className="button-shine mt-2 rounded-full bg-[#D3D3D3] px-5 py-2 text-[11px] font-bold text-[#00674F] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-white sm:px-6 sm:text-xs"
             >
-              EXPLORE MORE
+              Explore More
             </button>
           </div>
         </div>
