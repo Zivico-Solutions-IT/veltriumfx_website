@@ -111,28 +111,25 @@ const WhyUs = () => {
           <div className="absolute inset-0 bg-black/50"></div>
         </motion.div>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white flex justify-center text-center">
           <motion.div 
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className="max-w-2xl"
+            className="max-w-2xl flex flex-col items-center"
           >
-            <motion.span variants={fadeUpVariants} className="inline-block py-1 px-3 rounded-sm bg-white/10 text-white text-[11px] font-bold tracking-widest mb-6 uppercase border border-white/20">
-              Built For Focused Traders
-            </motion.span>
             <motion.h1 variants={fadeUpVariants} className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5 text-white">
               Trade With VeltriumFX
             </motion.h1>
-            <motion.p variants={fadeUpVariants} className="text-sm lg:text-base text-gray-300 leading-relaxed mb-8 max-w-xl">
+            <motion.p variants={fadeUpVariants} className="text-sm lg:text-base text-gray-300 leading-relaxed mb-8 max-w-xl mx-auto">
               VeltriumFX combines secure infrastructure, practical trading tools, and responsive support for a more disciplined market experience.
             </motion.p>
             <motion.div variants={fadeUpVariants}>
               <button
                 onClick={() => document.getElementById("why-us-about")?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex items-center justify-center bg-white text-[#00674F] px-8 py-3 rounded-sm font-semibold text-sm transition-colors hover:bg-gray-100"
+                className="button-shine mt-2 rounded-full bg-[#D3D3D3] px-5 py-2 text-[11px] font-bold text-[#00674F] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-white sm:px-6 sm:text-xs"
               >
-                View Details
+                Explore More
               </button>
             </motion.div>
           </motion.div>

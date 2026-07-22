@@ -429,7 +429,7 @@ function HeroSection() {
         </div>
       </div>
       {/* Fade-in Overlay */}
-      <div className="absolute inset-0 bg-[#00674F]/40 animate-[fadeIn_1.5s_ease-out] sm:bg-[#00674F]/40" />
+      <div className="absolute inset-0 bg-black/40" />
       
       <div className="market-hero-content relative z-10 mx-auto flex min-h-[calc(100svh-72px)] max-w-4xl flex-col items-center justify-center px-4 py-14 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
         <h1 className="market-hero-title text-4xl font-bold leading-tight text-white animate-[fadeInUp_0.8s_ease-out] sm:text-5xl md:text-6xl">Forex</h1>

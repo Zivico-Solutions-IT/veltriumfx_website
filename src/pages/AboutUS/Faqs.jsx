@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import faqImg from "../../assets/images/Faqs.png";
+import faqImg from "../../assets/images/faq1.jpeg";
 
 // Scroll Animation Component
 const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
@@ -288,13 +288,10 @@ export default function FaqPage() {
           </div>
         </div>
         
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/70" />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl justify-start">
-          <div className="max-w-2xl text-left text-white">
-            <p className="animate-[fadeInUp_0.6s_ease-out] mb-5 text-sm font-medium uppercase tracking-[4px] text-[#D3D3D3] md:text-base">
-              Help Center
-            </p>
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl justify-center text-center">
+          <div className="max-w-2xl text-center text-white flex flex-col items-center">
 
             <h1 className="animate-[fadeInUp_0.8s_ease-out] text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl">
               Frequently Asked <br />
@@ -303,13 +300,13 @@ export default function FaqPage() {
               </span>
             </h1>
 
-            <p className="animate-[fadeInUp_1s_ease-out] mt-6 max-w-xl text-base leading-relaxed text-gray-200 md:text-lg">
+            <p className="animate-[fadeInUp_1s_ease-out] mt-6 max-w-xl mx-auto text-base leading-relaxed text-gray-200 md:text-lg">
               Browse practical answers for accounts, platforms, payments and trading services.
             </p>
 
             <button
               type="button"
-              className="button-shine animate-[fadeInUp_1.2s_ease-out] mt-7 rounded-full bg-[#D3D3D3] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#D3D3D3] sm:px-9 sm:text-base"
+              className="button-shine mt-6 animate-[fadeInUp_1.2s_ease-out] rounded-full bg-[#D3D3D3] px-5 py-2 text-[11px] font-bold text-black shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-white sm:px-6 sm:text-xs"
               onClick={() => {
                 document.getElementById("faq-questions")?.scrollIntoView({
                   behavior: "smooth",

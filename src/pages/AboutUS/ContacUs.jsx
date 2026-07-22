@@ -95,31 +95,27 @@ export default function ContactPage() {
         
         <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl px-4 sm:px-6 lg:px-8 justify-start">
-          <div className="max-w-2xl text-left text-white">
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl px-4 sm:px-6 lg:px-8 justify-center text-center">
+          <div className="max-w-2xl text-center text-white">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+              className="flex flex-col items-center"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md shadow-sm border border-white/20 mb-6 sm:mb-8">
-                <Headphones className="w-4 h-4 text-white" />
-                <span className="text-xs font-bold uppercase tracking-widest text-white">Support Desk</span>
-              </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5 sm:mb-6 leading-tight">
-                Speak With <br className="hidden sm:block" /><span className="text-[#D3D3D3]">VeltriumFX</span>
+                Speak With <span className="text-[#D3D3D3]">VeltriumFX</span>
               </h1>
-              <p className="text-gray-300 text-sm lg:text-base max-w-xl mb-10 sm:mb-12 leading-relaxed">
+              <p className="text-gray-300 text-sm lg:text-base max-w-xl mx-auto mb-10 sm:mb-12 leading-relaxed">
                 Get practical assistance from our team through the channel that suits you best. We are available 24/5 to support your trading journey.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button
                   onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-bold text-[#00674F] shadow-lg shadow-white/10 transition-all duration-300 hover:scale-105 hover:bg-gray-100"
+                  className="button-shine w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#D3D3D3] px-5 py-2 text-[11px] font-bold text-[#00674F] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white sm:px-6 sm:text-xs"
                 >
-                  Send a Message
-                  <ArrowRight size={18} />
+                  Explore More
                 </button>
                 <button
                   onClick={() => document.getElementById("contact-info")?.scrollIntoView({ behavior: "smooth" })}

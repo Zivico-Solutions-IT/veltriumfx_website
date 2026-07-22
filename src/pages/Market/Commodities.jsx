@@ -154,7 +154,7 @@ export default function CommoditiesSection() {
           </div>
         </div>
         {/* Fade-in Overlay */}
-        <div className="absolute inset-0 bg-[#00674F]/40 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
 
         <div className="market-hero-content relative z-10 flex min-h-[calc(100svh-72px)] flex-col items-center justify-center px-4 py-16 text-center sm:min-h-[calc(100svh-80px)] md:px-6 lg:min-h-[calc(100svh-84px)]">
           <h1 className="market-hero-title text-4xl font-bold text-white animate-[fadeInUp_0.8s_ease-out] sm:text-5xl md:text-6xl">

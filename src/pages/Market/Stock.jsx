@@ -331,7 +331,7 @@ const Stock = () => {
         </div>
 
         {/* Fade-in Overlay */}
-        <div className="absolute inset-0 bg-[#00674F]/40 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Content */}
         <div className="market-hero-content relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center">
