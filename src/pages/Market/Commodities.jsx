@@ -163,7 +163,7 @@ export default function CommoditiesSection() {
 
           <p className="max-w-3xl px-2 mt-4 text-sm leading-6 text-white market-hero-copy animate-[fadeInUp_1s_ease-out] sm:text-base md:mt-5 md:leading-7">
             Access gold, oil, silver and other essential markets with VeltriumFX.
-            Build exposure to real-world resources and respond to global demand shifts.
+            
           </p>
           <div className="mt-8 animate-[fadeInUp_1.2s_ease-out]">
             <button 

@@ -377,7 +377,7 @@ const CryptocurrencyPage = () => {
             Access Crypto CFD Markets with VeltriumFX
           </p>
           <p className="text-xs text-gray-300 market-hero-copy md:text-sm animate-[fadeInUp_1.2s_ease-out]">
-            Trade digital asset price movement with flexible platform tools.
+            
           </p>
           <div className="mt-8 animate-[fadeInUp_1.4s_ease-out]">
             <button 
