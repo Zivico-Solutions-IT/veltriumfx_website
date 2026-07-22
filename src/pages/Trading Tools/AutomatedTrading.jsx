@@ -10,7 +10,7 @@ import {
   ClipboardList,
   Users,
 } from "lucide-react";
-import heroBg from "../../../public/Auto 1.jpeg";
+import heroBg from "../../assets/images/automatedTrading.png";
 import heroBg1 from "../../../public/Auto 2.jpg";
 
 // Fade In Up Animation Component
@@ -87,10 +87,9 @@ export default function AutomatedTradingPage() {
           <img
             src={heroBg}
             alt="Automated Trading Hero"
-            className="h-full w-full object-cover object-center hero-image"
+            className="h-full w-full object-cover object-center hero-image blur-md brightness-[0.20]"
           />
         </div>
-        <div className="absolute inset-0 bg-[#00674F]/65"></div>
 
         <div className="relative z-10 flex min-h-[calc(100svh-72px)] flex-col items-center justify-center px-4 py-14 text-center hero-content sm:min-h-[calc(100vh-80px)] md:px-6 lg:min-h-[calc(100vh-84px)]">
           <h1 className="animate-fade-down text-3xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">

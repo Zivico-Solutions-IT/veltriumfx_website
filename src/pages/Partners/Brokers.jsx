@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import heroBg from "../../assets/images/bro.png";
+import heroBg from "../../assets/images/intoBro.png";
 import {
   ChevronRight,
   Headphones,
@@ -171,7 +171,7 @@ export default function IntroducingBrokers() {
     <div className="w-full bg-[#f8faf9] overflow-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative flex min-h-[520px] items-center justify-center overflow-hidden bg-[#00674F] px-4 py-10 sm:min-h-[560px] sm:px-6 lg:min-h-[600px]">
+      <section className="relative flex min-h-[520px] items-center justify-center overflow-hidden bg-[#2d3748] px-4 py-10 sm:min-h-[560px] sm:px-6 lg:min-h-[600px]">
         {/* Animated Background with Zoom */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
@@ -181,12 +181,12 @@ export default function IntroducingBrokers() {
             <img
               src={heroBg}
               alt="Introducing Brokers Hero"
-              className="h-full w-full object-cover object-center"
+              className="h-full w-full object-cover object-center brightness-75"
             />
           </div>
         </div>
-        {/* Fade-in Overlay */}
-        <div className="absolute inset-0 bg-[#00674F]/60 animate-[fadeIn_1.5s_ease-out]"></div>
+        {/* Ash Color Overlay */}
+        <div className="absolute inset-0 bg-gray-700/40 animate-[fadeIn_1.5s_ease-out] mix-blend-multiply"></div>
 
         {/* Hero Content */}
         <div className="market-hero-content relative z-10 mx-auto max-w-5xl text-center">
@@ -260,6 +260,42 @@ export default function IntroducingBrokers() {
               </StaggeredCard>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ================= CTA BANNER ================= */}
+      <section className="py-10 sm:py-16 bg-[#f8faf9]">
+        <div className="w-full px-4 md:px-8 lg:px-16 mx-auto">
+          <ScrollReveal delay={0} threshold={0.2} direction="up">
+            <div className="relative overflow-hidden rounded-[2.5rem] bg-[#021f15] shadow-2xl w-full">
+              {/* Background Map/Globe image (using heroBg or another subtle pattern) */}
+              <div className="absolute right-0 top-0 h-full w-full sm:w-[60%] lg:w-[50%] z-0">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#021f15] to-transparent z-10 hidden sm:block"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#021f15] to-transparent z-10 sm:hidden"></div>
+                <img
+                  src={heroBg}
+                  alt="Global Network"
+                  className="h-full w-full object-cover object-right opacity-40 mix-blend-screen"
+                />
+              </div>
+
+              <div className="relative z-20 flex flex-col justify-center px-8 py-12 sm:px-12 sm:py-16 lg:px-20 lg:w-[60%]">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
+                  Ready to Grow With <span className="text-[#00c88f]">VeltriumFX?</span>
+                </h2>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8 max-w-lg">
+                  Join our global network of Introducing Brokers and start building your passive income today.
+                </p>
+                <Link
+                  to="/signup"
+                  className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#00674F] px-8 py-4 text-sm sm:text-base font-semibold text-white transition-all duration-300 hover:bg-[#00c88f] hover:text-[#021f15] hover:shadow-lg w-fit uppercase"
+                >
+                  START NOW
+                  <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -338,42 +374,6 @@ export default function IntroducingBrokers() {
               </React.Fragment>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ================= CTA BANNER ================= */}
-      <section className="py-10 sm:py-16 bg-[#f8faf9]">
-        <div className="w-full px-4 md:px-8 lg:px-16 mx-auto">
-          <ScrollReveal delay={0} threshold={0.2} direction="up">
-            <div className="relative overflow-hidden rounded-[2.5rem] bg-[#021f15] shadow-2xl w-full">
-              {/* Background Map/Globe image (using heroBg or another subtle pattern) */}
-              <div className="absolute right-0 top-0 h-full w-full sm:w-[60%] lg:w-[50%] z-0">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#021f15] to-transparent z-10 hidden sm:block"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#021f15] to-transparent z-10 sm:hidden"></div>
-                <img
-                  src={heroBg}
-                  alt="Global Network"
-                  className="h-full w-full object-cover object-right opacity-40 mix-blend-screen"
-                />
-              </div>
-
-              <div className="relative z-20 flex flex-col justify-center px-8 py-12 sm:px-12 sm:py-16 lg:px-20 lg:w-[60%]">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
-                  Ready to Grow With <span className="text-[#00c88f]">VeltriumFX?</span>
-                </h2>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8 max-w-lg">
-                  Join our global network of Introducing Brokers and start building your passive income today.
-                </p>
-                <Link
-                  to="/signup"
-                  className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#00674F] px-8 py-4 text-sm sm:text-base font-semibold text-white transition-all duration-300 hover:bg-[#00c88f] hover:text-[#021f15] hover:shadow-lg w-fit uppercase"
-                >
-                  START NOW
-                  <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 

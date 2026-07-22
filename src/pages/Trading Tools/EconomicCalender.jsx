@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaChartLine, FaCreditCard, FaUserAlt } from "react-icons/fa";
+import { FaChartLine, FaCreditCard, FaUserAlt, FaArrowRight } from "react-icons/fa";
 
 // Scroll Animation Component
 const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
@@ -217,6 +217,54 @@ export default function EconomicCalendar() {
             <TradingViewEconomicCalendar />
           </div>
         </ScrollReveal>
+      </section>
+
+      {/* ================= CTA BANNER ================= */}
+      <section className="py-8 sm:py-12 bg-white">
+        <div className="w-full px-4 md:px-8 lg:px-16 mx-auto max-w-7xl">
+          <ScrollReveal delay={0} threshold={0.2} direction="up">
+            <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#021f15] via-[#043424] to-[#01140e] shadow-[0_10px_30px_rgba(0,103,79,0.1)] w-full border border-[#00674F]/20">
+              {/* Refined Background Effect */}
+              <div className="absolute right-0 top-0 h-full w-full sm:w-[60%] lg:w-[50%] z-0">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#021f15] via-[#021f15]/80 to-transparent z-10 hidden sm:block"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#021f15] via-[#021f15]/80 to-transparent z-10 sm:hidden"></div>
+                <img
+                  src="/EconomicCalendar.png"
+                  alt="Market Analysis"
+                  className="h-full w-full object-cover object-right opacity-45 mix-blend-screen"
+                />
+              </div>
+
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#00c88f]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 z-0 pointer-events-none"></div>
+
+              <div className="relative z-20 flex flex-col justify-center px-6 py-10 sm:px-12 sm:py-12 lg:px-16 lg:w-[60%] text-left">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="h-[2px] w-6 bg-[#00c88f]"></span>
+                  <span className="text-[#00c88f] text-xs font-bold tracking-widest uppercase">
+                    Take Control of the Market
+                  </span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-[1.15] mb-4">
+                  Ready to Trade With <br className="hidden sm:block" />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c88f] to-[#00ffb7]">VeltriumFX?</span>
+                </h2>
+                <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6 max-w-lg font-light">
+                  Join our global network of professional traders. Experience institutional-grade conditions, raw spreads, and flawless execution.
+                </p>
+                <div
+                  onClick={() => navigate("/signup")}
+                  className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md px-6 py-3 text-xs sm:text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:shadow-[0_0_20px_rgba(0,200,143,0.3)] w-fit uppercase cursor-pointer"
+                >
+                  <span>Open Live Account</span>
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#00c88f] text-[#021f15] transition-transform duration-300 group-hover:scale-110">
+                    <FaArrowRight className="h-3 w-3" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* How It Works Section */}

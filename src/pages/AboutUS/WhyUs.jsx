@@ -11,7 +11,7 @@ import {
   Lock,
   CheckCircle2
 } from "lucide-react";
-import whyUsImg from "../../assets/images/why us.png";
+import whyUsImg from "../../assets/images/whyUs.png";
 
 /* ================= DATA ================= */
 const values = [
@@ -108,7 +108,7 @@ const WhyUs = () => {
           className="absolute inset-0 z-0"
         >
           <img src={whyUsImg} alt="Corporate" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#001f16]/85 via-[#003b2a]/65 to-[#00674F]/40"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
         </motion.div>
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">

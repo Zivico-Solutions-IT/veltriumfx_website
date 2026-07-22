@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import faqImg from "../../assets/images/Faqs.png";
 
 // Scroll Animation Component
 const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
@@ -272,7 +273,7 @@ export default function FaqPage() {
       {/* Hero Section */}
       <section
         className="relative flex min-h-[calc(100vh-72px)] items-center justify-start overflow-hidden bg-cover bg-center px-6 py-16 sm:min-h-[calc(100vh-80px)] md:px-20 lg:min-h-[calc(100vh-84px)]"
-        style={{ backgroundImage: "url('/Faq.png')" }}
+        style={{ backgroundImage: `url(${faqImg})` }}
       >
         {/* Animated Background with Zoom */}
         <div className="absolute inset-0 overflow-hidden">
@@ -282,12 +283,12 @@ export default function FaqPage() {
           >
             <div 
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: "url('/Faq.png')" }}
+              style={{ backgroundImage: `url(${faqImg})` }}
             />
           </div>
         </div>
         
-        <div className="absolute inset-0 bg-[#00674F]/70 animate-[fadeIn_1.5s_ease-out]" />
+        <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-7xl justify-start">
           <div className="max-w-2xl text-left text-white">

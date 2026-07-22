@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
+import contacUsImg from "../../assets/images/contacUs.png";
 import {
   Phone,
   Mail,
@@ -77,7 +78,7 @@ export default function ContactPage() {
   return (
     <div className="bg-[#F9FAFB] min-h-screen overflow-hidden font-sans selection:bg-[#00674F] selection:text-white">
       {/* Sleek Hero Section */}
-      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden flex flex-col items-center justify-center bg-gray-900">
+      <section className="relative flex min-h-[calc(100vh-72px)] sm:min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-84px)] items-center justify-start overflow-hidden bg-gray-900 pt-24 pb-16 lg:pt-32 lg:pb-20">
         
         {/* Background Image with Framer Motion slow zoom */}
         <motion.div 
@@ -88,46 +89,47 @@ export default function ContactPage() {
         >
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('/contact Us.jpeg')" }}
+            style={{ backgroundImage: `url(${contacUsImg})` }}
           />
         </motion.div>
         
-        {/* Green Overlay */}
-        <div className="absolute inset-0 bg-[#00674F]/75 backdrop-blur-[2px] z-0"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md shadow-sm border border-white/20 mb-8">
-              <Headphones className="w-4 h-4 text-white" />
-              <span className="text-xs font-bold uppercase tracking-widest text-white">Support Desk</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-              Speak With <span className="text-[#D3D3D3]">VeltriumFX</span>
-            </h1>
-            <p className="text-emerald-50 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-              Get practical assistance from our team through the channel that suits you best. We are available 24/5 to support your trading journey.
-            </p>
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl px-4 sm:px-6 lg:px-8 justify-start">
+          <div className="max-w-2xl text-left text-white">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md shadow-sm border border-white/20 mb-6 sm:mb-8">
+                <Headphones className="w-4 h-4 text-white" />
+                <span className="text-xs font-bold uppercase tracking-widest text-white">Support Desk</span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5 sm:mb-6 leading-tight">
+                Speak With <br className="hidden sm:block" /><span className="text-[#D3D3D3]">VeltriumFX</span>
+              </h1>
+              <p className="text-gray-300 text-sm lg:text-base max-w-xl mb-10 sm:mb-12 leading-relaxed">
+                Get practical assistance from our team through the channel that suits you best. We are available 24/5 to support your trading journey.
+              </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button
-                onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-bold text-[#00674F] shadow-lg shadow-white/10 transition-all duration-300 hover:scale-105 hover:bg-gray-100"
-              >
-                Send a Message
-                <ArrowRight size={18} />
-              </button>
-              <button
-                onClick={() => document.getElementById("contact-info")?.scrollIntoView({ behavior: "smooth" })}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-white/20"
-              >
-                Contact Details
-              </button>
-            </div>
-          </motion.div>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4">
+                <button
+                  onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-bold text-[#00674F] shadow-lg shadow-white/10 transition-all duration-300 hover:scale-105 hover:bg-gray-100"
+                >
+                  Send a Message
+                  <ArrowRight size={18} />
+                </button>
+                <button
+                  onClick={() => document.getElementById("contact-info")?.scrollIntoView({ behavior: "smooth" })}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-white/20"
+                >
+                  Contact Details
+                </button>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
