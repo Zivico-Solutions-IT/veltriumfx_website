@@ -1,8 +1,5 @@
 import { useState } from "react";
-import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
-import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import BrandLogo from "../components/brand/BrandLogo";
 import axios from "axios";
 
 // Add this style to hide browser's native password visibility toggle
@@ -64,36 +61,49 @@ const LoginPage = ({ onSignUpClick }) => {
       {/* Inject styles to hide native browser password toggle */}
       <style>{hideNativePasswordStyles}</style>
       
-      <main className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-10">
-        <section className="auth-card interactive-card relative w-full max-w-md rounded-2xl bg-white px-6 py-8 text-center shadow-xl sm:px-8">
-          <div className="absolute -top-7 left-1/2 -translate-x-1/2 rounded-xl bg-white px-3 py-2 shadow-md">
-            <BrandLogo />
-          </div>
+      <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#00674F] px-4 py-8 sm:px-6 lg:px-8">
+        <div className="absolute inset-0">
+          <img
+            src="/platform.png"
+            alt=""
+            className="h-full w-full object-cover opacity-25"
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(211,211,211,0.18),transparent_26%),radial-gradient(circle_at_72%_46%,rgba(0,103,79,0.32),transparent_28%),linear-gradient(135deg,rgba(0,103,79,0.96),rgba(0,103,79,0.78),rgba(0,103,79,0.96))]" />
+        </div>
 
-          <div className="mt-5">
-            <h1 className="text-2xl font-semibold text-gray-900">
-              Hello,
-              <br />
-              Welcome Back
+        <section className="relative z-10 grid w-full max-w-4xl overflow-hidden rounded-lg border border-[#D3D3D3]/25 bg-[#00674F]/85 shadow-[0_28px_90px_rgba(0,0,0,0.42)] backdrop-blur-xl lg:min-h-[520px] lg:grid-cols-[0.44fr_0.56fr]">
+          <div className="relative border-r border-[#D3D3D3]/15 bg-[#00674F]/88 px-5 py-7 text-white sm:px-8 lg:px-9 lg:py-10">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_10%,rgba(211,211,211,0.14),transparent_28%),radial-gradient(circle_at_0%_70%,rgba(0,103,79,0.26),transparent_36%)]" />
+
+          <div className="relative">
+            <h1 className="text-2xl font-extrabold text-white">
+              Sign in
             </h1>
-            <p className="mt-2 text-sm text-gray-500">
-              Login to continue to your account
+            <p className="mt-2 text-xs text-white/60">
+              Don't have an account?{" "}
+              <button
+                type="button"
+                onClick={onSignUpClick}
+                className="font-semibold text-[#D3D3D3] hover:text-white"
+              >
+                Create now
+              </button>
             </p>
           </div>
 
           <form
-            className="mt-7 space-y-4 text-left"
+            className="relative mt-7 space-y-3.5 text-left"
             onSubmit={handleSubmit}
           >
             {/* Email Field */}
             <label className="block">
-              <span className="mb-1.5 block text-xs font-medium text-gray-600">
+              <span className="mb-1.5 block text-[11px] font-semibold text-white/70">
                 Email
               </span>
               <input
                 type="email"
                 placeholder="example@gmail.com"
-                className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-700 outline-none transition focus:border-[#00674F] focus:ring-2 focus:ring-[#00674F]/10"
+                className="h-9 w-full rounded-md border border-white/15 bg-white/95 px-3 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -102,14 +112,14 @@ const LoginPage = ({ onSignUpClick }) => {
 
             {/* Password Field - REVERSE logic: showPassword true = FaEye, false = FaEyeSlash */}
             <label className="block">
-              <span className="mb-1.5 block text-xs font-medium text-gray-600">
+              <span className="mb-1.5 block text-[11px] font-semibold text-white/70">
                 Password
               </span>
               <div className="relative flex items-center">
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="****"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-2.5 pr-10 text-sm text-gray-700 outline-none transition focus:border-[#00674F] focus:ring-2 focus:ring-[#00674F]/10"
+                  className="h-9 w-full rounded-md border border-white/15 bg-white/95 px-3 pr-10 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -118,7 +128,7 @@ const LoginPage = ({ onSignUpClick }) => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 flex items-center justify-center p-1 rounded-md focus:outline-none transition-colors z-10"
+                  className="absolute right-3 top-1/2 z-10 flex -translate-y-1/2 items-center justify-center rounded-md p-1 text-gray-500 transition-colors hover:text-[#00674F] focus:outline-none"
                   aria-label={showPassword ? "Show password" : "Hide password"}
                 >
                   {/* REVERSE: When password is visible (showPassword = true): show open eye (FaEye) */}
@@ -129,85 +139,62 @@ const LoginPage = ({ onSignUpClick }) => {
             </label>
 
             {/* Remember Me & Forgot Password */}
-            <div className="flex items-center justify-between gap-3 text-sm text-gray-600">
+            <div className="flex items-center justify-between gap-3 text-sm text-white/70">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" className="accent-[#00674F]" />
                 Remember me
               </label>
-              <a href="#" className="font-medium text-[#00674F] hover:underline">
+              <a href="#" className="font-medium text-[#D3D3D3] hover:text-white">
                 Forgot password?
               </a>
             </div>
 
             {/* Error Message */}
             {error && (
-              <div className="text-red-600 text-xs mb-2">{error}</div>
+              <div className="mb-2 rounded-md border border-red-400/30 bg-red-500/10 px-3 py-2 text-xs text-red-200">{error}</div>
             )}
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="button-shine w-full rounded-lg bg-[#00674F] py-2.5 text-sm font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg active:translate-y-0"
+              className="mt-2 h-10 w-full rounded-md bg-[#D3D3D3] text-xs font-bold uppercase tracking-[0.08em] text-[#00674F] shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-0.5 hover:bg-white active:translate-y-0"
               disabled={loading}
             >
               {loading ? "Logging in..." : "Login"}
             </button>
           </form>
 
-          {/* Divider */}
-          <div className="my-6 flex items-center gap-3">
-            <div className="h-px flex-1 bg-gray-300"></div>
-            <span className="text-xs font-medium text-gray-500">or</span>
-            <div className="h-px flex-1 bg-gray-300"></div>
-          </div>
-
-          {/* OAuth Social Buttons */}
-          <div className="flex justify-center gap-5">
-            <a
-              href="https://google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-transform hover:-translate-y-1"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f7f8f8] shadow-md hover:shadow-lg">
-                <FcGoogle size={22} />
-              </div>
-            </a>
-
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-transform hover:-translate-y-1"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1877F2] text-white shadow-md">
-                <FaFacebookF size={18} />
-              </div>
-            </a>
-
-            <a
-              href="https://x.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-transform hover:-translate-y-1"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#00674F] text-white shadow-md">
-                <FaXTwitter size={18} />
-              </div>
-            </a>
-          </div>
-
           {/* Footer Link */}
-          <p className="mt-6 text-sm text-gray-600">
+          <p className="relative mt-6 border-t border-[#D3D3D3]/15 pt-5 text-sm text-white/65">
             Don't have an account?{" "}
             <button
               type="button"
               onClick={onSignUpClick}
-              className="font-semibold text-[#00674F] hover:text-[#00674F]"
+              className="font-semibold text-[#D3D3D3] hover:text-white"
             >
               Sign up
             </button>
           </p>
+          </div>
+
+          <div className="relative hidden min-h-[620px] overflow-hidden lg:block">
+            <img
+              src="/platform.png"
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,103,79,0.32),rgba(4,18,14,0.18)),radial-gradient(circle_at_52%_44%,rgba(211,211,211,0.22),transparent_30%)]" />
+            <div className="absolute left-8 top-8 h-28 w-28 rounded-full border border-[#D3D3D3]/20" />
+            <div className="absolute left-20 top-20 h-52 w-52 rounded-full border border-[#00674F]/25" />
+            <div className="absolute bottom-8 right-8 max-w-sm rounded-xl border border-[#D3D3D3]/20 bg-[#00674F]/45 p-5 text-white backdrop-blur-md">
+              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#D3D3D3]">
+                VeltriumFX Trading Access
+              </p>
+              <h2 className="mt-2 text-2xl font-black leading-tight">
+                Secure access to your trading workspace.
+              </h2>
+            </div>
+          </div>
         </section>
       </main>
     </>

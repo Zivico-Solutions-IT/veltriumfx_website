@@ -128,32 +128,38 @@ const AnimatedAccountCard = ({ account, index }) => {
   
   return (
     <ScrollReveal delay={index * 150} threshold={0.1}>
-      <div className={` home-package-card relative rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6 ${
-        accountData.popular ? 'ring-2 ring-[#D3D3D3] ring-opacity-50 relative' : ''
+      <div className={`account-type-card relative flex h-full flex-col overflow-hidden rounded-2xl border bg-white p-5 shadow-sm sm:p-6 ${
+        accountData.popular ? 'is-popular border-[#00674F]/45' : 'border-[#dce9e1]'
       }`}>
-        {/* POPULAR Badge */}
         {accountData.popular && (
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
-            <span className="bg-gradient-to-r from-[#D3D3D3] to-[#D3D3D3] text-black text-xs font-bold px-6 py-1.5 rounded-full shadow-lg whitespace-nowrap">
-              POPULAR
+          <div className="absolute right-4 top-4 z-20">
+            <span className="rounded-full bg-[#D3D3D3] px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#00674F] shadow-sm">
+              Popular
             </span>
           </div>
         )}
 
-        <div className="flex items-center gap-3 mb-5 mt-2">
-          <div className="account-plan-icon flex h-9 w-9 items-center justify-center rounded-md bg-[#00674F] text-sm text-white transition duration-300">
+        <div className="mb-6 flex items-center gap-3">
+          <div className="account-type-icon flex h-12 w-12 items-center justify-center rounded-xl bg-[#00674F] text-base text-white shadow-sm shadow-[#00674F]/20">
             <Icon />
           </div>
-          <h2 className="text-lg font-bold leading-snug text-gray-900 sm:text-xl">{accountData.title}</h2>
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#00674F]/70">
+              Trading Plan
+            </p>
+            <h2 className="mt-1 text-lg font-extrabold leading-snug text-gray-950 sm:text-xl">{accountData.title}</h2>
+          </div>
         </div>
 
-        <h2 className="account-plan-price mb-5 text-2xl font-extrabold text-[#00674F]">{accountData.price}</h2>
+        <h2 className="mb-5 text-3xl font-black tracking-tight text-[#00674F]">{accountData.price}</h2>
 
-        <ul className="space-y-3 text-sm text-gray-700 mb-6">
+        <ul className="mb-7 flex-1 space-y-3 text-sm text-gray-700">
           {accountData.features.map((feature, idx) => (
             <li key={idx} className="flex items-start gap-2">
-              <FaCheck className="mt-1 h-3 w-3 shrink-0 text-[#00674F]" />
-              <span>{feature}</span>
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#00674F]/10">
+                <FaCheck className="h-2.5 w-2.5 text-[#00674F]" />
+              </span>
+              <span className="leading-5">{feature}</span>
             </li>
           ))}
         </ul>
@@ -161,10 +167,10 @@ const AnimatedAccountCard = ({ account, index }) => {
       <button
   type="button"
   onClick={() => navigate("/signup")}
-  className={`w-full rounded-md border py-3 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 ${
+  className={`mt-auto w-full rounded-lg border py-3 text-sm font-bold uppercase tracking-[0.08em] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 ${
     accountData.popular
       ? "border-[#00674F] bg-[#00674F] text-white hover:shadow-[#00674F]/20"
-      : "border-[#00674F] bg-white text-[#00674F] hover:bg-[#00674F] hover:text-white hover:shadow-[#00674F]/20"
+      : "border-[#00674F]/35 bg-white text-[#00674F] hover:border-[#00674F] hover:bg-[#00674F] hover:text-white hover:shadow-[#00674F]/20"
   }`}
 >
   Open Account
@@ -383,9 +389,14 @@ export default function AccountTypesPage() {
 
       {/* Accounts Section - 5 Cards Fading In Up */}
       <section id="account-cards" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-10 sm:px-5 sm:py-12">
-        <div className="grid grid-cols-1 gap-6 sm:gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
           {accounts.map((account, index) => (
-            <AnimatedAccountCard key={index} account={account} index={index} />
+            <div
+              key={account.title}
+              className={`lg:col-span-2 ${index === 3 ? "lg:col-start-2" : ""}`}
+            >
+              <AnimatedAccountCard account={account} index={index} />
+            </div>
           ))}
         </div>
       </section>
@@ -439,20 +450,34 @@ export default function AccountTypesPage() {
       </section>
 
       <style jsx>{`
-        /* Card Hover Effects */
-        . home-package-card {
-          transition: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-          overflow: visible;
+        .account-type-card {
+          box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+          transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
         }
-        
-        .account-plan-card:hover {
-          transform: translateY(-4px);
-          transition: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+
+        .account-type-card::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background: linear-gradient(135deg, rgba(0, 103, 79, 0.08), transparent 42%);
+          opacity: 0;
+          transition: opacity 0.35s ease;
         }
-        
-        /* Remove icon scale animation */
-        .account-plan-card:hover .account-plan-icon {
-          transform: none;
+
+        .account-type-card:hover {
+          transform: translateY(-8px);
+          border-color: rgba(0, 103, 79, 0.38);
+          box-shadow: 0 26px 60px rgba(0, 103, 79, 0.14);
+        }
+
+        .account-type-card:hover::before,
+        .account-type-card.is-popular::before {
+          opacity: 1;
+        }
+
+        .account-type-card.is-popular {
+          box-shadow: 0 24px 56px rgba(0, 103, 79, 0.14);
         }
 
         /* Process cards - slower hover */
@@ -475,30 +500,13 @@ export default function AccountTypesPage() {
           transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
-        /* Remove any potential shine/glow effects from all elements */
-        .account-plan-card,
-        .account-plan-card *,
-        .process-card,
-        .process-card *,
-        button,
-        button * {
-          box-shadow: none;
-          text-shadow: none;
-          filter: none;
-        }
-
-        /* Keep only necessary shadows */
-        .account-plan-card:hover {
-          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-        }
-        
         .process-card:hover {
           box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
         }
 
         /* Mobile Optimizations */
         @media (max-width: 640px) {
-          .account-plan-card {
+          .account-type-card {
             transform: translateX(0);
           }
           

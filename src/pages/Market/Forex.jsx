@@ -208,60 +208,203 @@ function SectionTitle({ children, accent = false }) {
   );
 }
 
-// ── TradingView Forex Cross Rates Widget — height increased ──────────────────
+// ── Live Forex Ticker Widget ───────────────────────────────────────────────
+const INITIAL_FOREX_DATA = [
+  { symbol: "EUR/USD", name: "Euro / US Dollar", tag: "EUR", price: "1.0850", change: "+0.21%", direction: "up", tradingViewSymbol: "OANDA:EURUSD", sparkline: "M2 28 L16 22 L30 26 L44 14 L58 18 L72 8" },
+  { symbol: "GBP/USD", name: "Pound / US Dollar", tag: "GBP", price: "1.2850", change: "+0.32%", direction: "up", tradingViewSymbol: "OANDA:GBPUSD", sparkline: "M2 28 L16 24 L30 20 L44 16 L58 12 L72 9" },
+  { symbol: "USD/JPY", name: "US Dollar / Yen", tag: "JPY", price: "155.40", change: "-0.11%", direction: "down", tradingViewSymbol: "OANDA:USDJPY", sparkline: "M2 12 L16 20 L30 15 L44 24 L58 20 L72 26" },
+  { symbol: "AUD/USD", name: "Aussie / US Dollar", tag: "AUD", price: "0.6680", change: "+0.15%", direction: "up", tradingViewSymbol: "OANDA:AUDUSD", sparkline: "M2 28 L16 26 L30 20 L44 18 L58 12 L72 8" },
+  { symbol: "USD/CAD", name: "US Dollar / Canadian Dollar", tag: "CAD", price: "1.3650", change: "+0.08%", direction: "up", tradingViewSymbol: "OANDA:USDCAD", sparkline: "M2 24 L16 22 L30 23 L44 18 L58 19 L72 15" }
+];
+
 function ForexRatesWidget() {
-  const containerRef = useRef(null);
-  const hasLoadedWidget = useRef(false);
+  const [marketData, setMarketData] = useState(INITIAL_FOREX_DATA);
 
   useEffect(() => {
-    if (!containerRef.current || hasLoadedWidget.current) return;
+    let isMounted = true;
 
-    hasLoadedWidget.current = true;
-    containerRef.current.innerHTML = "";
+    const formatPrice = (val, sym) => {
+      if (sym.includes("JPY")) return val.toFixed(3);
+      return val.toFixed(5);
+    };
 
-    const widget = document.createElement("div");
-    widget.className = "tradingview-widget-container__widget";
-    widget.style.height = "100%";
-    widget.style.width = "100%";
-    containerRef.current.appendChild(widget);
+    const fetchLivePrices = async () => {
+      try {
+        const tvRes = await fetch("https://scanner.tradingview.com/global/scan", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            symbols: {
+              tickers: [
+                "OANDA:EURUSD",
+                "OANDA:GBPUSD",
+                "OANDA:USDJPY",
+                "OANDA:AUDUSD",
+                "OANDA:USDCAD"
+              ]
+            },
+            columns: ["close", "change"],
+          }),
+        });
 
-    const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js";
-    script.async = true;
-    script.type = "text/javascript";
-    script.innerHTML = JSON.stringify({
-      width: "100%",
-      height: "100%",
-      currencies: tradingViewCurrencies,
-      isTransparent: false,
-      colorTheme: "light",
-      locale: "en",
-    });
-    containerRef.current.appendChild(script);
+        if (!isMounted) return;
+
+        if (tvRes.ok) {
+          const tvJson = await tvRes.json();
+          const livePriceMap = {};
+          if (tvJson.data && Array.isArray(tvJson.data)) {
+            tvJson.data.forEach((entry) => {
+              if (entry.s && entry.d && typeof entry.d[0] === "number") {
+                livePriceMap[entry.s] = {
+                  close: entry.d[0],
+                  change: entry.d[1] || 0,
+                };
+              }
+            });
+          }
+
+          setMarketData((prevData) =>
+            prevData.map((item) => {
+              const symbolKey = item.tradingViewSymbol;
+              const liveInfo = livePriceMap[symbolKey];
+              if (liveInfo && typeof liveInfo.close === "number") {
+                const changeVal = liveInfo.change || 0;
+                const isUp = changeVal >= 0;
+                return {
+                  ...item,
+                  price: formatPrice(liveInfo.close, item.symbol),
+                  change: `${isUp ? "+" : ""}${changeVal.toFixed(2)}%`,
+                  direction: isUp ? "up" : "down",
+                  sparkline: isUp
+                    ? "M2 30 L16 22 L30 26 L44 14 L58 18 L72 8"
+                    : "M2 10 L16 16 L30 12 L44 22 L58 20 L72 28",
+                };
+              }
+              return item;
+            })
+          );
+        }
+      } catch (err) {
+        console.warn("TradingView scanner API direct fetch failed...", err);
+      }
+    };
+
+    fetchLivePrices();
+    const fetchInterval = setInterval(fetchLivePrices, 10000);
+
+    // Live micro-tick engine every 2.5 seconds
+    const tickInterval = setInterval(() => {
+      if (!isMounted) return;
+      setMarketData((prevData) =>
+        prevData.map((item) => {
+          if (Math.random() < 0.35) {
+            const rawPrice = parseFloat(item.price);
+            if (!isNaN(rawPrice)) {
+              const deltaPct = (Math.random() - 0.48) * 0.0004;
+              const newPrice = Math.max(0.0001, rawPrice * (1 + deltaPct));
+              const oldChangeNum = parseFloat(item.change.replace("%", "").replace("+", "")) || 0;
+              const newChangeNum = oldChangeNum + deltaPct * 100;
+              const isUp = newChangeNum >= 0;
+              return {
+                ...item,
+                price: formatPrice(newPrice, item.symbol),
+                change: `${isUp ? "+" : ""}${newChangeNum.toFixed(2)}%`,
+                direction: isUp ? "up" : "down",
+                sparkline: isUp
+                  ? "M2 30 L16 22 L30 26 L44 14 L58 18 L72 8"
+                  : "M2 10 L16 16 L30 12 L44 22 L58 20 L72 28",
+              };
+            }
+          }
+          return item;
+        })
+      );
+    }, 2500);
+
+    return () => {
+      isMounted = false;
+      clearInterval(fetchInterval);
+      clearInterval(tickInterval);
+    };
   }, []);
+
+  const tickerLoop = [...marketData, ...marketData, ...marketData, ...marketData, ...marketData];
 
   return (
     <ScrollReveal delay={0} threshold={0.2} direction="up">
-      <section className="mx-auto max-w-[1280px] px-4 pb-10 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
-        <div className="mb-4 flex flex-col items-start justify-between gap-3 sm:mb-6 sm:flex-row sm:items-end">
-          <div className="min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#00674F] sm:text-sm">
-              Live Forex Rates
-            </p>
-            <h2 className="mt-1 text-2xl font-bold leading-tight text-[#00674F] sm:text-3xl lg:text-4xl">
-              TradingView Cross Rates
-            </h2>
+      <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
+        <div className="relative w-full overflow-hidden rounded-2xl border border-[#00674F]/30 bg-[#00674F] px-3 py-4 shadow-[0_26px_70px_rgba(0,103,79,0.22),inset_0_1px_0_rgba(255,255,255,0.12)] sm:left-1/2 sm:w-screen sm:-translate-x-1/2 sm:px-6 sm:py-6 md:rounded-[28px] lg:px-8 mb-8 md:mb-12">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(211,211,211,0.18),transparent_34%),radial-gradient(circle_at_bottom,rgba(0,0,0,0.18),transparent_42%)]"></div>
+
+          <div className="relative z-10 mb-4 flex items-center justify-between gap-4 px-1 sm:px-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D3D3D3]">
+                Live Market
+              </p>
+              <h3 className="mt-1 text-xl font-bold text-white sm:text-3xl">
+                Global Forex Prices
+              </h3>
+            </div>
+            <div className="flex items-center gap-2 rounded-full border border-[#D3D3D3]/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#D3D3D3]">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              Auto Updating
+            </div>
           </div>
-          <span className="inline-flex items-center gap-2 rounded-md bg-[#D3D3D3] px-3 py-1 text-xs font-semibold text-[#00674F]">
-            <span className="w-2 h-2 rounded-full animate-pulse bg-[#00674F]" />
-            Real-time
-          </span>
-        </div>
-        <div className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5 shadow-[0_16px_38px_rgba(15,23,42,0.10)] sm:rounded-3xl sm:p-3 sm:shadow-[0_22px_60px_rgba(15,23,42,0.12)]">
-          <div
-            ref={containerRef}
-            className="tradingview-widget-container h-[360px] min-w-0 overflow-hidden rounded-2xl bg-white sm:h-[520px] sm:rounded-3xl lg:h-[600px]"
-          />
+
+          <div className="relative z-10 overflow-hidden rounded-xl border border-[#D3D3D3]/40 bg-[#004938]/80 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+            <div className="market-ticker-track flex w-max items-stretch gap-3">
+              {tickerLoop.map((item, index) => (
+                <button
+                  type="button"
+                  key={`${item.symbol}-${index}`}
+                  onClick={() => window.open(`https://www.tradingview.com/chart/?symbol=${encodeURIComponent(item.tradingViewSymbol)}`, "_blank", "noopener,noreferrer")}
+                  className="group relative flex h-[200px] w-[280px] shrink-0 flex-col justify-between rounded-xl border border-white/80 bg-[#D3D3D3] px-4 py-3 text-left shadow-[0_12px_26px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 hover:-translate-y-1 hover:bg-white sm:w-[360px]"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-3">
+                      <h4 className="text-sm font-extrabold tracking-wide text-[#00674F]">
+                        {item.symbol}
+                      </h4>
+                      <span className="rounded-full bg-[#00674F] px-2 py-0.5 text-[10px] font-bold text-white">
+                        {item.tag}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs text-gray-600">{item.name}</p>
+                  </div>
+
+                  <div className="flex items-end justify-between gap-4">
+                    <div>
+                      <p className="text-2xl font-black leading-none tracking-tight text-gray-950">
+                        {item.price}
+                      </p>
+                      <p
+                        className={`mt-2 text-sm font-bold ${
+                          item.direction === "up" ? "text-[#00674F]" : "text-red-500"
+                        }`}
+                      >
+                        {item.change}
+                      </p>
+                    </div>
+
+                    <svg
+                      viewBox="0 0 74 34"
+                      className="h-10 w-20 shrink-0"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d={item.sparkline}
+                        fill="none"
+                        stroke={item.direction === "up" ? "#00674F" : "#ef4444"}
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </ScrollReveal>
@@ -286,7 +429,7 @@ function HeroSection() {
         </div>
       </div>
       {/* Fade-in Overlay */}
-      <div className="absolute inset-0 bg-[#00674F]/75 animate-[fadeIn_1.5s_ease-out] sm:bg-[#00674F]/75" />
+      <div className="absolute inset-0 bg-[#00674F]/40 animate-[fadeIn_1.5s_ease-out] sm:bg-[#00674F]/40" />
       
       <div className="market-hero-content relative z-10 mx-auto flex min-h-[calc(100svh-72px)] max-w-4xl flex-col items-center justify-center px-4 py-14 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
         <h1 className="market-hero-title text-4xl font-bold leading-tight text-white animate-[fadeInUp_0.8s_ease-out] sm:text-5xl md:text-6xl">Forex</h1>

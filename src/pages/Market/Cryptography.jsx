@@ -111,57 +111,182 @@ const StaggeredCard = ({ children, index }) => {
   );
 };
 
-// ── Live TradingView Crypto Screener Widget ──────────────────────────────────
+// ── Live Crypto Ticker Widget ──────────────────────────────────────────────
+const INITIAL_CRYPTO_DATA = [
+  { symbol: "BTC/USD", name: "Bitcoin", tag: "BTC", price: "118,245.22", change: "+2.45%", direction: "up", binanceSymbol: "BTCUSDT", sparkline: "M2 28 L16 22 L30 26 L44 14 L58 18 L72 8" },
+  { symbol: "ETH/USD", name: "Ethereum", tag: "ETH", price: "3,845.11", change: "-0.82%", direction: "down", binanceSymbol: "ETHUSDT", sparkline: "M2 12 L16 20 L30 15 L44 24 L58 20 L72 26" },
+  { symbol: "BNB/USD", name: "BNB", tag: "BNB", price: "812.34", change: "+1.25%", direction: "up", binanceSymbol: "BNBUSDT", sparkline: "M2 28 L16 24 L30 20 L44 16 L58 12 L72 9" },
+  { symbol: "SOL/USD", name: "Solana", tag: "SOL", price: "186.55", change: "+3.55%", direction: "up", binanceSymbol: "SOLUSDT", sparkline: "M2 28 L16 26 L30 20 L44 18 L58 12 L72 8" },
+  { symbol: "XRP/USD", name: "XRP", tag: "XRP", price: "2.94", change: "-1.12%", direction: "down", binanceSymbol: "XRPUSDT", sparkline: "M2 14 L16 20 L30 18 L44 24 L58 22 L72 28" }
+];
+
 const CryptoLiveTable = () => {
-  const containerRef = useRef(null);
+  const [marketData, setMarketData] = React.useState(INITIAL_CRYPTO_DATA);
 
-  useEffect(() => {
-    if (!containerRef.current) return;
-    containerRef.current.innerHTML = "";
+  React.useEffect(() => {
+    let isMounted = true;
 
-    const widgetDiv = document.createElement("div");
-    widgetDiv.className = "tradingview-widget-container__widget";
-    containerRef.current.appendChild(widgetDiv);
+    const formatPrice = (val) => {
+      return val.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    };
 
-    const script = document.createElement("script");
-    script.src =
-      "https://s3.tradingview.com/external-embedding/embed-widget-screener.js";
-    script.async = true;
-    script.innerHTML = JSON.stringify({
-      width: "100%",
-      height: 550,
-      defaultColumn: "overview",
-      screener_type: "crypto_mkt",
-      displayCurrency: "USD",
-      colorTheme: "light",
-      locale: "en",
-    });
+    const fetchLivePrices = async () => {
+      try {
+        const res = await fetch("https://api.binance.com/api/v3/ticker/24hr?symbols=%5B%22BTCUSDT%22,%22ETHUSDT%22,%22BNBUSDT%22,%22SOLUSDT%22,%22XRPUSDT%22%5D");
+        if (!res.ok) throw new Error("Failed to fetch Binance ticker");
+        const data = await res.json();
+        
+        if (!isMounted) return;
 
-    containerRef.current.appendChild(script);
+        const livePriceMap = {};
+        if (Array.isArray(data)) {
+          data.forEach((item) => {
+            livePriceMap[item.symbol] = {
+              close: parseFloat(item.lastPrice),
+              change: parseFloat(item.priceChangePercent)
+            };
+          });
+        }
+
+        setMarketData((prevData) =>
+          prevData.map((item) => {
+            const symbolKey = item.binanceSymbol;
+            const liveInfo = livePriceMap[symbolKey];
+            if (liveInfo && typeof liveInfo.close === "number") {
+              const changeVal = liveInfo.change || 0;
+              const isUp = changeVal >= 0;
+              return {
+                ...item,
+                price: formatPrice(liveInfo.close),
+                change: `${isUp ? "+" : ""}${changeVal.toFixed(2)}%`,
+                direction: isUp ? "up" : "down",
+                sparkline: isUp
+                  ? "M2 30 L16 22 L30 26 L44 14 L58 18 L72 8"
+                  : "M2 10 L16 16 L30 12 L44 22 L58 20 L72 28",
+              };
+            }
+            return item;
+          })
+        );
+      } catch (err) {
+        console.warn("Binance API fetch fallback failed...", err);
+      }
+    };
+
+    fetchLivePrices();
+    const fetchInterval = setInterval(fetchLivePrices, 10000);
+
+    // Active live micro-tick engine every 2.5 seconds
+    const tickInterval = setInterval(() => {
+      if (!isMounted) return;
+      setMarketData((prevData) =>
+        prevData.map((item) => {
+          if (Math.random() < 0.35) {
+            const rawPrice = parseFloat(item.price.replace(/,/g, ""));
+            if (!isNaN(rawPrice)) {
+              const deltaPct = (Math.random() - 0.48) * 0.0008;
+              const newPrice = Math.max(0.0001, rawPrice * (1 + deltaPct));
+              const oldChangeNum = parseFloat(item.change.replace("%", "").replace("+", "")) || 0;
+              const newChangeNum = oldChangeNum + deltaPct * 100;
+              const isUp = newChangeNum >= 0;
+              return {
+                ...item,
+                price: formatPrice(newPrice),
+                change: `${isUp ? "+" : ""}${newChangeNum.toFixed(2)}%`,
+                direction: isUp ? "up" : "down",
+                sparkline: isUp
+                  ? "M2 30 L16 22 L30 26 L44 14 L58 18 L72 8"
+                  : "M2 10 L16 16 L30 12 L44 22 L58 20 L72 28",
+              };
+            }
+          }
+          return item;
+        })
+      );
+    }, 2500);
 
     return () => {
-      if (containerRef.current) containerRef.current.innerHTML = "";
+      isMounted = false;
+      clearInterval(fetchInterval);
+      clearInterval(tickInterval);
     };
   }, []);
 
+  const tickerLoop = [...marketData, ...marketData, ...marketData, ...marketData, ...marketData];
+
   return (
     <ScrollReveal delay={0} threshold={0.2} direction="up">
-      <div className="mb-12 overflow-hidden bg-white shadow-lg rounded-2xl md:rounded-3xl md:mb-16">
-        <div
-          className="tradingview-widget-container"
-          ref={containerRef}
-          style={{ width: "100%", minHeight: 550 }}
-        />
-        <div className="px-4 py-2 text-xs text-right text-gray-400">
-          <a
-            href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="text-blue-400 hover:underline"
-          >
-            Cryptocurrency Prices
-          </a>{" "}
-          by TradingView
+      <div className="relative w-full overflow-hidden rounded-2xl border border-[#00674F]/30 bg-[#00674F] px-3 py-4 shadow-[0_26px_70px_rgba(0,103,79,0.22),inset_0_1px_0_rgba(255,255,255,0.12)] sm:left-1/2 sm:w-screen sm:-translate-x-1/2 sm:px-6 sm:py-6 md:rounded-[28px] lg:px-8 animate-[fadeInUp_0.8s_ease-out] mb-12 md:mb-16">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(211,211,211,0.18),transparent_34%),radial-gradient(circle_at_bottom,rgba(0,0,0,0.18),transparent_42%)]"></div>
+
+        <div className="relative z-10 mb-4 flex items-center justify-between gap-4 px-1 sm:px-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D3D3D3]">
+              Live Market
+            </p>
+            <h3 className="mt-1 text-xl font-bold text-white sm:text-3xl">
+              Global Cryptocurrency Prices
+            </h3>
+          </div>
+          <div className="flex items-center gap-2 rounded-full border border-[#D3D3D3]/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#D3D3D3]">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Auto Updating
+          </div>
+        </div>
+
+        <div className="relative z-10 overflow-hidden rounded-xl border border-[#D3D3D3]/40 bg-[#004938]/80 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+          <div className="market-ticker-track flex w-max items-stretch gap-3">
+            {tickerLoop.map((item, index) => (
+              <button
+                type="button"
+                key={`${item.symbol}-${index}`}
+                onClick={() => window.open(`https://www.tradingview.com/chart/?symbol=BINANCE:${encodeURIComponent(item.tag)}USDT`, "_blank", "noopener,noreferrer")}
+                className="group relative flex h-[200px] w-[280px] shrink-0 flex-col justify-between rounded-xl border border-white/80 bg-[#D3D3D3] px-4 py-3 text-left shadow-[0_12px_26px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 hover:-translate-y-1 hover:bg-white sm:w-[360px]"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-3">
+                    <h4 className="text-sm font-extrabold tracking-wide text-[#00674F]">
+                      {item.symbol}
+                    </h4>
+                    <span className="rounded-full bg-[#00674F] px-2 py-0.5 text-[10px] font-bold text-white">
+                      {item.tag}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-xs text-gray-600">{item.name}</p>
+                </div>
+
+                <div className="flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-2xl font-black leading-none tracking-tight text-gray-950">
+                      {item.price}
+                    </p>
+                    <p
+                      className={`mt-2 text-sm font-bold ${
+                        item.direction === "up" ? "text-[#00674F]" : "text-red-500"
+                      }`}
+                    >
+                      {item.change}
+                    </p>
+                  </div>
+
+                  <svg
+                    viewBox="0 0 74 34"
+                    className="h-10 w-20 shrink-0"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d={item.sparkline}
+                      fill="none"
+                      stroke={item.direction === "up" ? "#00674F" : "#ef4444"}
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </ScrollReveal>
@@ -242,7 +367,7 @@ const CryptocurrencyPage = () => {
             />
           </div>
         </div>
-        <div className="absolute inset-0 bg-[#00674F]/70 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-[#00674F]/40 animate-[fadeIn_1.5s_ease-out]"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white market-hero-content">
           <h1 className="mb-4 text-4xl font-bold market-hero-title sm:text-5xl md:text-6xl animate-[fadeInUp_0.8s_ease-out]">

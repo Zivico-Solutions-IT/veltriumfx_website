@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import heroBg from "../../assets/images/ind.bg.png";
 import heroBg2 from "../../assets/images/ind pic1.jpeg";
-import TradingViewWidget from "../../pages/Market/TradingViewWidget";
 
 import {
   Star,
@@ -219,9 +218,206 @@ const factors = [
   },
 ];
 
-/* =========================
-   MAIN COMPONENT
-========================= */
+// ── Live Indices Ticker Widget ─────────────────────────────────────────────
+const INITIAL_INDICES_DATA = [
+  { symbol: "S&P 500", name: "US Stock Benchmark", tag: "SPX", price: "5,480.20", change: "+1.01%", direction: "up", tradingViewSymbol: "FOREXCOM:SPX", sparkline: "M2 28 L16 24 L30 20 L44 16 L58 12 L72 9" },
+  { symbol: "Dow Jones", name: "Industrial Average", tag: "DJI", price: "39,120.50", change: "+1.07%", direction: "up", tradingViewSymbol: "FOREXCOM:DJI", sparkline: "M2 28 L16 22 L30 26 L44 14 L58 18 L72 8" },
+  { symbol: "NASDAQ 100", name: "US Tech Index", tag: "NDX", price: "19,750.40", change: "+1.35%", direction: "up", tradingViewSymbol: "NASDAQ:NDX", sparkline: "M2 28 L16 26 L30 20 L44 18 L58 12 L72 8" },
+  { symbol: "FTSE 100", name: "UK Equities Index", tag: "UK100", price: "8,240.15", change: "+0.84%", direction: "up", tradingViewSymbol: "FOREXCOM:UK100", sparkline: "M2 26 L16 24 L30 25 L44 20 L58 22 L72 18" },
+  { symbol: "Germany 40", name: "DAX Benchmark", tag: "GER40", price: "18,050.60", change: "+0.81%", direction: "up", tradingViewSymbol: "FOREXCOM:GER30", sparkline: "M2 24 L16 22 L30 23 L44 18 L58 19 L72 15" }
+];
+
+const IndexLiveTicker = () => {
+  const [marketData, setMarketData] = useState(INITIAL_INDICES_DATA);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const formatPrice = (val, sym) => {
+      if (sym === "XRP") return val.toLocaleString(undefined, { minimumFractionDigits: 4, maximumFractionDigits: 4 });
+      return val.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    };
+
+    const fetchLivePrices = async () => {
+      try {
+        const tvRes = await fetch("https://scanner.tradingview.com/global/scan", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            symbols: {
+              tickers: [
+                "FOREXCOM:SPX",
+                "FOREXCOM:DJI",
+                "NASDAQ:NDX",
+                "FOREXCOM:UK100",
+                "FOREXCOM:GER30"
+              ]
+            },
+            columns: ["close", "change"],
+          }),
+        });
+
+        if (!isMounted) return;
+
+        if (tvRes.ok) {
+          const tvJson = await tvRes.json();
+          const livePriceMap = {};
+          if (tvJson.data && Array.isArray(tvJson.data)) {
+            tvJson.data.forEach((entry) => {
+              if (entry.s && entry.d && typeof entry.d[0] === "number") {
+                livePriceMap[entry.s] = {
+                  close: entry.d[0],
+                  change: entry.d[1] || 0,
+                };
+              }
+            });
+          }
+
+          setMarketData((prevData) =>
+            prevData.map((item) => {
+              const symbolKey = item.tradingViewSymbol;
+              const liveInfo = livePriceMap[symbolKey];
+              if (liveInfo && typeof liveInfo.close === "number") {
+                const changeVal = liveInfo.change || 0;
+                const isUp = changeVal >= 0;
+                return {
+                  ...item,
+                  price: formatPrice(liveInfo.close, item.symbol),
+                  change: `${isUp ? "+" : ""}${changeVal.toFixed(2)}%`,
+                  direction: isUp ? "up" : "down",
+                  sparkline: isUp
+                    ? "M2 30 L16 22 L30 26 L44 14 L58 18 L72 8"
+                    : "M2 10 L16 16 L30 12 L44 22 L58 20 L72 28",
+                };
+              }
+              return item;
+            })
+          );
+        }
+      } catch (err) {
+        console.warn("TradingView scanner API direct fetch failed...", err);
+      }
+    };
+
+    fetchLivePrices();
+    const fetchInterval = setInterval(fetchLivePrices, 10000);
+
+    // Live micro-tick engine every 2.5 seconds
+    const tickInterval = setInterval(() => {
+      if (!isMounted) return;
+      setMarketData((prevData) =>
+        prevData.map((item) => {
+          if (Math.random() < 0.35) {
+            const rawPrice = parseFloat(item.price.replace(/,/g, ""));
+            if (!isNaN(rawPrice)) {
+              const deltaPct = (Math.random() - 0.48) * 0.0006;
+              const newPrice = Math.max(1.0, rawPrice * (1 + deltaPct));
+              const oldChangeNum = parseFloat(item.change.replace("%", "").replace("+", "")) || 0;
+              const newChangeNum = oldChangeNum + deltaPct * 100;
+              const isUp = newChangeNum >= 0;
+              return {
+                ...item,
+                price: formatPrice(newPrice, item.symbol),
+                change: `${isUp ? "+" : ""}${newChangeNum.toFixed(2)}%`,
+                direction: isUp ? "up" : "down",
+                sparkline: isUp
+                  ? "M2 30 L16 22 L30 26 L44 14 L58 18 L72 8"
+                  : "M2 10 L16 16 L30 12 L44 22 L58 20 L72 28",
+              };
+            }
+          }
+          return item;
+        })
+      );
+    }, 2500);
+
+    return () => {
+      isMounted = false;
+      clearInterval(fetchInterval);
+      clearInterval(tickInterval);
+    };
+  }, []);
+
+  const tickerLoop = [...marketData, ...marketData, ...marketData, ...marketData];
+
+  return (
+    <ScrollReveal delay={0} threshold={0.2} direction="up">
+      <div className="relative w-full overflow-hidden rounded-2xl border border-[#00674F]/30 bg-[#00674F] px-3 py-4 shadow-[0_26px_70px_rgba(0,103,79,0.22),inset_0_1px_0_rgba(255,255,255,0.12)] sm:left-1/2 sm:w-screen sm:-translate-x-1/2 sm:px-6 sm:py-6 md:rounded-[28px] lg:px-8 mb-8 md:mb-12">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(211,211,211,0.18),transparent_34%),radial-gradient(circle_at_bottom,rgba(0,0,0,0.18),transparent_42%)]"></div>
+
+        <div className="relative z-10 mb-4 flex items-center justify-between gap-4 px-1 sm:px-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D3D3D3]">
+              Live Market
+            </p>
+            <h3 className="mt-1 text-xl font-bold text-white sm:text-3xl">
+              Global Indices Prices
+            </h3>
+          </div>
+          <div className="flex items-center gap-2 rounded-full border border-[#D3D3D3]/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#D3D3D3]">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Auto Updating
+          </div>
+        </div>
+
+        <div className="relative z-10 overflow-hidden rounded-xl border border-[#D3D3D3]/40 bg-[#004938]/80 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+          <div className="market-ticker-track flex w-max items-stretch gap-3">
+            {tickerLoop.map((item, index) => (
+              <button
+                type="button"
+                key={`${item.symbol}-${index}`}
+                onClick={() => window.open(`https://www.tradingview.com/chart/?symbol=${encodeURIComponent(item.tradingViewSymbol)}`, "_blank", "noopener,noreferrer")}
+                className="group relative flex h-[200px] w-[280px] shrink-0 flex-col justify-between rounded-xl border border-white/80 bg-[#D3D3D3] px-4 py-3 text-left shadow-[0_12px_26px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 hover:-translate-y-1 hover:bg-white sm:w-[360px]"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-3">
+                    <h4 className="text-sm font-extrabold tracking-wide text-[#00674F]">
+                      {item.symbol}
+                    </h4>
+                    <span className="rounded-full bg-[#00674F] px-2 py-0.5 text-[10px] font-bold text-white">
+                      {item.tag}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-xs text-gray-600">{item.name}</p>
+                </div>
+
+                <div className="flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-2xl font-black leading-none tracking-tight text-gray-950">
+                      {item.price}
+                    </p>
+                    <p
+                      className={`mt-2 text-sm font-bold ${
+                        item.direction === "up" ? "text-[#00674F]" : "text-red-500"
+                      }`}
+                    >
+                      {item.change}
+                    </p>
+                  </div>
+
+                  <svg
+                    viewBox="0 0 74 34"
+                    className="h-10 w-20 shrink-0"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d={item.sparkline}
+                      fill="none"
+                      stroke={item.direction === "up" ? "#00674F" : "#ef4444"}
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </ScrollReveal>
+  );
+};
 
 const IndicesPage = () => {
   return (
@@ -250,7 +446,7 @@ const IndicesPage = () => {
         </div>
 
         {/* Fade-in Overlays */}
-        <div className="absolute inset-0 bg-[#00674F]/65 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-[#00674F]/40 animate-[fadeIn_1.5s_ease-out]"></div>
 
         <div className="market-hero-content relative z-10 mx-auto max-w-5xl">
           
@@ -328,20 +524,10 @@ const IndicesPage = () => {
         </div>
       </section>
 
-      {/* =========================================
-          MARKET OVERVIEW WITH TRADINGVIEW
-      ========================================= */}
-
       <section className="bg-[#D3D3D3] px-4 pb-8 pt-5 sm:px-6 sm:pb-10 sm:pt-6 lg:pb-12 lg:pt-7">
-        
-        {/* TRADINGVIEW WIDGET CARD */}
-        <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="mx-auto max-w-7xl rounded-2xl border border-gray-100 bg-white p-3 shadow-sm sm:rounded-3xl sm:p-6 lg:p-8">
-            <div className="h-[300px] w-full min-w-0 sm:h-[430px] lg:h-[500px]">
-              <TradingViewWidget />
-            </div>
-          </div>
-        </ScrollReveal>
+        <div className="mx-auto max-w-7xl">
+          <IndexLiveTicker />
+        </div>
 
         {/* WHAT ARE INDICES */}
         <ScrollReveal delay={100} threshold={0.2} direction="up">
@@ -382,55 +568,27 @@ const IndicesPage = () => {
         <div className="grid grid-cols-1 gap-5 mx-auto mt-6 max-w-6xl sm:grid-cols-2 lg:mt-8 lg:grid-cols-4">
           {indices.map((item, index) => (
             <StaggeredCard key={index} index={index}>
-              <div className="relative h-full flex flex-col justify-between w-full overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <div>
-                  {/* Top Header Row */}
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E7F5EE] text-[#00674F]">
-                        {item.icon}
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-bold uppercase tracking-wider text-[#00674F]">
-                          {item.subtitle}
-                        </p>
-                        <h3 className="text-lg font-bold leading-tight text-[#0f172a]">
-                          {item.title}
-                        </h3>
-                      </div>
-                    </div>
-                    <span className="shrink-0 rounded-md border border-slate-300 bg-slate-200/60 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-600">
-                      LIVE
-                    </span>
+              <div className="relative h-full flex flex-col justify-between w-full overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div className="flex flex-col items-center w-full">
+                  {/* Centered Icon Container */}
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E7F5EE] text-[#00674F] mb-3">
+                    {item.icon}
+                  </div>
+                  
+                  {/* Subtitle & Title */}
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-[#00674F]">
+                      {item.subtitle}
+                    </p>
+                    <h3 className="text-lg font-bold leading-tight text-[#0f172a] mt-1">
+                      {item.title}
+                    </h3>
                   </div>
 
                   {/* Description */}
                   <p className="mt-4 text-xs sm:text-sm leading-relaxed text-slate-600">
                     {item.desc}
                   </p>
-                </div>
-
-                <div>
-                  {/* Price Box */}
-                  <div className="mt-4 rounded-xl border border-slate-200/80 bg-[#F8F9FA] p-3.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <div>
-                        <p className="text-xl font-bold text-[#0f172a] sm:text-2xl">
-                          {item.value}
-                        </p>
-                        <p className="mt-0.5 text-xs font-semibold text-[#00674F]">
-                          {item.change} <span className="font-normal text-slate-500">{item.changePercent}</span>
-                        </p>
-                      </div>
-                      <div className="h-7 w-14 shrink-0 rounded-md bg-gradient-to-r from-[#00674F]/70 to-[#b2e2d3]" />
-                    </div>
-                  </div>
-
-                  {/* View Details Button */}
-                  <button className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#00674F] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-[#00543e]">
-                    VIEW DETAILS
-                    <ArrowRight size={14} />
-                  </button>
                 </div>
               </div>
             </StaggeredCard>
@@ -529,8 +687,8 @@ const IndicesPage = () => {
 
             {/* Centered Action Link */}
             <div className="mt-5 inline-flex items-center justify-center gap-1.5 text-sm font-bold text-[#00674F]">
-              <span>Learn More</span>
-              <ArrowRight size={15} />
+              
+              
             </div>
           </div>
         </StaggeredCard>

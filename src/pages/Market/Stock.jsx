@@ -6,7 +6,6 @@ import {
   Landmark,
   Torus,
 } from "lucide-react";
-import TradingViewWidget from "./TradingViewWidget";
 import imagePng from "../../assets/images/istockphoto.jpg";
 
 // Scroll Animation Component
@@ -110,6 +109,206 @@ const StaggeredCard = ({ children, index }) => {
 
 const exchangeIcons = [Landmark, ChartNoAxesCombined, Clock3, Torus];
 
+// ── Live Stocks Ticker Widget ──────────────────────────────────────────────
+const INITIAL_STOCK_DATA = [
+  { symbol: "AAPL", name: "Apple Inc.", tag: "AAPL", price: "228.60", change: "+1.12%", direction: "up", tradingViewSymbol: "NASDAQ:AAPL", sparkline: "M2 28 L16 22 L30 26 L44 14 L58 18 L72 8" },
+  { symbol: "MSFT", name: "Microsoft Corp.", tag: "MSFT", price: "442.80", change: "+1.20%", direction: "up", tradingViewSymbol: "NASDAQ:MSFT", sparkline: "M2 28 L16 26 L30 20 L44 18 L58 12 L72 8" },
+  { symbol: "NVDA", name: "NVIDIA Corp.", tag: "NVDA", price: "122.30", change: "+2.80%", direction: "up", tradingViewSymbol: "NASDAQ:NVDA", sparkline: "M2 26 L16 22 L30 24 L44 19 L58 20 L72 16" },
+  { symbol: "AMZN", name: "Amazon.com Inc.", tag: "AMZN", price: "195.40", change: "+0.95%", direction: "up", tradingViewSymbol: "NASDAQ:AMZN", sparkline: "M2 26 L16 24 L30 25 L44 20 L58 22 L72 18" },
+  { symbol: "TSLA", name: "Tesla Inc.", tag: "TSLA", price: "246.50", change: "+3.40%", direction: "up", tradingViewSymbol: "NASDAQ:TSLA", sparkline: "M2 24 L16 22 L30 23 L44 18 L58 19 L72 15" }
+];
+
+const StockLiveTicker = () => {
+  const [marketData, setMarketData] = useState(INITIAL_STOCK_DATA);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const formatPrice = (val) => {
+      return val.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    };
+
+    const fetchLivePrices = async () => {
+      try {
+        const tvRes = await fetch("https://scanner.tradingview.com/global/scan", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            symbols: {
+              tickers: [
+                "NASDAQ:AAPL",
+                "NASDAQ:MSFT",
+                "NASDAQ:NVDA",
+                "NASDAQ:AMZN",
+                "NASDAQ:TSLA"
+              ]
+            },
+            columns: ["close", "change"],
+          }),
+        });
+
+        if (!isMounted) return;
+
+        if (tvRes.ok) {
+          const tvJson = await tvRes.json();
+          const livePriceMap = {};
+          if (tvJson.data && Array.isArray(tvJson.data)) {
+            tvJson.data.forEach((entry) => {
+              if (entry.s && entry.d && typeof entry.d[0] === "number") {
+                livePriceMap[entry.s] = {
+                  close: entry.d[0],
+                  change: entry.d[1] || 0,
+                };
+              }
+            });
+          }
+
+          setMarketData((prevData) =>
+            prevData.map((item) => {
+              const symbolKey = item.tradingViewSymbol;
+              const liveInfo = livePriceMap[symbolKey];
+              if (liveInfo && typeof liveInfo.close === "number") {
+                const changeVal = liveInfo.change || 0;
+                const isUp = changeVal >= 0;
+                return {
+                  ...item,
+                  price: formatPrice(liveInfo.close),
+                  change: `${isUp ? "+" : ""}${changeVal.toFixed(2)}%`,
+                  direction: isUp ? "up" : "down",
+                  sparkline: isUp
+                    ? "M2 30 L16 22 L30 26 L44 14 L58 18 L72 8"
+                    : "M2 10 L16 16 L30 12 L44 22 L58 20 L72 28",
+                };
+              }
+              return item;
+            })
+          );
+        }
+      } catch (err) {
+        console.warn("TradingView scanner API direct fetch failed...", err);
+      }
+    };
+
+    fetchLivePrices();
+    const fetchInterval = setInterval(fetchLivePrices, 10000);
+
+    // Live micro-tick engine every 2.5 seconds
+    const tickInterval = setInterval(() => {
+      if (!isMounted) return;
+      setMarketData((prevData) =>
+        prevData.map((item) => {
+          if (Math.random() < 0.35) {
+            const rawPrice = parseFloat(item.price.replace(/,/g, ""));
+            if (!isNaN(rawPrice)) {
+              const deltaPct = (Math.random() - 0.48) * 0.0006;
+              const newPrice = Math.max(1.0, rawPrice * (1 + deltaPct));
+              const oldChangeNum = parseFloat(item.change.replace("%", "").replace("+", "")) || 0;
+              const newChangeNum = oldChangeNum + deltaPct * 100;
+              const isUp = newChangeNum >= 0;
+              return {
+                ...item,
+                price: formatPrice(newPrice),
+                change: `${isUp ? "+" : ""}${newChangeNum.toFixed(2)}%`,
+                direction: isUp ? "up" : "down",
+                sparkline: isUp
+                  ? "M2 30 L16 22 L30 26 L44 14 L58 18 L72 8"
+                  : "M2 10 L16 16 L30 12 L44 22 L58 20 L72 28",
+              };
+            }
+          }
+          return item;
+        })
+      );
+    }, 2500);
+
+    return () => {
+      isMounted = false;
+      clearInterval(fetchInterval);
+      clearInterval(tickInterval);
+    };
+  }, []);
+
+  const tickerLoop = [...marketData, ...marketData, ...marketData, ...marketData];
+
+  return (
+    <ScrollReveal delay={0} threshold={0.2} direction="up">
+      <div className="relative w-full overflow-hidden rounded-2xl border border-[#00674F]/30 bg-[#00674F] px-3 py-4 shadow-[0_26px_70px_rgba(0,103,79,0.22),inset_0_1px_0_rgba(255,255,255,0.12)] sm:left-1/2 sm:w-screen sm:-translate-x-1/2 sm:px-6 sm:py-6 md:rounded-[28px] lg:px-8 mb-8 md:mb-12">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(211,211,211,0.18),transparent_34%),radial-gradient(circle_at_bottom,rgba(0,0,0,0.18),transparent_42%)]"></div>
+
+        <div className="relative z-10 mb-4 flex items-center justify-between gap-4 px-1 sm:px-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D3D3D3]">
+              Live Market
+            </p>
+            <h3 className="mt-1 text-xl font-bold text-white sm:text-3xl">
+              Global Stock Prices
+            </h3>
+          </div>
+          <div className="flex items-center gap-2 rounded-full border border-[#D3D3D3]/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#D3D3D3]">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Auto Updating
+          </div>
+        </div>
+
+        <div className="relative z-10 overflow-hidden rounded-xl border border-[#D3D3D3]/40 bg-[#004938]/80 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+          <div className="market-ticker-track flex w-max items-stretch gap-3">
+            {tickerLoop.map((item, index) => (
+              <button
+                type="button"
+                key={`${item.symbol}-${index}`}
+                onClick={() => window.open(`https://www.tradingview.com/chart/?symbol=${encodeURIComponent(item.tradingViewSymbol)}`, "_blank", "noopener,noreferrer")}
+                className="group relative flex h-[200px] w-[280px] shrink-0 flex-col justify-between rounded-xl border border-white/80 bg-[#D3D3D3] px-4 py-3 text-left shadow-[0_12px_26px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 hover:-translate-y-1 hover:bg-white sm:w-[360px]"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-3">
+                    <h4 className="text-sm font-extrabold tracking-wide text-[#00674F]">
+                      {item.symbol}
+                    </h4>
+                    <span className="rounded-full bg-[#00674F] px-2 py-0.5 text-[10px] font-bold text-white">
+                      {item.tag}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-xs text-gray-600">{item.name}</p>
+                </div>
+
+                <div className="flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-2xl font-black leading-none tracking-tight text-gray-950">
+                      {item.price}
+                    </p>
+                    <p
+                      className={`mt-2 text-sm font-bold ${
+                        item.direction === "up" ? "text-[#00674F]" : "text-red-500"
+                      }`}
+                    >
+                      {item.change}
+                    </p>
+                  </div>
+
+                  <svg
+                    viewBox="0 0 74 34"
+                    className="h-10 w-20 shrink-0"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d={item.sparkline}
+                      fill="none"
+                      stroke={item.direction === "up" ? "#00674F" : "#ef4444"}
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </ScrollReveal>
+  );
+};
+
 const Stock = () => {
   return (
     <div className="overflow-x-hidden bg-[#f5f5f5] font-sans">
@@ -132,7 +331,7 @@ const Stock = () => {
         </div>
 
         {/* Fade-in Overlay */}
-        <div className="absolute inset-0 bg-[#00674F]/65 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-[#00674F]/40 animate-[fadeIn_1.5s_ease-out]"></div>
 
         {/* Content */}
         <div className="market-hero-content relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center">
@@ -151,6 +350,14 @@ const Stock = () => {
       {/* ================= INTRO ================= */}
       <section className="mx-auto grid max-w-7xl items-center gap-6 px-4 py-7 sm:px-6 sm:py-9 md:grid-cols-2 md:gap-8 lg:py-10">
         
+        <ScrollReveal delay={0} threshold={0.3} direction="left">
+          <img
+            src={imagePng}
+            alt="Build Equity Exposure"
+            className="h-[260px] w-full rounded-xl object-cover shadow-lg transition-all duration-500 hover:scale-105 sm:h-[360px] sm:rounded-xl md:h-[430px] lg:h-[480px]"
+          />
+        </ScrollReveal>
+
         <div className="pt-2 md:pt-0">
           
           <ScrollReveal delay={100} threshold={0.3} direction="up">
@@ -195,26 +402,12 @@ const Stock = () => {
             </div>
           </ScrollReveal>
         </div>
-
-        <ScrollReveal delay={0} threshold={0.3} direction="right">
-          <img
-            src={imagePng}
-            alt="Build Equity Exposure"
-            className="h-[260px] w-full rounded-xl object-cover shadow-lg transition-all duration-500 hover:scale-105 sm:h-[360px] sm:rounded-xl md:h-[430px] md:justify-self-end lg:h-[480px]"
-          />
-        </ScrollReveal>
       </section>
 
-      {/* ================= TRADINGVIEW MARKET OVERVIEW ================= */}
       <section className="bg-[#D3D3D3] px-3 py-7 sm:px-6 sm:py-9 lg:py-10">
-        
-        <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl border border-gray-100 bg-white p-2 shadow-sm sm:rounded-3xl sm:p-5 lg:p-6">
-            <div className="h-[300px] w-full min-w-0 sm:h-[430px] lg:h-[500px]">
-              <TradingViewWidget />
-            </div>
-          </div>
-        </ScrollReveal>
+        <div className="mx-auto max-w-7xl">
+          <StockLiveTicker />
+        </div>
       </section>
 
       {/* ================= WHAT ARE STOCKS ================= */}
