@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import heroImg from "../../assets/images/accounts.jpeg";
 import {
   FaChartLine,
   FaCheck,
@@ -259,8 +260,8 @@ export default function AccountTypesPage() {
             }}
           >
             <img
-              src="/accounttype.png"
-              alt=""
+              src={heroImg}
+              alt="Account Type Hero"
               className="account-hero-image h-full w-full object-cover object-top brightness-110 sm:object-center"
             />
           </div>

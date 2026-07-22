@@ -2,6 +2,7 @@ import React, { memo, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaChartLine, FaCreditCard, FaUserAlt, FaArrowRight } from "react-icons/fa";
 import ecoCalImg from "../../assets/images/economicCalander.jpeg";
+import bannerImg from "../../../public/Auto 2.jpg";
 
 // Scroll Animation Component
 const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
@@ -267,6 +268,41 @@ export default function EconomicCalendar() {
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#00c88f] text-[#021f15] transition-transform duration-300 group-hover:scale-110">
                     <FaArrowRight className="h-3 w-3" />
                   </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+
+      {/* DARK INFO BANNER */}
+      <section className="bg-white px-4 pb-2 pt-0 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <ScrollReveal delay={0} threshold={0.1} direction="up">
+            <div className="overflow-hidden bg-[#0d1b16] rounded-xl text-white shadow-xl relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b16] via-[#0d1b16]/90 to-transparent z-10 hidden md:block"></div>
+              <div className="grid items-center gap-0 lg:grid-cols-2 relative z-20">
+                {/* CONTENT */}
+                <div className="p-8 sm:p-10 lg:p-12 lg:pr-4">
+                  <h3 className="text-2xl font-bold leading-tight sm:text-4xl text-white">
+                    Stay Ahead of <br className="hidden sm:block" />
+                    <span className="text-[#00c88f]">Every Market Move</span>
+                  </h3>
+                  <div className="mt-4 h-1 w-12 bg-[#00674F]"></div>
+                  <p className="mt-5 text-sm leading-7 text-gray-300 sm:text-base sm:leading-relaxed max-w-lg">
+                    Whether you're a seasoned trader or just starting out, the Economic Calendar gives you the edge you need — tracking high-impact global events, central bank decisions, and economic releases in real time.
+                  </p>
+                </div>
+
+                {/* IMAGE */}
+                <div className="relative h-[250px] w-full sm:h-[350px] lg:h-[100%] order-first lg:order-last">
+                  <img
+                    src={bannerImg}
+                    alt="Economic Calendar Insight"
+                    className="h-full w-full object-cover object-center lg:absolute lg:inset-0"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b16] to-transparent lg:bg-gradient-to-l opacity-80 md:opacity-60"></div>
                 </div>
               </div>
             </div>

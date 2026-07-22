@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import heroImg from "../../assets/images/bounas.jpg";
 import { FaArrowRight, FaGift } from "react-icons/fa";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
@@ -326,8 +327,8 @@ export default function Promotions() {
             }}
           >
             <img
-              src="/Promotions.png.jpeg"
-              alt=""
+              src={heroImg}
+              alt="Promotions Hero"
               className="account-hero-image h-full w-full object-cover object-center brightness-110"
             />
           </div>

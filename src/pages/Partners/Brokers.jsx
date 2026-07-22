@@ -272,36 +272,34 @@ export default function IntroducingBrokers() {
         </div>
       </section>
 
-      {/* ================= CTA BANNER ================= */}
-      <section className="py-10 sm:py-16 bg-[#f8faf9]">
-        <div className="w-full px-4 md:px-8 lg:px-16 mx-auto">
-          <ScrollReveal delay={0} threshold={0.2} direction="up">
-            <div className="relative overflow-hidden rounded-[2.5rem] bg-[#021f15] shadow-2xl w-full">
-              {/* Background Map/Globe image (using heroBg or another subtle pattern) */}
-              <div className="absolute right-0 top-0 h-full w-full sm:w-[60%] lg:w-[50%] z-0">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#021f15] to-transparent z-10 hidden sm:block"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#021f15] to-transparent z-10 sm:hidden"></div>
-                <img
-                  src={heroBg}
-                  alt="Global Network"
-                  className="h-full w-full object-cover object-right opacity-40 mix-blend-screen"
-                />
-              </div>
+      {/* ================= DARK INFO BANNER ================= */}
+      <section className="px-4 pb-4 pt-0 sm:px-6 md:px-8 lg:px-16 bg-[#f8faf9]">
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal delay={0} threshold={0.1} direction="up">
+            <div className="overflow-hidden bg-[#0d1b16] rounded-xl text-white shadow-xl relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b16] via-[#0d1b16]/90 to-transparent z-10 hidden md:block"></div>
+              <div className="grid items-center gap-0 lg:grid-cols-2 relative z-20">
+                {/* CONTENT */}
+                <div className="p-8 sm:p-10 lg:p-12 lg:pr-4">
+                  <h3 className="text-2xl font-bold leading-tight sm:text-4xl text-white">
+                    Build Your Network, <br className="hidden sm:block" />
+                    <span className="text-[#00c88f]">Grow Your Income</span>
+                  </h3>
+                  <div className="mt-4 h-1 w-12 bg-[#00674F]"></div>
+                  <p className="mt-5 text-sm leading-7 text-gray-300 sm:text-base sm:leading-relaxed max-w-lg">
+                    Whether you're an experienced financial professional or an ambitious networker, the VeltriumFX IB program is designed to help you earn competitive commissions by connecting traders to a world-class platform.
+                  </p>
+                </div>
 
-              <div className="relative z-20 flex flex-col justify-center px-8 py-12 sm:px-12 sm:py-16 lg:px-20 lg:w-[60%]">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
-                  Ready to Grow With <span className="text-[#00c88f]">VeltriumFX?</span>
-                </h2>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8 max-w-lg">
-                  Join our global network of Introducing Brokers and start building your passive income today.
-                </p>
-                <Link
-                  to="/signup"
-                  className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#00674F] px-8 py-4 text-sm sm:text-base font-semibold text-white transition-all duration-300 hover:bg-[#00c88f] hover:text-[#021f15] hover:shadow-lg w-fit uppercase"
-                >
-                  START NOW
-                  <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+                {/* IMAGE */}
+                <div className="relative h-[250px] w-full sm:h-[350px] lg:h-[100%] order-first lg:order-last">
+                  <img
+                    src={heroBg}
+                    alt="Introducing Brokers Network"
+                    className="h-full w-full object-cover object-center lg:absolute lg:inset-0"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b16] to-transparent lg:bg-gradient-to-l opacity-80 md:opacity-60"></div>
+                </div>
               </div>
             </div>
           </ScrollReveal>
