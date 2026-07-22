@@ -69,7 +69,7 @@ const PrivacyPolicy = () => {
           className="absolute inset-0 h-full w-full scale-105 object-cover animate-[slowZoom_15s_ease-in-out_infinite]"
         />
 
-        <div className="absolute inset-0 bg-[#00674F]/70"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
         <div className="absolute top-10 right-0 h-64 w-64 rounded-full bg-[#D3D3D3]0/20 blur-3xl animate-pulse sm:right-10 sm:h-[500px] sm:w-[500px]"></div>
 
         <div className="absolute inset-0 overflow-hidden">

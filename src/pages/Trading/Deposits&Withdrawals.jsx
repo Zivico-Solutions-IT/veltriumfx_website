@@ -201,7 +201,7 @@ export default function DepositWithdrawSection() {
         </div>
 
         {/* Fade-in Overlays */}
-        <div className="absolute inset-0 bg-[#00674F]/65 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)] animate-[fadeIn_1.8s_ease-out]"></div>
 
         {/* Hero Content */}

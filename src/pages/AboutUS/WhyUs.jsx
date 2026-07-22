@@ -111,20 +111,17 @@ const WhyUs = () => {
           <div className="absolute inset-0 bg-black/50"></div>
         </motion.div>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white flex justify-center text-center">
           <motion.div 
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className="max-w-2xl"
+            className="max-w-2xl flex flex-col items-center"
           >
-            <motion.span variants={fadeUpVariants} className="inline-block py-1 px-3 rounded-sm bg-white/10 text-white text-[11px] font-bold tracking-widest mb-6 uppercase border border-white/20">
-              Built For Focused Traders
-            </motion.span>
             <motion.h1 variants={fadeUpVariants} className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5 text-white">
               Trade With VeltriumFX
             </motion.h1>
-            <motion.p variants={fadeUpVariants} className="text-sm lg:text-base text-gray-300 leading-relaxed mb-8 max-w-xl">
+            <motion.p variants={fadeUpVariants} className="text-sm lg:text-base text-gray-300 leading-relaxed mb-8 max-w-xl mx-auto">
               VeltriumFX combines secure infrastructure, practical trading tools, and responsive support for a more disciplined market experience.
             </motion.p>
             <motion.div variants={fadeUpVariants}>

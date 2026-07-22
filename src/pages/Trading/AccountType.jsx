@@ -267,7 +267,7 @@ export default function AccountTypesPage() {
         </div>
 
         {/* Fade-in Overlays */}
-        <div className="absolute inset-0 bg-[#00674F]/65 animate-[fadeIn_1.5s_ease-out]" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)] animate-[fadeIn_1.8s_ease-out]" />
 
         <div className="relative z-10 w-full max-w-4xl">

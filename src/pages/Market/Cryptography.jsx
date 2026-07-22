@@ -367,7 +367,7 @@ const CryptocurrencyPage = () => {
             />
           </div>
         </div>
-        <div className="absolute inset-0 bg-[#00674F]/40 animate-[fadeIn_1.5s_ease-out]"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white market-hero-content">
           <h1 className="mb-4 text-4xl font-bold market-hero-title sm:text-5xl md:text-6xl animate-[fadeInUp_0.8s_ease-out]">
