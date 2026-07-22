@@ -147,7 +147,7 @@ export default function CommoditiesSection() {
             style={{ transformOrigin: 'center' }}
           >
             <img
-              src="/Commodities.png.jpeg"
+              src="\src\assets\images\cmd.png"
               alt="Commodities Hero"
               className="object-cover object-center w-full h-full market-hero-image"
             />
@@ -165,6 +165,14 @@ export default function CommoditiesSection() {
             Access gold, oil, silver and other essential markets with VeltriumFX.
             Build exposure to real-world resources and respond to global demand shifts.
           </p>
+          <div className="mt-8 animate-[fadeInUp_1.2s_ease-out]">
+            <button 
+              onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
+              className="bg-[#D3D3D3] hover:bg-white text-[#00674F] font-semibold tracking-wider text-sm px-8 py-3 rounded transition-colors duration-300 shadow-md"
+            >
+              EXPLORE MORE
+            </button>
+          </div>
         </div>
       </section>
 

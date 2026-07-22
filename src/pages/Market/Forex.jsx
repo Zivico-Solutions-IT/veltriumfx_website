@@ -422,7 +422,7 @@ function HeroSection() {
           style={{ transformOrigin: 'center' }}
         >
           <img
-            src="\src\assets\images\cover-1.jpg"
+            src="\src\assets\images\frx.png"
             alt="Forex Hero"
             className="h-full w-full object-cover object-center market-hero-image"
           />
@@ -436,6 +436,14 @@ function HeroSection() {
         <p className="market-hero-copy mt-4 max-w-2xl text-sm leading-6 text-gray-200 animate-[fadeInUp_1s_ease-out] sm:text-base sm:leading-7">
           Access major, minor and exotic currency pairs through VeltriumFX.
         </p>
+        <div className="mt-8 animate-[fadeInUp_1.2s_ease-out]">
+          <button 
+            onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
+            className="bg-[#D3D3D3] hover:bg-white text-[#00674F] font-semibold tracking-wider text-sm px-8 py-3 rounded transition-colors duration-300 shadow-md"
+          >
+            EXPLORE MORE
+          </button>
+        </div>
       </div>
     </section>
   );

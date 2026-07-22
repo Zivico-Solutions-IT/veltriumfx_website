@@ -73,14 +73,14 @@ const RegisterPage = ({ onLoginClick }) => {
     <>
       <style>{hideNativePasswordStyles}</style>
 
-      <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#00674F] px-4 py-8 sm:px-6 lg:px-8">
+      <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#D3D3D3] px-4 py-8 sm:px-6 lg:px-8">
         <div className="absolute inset-0">
           <img
             src="/platform.png"
             alt=""
             className="h-full w-full object-cover opacity-25"
           />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(211,211,211,0.18),transparent_26%),radial-gradient(circle_at_72%_46%,rgba(0,103,79,0.32),transparent_28%),linear-gradient(135deg,rgba(0,103,79,0.96),rgba(0,103,79,0.78),rgba(0,103,79,0.96))]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(211,211,211,0.18),transparent_26%),radial-gradient(circle_at_72%_46%,rgba(211,211,211,0.32),transparent_28%),linear-gradient(135deg,rgba(211,211,211,0.96),rgba(211,211,211,0.78),rgba(211,211,211,0.96))]" />
         </div>
 
         <section className="relative z-10 grid w-full max-w-5xl overflow-hidden rounded-lg border border-[#D3D3D3]/25 bg-[#00674F]/85 shadow-[0_28px_90px_rgba(0,0,0,0.42)] backdrop-blur-xl lg:min-h-[620px] lg:grid-cols-[0.5fr_0.5fr]">

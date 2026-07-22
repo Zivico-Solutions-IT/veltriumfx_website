@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import heroBg from "../../assets/images/image 90.jpeg";
+import heroBg from "../../assets/images/cryp.png";
 import cryptoBottom from "../../assets/images/crypto_bottom.webp";
 import cryptoHero from "../../assets/images/Cryptocurrencies-2.jpg";
 import {
@@ -379,6 +379,14 @@ const CryptocurrencyPage = () => {
           <p className="text-xs text-gray-300 market-hero-copy md:text-sm animate-[fadeInUp_1.2s_ease-out]">
             Trade digital asset price movement with flexible platform tools.
           </p>
+          <div className="mt-8 animate-[fadeInUp_1.4s_ease-out]">
+            <button 
+              onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
+              className="bg-[#D3D3D3] hover:bg-white text-[#00674F] font-semibold tracking-wider text-sm px-8 py-3 rounded transition-colors duration-300 shadow-md"
+            >
+              EXPLORE MORE
+            </button>
+          </div>
         </div>
       </div>
 

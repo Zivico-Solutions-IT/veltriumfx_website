@@ -323,7 +323,7 @@ const Stock = () => {
             style={{ transformOrigin: 'center' }}
           >
             <img
-              src="/cover-1.jpg"
+              src="\src\assets\images\stk.png"
               alt="Stock Hero"
               className="market-hero-image h-full w-full object-cover object-center"
             />
@@ -344,6 +344,14 @@ const Stock = () => {
             Explore leading global shares through VeltriumFX
           </p>
 
+          <div className="mt-8 animate-[fadeInUp_1.2s_ease-out]">
+            <button 
+              onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
+              className="bg-[#D3D3D3] hover:bg-white text-[#00674F] font-semibold tracking-wider text-sm px-8 py-3 rounded transition-colors duration-300 shadow-md"
+            >
+              EXPLORE MORE
+            </button>
+          </div>
         </div>
       </section>
 
