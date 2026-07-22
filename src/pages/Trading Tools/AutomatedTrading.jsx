@@ -183,36 +183,34 @@ export default function AutomatedTradingPage() {
             ))}
           </div>
 
-          {/* EXTRA BLOCK */}
+          {/* IS AUTOMATED TRADING FOR EVERYONE? - Dark Banner */}
           <FadeInUp delay={450}>
-            <div className="mt-10 overflow-hidden bg-white sm:mt-12">
-              <div className="grid items-center gap-0 lg:grid-cols-2">
-                {/* IMAGE */}
-                <div className="relative">
-                  <div
-                    className="relative h-[220px] w-full bg-cover bg-center sm:h-[340px]"
-                    style={{
-                      backgroundImage: `url(${heroBg1})`,
-                    }}
-                  />
-                </div>
-
+            <div className="mt-10 overflow-hidden bg-[#0d1b16] sm:mt-12 rounded-xl text-white shadow-xl relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b16] via-[#0d1b16]/90 to-transparent z-10 hidden md:block"></div>
+              <div className="grid items-center gap-0 lg:grid-cols-2 relative z-20">
                 {/* CONTENT */}
-                <div className="bg-white p-5 sm:p-8 lg:p-10">
-                  <div className="flex items-start gap-3 sm:items-center sm:gap-4">
-                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-[#D3D3D3] text-[#00674F] sm:h-12 sm:w-12">
-                      <Users className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-bold leading-tight sm:text-3xl">
-                      Is Automated Trading for Everyone?
-                    </h3>
-                  </div>
-                  <p className="mt-4 text-sm text-justify leading-7 text-gray-600 sm:text-base sm:leading-relaxed">
+                <div className="p-8 sm:p-10 lg:p-12 lg:pr-4">
+                  <h3 className="text-2xl font-bold leading-tight sm:text-4xl text-white">
+                    Is Automated Trading <br className="hidden sm:block" />
+                    for <span className="text-[#00c88f]">Everyone?</span>
+                  </h3>
+                  <div className="mt-4 h-1 w-12 bg-[#00674F]"></div>
+                  <p className="mt-5 text-sm leading-7 text-gray-300 sm:text-base sm:leading-relaxed max-w-lg">
                     Whether you're a professional trader seeking scalable
                     execution or a beginner exploring algorithmic systems,
                     automated trading platforms can be tailored to suit different
                     investment goals and strategies.
                   </p>
+                </div>
+
+                {/* IMAGE */}
+                <div className="relative h-[250px] w-full sm:h-[350px] lg:h-[100%] order-first lg:order-last">
+                  <img
+                    src={heroBg1}
+                    alt="Automated Trading for Everyone"
+                    className="h-full w-full object-cover object-center lg:absolute lg:inset-0"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b16] to-transparent lg:bg-gradient-to-l opacity-80 md:opacity-60"></div>
                 </div>
               </div>
             </div>
@@ -221,59 +219,60 @@ export default function AutomatedTradingPage() {
       </section>
 
       {/* WHY CHOOSE SECTION */}
-      <section className="bg-white px-4 pb-8 pt-0 sm:px-6 lg:pb-10 lg:pt-1">
-        <div className="mx-auto flex max-w-4xl justify-center">
-          <div className="w-full bg-white p-0 sm:p-6 lg:p-7">
-            <FadeInUp delay={0}>
-              <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-[#00674F]">
-                Why Choose Automated Trading?
-              </p>
-
-              <h2 className="mx-auto mt-3 max-w-2xl text-center text-2xl font-bold leading-tight text-gray-950 sm:text-3xl">
-                Built for Speed, Precision & Consistency
+      <section className="bg-gradient-to-b from-[#f7f7f5] to-[#e4ede9] px-4 pb-16 pt-12 sm:px-6 lg:pb-20 lg:pt-16">
+        <div className="mx-auto max-w-7xl">
+          <FadeInUp delay={0}>
+            <div className="text-center">
+              <h2 className="text-2xl font-bold leading-tight text-gray-950 sm:text-3xl md:text-4xl">
+                Why Choose <span className="text-[#00674F]">Automated Trading?</span>
               </h2>
-            </FadeInUp>
-
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {[
-                {
-                  icon: <Clock3 />,
-                  title: "24/7 Market Monitoring",
-                  text: "Track market movements continuously without interruption.",
-                },
-                {
-                  icon: <Zap />,
-                  title: "Fast & Efficient Execution",
-                  text: "Execute trades in milliseconds with optimized algorithms.",
-                },
-                {
-                  icon: <Scale />,
-                  title: "Emotion-Free Decisions",
-                  text: "Trade based on data, logic and disciplined strategies.",
-                },
-                {
-                  icon: <ClipboardList />,
-                  title: "Reliable Consistency",
-                  text: "Maintain structured execution aligned with your strategy.",
-                },
-              ].map((item, index) => (
-                <FadeInUp key={index} delay={index * 100}>
-                  <div className="group flex gap-3 rounded-xl border border-gray-100 bg-[#f7faf7] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#00674F]/20 hover:bg-white hover:shadow-md sm:gap-4 sm:p-5">
-                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#00674F]/10 text-[#00674F] transition-all duration-300 group-hover:bg-[#00674F] group-hover:text-white group-hover:scale-110 sm:h-12 sm:w-12">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-base font-semibold text-gray-950 transition-all duration-300 group-hover:text-[#00674F]">
-                        {item.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                        {item.text}
-                      </p>
-                    </div>
-                  </div>
-                </FadeInUp>
-              ))}
+              <div className="mt-4 flex items-center justify-center gap-3">
+                <div className="h-[2px] w-12 bg-[#00674F]/40"></div>
+                <p className="text-sm sm:text-base font-semibold text-gray-700 uppercase tracking-wide">
+                  Built for Speed, Precision & Consistency
+                </p>
+                <div className="h-[2px] w-12 bg-[#00674F]/40"></div>
+              </div>
             </div>
+          </FadeInUp>
+
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: <Clock3 className="h-9 w-9" />,
+                title: "24/7 Market Monitoring",
+                text: "Track market movements continuously without interruption.",
+              },
+              {
+                icon: <Zap className="h-9 w-9" />,
+                title: "Fast & Efficient Execution",
+                text: "Execute trades in milliseconds with optimized algorithms.",
+              },
+              {
+                icon: <Scale className="h-9 w-9" />,
+                title: "Emotion-Free Decisions",
+                text: "Trade based on data, logic and disciplined strategies.",
+              },
+              {
+                icon: <ClipboardList className="h-9 w-9" />,
+                title: "Reliable Consistency",
+                text: "Maintain structured execution aligned with your strategy.",
+              },
+            ].map((item, index) => (
+              <FadeInUp key={index} delay={index * 100}>
+                <div className="flex h-full flex-col items-center justify-start rounded-xl bg-white p-8 text-center shadow-[0_4px_20px_rgb(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_25px_rgb(0,0,0,0.1)]">
+                  <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-white text-[#00674F] border-[2px] border-[#00674F]">
+                    {item.icon}
+                  </div>
+                  <h3 className="mb-3 text-lg font-bold text-gray-900">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-600">
+                    {item.text}
+                  </p>
+                </div>
+              </FadeInUp>
+            ))}
           </div>
         </div>
       </section>
