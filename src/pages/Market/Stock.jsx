@@ -200,7 +200,7 @@ const Stock = () => {
           <img
             src={imagePng}
             alt="Build Equity Exposure"
-            className="h-[260px] w-full rounded-none object-cover shadow-lg transition-all duration-500 hover:scale-105 sm:h-[360px] sm:rounded-none md:h-[430px] md:justify-self-end lg:h-[480px]"
+            className="h-[260px] w-full rounded-xl object-cover shadow-lg transition-all duration-500 hover:scale-105 sm:h-[360px] sm:rounded-xl md:h-[430px] md:justify-self-end lg:h-[480px]"
           />
         </ScrollReveal>
       </section>
@@ -209,7 +209,7 @@ const Stock = () => {
       <section className="bg-[#D3D3D3] px-3 py-7 sm:px-6 sm:py-9 lg:py-10">
         
         <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="mx-auto max-w-7xl overflow-hidden rounded-none border border-gray-100 bg-white p-2 shadow-sm sm:rounded-none sm:p-5 lg:p-6">
+          <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl border border-gray-100 bg-white p-2 shadow-sm sm:rounded-3xl sm:p-5 lg:p-6">
             <div className="h-[300px] w-full min-w-0 sm:h-[430px] lg:h-[500px]">
               <TradingViewWidget />
             </div>
@@ -221,13 +221,13 @@ const Stock = () => {
       <section className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:py-6">
         
         <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="rounded-none border-b-4 border-[#D3D3D3] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-5 shadow-md transition-all duration-300 hover:shadow-xl sm:rounded-none sm:p-6 lg:p-7">
+          <div className="rounded-2xl border-b-4 border-[#D3D3D3] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-5 shadow-md transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7">
             
             <h3 className="text-2xl font-bold text-[#00674F] sm:text-3xl">
               What are Stocks?
             </h3>
 
-            <div className="mt-3 h-1 w-20 rounded-none bg-[#D3D3D3]"></div>
+            <div className="mt-3 h-1 w-20 rounded-full bg-[#D3D3D3]"></div>
 
             <p className="mt-4 text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 lg:text-lg">
               A stock represents a unit of ownership in a company. By purchasing
@@ -277,11 +277,11 @@ const Stock = () => {
         },
       ].map((item, i) => (
         <StaggeredCard key={i} index={i}>
-          <div className="group relative flex h-full min-h-[200px] flex-col overflow-hidden rounded-none border border-gray-200 bg-white px-8 py-10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:min-h-[220px] sm:px-6 sm:py-8">
+          <div className="group relative flex h-full min-h-[200px] flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white px-8 py-10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:min-h-[220px] sm:px-6 sm:py-8">
             <div className="relative z-10 flex flex-1 flex-col items-center text-center">
 
               {/* Icon (centered) */}
-              <div className="flex h-16 w-16 items-center justify-center rounded-none bg-[#E8F5EF] text-[#00674F] transition-all duration-300 group-hover:scale-105 sm:h-16 sm:w-16">
+              <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-[#E8F5EF] text-[#00674F] transition-all duration-300 group-hover:scale-105 sm:h-16 sm:w-16">
                 {React.createElement(exchangeIcons[i], {
                   className: "h-7 w-7 sm:h-7 sm:w-7",
                   strokeWidth: 2.4,
@@ -294,7 +294,7 @@ const Stock = () => {
               </h4>
 
               {/* Centered underline */}
-              <div className="mt-3 h-1 w-12 rounded-none bg-[#00674F] mx-auto"></div>
+              <div className="mt-3 h-1 w-12 rounded-full bg-[#00674F] mx-auto"></div>
 
               {/* Description */}
               <p className="mt-4 text-sm leading-6 text-slate-600 sm:leading-7">
@@ -312,13 +312,13 @@ const Stock = () => {
       <section className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-0">
         
         <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="rounded-none bg-[#00674F] p-5 text-white shadow-lg transition-all duration-300 hover:shadow-xl sm:rounded-none sm:p-6 lg:p-7">
+          <div className="rounded-2xl bg-[#00674F] p-5 text-white shadow-lg transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7">
             
             <h3 className="text-2xl font-bold text-[#D3D3D3] sm:text-3xl">
               Why Trade Stocks?
             </h3>
 
-            <div className="mt-3 h-1 w-20 rounded-none bg-[#D3D3D3]"></div>
+            <div className="mt-3 h-1 w-20 rounded-full bg-[#D3D3D3]"></div>
 
             <p className="mt-4 text-justify text-sm leading-7 sm:text-left sm:text-base sm:leading-7 lg:text-lg">
               Stock trading offers access to a broad range of companies across
@@ -334,13 +334,13 @@ const Stock = () => {
       <section className="mx-auto max-w-7xl px-4 pb-8 pt-5 sm:px-6 lg:px-0">
         
         <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="rounded-none border-b-4 border-[#D3D3D3] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-5 shadow-md transition-all duration-300 hover:shadow-xl sm:rounded-none sm:p-6 lg:p-7">
+          <div className="rounded-2xl border-b-4 border-[#D3D3D3] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-5 shadow-md transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7">
             
             <h3 className="text-2xl font-bold text-[#00674F] sm:text-3xl">
               How Does Stock Trading Work?
             </h3>
 
-            <div className="mt-3 h-1 w-20 rounded-none bg-[#D3D3D3]"></div>
+            <div className="mt-3 h-1 w-20 rounded-full bg-[#D3D3D3]"></div>
 
             <p className="mt-4 text-justify text-sm leading-7 text-gray-700 sm:text-left sm:text-base sm:leading-8 lg:text-lg">
               Stock trading involves buying and selling shares of companies on

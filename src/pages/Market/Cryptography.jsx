@@ -334,7 +334,7 @@ const CryptocurrencyPage = () => {
       {/* What are Crypto CFDs Section */}
       <div className="px-3 py-6 sm:px-5 lg:px-6">
         <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="mx-auto max-w-6xl rounded-none border border-[#00674F] bg-[#00674F] p-8 text-white shadow-sm transition-all duration-300 sm:p-10 md:p-12">
+          <div className="mx-auto max-w-6xl rounded-2xl border border-[#00674F] bg-[#00674F] p-8 text-white shadow-sm transition-all duration-300 sm:p-10 md:p-12">
             <h2 className="mb-5 text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
               What are Crypto CFDs?
             </h2>
@@ -374,21 +374,16 @@ const CryptocurrencyPage = () => {
     {factors.map((factor, index) => (
       <div
         key={index}
-        className="relative h-full min-h-[260px] sm:min-h-[290px] flex flex-col justify-between w-full overflow-hidden rounded-none border border-slate-200 bg-white px-5 py-7 text-left shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+        className="relative h-full min-h-[260px] sm:min-h-[290px] flex flex-col justify-between w-full overflow-hidden rounded-2xl border border-slate-200 bg-white px-5 py-7 text-center shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
       >
-        <div>
-          {/* Header: Icon & Title */}
-          <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-none bg-[#E7F5EE] text-[#00674F]">
-              {factor.icon}
-            </div>
-            <h3 className="text-sm font-bold leading-snug text-[#0f172a] sm:text-base">
-              {factor.title}
-            </h3>
+        <div className="flex flex-col items-center gap-4">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E7F5EE] text-[#00674F]">
+            {factor.icon}
           </div>
-
-          {/* Description */}
-          <p className="mt-4 text-xs sm:text-sm leading-relaxed text-slate-600">
+          <h3 className="text-sm font-bold leading-snug text-[#0f172a] sm:text-base">
+            {factor.title}
+          </h3>
+          <p className="text-xs sm:text-sm leading-relaxed text-slate-600">
             {factor.description}
           </p>
         </div>
@@ -483,7 +478,7 @@ const CryptocurrencyPage = () => {
                 {promoFeatures.map((feature, index) => (
                   <div
                     key={index}
-                    className="bg-white p-6 border border-[#D3D3D3] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col items-center text-center h-full rounded-none"
+                    className="bg-white p-6 border border-[#D3D3D3] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col items-center text-center h-full rounded-2xl"
                   >
                     <div className="flex justify-center mb-4 text-[#00674F]">
                       {feature.icon}

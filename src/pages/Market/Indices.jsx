@@ -382,12 +382,12 @@ const IndicesPage = () => {
         <div className="grid grid-cols-1 gap-5 mx-auto mt-6 max-w-6xl sm:grid-cols-2 lg:mt-8 lg:grid-cols-4">
           {indices.map((item, index) => (
             <StaggeredCard key={index} index={index}>
-              <div className="relative h-full flex flex-col justify-between w-full overflow-hidden rounded-none border border-slate-200 bg-white p-5 text-left shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="relative h-full flex flex-col justify-between w-full overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <div>
                   {/* Top Header Row */}
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-none bg-[#E7F5EE] text-[#00674F]">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E7F5EE] text-[#00674F]">
                         {item.icon}
                       </div>
                       <div>
@@ -399,7 +399,7 @@ const IndicesPage = () => {
                         </h3>
                       </div>
                     </div>
-                    <span className="shrink-0 rounded-none border border-slate-300 bg-slate-200/60 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-600">
+                    <span className="shrink-0 rounded-md border border-slate-300 bg-slate-200/60 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-600">
                       LIVE
                     </span>
                   </div>
@@ -412,7 +412,7 @@ const IndicesPage = () => {
 
                 <div>
                   {/* Price Box */}
-                  <div className="mt-4 rounded-none border border-slate-200/80 bg-[#F8F9FA] p-3.5">
+                  <div className="mt-4 rounded-xl border border-slate-200/80 bg-[#F8F9FA] p-3.5">
                     <div className="flex items-center justify-between gap-2">
                       <div>
                         <p className="text-xl font-bold text-[#0f172a] sm:text-2xl">
@@ -422,12 +422,12 @@ const IndicesPage = () => {
                           {item.change} <span className="font-normal text-slate-500">{item.changePercent}</span>
                         </p>
                       </div>
-                      <div className="h-7 w-14 shrink-0 rounded-none bg-gradient-to-r from-[#00674F]/70 to-[#b2e2d3]" />
+                      <div className="h-7 w-14 shrink-0 rounded-md bg-gradient-to-r from-[#00674F]/70 to-[#b2e2d3]" />
                     </div>
                   </div>
 
                   {/* View Details Button */}
-                  <button className="mt-4 inline-flex items-center gap-2 rounded-none bg-[#00674F] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-[#00543e]">
+                  <button className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#00674F] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-[#00543e]">
                     VIEW DETAILS
                     <ArrowRight size={14} />
                   </button>
@@ -463,16 +463,16 @@ const IndicesPage = () => {
   <div className="grid max-w-6xl gap-5 mx-auto mt-8 lg:mt-10 lg:grid-cols-2">
     {topCards.map((card, index) => (
       <ScrollReveal key={index} delay={index * 150} threshold={0.2} direction="up">
-        <div className="rounded-none border border-slate-200 bg-white p-6 shadow-[0_24px_60px_rgba(0,103,79,0.08)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(0,103,79,0.14)] md:p-8 h-full">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_24px_60px_rgba(0,103,79,0.08)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(0,103,79,0.14)] md:p-8 h-full">
           <div className="flex items-start gap-4">
-            <div className="flex h-14 w-14 items-center justify-center rounded-none bg-[#00674F] text-white shadow-lg shadow-[#00674F]/10 sm:h-16 sm:w-16">
+            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#00674F] text-white shadow-lg shadow-[#00674F]/10 sm:h-16 sm:w-16">
               {card.icon}
             </div>
             <div className="flex-1">
               <h3 className="text-xl font-semibold text-[#0f172a] sm:text-2xl">
                 {card.title}
               </h3>
-              <div className="mt-3 h-1.5 w-16 rounded-none bg-[#00674F]" />
+              <div className="mt-3 h-1.5 w-16 rounded-full bg-[#00674F]" />
             </div>
           </div>
 
@@ -509,26 +509,26 @@ const IndicesPage = () => {
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {factors.map((item, index) => (
         <StaggeredCard key={index} index={index}>
-          <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-none border border-slate-200 bg-white p-5 text-left shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <div>
-              {/* Header: Icon & Title */}
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-none bg-[#E7F5EE] text-[#00674F]">
-                  {item.icon}
-                </div>
-                <h3 className="text-base font-bold leading-snug text-[#0f172a] sm:text-lg">
-                  {item.title}
-                </h3>
+          <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div className="flex flex-col items-center">
+              {/* Centered Icon Container */}
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E7F5EE] text-[#00674F] mb-4">
+                {item.icon}
               </div>
+              
+              {/* Centered Title */}
+              <h3 className="text-base font-bold leading-snug text-[#0f172a] sm:text-lg mb-3">
+                {item.title}
+              </h3>
 
-              {/* Description */}
-              <p className="mt-4 text-xs sm:text-sm leading-relaxed text-slate-600">
+              {/* Centered Description */}
+              <p className="text-xs sm:text-sm leading-relaxed text-slate-600">
                 {item.desc}
               </p>
             </div>
 
-            {/* Action Link */}
-            <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-[#00674F]">
+            {/* Centered Action Link */}
+            <div className="mt-5 inline-flex items-center justify-center gap-1.5 text-sm font-bold text-[#00674F]">
               <span>Learn More</span>
               <ArrowRight size={15} />
             </div>

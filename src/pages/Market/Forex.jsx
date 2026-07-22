@@ -202,7 +202,7 @@ function SectionTitle({ children, accent = false }) {
         <h2 className={`text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl ${accent ? "text-[#00674F]" : "text-[#1f1f1f]"}`}>
           {children}
         </h2>
-        {!accent && <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-[#00674F] sm:mt-6 sm:w-24" />}
+        {!accent && <div className="mx-auto mt-4 h-1 w-20 rounded-none bg-[#00674F] sm:mt-6 sm:w-24" />}
       </div>
     </ScrollReveal>
   );
@@ -252,15 +252,15 @@ function ForexRatesWidget() {
               TradingView Cross Rates
             </h2>
           </div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-[#D3D3D3] px-3 py-1 text-xs font-semibold text-[#00674F]">
-            <span className="w-2 h-2 rounded-full animate-pulse bg-[#D3D3D3]0" />
+          <span className="inline-flex items-center gap-2 rounded-md bg-[#D3D3D3] px-3 py-1 text-xs font-semibold text-[#00674F]">
+            <span className="w-2 h-2 rounded-full animate-pulse bg-[#00674F]" />
             Real-time
           </span>
         </div>
-        <div className="min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_16px_38px_rgba(15,23,42,0.10)] sm:rounded-2xl sm:p-3 sm:shadow-[0_22px_60px_rgba(15,23,42,0.12)]">
+        <div className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5 shadow-[0_16px_38px_rgba(15,23,42,0.10)] sm:rounded-3xl sm:p-3 sm:shadow-[0_22px_60px_rgba(15,23,42,0.12)]">
           <div
             ref={containerRef}
-            className="tradingview-widget-container h-[360px] min-w-0 overflow-hidden rounded-lg bg-white sm:h-[520px] sm:rounded-xl lg:h-[600px]"
+            className="tradingview-widget-container h-[360px] min-w-0 overflow-hidden rounded-2xl bg-white sm:h-[520px] sm:rounded-3xl lg:h-[600px]"
           />
         </div>
       </section>
@@ -304,9 +304,9 @@ function AboutSection() {
       <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-14">
         <ScrollReveal delay={0} threshold={0.3} direction="left">
           <img
-            src="\src\assets\images\166f997e78024.jpeg"
+            src="\src\assets\images\shutterstock_2159962175.jpg"
             alt="forex"
-            className="h-[210px] w-full rounded-xl object-cover shadow-md transition-all duration-500 hover:scale-105 sm:h-[320px] sm:rounded-2xl lg:h-[350px] lg:rounded-[30px]"
+            className="h-[210px] w-full rounded-3xl object-cover shadow-xl transition-all duration-500 hover:scale-105 sm:h-[320px] sm:rounded-3xl lg:h-[350px] lg:rounded-3xl"
           />
         </ScrollReveal>
         
@@ -362,14 +362,19 @@ function FeatureGrid() {
           const Icon = item.icon;
           return (
             <StaggeredCard key={item.title} index={index}>
-              <div className="relative flex h-full min-h-[170px] flex-col items-center overflow-hidden rounded-xl border border-gray-200 border-b-[4px] border-b-[#00674F] bg-white px-4 py-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[185px] md:border-b-[5px] lg:min-h-[195px] lg:px-5">
-                <div className="relative z-10 mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#D3D3D3] text-[#00674F] transition-all duration-300 group-hover:scale-110 sm:h-13 sm:w-13">
+              <div className="relative flex h-full min-h-[220px] sm:min-h-[240px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                {/* Centered Icon Container */}
+                <div className="relative z-10 mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#D3D3D3] text-[#00674F] transition-all duration-300 sm:h-13 sm:w-13">
                   <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.2} />
                 </div>
-                <h3 className="relative z-10 text-sm font-bold leading-snug text-gray-800 sm:text-base lg:text-lg">
+                
+                {/* Centered Title */}
+                <h3 className="relative z-10 text-base font-bold leading-snug text-gray-800 sm:text-lg mb-3">
                   {item.title}
                 </h3>
-                <p className="relative z-10 mt-2 text-sm leading-6 text-gray-500">
+                
+                {/* Centered Description */}
+                <p className="relative z-10 text-sm leading-relaxed text-gray-500">
                   {item.desc}
                 </p>
               </div>
@@ -416,7 +421,7 @@ function MarketOfferingsSection() {
               <div className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white px-5 py-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00674F]/20 hover:shadow-md sm:px-6">
                 <div className="absolute bottom-0 left-0 top-0 w-1 bg-[#00674F]" />
                 <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#D3D3D3] text-sm font-bold text-[#00674F]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#D3D3D3] text-sm font-bold text-[#00674F]">
                     {String(index + 1).padStart(2, "0")}
                   </div>
                   <div className="min-w-0">
@@ -460,8 +465,8 @@ function FundingSection() {
           const Icon = method.icon;
           return (
             <StaggeredCard key={method.name} index={index}>
-              <div className="group relative flex h-full min-h-[200px] flex-col items-center justify-start overflow-hidden rounded-2xl border border-gray-200 border-b-4 border-b-[#00674F] bg-white px-4 py-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[210px] sm:px-5 lg:min-h-[220px]">
-                <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#D3D3D3] text-[#00674F] transition-all duration-300 group-hover:scale-110 sm:h-14 sm:w-14">
+              <div className="group relative flex h-full min-h-[200px] flex-col items-center justify-start overflow-hidden rounded-2xl border border-gray-200 bg-white px-4 py-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[210px] sm:px-5 lg:min-h-[220px]">
+                <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#D3D3D3] text-[#00674F] transition-all duration-300 group-hover:scale-110 sm:h-14 sm:w-14">
                   <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.3} />
                 </div>
                 <h3 className="relative z-10 mt-3 flex min-h-[42px] items-center justify-center text-sm font-bold leading-snug text-slate-900 sm:min-h-[48px] sm:text-base lg:text-lg">
