@@ -77,50 +77,48 @@ const StepCard = ({ step, index, isActive, onActivate }) => {
       <button
         type="button"
         onClick={() => onActivate(index)}
-        className={`process-card relative z-10 flex min-h-[280px] w-full max-w-[360px] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-sm border bg-white px-8 py-12 text-center shadow-sm transition-colors duration-300 focus:outline-none md:min-h-[300px] mx-auto ${
+        className={`process-card relative z-10 flex min-h-[280px] w-full max-w-[360px] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl border bg-white px-8 py-12 text-center shadow-[0_18px_42px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-3 focus:outline-none focus:ring-2 focus:ring-[#D3D3D3] focus:ring-offset-4 md:min-h-[300px] mx-auto ${
           isActive
-            ? "border-[#00674F] bg-[#00674F]/5"
-            : "border-[#D3D3D3] hover:border-[#00674F]/50 hover:bg-gray-50"
+            ? "border-[#D3D3D3] shadow-[0_28px_48px_rgba(212,175,55,0.2)]"
+            : "border-[#00674F]/15 hover:border-[#00674F]/40 hover:shadow-[0_28px_60px_rgba(1,68,33,0.16)]"
         }`}
         aria-pressed={isActive}
       >
         {/* Top Progress Bar */}
         <span
-          className={`absolute left-0 top-0 h-1.5 w-full origin-left transition-all duration-500 ${
-            isActive ? "scale-x-100 bg-[#00674F]" : "scale-x-0 bg-[#D3D3D3]"
+          className={`absolute left-0 top-0 h-1.5 w-full origin-left rounded-t-2xl transition-all duration-300 ${
+            isActive ? "scale-x-100 bg-[#D3D3D3]" : "scale-x-0 bg-[#D3D3D3]"
           }`}
         ></span>
 
         {/* Step Number Badge */}
-        <div className={`absolute left-5 top-5 flex h-8 w-8 items-center justify-center rounded-sm border text-xs font-bold transition-colors duration-300 ${
-          isActive ? "border-[#00674F] bg-[#00674F] text-white" : "border-[#D3D3D3] bg-white text-[#00674F]"
-        }`}>
+        <div className="absolute left-5 top-5 flex h-8 w-8 items-center justify-center rounded-md border border-[#00674F]/15 bg-[#D3D3D3] text-xs font-bold text-[#00674F] transition-all duration-300">
           {number}
         </div>
 
         {/* Selected Badge */}
         {isActive && (
-          <div className="absolute right-5 top-5 rounded-sm bg-[#00674F] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">
-            Active
+          <div className="absolute right-5 top-5 rounded-full bg-[#D3D3D3] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-md">
+            Selected
           </div>
         )}
 
         {/* Icon Container */}
         <div
-          className={`process-icon mb-6 flex h-14 w-14 items-center justify-center rounded-sm text-2xl transition-all duration-300 ${
-            isActive ? "bg-[#00674F] text-white shadow-md scale-110" : "bg-[#D3D3D3]/30 text-[#00674F]"
+          className={`process-icon mb-5 flex h-16 w-16 items-center justify-center rounded-lg bg-[#00674F] text-2xl text-white shadow-sm transition-all duration-300 ${
+            isActive ? "scale-110 bg-[#00674F]" : ""
           }`}
         >
           <Icon />
         </div>
 
         {/* Title */}
-        <h3 className={`mb-3 text-lg font-bold transition-colors duration-300 sm:text-xl ${isActive ? "text-[#00674F]" : "text-gray-900"}`}>
+        <h3 className="mb-3 text-lg font-bold text-[#00674F] transition-all duration-300 sm:text-xl">
           {title}
         </h3>
 
         {/* Description */}
-        <p className="text-center text-sm leading-relaxed text-gray-600 sm:text-base">
+        <p className="text-center text-sm leading-relaxed text-gray-500 transition-all duration-300 sm:text-base">
           {desc}
         </p>
       </button>
@@ -161,7 +159,7 @@ export default function Account() {
   return (
     <section
       ref={sectionRef}
-      className="w-full overflow-hidden bg-white px-4 py-16 text-center sm:px-5 sm:py-24 border-b border-[#D3D3D3]"
+      className="w-full overflow-hidden bg-[#f5f6f7] px-4 py-10 text-center sm:px-5 sm:py-14"
     >
       <div className="mx-auto max-w-6xl">
         {/* Top Small Heading */}
@@ -174,27 +172,28 @@ export default function Account() {
           }`}
         >
           <span className="h-[2px] w-8 bg-[#00674F] sm:w-10"></span>
-          <p className="text-[11px] font-bold uppercase tracking-widest text-[#00674F]">Getting Started</p>
+          <p className="text-sm font-semibold text-gray-700">Getting Started</p>
           <span className="h-[2px] w-8 bg-[#00674F] sm:w-10"></span>
         </div>
 
         {/* Main Heading */}
         <h2
-          className={`mb-12 text-3xl font-extrabold leading-tight text-gray-900 transition-all duration-700 delay-100 sm:text-4xl md:mb-16 md:text-5xl ${
+          className={`mb-10 text-2xl font-bold leading-tight text-gray-900 transition-all duration-700 delay-100 sm:text-3xl md:mb-14 md:text-4xl ${
             hasAnimated
               ? "translate-y-0 opacity-100"
               : "translate-y-8 opacity-0"
           }`}
         >
-          A Cleaner Way to Begin with <span className="text-[#00674F]">VeltriumFX</span>
+          A Cleaner Way to Begin with{" "}
+          <span className="text-[#00674F]">VeltriumFX</span>
         </h2>
 
         {/* Steps with Scroll Animation */}
-        <div className="relative grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-3 md:gap-8">
+        <div className="relative grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-3 md:gap-8">
           {/* Animated Progress Line - Desktop Only */}
-          <div className="absolute left-[18%] right-[18%] top-[45%] hidden h-[2px] -translate-y-1/2 overflow-hidden bg-[#D3D3D3] md:block">
+          <div className="absolute left-[18%] right-[18%] top-1/2 hidden h-[3px] -translate-y-1/2 overflow-hidden rounded-full bg-[#00674F]/15 md:block">
             <span
-              className="step-line-progress block h-full bg-[#00674F] transition-all duration-500 ease-out"
+              className="step-line-progress block h-full rounded-full bg-[#D3D3D3] transition-all duration-500 ease-out"
               style={{
                 width: activeStep !== null ? "33.333%" : "0%",
                 transform: activeStep !== null ? `translateX(${activeStep * 100}%)` : "translateX(-100%)",
@@ -216,7 +215,7 @@ export default function Account() {
 
         {/* Bottom Text */}
         <p
-          className={`mx-auto mt-12 max-w-md text-center text-sm leading-relaxed text-gray-600 transition-all duration-700 delay-500 sm:mt-16 sm:text-base ${
+          className={`mx-auto mt-12 max-w-md text-justify text-sm leading-relaxed text-gray-700 transition-all duration-700 delay-500 sm:mt-14 sm:text-center sm:text-base ${
             hasAnimated ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
@@ -227,7 +226,7 @@ export default function Account() {
         <button
           type="button"
           onClick={() => navigate("/login")}
-          className={`mt-6 inline-flex items-center justify-center rounded-sm border border-[#00674F] bg-[#00674F] px-10 py-3.5 text-sm font-bold tracking-wide text-white transition-colors hover:bg-white hover:text-[#00674F] sm:w-auto ${
+          className={`button-shine relative mt-5 w-full max-w-[220px] overflow-hidden rounded-full bg-[#00674F] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:w-auto ${
             hasAnimated ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
           style={{ transitionDelay: "600ms" }}
@@ -237,9 +236,52 @@ export default function Account() {
       </div>
 
       <style jsx>{`
+        /* Button Shine Effect */
+        .button-shine::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+          );
+          transition: left 0.5s ease;
+        }
+
+        .button-shine:hover::before {
+          left: 100%;
+        }
+
         /* Hover Scale for Icon */
         .process-card:hover .process-icon {
           transform: scale(1.05);
+        }
+
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+          .button-shine::before {
+            animation: none;
+            transition: none;
+          }
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 640px) {
+          .process-card {
+            min-height: 260px;
+            padding: 1.5rem;
+          }
+          
+          .process-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            font-size: 1.25rem;
+          }
         }
       `}</style>
     </section>

@@ -39,91 +39,71 @@ export default function FAQ() {
   };
 
   return (
-    <section className="flex justify-center bg-[#F8F9FA] px-4 py-16 sm:px-6 sm:py-24 border-b border-[#D3D3D3]">
+    <section className="reveal-section flex justify-center bg-white px-4 py-10 sm:px-6 sm:py-8 md:py-10 lg:px-8">
       <div className="w-full max-w-4xl">
         
         {/* Heading */}
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <span className="w-8 h-[2px] bg-[#00674F]"></span>
-          <span className="text-[#00674F] font-bold uppercase tracking-widest text-[11px]">Knowledge Base</span>
-          <span className="w-8 h-[2px] bg-[#00674F]"></span>
-        </div>
-
-        <h2 className="mb-12 text-center text-3xl font-extrabold leading-tight sm:mb-16 sm:text-4xl md:text-5xl text-gray-900">
-          Clear <span className="text-[#00674F]">Guidance</span>
+        <h2 className="mb-6 text-center text-xl font-semibold leading-tight sm:mb-6 sm:text-2xl md:text-3xl">
+          Clear <span className="text-[#00674F]">Guidance</span> for New Traders
         </h2>
 
-        {/* FAQ Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          {faqData.map((item) => {
-            const isOpen = openId === item.id;
-            return (
-              <div 
-                key={item.id} 
-                className={`rounded-sm border p-5 sm:p-6 transition-all duration-300 ${
-                  isOpen 
-                    ? "bg-[#00674F] border-[#00674F] shadow-xl translate-y-[-4px]" 
-                    : "bg-white border-[#D3D3D3] shadow-sm hover:border-[#00674F]/40"
-                }`}
+        {/* FAQ */}
+        <div className="space-y-3 sm:space-y-5">
+          {faqData.map((item) => (
+            <div key={item.id} className="interactive-card rounded-xl border-b border-gray-300 bg-white/40 p-4 sm:p-4">
+              
+              {/* FIXED ROW */}
+              <div
+                onClick={() => toggle(item.id)}
+                className="flex cursor-pointer items-center gap-3 sm:gap-4"
               >
                 
-                {/* FIXED ROW */}
-                <div
-                  onClick={() => toggle(item.id)}
-                  className="flex cursor-pointer items-start gap-4"
-                >
-                  
-                  {/* Number Badge */}
-                  <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-sm text-xs font-bold transition-colors ${
-                    isOpen ? "bg-[#D3D3D3] text-[#00674F]" : "bg-[#00674F]/10 text-[#00674F]"
-                  }`}>
-                    0{item.id}
-                  </div>
-
-                  {/* Question + Arrow */}
-                  <div className="flex flex-1 items-start justify-between gap-3 pt-1">
-                    
-                    <h3 className={`text-left text-base font-bold leading-snug transition-colors ${
-                      isOpen ? "text-white" : "text-gray-900"
-                    }`}>
-                      {item.question}
-                    </h3>
-
-                    {/* Arrow */}
-                    <svg
-                      className={`h-4 w-4 shrink-0 transition-transform duration-300 ${
-                        isOpen ? "rotate-180 text-white" : "text-gray-400"
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </div>
+                {/* Number */}
+                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#00674F] text-xs font-medium text-white sm:h-7 sm:w-7 sm:text-sm">
+                  {item.id}
                 </div>
 
-                {/* Answer */}
-                <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-40 mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <p className={`text-sm leading-relaxed ${isOpen ? "text-[#D3D3D3]" : "text-gray-600"}`}>
-                    {item.answer}
-                  </p>
+                {/* Question + Arrow */}
+                <div className="flex flex-1 items-center justify-between gap-3">
+                  
+                  <h3 className="text-left text-sm font-semibold leading-snug text-gray-800 sm:text-base">
+                    {item.question}
+                  </h3>
+
+                  {/* Arrow */}
+                  <svg
+                    className={`h-3 w-3 shrink-0 text-gray-500 transition-transform duration-300 sm:h-4 sm:w-4 ${
+                      openId === item.id ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
                 </div>
               </div>
-            );
-          })}
+
+              {/* Answer */}
+              {openId === item.id && (
+                <p className="ml-0 mt-3 text-justify text-xs leading-relaxed text-gray-600 sm:ml-11 sm:text-left sm:text-sm">
+                  {item.answer}
+                </p>
+              )}
+            </div>
+          ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-6 flex justify-center">
           <button
             type="button"
             onClick={() => navigate("/faq")}
-            className="inline-flex items-center justify-center rounded-sm border border-[#00674F] bg-white px-10 py-3.5 text-sm font-bold uppercase tracking-widest text-[#00674F] shadow-sm transition-colors hover:bg-[#00674F] hover:text-white sm:w-auto"
+            className="button-shine w-full max-w-[220px] rounded-full bg-[#00674F] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0 sm:w-auto"
           >
             More Questions
           </button>

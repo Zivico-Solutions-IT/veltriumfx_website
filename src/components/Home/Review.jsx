@@ -36,27 +36,27 @@ const reviews = [
 
 const ReviewCard = ({ name, role, image, text, index }) => (
   <div
-    className="review-card-animate relative w-[calc(100vw-2rem)] max-w-[280px] flex-shrink-0 overflow-hidden rounded-sm bg-white border border-[#D3D3D3] p-6 shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-[#00674F] hover:shadow-xl sm:w-[300px] sm:max-w-[300px] md:w-[350px] md:max-w-[350px]"
+    className="review-card-animate relative w-[calc(100vw-2rem)] max-w-[280px] flex-shrink-0 overflow-hidden rounded-xl bg-gray-100 p-4 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl sm:w-[300px] sm:max-w-[300px] md:w-[350px] md:max-w-[350px] md:rounded-2xl md:p-6"
     style={{ animationDelay: `${(index % reviews.length) * 0.18}s` }}
   >
-    <div className="absolute top-0 left-0 w-full h-1 bg-[#00674F] scale-x-0 transition-transform origin-left duration-300 group-hover:scale-x-100"></div>
+    <span className="absolute inset-0 pointer-events-none review-gold-border rounded-xl md:rounded-2xl"></span>
 
-    <div className="mb-4 flex text-lg text-[#00674F]">★★★★★</div>
+    <div className="mb-3 text-sm text-[#D3D3D3]">★★★★★</div>
 
-    <p className="mb-6 text-sm leading-relaxed text-gray-700">
-      "{text}"
+    <p className="mb-4 text-xs leading-6 text-justify text-gray-700 sm:text-sm">
+      {text}
     </p>
 
-    <div className="flex items-center gap-4 mt-auto">
+    <div className="flex items-center gap-2 sm:gap-3">
       <img
         src={image}
         alt={name}
-        className="object-cover w-10 h-10 rounded-sm border border-[#D3D3D3]"
+        className="object-cover w-8 h-8 rounded-full sm:h-9 sm:w-9"
       />
 
       <div>
-        <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wide">{name}</h4>
-        <p className="text-xs font-semibold text-[#00674F]">{role}</p>
+        <h4 className="text-sm font-semibold text-[#00674F]">{name}</h4>
+        <p className="text-xs text-gray-500">{role}</p>
       </div>
     </div>
   </div>
@@ -146,18 +146,18 @@ const stats = [
 ];
 
 const StatBox = ({ icon: Icon, value, suffix, title, desc }) => (
-  <div className="flex flex-col items-center p-6 text-center border border-[#D3D3D3] rounded-sm bg-white transition-all duration-300 hover:border-[#00674F] hover:shadow-lg group">
-    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-sm bg-[#D3D3D3]/30 text-[#00674F] transition-all duration-300 group-hover:bg-[#00674F] group-hover:text-white">
-      <Icon size={24} strokeWidth={2} />
+  <div className="flex flex-col items-center p-4 text-center interactive-card rounded-2xl sm:p-5">
+    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-[#D3D3D3] md:h-12 md:w-12">
+      <Icon size={20} color="black" />
     </div>
 
-    <h3 className="text-3xl font-extrabold text-gray-900 md:text-4xl">
+    <h3 className="text-xl font-bold md:text-2xl">
       <CountUpNumber end={value} suffix={suffix} duration={2000} />
     </h3>
 
-    <p className="mt-2 text-sm font-bold uppercase tracking-wider text-[#00674F]">{title}</p>
+    <p className="text-sm font-bold text-gray-600">{title}</p>
 
-    <p className="mt-3 text-sm leading-relaxed text-gray-600">
+    <p className="mt-2 text-xs text-justify text-gray-500 sm:text-center">
       {desc}
     </p>
   </div>
@@ -165,39 +165,25 @@ const StatBox = ({ icon: Icon, value, suffix, title, desc }) => (
 
 export default function Review() {
   return (
-    <section className="px-4 py-16 bg-[#F8F9FA] sm:px-6 sm:py-24 lg:px-8 border-b border-[#D3D3D3]">
-      <div className="mx-auto max-w-7xl">
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <span className="w-8 h-[2px] bg-[#00674F]"></span>
-          <span className="text-[#00674F] font-bold uppercase tracking-widest text-[11px]">Testimonials</span>
-          <span className="w-8 h-[2px] bg-[#00674F]"></span>
-        </div>
-        
-        <h2 className="mb-12 text-3xl font-extrabold leading-tight text-center text-gray-900 sm:mb-16 sm:text-4xl md:text-5xl">
-          Traders Experience <span className="text-[#00674F]">With Us</span>
-        </h2>
-      </div>
+    <section className="px-4 py-10 bg-white reveal-section sm:px-6 sm:py-8 md:py-12 lg:px-8">
+      <h2 className="mb-6 text-xl font-bold leading-tight text-center sm:mb-7 sm:text-2xl md:mb-9 md:text-3xl">
+        Traders Experience With Us
+      </h2>
 
-      <div className="mx-auto overflow-hidden max-w-7xl mb-16 sm:mb-24">
-        <div className="flex gap-6 w-max animate-scroll md:gap-8 hover:[animation-play-state:paused]">
+      <div className="mx-auto overflow-hidden max-w-7xl">
+        <div className="flex gap-4 w-max animate-scroll sm:gap-5 md:gap-8">
           {[...reviews, ...reviews].map((review, index) => (
             <ReviewCard key={index} index={index} {...review} />
           ))}
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl mt-12 sm:mt-16">
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <span className="w-8 h-[2px] bg-[#00674F]"></span>
-          <span className="text-[#00674F] font-bold uppercase tracking-widest text-[11px]">Global Reach</span>
-          <span className="w-8 h-[2px] bg-[#00674F]"></span>
-        </div>
-
-        <h2 className="mb-10 text-3xl font-extrabold leading-tight text-center text-gray-900 sm:mb-12 md:text-4xl">
+      <div className="mt-6 text-center sm:mt-10 md:mt-14">
+        <h2 className="mb-5 text-xl font-bold leading-tight sm:mb-7 md:mb-9 md:text-2xl">
           Built on Trust & Performance
         </h2>
 
-        <div className="grid max-w-5xl grid-cols-1 gap-6 mx-auto sm:grid-cols-3 md:gap-8">
+        <div className="grid max-w-4xl grid-cols-1 gap-4 mx-auto sm:grid-cols-3 md:gap-10">
           {stats.map((stat, index) => (
             <StatBox key={index} {...stat} />
           ))}
@@ -215,8 +201,42 @@ export default function Review() {
             animation: scroll 45s linear infinite;
           }
 
-          .review-card-animate:hover .absolute.top-0 {
-            transform: scaleX(1);
+          .animate-scroll:hover {
+            animation-play-state: paused;
+          }
+
+          @keyframes reviewFloat {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-8px);
+            }
+          }
+
+          .review-card-animate {
+            animation: reviewFloat 5s ease-in-out infinite;
+          }
+
+          .animate-scroll:hover .review-card-animate {
+            animation-play-state: paused;
+          }
+
+          @keyframes goldBorderGlow {
+            0%, 100% {
+              opacity: 0.55;
+              box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.35);
+            }
+            50% {
+              opacity: 1;
+              box-shadow:
+                inset 0 0 0 2px rgba(212, 175, 55, 0.95),
+                0 0 22px rgba(212, 175, 55, 0.24);
+            }
+          }
+
+          .review-gold-border {
+            animation: goldBorderGlow 2.8s ease-in-out infinite;
           }
         `}
       </style>
