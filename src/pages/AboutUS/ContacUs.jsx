@@ -80,18 +80,13 @@ export default function ContactPage() {
       {/* Sleek Hero Section */}
       <section className="relative flex min-h-[calc(100vh-72px)] sm:min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-84px)] items-center justify-start overflow-hidden bg-gray-900 pt-24 pb-16 lg:pt-32 lg:pb-20">
         
-        {/* Background Image with Framer Motion slow zoom */}
-        <motion.div 
-          className="absolute inset-0 z-0"
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.1 }}
-          transition={{ duration: 20, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
-        >
+        {/* Background Image with slow zoom */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${contacUsImg})` }}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-[slowZoom_20s_ease-in-out_infinite]"
+            style={{ backgroundImage: `url(${contacUsImg})`, transformOrigin: 'center' }}
           />
-        </motion.div>
+        </div>
         
         <div className="absolute inset-0 bg-black/40"></div>
 

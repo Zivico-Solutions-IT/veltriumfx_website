@@ -57,6 +57,11 @@ export default {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        "slowZoom": {
+          "0%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
+          "100%": { transform: "scale(1)" },
+        },
       },
       animation: {
         "fade-in": "fade-in 0.5s ease-in-out",
@@ -72,6 +77,7 @@ export default {
         "border-glow": "border-glow 2s ease-in-out infinite",
         "gradient-border": "gradient-border 3s ease infinite",
         "border-rotate": "border-rotate 8s linear infinite",
+        "slowZoom": "slowZoom 20s ease-in-out infinite",
       },
     },
   },

@@ -184,7 +184,6 @@ export default function EconomicCalendar() {
     <div className="w-full overflow-x-hidden bg-white text-[#0b1f16]">
       {/* Hero Section with Parallax Effect */}
       <section className="relative h-[calc(100vh-72px)] w-full overflow-hidden bg-[#00674F] sm:h-[calc(100vh-80px)] lg:h-[calc(100vh-84px)]">
-        {/* Animated Background with Zoom */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
             className="absolute inset-0 animate-[slowZoom_20s_ease-in-out_infinite]"
@@ -193,7 +192,7 @@ export default function EconomicCalendar() {
             <img
               src={ecoCalImg}
               alt="Economic Calendar Hero"
-              className="h-full w-full object-cover object-center hero-image"
+              className="h-full w-full object-cover object-center"
             />
           </div>
         </div>
@@ -364,14 +363,7 @@ export default function EconomicCalendar() {
           }
         }
         
-        @keyframes economicHeroZoom {
-          from {
-            transform: scale(1.08);
-          }
-          to {
-            transform: scale(1);
-          }
-        }
+
 
         @keyframes fadeDown {
           from {
@@ -432,9 +424,7 @@ export default function EconomicCalendar() {
           left: 100%;
         }
 
-        .hero-image {
-          animation: economicHeroZoom 1.5s ease-out both;
-        }
+
 
         .animate-fade-down {
           animation: fadeDown 0.85s ease-out both;
