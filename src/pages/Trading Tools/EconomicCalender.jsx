@@ -289,9 +289,9 @@ export default function EconomicCalendar() {
                   </div>
                 )}
 
-                <div className="process-card relative w-full max-w-[320px] rounded-2xl border border-[#00674F]/20 border-b-[4px] border-b-[#00674F] bg-white px-5 pb-8 pt-14 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-6">
+                <div className="process-card group relative w-full max-w-[320px] rounded-2xl border border-[#00674F]/20 border-b-[4px] border-b-[#00674F] bg-white px-5 pb-8 pt-14 text-center shadow-md transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(0,103,79,0.15)] sm:px-6">
                   <div className="absolute -top-7 left-1/2 -translate-x-1/2">
-                    <div className="process-icon flex h-14 w-14 items-center justify-center rounded-full bg-[#00674F] text-xl text-white shadow-lg shadow-[#00674F]/20 transition-all duration-300 hover:scale-110 hover:bg-[#D3D3D3]">
+                    <div className="process-icon flex h-14 w-14 items-center justify-center rounded-full bg-[#00674F] text-xl text-white shadow-lg shadow-[#00674F]/20 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                       <Icon />
                     </div>
                   </div>

@@ -88,7 +88,7 @@ export default function AboutUs() {
           <div className="mt-5 flex justify-center sm:mt-6 md:justify-start">
             <Link
               to="/why-us"
-              className="button-shine inline-flex  items-center justify-center rounded-full bg-[#00674F] px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-[#00674F] hover:shadow-lg sm:text-base"
+              className="button-shine inline-flex items-center justify-center rounded-full bg-[#00674F] px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_10px_20px_rgba(0,103,79,0.3)] active:scale-95 sm:text-base"
             >
               Explore Our Story
             </Link>

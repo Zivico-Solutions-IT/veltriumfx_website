@@ -62,7 +62,7 @@ export default function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-[21rem] text-center sm:max-w-3xl md:max-w-5xl">
 
         {/* Badge */}
-        <div className="hero-trust-badge inline-flex items-center max-w-full gap-2 px-3 py-1.5 mb-5 bg-white border border-gray-200 rounded-full shadow-sm sm:mb-6 sm:gap-3 sm:px-6 sm:py-2">
+        <div className="hero-trust-badge inline-flex items-center max-w-full gap-2 px-3 py-1.5 mb-5 bg-white border border-gray-200 rounded-full shadow-sm sm:mb-6 sm:gap-3 sm:px-6 sm:py-2 transition-all duration-300 hover:shadow-md hover:scale-[1.02] cursor-default">
           <div className="flex -space-x-2">
             <img
               src="https://i.pravatar.cc/32?img=1"
@@ -145,7 +145,7 @@ export default function Hero() {
   <button
     type="button"
     onClick={() => navigate("/login")}
-    className="w-auto max-w-[200px] rounded-full bg-[#D3D3D3] px-5 py-2.5 text-xs font-semibold text-[#00674F] shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#D3D3D3]/90 hover:shadow-lg hover:shadow-[#D3D3D3]/20 active:translate-y-0 sm:w-auto sm:max-w-none sm:px-10 sm:py-3 sm:text-base"
+    className="w-auto max-w-[200px] rounded-full bg-[#D3D3D3] px-5 py-2.5 text-xs font-semibold text-[#00674F] shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:bg-white hover:shadow-[0_10px_20px_rgba(211,211,211,0.3)] active:scale-95 sm:w-auto sm:max-w-none sm:px-10 sm:py-3 sm:text-base"
     style={{
       WebkitTapHighlightColor: 'transparent',
       touchAction: 'manipulation',

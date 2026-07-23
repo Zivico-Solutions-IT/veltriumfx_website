@@ -67,11 +67,13 @@ export default function PricingSection() {
               className={`
                 home-package-card
                 group relative flex flex-col justify-between
-                rounded-2xl p-5 sm:p-7 md:rounded-3xl md:p-8
-                bg-[#fcfdfc] border border-[#dce9e1]
-                shadow-md
+                rounded-2xl p-6 sm:p-8 md:rounded-3xl md:p-10
+                bg-white border border-[#dce9e1]
+                shadow-lg transition-all duration-500 ease-out
+                hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,103,79,0.12)]
+                hover:border-[#00674F]/30
 
-                ${plan.highlight ? "ring-2 ring-[#D3D3D3]" : ""}
+                ${plan.highlight ? "ring-2 ring-[#D3D3D3] shadow-[0_10px_30px_rgba(211,211,211,0.3)]" : ""}
               `}
             >
 
@@ -128,8 +130,8 @@ export default function PricingSection() {
                   font-semibold text-sm sm:text-base
                   transition-all duration-300 ease-out
 
-                  hover:scale-105 hover:shadow-xl hover:shadow-[#00674F]/20
-                  active:scale-95
+                  hover:scale-[1.03] hover:shadow-xl hover:shadow-[#00674F]/25 hover:bg-[#005a45]
+                  active:scale-[0.98]
                 "
               >
                 Open Account

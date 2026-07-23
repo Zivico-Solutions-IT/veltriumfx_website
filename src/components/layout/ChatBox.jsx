@@ -110,7 +110,7 @@ export default function ChatBox({ embedded = false, initialOpen = false }) {
   };
 
   return (
-    <div className={embedded ? "w-full" : "fixed bottom-5 right-4 z-[70] sm:bottom-6 sm:right-6"}>
+    <div className={embedded ? "w-full" : "fixed bottom-5 right-4 z-[70] flex flex-col items-end sm:bottom-6 sm:right-6"}>
       {(embedded || isOpen) && (
         <div
           className={
@@ -211,7 +211,7 @@ export default function ChatBox({ embedded = false, initialOpen = false }) {
       {!embedded && (
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="h-14 w-14 rounded-full bg-[#00674F] text-white flex items-center justify-center"
+          className="mt-4 h-14 w-14 rounded-full bg-[#00674F] text-white flex items-center justify-center shadow-xl hover:scale-105 transition-transform"
         >
           {isOpen ? <X size={24} /> : <MessageCircle size={26} />}
         </button>

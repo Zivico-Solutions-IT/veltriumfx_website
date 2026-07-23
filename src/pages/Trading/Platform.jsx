@@ -57,7 +57,7 @@ const ScrollReveal = ({ children, delay = 0, threshold = 0.2 }) => {
 const AnimatedCard = ({ card, index }) => {
   return (
     <ScrollReveal delay={index * 150} threshold={0.1}>
-      <div className="flex h-full flex-col rounded-2xl border-b-4 border-[#00674F] bg-white p-5 transition duration-300 hover:-translate-y-1 sm:p-8">
+      <div className="flex h-full flex-col rounded-2xl border-b-4 border-[#00674F] bg-white p-5 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,103,79,0.1)] sm:p-8">
         {/* Header */}
         <div className="flex min-h-[72px] items-center gap-4 mb-4">
           <div

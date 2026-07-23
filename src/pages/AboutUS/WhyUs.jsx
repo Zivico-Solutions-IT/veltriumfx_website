@@ -227,15 +227,15 @@ const WhyUs = () => {
               <motion.div 
                 key={idx}
                 variants={fadeUpVariants}
-                className="relative bg-white rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col h-full border border-gray-100 group"
+                className="relative bg-white rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,103,79,0.12)] hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group"
               >
                 {/* Abstract corner background */}
                 <div className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tl from-[#00674F]/10 to-transparent rounded-tl-full opacity-100 pointer-events-none transition-all duration-500 group-hover:scale-110"></div>
 
                 <div className="relative z-10 flex justify-between items-start mb-8">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#e6f4ef] to-white flex items-center justify-center relative shadow-inner">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#e6f4ef] to-white flex items-center justify-center relative shadow-inner transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_10px_20px_rgba(0,103,79,0.15)]">
                     <div className="absolute inset-0 bg-[#00674F]/5 rounded-full blur-sm"></div>
-                    <item.icon className="w-8 h-8 text-[#00674F] relative z-10" strokeWidth={1.5} />
+                    <item.icon className="w-8 h-8 text-[#00674F] relative z-10 transition-transform duration-300 group-hover:rotate-6" strokeWidth={1.5} />
                   </div>
                   <div className="text-right mt-2">
                     <span className="text-xl font-bold text-[#00674F]">0{idx + 1}</span>

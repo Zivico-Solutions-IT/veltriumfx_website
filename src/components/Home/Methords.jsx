@@ -336,7 +336,7 @@ const Methords = ({ variant = "all" }) => {
                   key={method.name}
                   href="/deposit"
                   aria-label={`View ${method.name} deposit and withdrawal details`}
-                  className="group flex min-h-[74px] flex-col items-center justify-center gap-1.5 rounded-xl border border-[#D3D3D3]/60 bg-white px-2 py-3 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#00674F]/40 hover:shadow-md sm:min-h-[92px] sm:gap-2 sm:px-3 sm:py-4"
+                  className="group flex min-h-[74px] flex-col items-center justify-center gap-1.5 rounded-xl border border-[#D3D3D3]/60 bg-white px-2 py-3 text-center shadow-sm transition-all duration-500 ease-out hover:-translate-y-2 hover:border-[#00674F]/40 hover:shadow-lg sm:min-h-[92px] sm:gap-2 sm:px-3 sm:py-4"
                 >
                   <div className="flex h-8 items-center justify-center transition duration-300 group-hover:scale-105 sm:h-11">
                     <PaymentLogo method={method} />
