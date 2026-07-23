@@ -150,7 +150,7 @@ export default function AutomatedTradingPage() {
           </FadeInUp>
 
           {/* CARDS */}
-          <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-y-12 md:grid-cols-3 md:gap-4">
+          <div className="mx-auto mt-16 sm:mt-20 grid max-w-5xl grid-cols-1 gap-y-16 md:grid-cols-3 md:gap-6">
             {[
               {
                 icon: <ScanSearch className="w-8 h-8" />,
