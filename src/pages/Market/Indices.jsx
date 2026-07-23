@@ -6,6 +6,7 @@ import {
   Star,
   BarChart3,
   ArrowUp,
+  ArrowDown,
   ArrowRight,
   Clock3,
   Search,
@@ -119,13 +120,15 @@ const StaggeredCard = ({ children, index }) => {
 
 const indices = [
   {
-    title: "Wall Street",
-    subtitle: "Dow Jones",
+    title: "Dow Jones",
+    subtitle: "Wall Street",
     desc: "Tracks 30 prominent companies on the NYSE.",
     value: "38,921.23",
     change: "+412.75",
-    changePercent: "+1.07%",
-    icon: <TrendingUp size={24} />,
+    changePercent: "+1.42%",
+    direction: "up",
+    sparkline: "M0 28 L15 22 L30 26 L45 14 L60 18 L74 8",
+    flag: "https://flagcdn.com/w40/us.png",
   },
   {
     title: "S&P 500",
@@ -133,17 +136,21 @@ const indices = [
     desc: "A comprehensive benchmark for the US stock market.",
     value: "5,234.18",
     change: "+52.18",
-    changePercent: "+1.01%",
-    icon: <BarChart3 size={24} />,
+    changePercent: "+0.87%",
+    direction: "up",
+    sparkline: "M0 28 L15 26 L30 20 L45 18 L60 12 L74 8",
+    flag: "https://flagcdn.com/w40/us.png",
   },
   {
     title: "FTSE 100",
     subtitle: "UK Equities",
     desc: "Measures the top 100 companies by market cap in London.",
     value: "8,275.63",
-    change: "+68.73",
-    changePercent: "+0.84%",
-    icon: <ArrowUp size={24} />,
+    change: "-20.73",
+    changePercent: "-0.25%",
+    direction: "down",
+    sparkline: "M0 10 L15 16 L30 12 L45 22 L60 20 L74 28",
+    flag: "https://flagcdn.com/w40/gb.png",
   },
   {
     title: "DAX",
@@ -151,8 +158,10 @@ const indices = [
     desc: "Reflects the performance of Germany's 40 largest companies.",
     value: "18,516.65",
     change: "+148.67",
-    changePercent: "+0.81%",
-    icon: <TrendingUp size={24} />,
+    changePercent: "+0.54%",
+    direction: "up",
+    sparkline: "M0 24 L15 22 L30 23 L45 18 L60 19 L74 15",
+    flag: "https://flagcdn.com/w40/de.png",
   },
 ];
 
@@ -162,12 +171,12 @@ const indices = [
 
 const topCards = [
   {
-    icon: <BarChart3 size={22} />,
+    icon: <BarChart3 size={24} />,
     title: "Market Capitalization-Based Indices",
     desc: "Companies' market value influences the index more heavily, so larger firms dominate the movement (e.g., S&P 500, FTSE 100).",
   },
   {
-    icon: <ArrowUp size={22} />,
+    icon: <ArrowUp size={24} />,
     title: "Price-Weighted Indices",
     desc: "These depend on the stock price of the companies in the index, with higher-priced stocks having more impact (e.g., Dow Jones, Nikkei 225).",
   },
@@ -197,22 +206,22 @@ const middleCards = [
 
 const factors = [
   {
-    icon: <Landmark size={26} />,
+    icon: <Landmark size={24} />,
     title: "Political Events",
     desc: "Elections, policy shifts and international tensions can all move market prices.",
   },
   {
-    icon: <TrendingUp size={26} />,
+    icon: <TrendingUp size={24} />,
     title: "Corporate Announcements",
     desc: "Major company news, such as leadership changes, mergers and earnings reports, impacts the indices they are part of.",
   },
   {
-    icon: <BarChart3 size={26} />,
+    icon: <BarChart3 size={24} />,
     title: "Economic Data",
     desc: "Employment reports, inflation and central bank policies shape investor sentiment and index performance.",
   },
   {
-    icon: <Briefcase size={26} />,
+    icon: <Briefcase size={24} />,
     title: "Industry News",
     desc: "News affecting key sectors or industries (e.g. energy or tech) can influence the indices related to those sectors.",
   },
@@ -562,8 +571,8 @@ const IndicesPage = () => {
         {/* TITLE */}
         <ScrollReveal delay={200} threshold={0.2} direction="up">
           <div className="mt-10 text-center sm:mt-12">
-            <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
-              Popular <span className="text-[#00674F]">Indices</span>
+            <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl text-[#111827]">
+              Popular Indices
             </h2>
             <p className="max-w-2xl mx-auto mt-4 text-sm leading-7 text-gray-500 sm:text-base">
               Track major market benchmarks and stay updated with key index
@@ -574,33 +583,80 @@ const IndicesPage = () => {
 
         {/* INDEX CARDS - Staggered */}
         <div className="grid grid-cols-1 gap-5 mx-auto mt-6 max-w-6xl sm:grid-cols-2 lg:mt-8 lg:grid-cols-4">
-          {indices.map((item, index) => (
-            <StaggeredCard key={index} index={index}>
-              <div className="relative h-full flex flex-col justify-between w-full overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <div className="flex flex-col items-center w-full">
-                  {/* Centered Icon Container */}
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E7F5EE] text-[#00674F] mb-3">
-                    {item.icon}
-                  </div>
-                  
-                  {/* Subtitle & Title */}
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-[#00674F]">
-                      {item.subtitle}
+          {indices.map((item, index) => {
+            const isUp = item.direction === "up";
+            const colorClass = isUp ? "text-[#00674F]" : "text-red-500";
+            
+            return (
+              <StaggeredCard key={index} index={index}>
+                <div className="relative h-full flex flex-col justify-between w-full overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <div className="flex flex-col w-full">
+                    {/* Header: Flag, Title, Subtitle */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <img src={item.flag} alt={`${item.title} flag`} className="w-10 h-10 rounded-full object-cover shadow-sm border border-slate-100" />
+                      <div>
+                        <h3 className="text-base font-bold leading-tight text-[#0f172a]">
+                          {item.title}
+                        </h3>
+                        <p className="text-xs font-medium text-slate-500 mt-0.5">
+                          {item.subtitle}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Sparkline */}
+                    <div className="relative h-14 w-full mb-3 rounded-b-lg">
+                      <svg
+                        viewBox="0 0 74 34"
+                        className="absolute inset-0 h-full w-full"
+                        preserveAspectRatio="none"
+                      >
+                        <defs>
+                          <linearGradient id={`grad-up-${index}`} x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor="#00674F" stopOpacity="0.2" />
+                            <stop offset="100%" stopColor="#00674F" stopOpacity="0" />
+                          </linearGradient>
+                          <linearGradient id={`grad-down-${index}`} x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor="#ef4444" stopOpacity="0.2" />
+                            <stop offset="100%" stopColor="#ef4444" stopOpacity="0" />
+                          </linearGradient>
+                        </defs>
+                        <path
+                          d={`${item.sparkline} L74 34 L0 34 Z`}
+                          fill={isUp ? `url(#grad-up-${index})` : `url(#grad-down-${index})`}
+                          stroke="none"
+                        />
+                        <path
+                          d={item.sparkline}
+                          fill="none"
+                          stroke={isUp ? "#00674F" : "#ef4444"}
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+
+                    {/* Percentage Change */}
+                    <div className={`text-[22px] sm:text-2xl font-bold mb-2 flex items-center gap-1 tracking-tight ${colorClass}`}>
+                      {item.changePercent}
+                      {isUp ? <ArrowUp size={20} strokeWidth={3} /> : <ArrowDown size={20} strokeWidth={3} />}
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-xs sm:text-sm leading-relaxed text-slate-600 mb-5">
+                      {item.desc}
                     </p>
-                    <h3 className="text-lg font-bold leading-tight text-[#0f172a] mt-1">
-                      {item.title}
-                    </h3>
                   </div>
 
-                  {/* Description */}
-                  <p className="mt-4 text-xs sm:text-sm leading-relaxed text-slate-600">
-                    {item.desc}
-                  </p>
+                  {/* View Index Link */}
+                  <div className="mt-auto pt-4 border-t border-slate-100">
+                    
+                  </div>
                 </div>
-              </div>
-            </StaggeredCard>
-          ))}
+              </StaggeredCard>
+            );
+          })}
         </div>
       </section>
 
@@ -610,47 +666,91 @@ const IndicesPage = () => {
     HOW INDICES ARE CALCULATED
 ========================================= */}
 
-<section className="px-4 py-8 bg-white sm:px-6 sm:py-10 lg:py-12">
+<section className="px-4 py-8 bg-white sm:px-6 sm:py-10 lg:py-12 overflow-hidden">
 
   {/* HEADER */}
   <ScrollReveal delay={0} threshold={0.2} direction="up">
     <div className="text-center">
       <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
-        How Are Indices{" "}
-        <span className="text-[#00674F]">Calculated?</span>
+        How Are Indices Calculated?
       </h2>
-      <p className="mt-4 text-sm text-gray-500 sm:text-base">
+      <p className="mt-4 text-sm text-[#111827] font-medium sm:text-base">
         Indices are calculated in two primary ways
       </p>
     </div>
   </ScrollReveal>
 
-  {/* TOP CARDS - Both cards same size */}
-  <div className="grid max-w-6xl gap-5 mx-auto mt-8 lg:mt-10 lg:grid-cols-2">
-    {topCards.map((card, index) => (
-      <ScrollReveal key={index} delay={index * 150} threshold={0.2} direction="up">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_24px_60px_rgba(0,103,79,0.08)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(0,103,79,0.14)] md:p-8 h-full">
-          <div className="flex items-start gap-4">
-            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#00674F] text-white shadow-lg shadow-[#00674F]/10 sm:h-16 sm:w-16">
-              {card.icon}
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-semibold text-[#0f172a] sm:text-2xl">
-                {card.title}
-              </h3>
-              <div className="mt-3 h-1.5 w-16 rounded-full bg-[#00674F]" />
-            </div>
+  {/* CARDS CONTAINER */}
+  <div className="relative max-w-5xl mx-auto mt-10 flex flex-col lg:flex-row items-stretch justify-between gap-6 lg:gap-16 px-2">
+    
+    {/* Calculator Middle Badge (Desktop) */}
+    <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 items-center justify-center">
+      <div className="h-16 w-16 bg-[#F4F9F7] rounded-full flex items-center justify-center relative">
+         {/* Dotted lines going left and right */}
+         <div className="absolute top-1/2 left-[-150px] w-[150px] border-t-[1.5px] border-dashed border-[#00674F]/40 -translate-y-1/2 z-[-1]" />
+         <div className="absolute top-1/2 right-[-150px] w-[150px] border-t-[1.5px] border-dashed border-[#00674F]/40 -translate-y-1/2 z-[-1]" />
+         {/* Center icon */}
+         <div className="bg-white rounded-full p-3 shadow-sm border border-slate-200 ring-4 ring-[#F4F9F7]">
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00674F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16.01" y1="10" y2="10"/><line x1="16" x2="16.01" y1="14" y2="14"/><line x1="16" x2="16.01" y1="18" y2="18"/><line x1="8" x2="8.01" y1="10" y2="10"/><line x1="8" x2="8.01" y1="14" y2="14"/><line x1="8" x2="8.01" y1="18" y2="18"/><line x1="12" x2="12.01" y1="10" y2="10"/><line x1="12" x2="12.01" y1="14" y2="14"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>
+         </div>
+      </div>
+    </div>
+
+    {/* LEFT CARD */}
+    <ScrollReveal delay={150} threshold={0.2} direction="right">
+      <div className="relative w-full lg:w-[420px] rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col h-full z-20 transition duration-300 hover:shadow-md">
+        <div className="flex gap-4">
+          <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white">
+             <BarChart3 size={24} />
           </div>
-
-          <p className="mt-6 text-sm leading-7 text-[#475569] sm:text-base">
-            {card.desc}
-          </p>
+          <div>
+            <h3 className="text-[16px] sm:text-[17px] font-semibold text-[#1e293b] leading-snug mt-1 font-sans tracking-tight">
+              Market Capitalization-Based Indices
+            </h3>
+            <p className="mt-2 text-[13px] sm:text-[14px] font-medium leading-relaxed text-[#64748b]">
+              Companies' market value influences the index more heavily, so larger firms dominate the movement.
+            </p>
+          </div>
         </div>
-      </ScrollReveal>
-    ))}
-  </div>
+        <div className="mt-5 border border-slate-200 bg-white shadow-sm px-4 py-2 text-[13px] text-[#475569] font-medium ml-[68px] rounded-md">
+          <span className="text-[#00674F] font-semibold">Examples:</span> S&P 500, FTSE 100
+        </div>
+      </div>
+    </ScrollReveal>
 
-  
+    {/* Calculator Middle Badge (Mobile) */}
+    <div className="flex lg:hidden justify-center items-center py-2 relative z-10">
+      <div className="h-14 w-14 bg-[#F4F9F7] rounded-full flex items-center justify-center relative">
+         <div className="absolute top-[-30px] left-1/2 h-[30px] border-l-[1.5px] border-dashed border-[#00674F]/40 -translate-x-1/2 z-[-1]" />
+         <div className="absolute bottom-[-30px] left-1/2 h-[30px] border-l-[1.5px] border-dashed border-[#00674F]/40 -translate-x-1/2 z-[-1]" />
+         <div className="bg-white rounded-full p-2.5 shadow-sm border border-slate-200 ring-4 ring-[#F4F9F7]">
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00674F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16.01" y1="10" y2="10"/><line x1="16" x2="16.01" y1="14" y2="14"/><line x1="16" x2="16.01" y1="18" y2="18"/><line x1="8" x2="8.01" y1="10" y2="10"/><line x1="8" x2="8.01" y1="14" y2="14"/><line x1="8" x2="8.01" y1="18" y2="18"/><line x1="12" x2="12.01" y1="10" y2="10"/><line x1="12" x2="12.01" y1="14" y2="14"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>
+         </div>
+      </div>
+    </div>
+
+    {/* RIGHT CARD */}
+    <ScrollReveal delay={300} threshold={0.2} direction="left">
+      <div className="relative w-full lg:w-[420px] rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col h-full z-20 transition duration-300 hover:shadow-md">
+        <div className="flex gap-4">
+          <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white">
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+          </div>
+          <div>
+            <h3 className="text-[16px] sm:text-[17px] font-semibold text-[#1e293b] leading-snug mt-1 font-sans tracking-tight">
+              Price-Weighted Indices
+            </h3>
+            <p className="mt-2 text-[13px] sm:text-[14px] font-medium leading-relaxed text-[#64748b]">
+              These depend on the stock price of the companies in the index, with higher-priced stocks having more impact.
+            </p>
+          </div>
+        </div>
+        <div className="mt-5 border border-slate-200 bg-white shadow-sm px-4 py-2 text-[13px] text-[#475569] font-medium ml-[68px] rounded-md">
+          <span className="text-[#00674F] font-semibold">Examples:</span> Dow Jones, Nikkei 225
+        </div>
+      </div>
+    </ScrollReveal>
+  </div>
 </section>
 
       {/* =========================================
@@ -663,7 +763,7 @@ const IndicesPage = () => {
     <ScrollReveal delay={0} threshold={0.2} direction="up">
       <div className="text-center mb-8 sm:mb-10">
         <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
-          What Moves an <span className="text-[#00674F]">Index Price?</span>
+          What Moves an Index Price?
         </h2>
         <p className="mt-4 text-sm text-gray-500 sm:text-base max-w-2xl mx-auto">
           Several factors influence index prices including economic data, political events, corporate announcements and industry trends.
@@ -675,29 +775,28 @@ const IndicesPage = () => {
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {factors.map((item, index) => (
         <StaggeredCard key={index} index={index}>
-          <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <div className="flex flex-col items-center">
-              {/* Centered Icon Container */}
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E7F5EE] text-[#00674F] mb-4">
+          <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-center">
+            <div className="flex flex-col items-center gap-4">
+              {/* Circular Icon Container */}
+              <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white mx-auto">
                 {item.icon}
               </div>
               
-              {/* Centered Title */}
-              <h3 className="text-base font-bold leading-snug text-[#0f172a] sm:text-lg mb-3">
-                {item.title}
-              </h3>
+              <div className="flex flex-col pt-0.5">
+                {/* Centered Title */}
+                <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">
+                  {item.title}
+                </h3>
 
-              {/* Centered Description */}
-              <p className="text-xs sm:text-sm leading-relaxed text-slate-600">
-                {item.desc}
-              </p>
+                {/* Centered Description */}
+                <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">
+                  {item.desc}
+                </p>
+              </div>
             </div>
 
-            {/* Centered Action Link */}
-            <div className="mt-5 inline-flex items-center justify-center gap-1.5 text-sm font-bold text-[#00674F]">
-              
-              
-            </div>
+            {/* Bottom green dash */}
+            <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
           </div>
         </StaggeredCard>
       ))}

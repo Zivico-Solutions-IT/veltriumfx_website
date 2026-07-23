@@ -478,30 +478,31 @@ const Stock = () => {
         },
       ].map((item, i) => (
         <StaggeredCard key={i} index={i}>
-          <div className="group relative flex h-full min-h-[200px] flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white px-8 py-10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:min-h-[220px] sm:px-6 sm:py-8">
-            <div className="relative z-10 flex flex-1 flex-col items-center text-center">
-
-              {/* Icon (centered) */}
-              <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-[#E8F5EF] text-[#00674F] transition-all duration-300 group-hover:scale-105 sm:h-16 sm:w-16">
+          <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-center">
+            <div className="flex flex-col items-center gap-4">
+              {/* Circular Icon Container */}
+              <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white mx-auto">
                 {React.createElement(exchangeIcons[i], {
-                  className: "h-7 w-7 sm:h-7 sm:w-7",
+                  size: 24,
                   strokeWidth: 2.4,
                 })}
               </div>
+              
+              <div className="flex flex-col pt-0.5">
+                {/* Centered Title */}
+                <h4 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">
+                  {item.name}
+                </h4>
 
-              {/* Title */}
-              <h4 className="mt-4 text-base font-bold leading-snug text-slate-900 sm:text-lg">
-                {item.name}
-              </h4>
-
-              {/* Centered underline */}
-              <div className="mt-3 h-1 w-12 rounded-full bg-[#00674F] mx-auto"></div>
-
-              {/* Description */}
-              <p className="mt-4 text-sm leading-6 text-slate-600 sm:leading-7">
-                {item.desc}
-              </p>
+                {/* Centered Description */}
+                <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">
+                  {item.desc}
+                </p>
+              </div>
             </div>
+
+            {/* Bottom green dash */}
+            <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
           </div>
         </StaggeredCard>
       ))}

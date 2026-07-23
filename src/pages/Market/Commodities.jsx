@@ -280,38 +280,53 @@ export default function CommoditiesSection() {
 
             <div className="grid grid-cols-1 gap-5 mt-7 sm:mt-9 sm:gap-6 md:grid-cols-3">
               <StaggeredCard index={0}>
-                <div className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:p-6">
-                  <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#D3D3D3] text-[#00674F] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
-                    <FaChartPie className="text-2xl md:text-3xl" />
+                <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-center">
+                  <div className="flex flex-col items-center gap-4">
+                    {/* Circular Icon Container */}
+                    <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white mx-auto">
+                      <FaChartPie size={24} />
+                    </div>
+                    
+                    <div className="flex flex-col pt-0.5">
+                      <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">Diversification</h3>
+                      <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">Adding commodities to your portfolio can provide exposure to different markets.</p>
+                    </div>
                   </div>
-                  <div className="relative z-10">
-                    <h3 className="mb-2 text-lg font-bold leading-tight text-gray-800 md:text-xl">Diversification</h3>
-                    <p className="text-sm leading-6 text-gray-600">Adding commodities to your portfolio can provide exposure to different markets.</p>
-                  </div>
+                  <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
                 </div>
               </StaggeredCard>
 
               <StaggeredCard index={1}>
-                <div className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:p-6">
-                  <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#D3D3D3] text-[#00674F] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
-                    <FaShieldAlt className="text-2xl md:text-3xl" />
+                <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-center">
+                  <div className="flex flex-col items-center gap-4">
+                    {/* Circular Icon Container */}
+                    <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white mx-auto">
+                      <FaShieldAlt size={24} />
+                    </div>
+                    
+                    <div className="flex flex-col pt-0.5">
+                      <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">Hedging</h3>
+                      <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">Commodities can act as a hedge against inflation and currency fluctuations.</p>
+                    </div>
                   </div>
-                  <div className="relative z-10">
-                    <h3 className="mb-2 text-lg font-bold leading-tight text-gray-800 md:text-xl">Hedging</h3>
-                    <p className="text-sm leading-6 text-gray-600">Commodities can act as a hedge against inflation and currency fluctuations.</p>
-                  </div>
+                  <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
                 </div>
               </StaggeredCard>
 
               <StaggeredCard index={2}>
-                <div className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:p-6">
-                  <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#D3D3D3] text-[#00674F] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
-                    <BiTrendingUp className="text-2xl md:text-3xl" />
+                <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-center">
+                  <div className="flex flex-col items-center gap-4">
+                    {/* Circular Icon Container */}
+                    <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white mx-auto">
+                      <BiTrendingUp size={24} />
+                    </div>
+                    
+                    <div className="flex flex-col pt-0.5">
+                      <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">Market Dynamics</h3>
+                      <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">Commodity prices are highly responsive to supply and demand changes.</p>
+                    </div>
                   </div>
-                  <div className="relative z-10">
-                    <h3 className="mb-2 text-lg font-bold leading-tight text-gray-800 md:text-xl">Market Dynamics</h3>
-                    <p className="text-sm leading-6 text-gray-600">Commodity prices are highly responsive to supply and demand changes.</p>
-                  </div>
+                  <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
                 </div>
               </StaggeredCard>
             </div>
@@ -332,12 +347,17 @@ export default function CommoditiesSection() {
     { icon: RiStockLine, title: "Exchange-Traded Funds (ETFs)", desc: "Invest in a variety of commodities without purchasing physical assets, offering broad exposure to commodity markets." }
   ].map((item, index) => (
     <StaggeredCard key={index} index={index}>
-      <div className="group relative flex h-full min-h-[220px] sm:min-h-[260px] md:min-h-[280px] flex-col items-center overflow-hidden rounded-2xl border border-gray-200 bg-white p-4 sm:p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:p-6">
-        <div className="relative z-10 mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#D3D3D3] text-[#00674F] transition-all duration-300 group-hover:scale-110 sm:mb-4 sm:h-14 sm:w-14 md:h-16 md:w-16">
-          <item.icon className="text-xl sm:text-2xl md:text-3xl" />
+      <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white mx-auto">
+            <item.icon size={24} />
+          </div>
+          <div className="flex flex-col pt-0.5">
+            <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">{item.title}</h3>
+            <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">{item.desc}</p>
+          </div>
         </div>
-        <h3 className="mb-2 text-base sm:text-lg font-bold leading-tight text-gray-800 md:text-xl">{item.title}</h3>
-        <p className="flex-1 text-sm leading-6 text-gray-600">{item.desc}</p>
+        <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
       </div>
     </StaggeredCard>
   ))}
@@ -364,12 +384,17 @@ export default function CommoditiesSection() {
               { icon: MdShowChart, title: "Market Speculation", desc: "Expectations about future price movements often drive the short-term fluctuations of commodities." }
             ].map((item, index) => (
               <StaggeredCard key={index} index={index}>
-                <div className="group rounded-2xl border border-gray-200 bg-white px-4 sm:px-5 py-6 sm:py-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                  <div className="mx-auto flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-[#D3D3D3] transition-all duration-300 group-hover:scale-110">
-                    <item.icon className="h-6 w-6 sm:h-7 sm:w-7 text-[#00674F]" />
+                <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-center">
+                  <div className="flex flex-col items-center gap-4">
+                    <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white mx-auto">
+                      <item.icon size={24} />
+                    </div>
+                    <div className="flex flex-col pt-0.5">
+                      <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">{item.title}</h3>
+                      <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">{item.desc}</p>
+                    </div>
                   </div>
-                  <h3 className="mt-3 text-base font-bold text-gray-800 sm:mt-4 md:text-lg">{item.title}</h3>
-                  <p className="mt-3 text-sm sm:text-base font-regular leading-relaxed sm:leading-[1.75] text-gray-600">{item.desc}</p>
+                  <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
                 </div>
               </StaggeredCard>
             ))}
@@ -391,22 +416,22 @@ export default function CommoditiesSection() {
 
           <div className="grid grid-cols-2 gap-6 mt-10 sm:gap-8 md:grid-cols-3 lg:grid-cols-5">
             {[
-              { icon: GiGoldBar, name: "Gold", type: "Precious Metal", color: "from-[#00674F] to-[#0D7A43]", rotate: "rotate-12" },
-              { icon: null, name: "Silver", type: "Precious Metal", color: "from-gray-500 to-gray-400", rotate: "-rotate-12", isSilver: true },
-              { icon: GiOilPump, name: "Crude Oil", type: "Energy", color: "from-gray-800 to-gray-700", rotate: "rotate-12" },
-              { icon: GiWheat, name: "Wheat", type: "Agriculture", color: "from-amber-600 to-amber-500", rotate: "-rotate-12" },
-              { icon: GiCoffeeBeans, name: "Coffee", type: "Agriculture", color: "from-amber-800 to-amber-700", rotate: "rotate-12" }
+              { icon: GiGoldBar, name: "Gold", type: "Precious Metal", rotate: "rotate-12" },
+              { icon: null, name: "Silver", type: "Precious Metal", rotate: "-rotate-12", isSilver: true },
+              { icon: GiOilPump, name: "Crude Oil", type: "Energy", rotate: "rotate-12" },
+              { icon: GiWheat, name: "Wheat", type: "Agriculture", rotate: "-rotate-12" },
+              { icon: GiCoffeeBeans, name: "Coffee", type: "Agriculture", rotate: "rotate-12" }
             ].map((item, index) => (
               <StaggeredCard key={index} index={index}>
                 <div className="group rounded-2xl border border-gray-200 bg-white p-5 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
-                  <div className={`mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br ${item.color} text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:${item.rotate}`}>
+                  <div className={`mx-auto flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white transition-all duration-300 group-hover:scale-110 group-hover:${item.rotate}`}>
                     {item.isSilver ? (
-                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="1" fill="none" />
+                      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="1.5" fill="none" />
                         <circle cx="12" cy="12" r="3" fill="white" />
                       </svg>
                     ) : (
-                      <item.icon className="text-3xl" />
+                      <item.icon size={24} />
                     )}
                   </div>
                   <h3 className="mt-4 text-base font-extrabold text-black transition-colors duration-300 group-hover:text-[#00674F]">{item.name}</h3>

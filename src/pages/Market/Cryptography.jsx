@@ -301,31 +301,31 @@ const CryptocurrencyPage = () => {
       title: "Supply",
       description:
         "The total number of coins available and their release schedule.",
-      icon: <Coins size={30} />,
+      icon: <Coins size={24} />,
     },
     {
       title: "Market Capitalization",
       description:
         "The total value of coins in circulation and market expectations for future movements.",
-      icon: <ChartNoAxesCombined size={30} />,
+      icon: <ChartNoAxesCombined size={24} />,
     },
     {
       title: "Reputation",
       description:
         "The practical use cases and adoption of cryptocurrencies within financial systems.",
-      icon: <BadgeCheck size={30} />,
+      icon: <BadgeCheck size={24} />,
     },
     {
       title: "Utility",
       description:
         "The practical use cases and adoption of cryptocurrencies within financial systems.",
-      icon: <Blocks size={30} />,
+      icon: <Blocks size={24} />,
     },
     {
       title: "Events & News",
       description:
         "Reflects the performance of the market and major global movements.",
-      icon: <Newspaper size={30} />,
+      icon: <Newspaper size={24} />,
     },
   ];
 
@@ -334,19 +334,19 @@ const CryptocurrencyPage = () => {
       title: "No Asset Ownership",
       description:
         "Trade cryptocurrencies without owning them, requiring minimal capital to get started.",
-      icon: <FaLock className="text-4xl text-blue-600" />,
+      icon: <FaLock size={24} />,
     },
     {
       title: "High Volatility",
       description:
         "Leverage the volatility of the crypto market to potentially achieve significant gains, but be mindful of amplified risks.",
-      icon: <FaChartLine className="text-4xl text-[#00674F]" />,
+      icon: <FaChartLine size={24} />,
     },
     {
       title: "Simple & Accessible",
       description:
         "Unlike stocks and commodities, Crypto CFDs are easier to trade, providing straightforward opportunities for both beginners and experienced traders.",
-      icon: <FaBitcoin className="text-4xl text-[#D3D3D3]" />,
+      icon: <FaBitcoin size={24} />,
     },
   ];
 
@@ -507,19 +507,29 @@ const CryptocurrencyPage = () => {
     {factors.map((factor, index) => (
       <div
         key={index}
-        className="relative h-full min-h-[260px] sm:min-h-[290px] flex flex-col justify-between w-full overflow-hidden rounded-2xl border border-slate-200 bg-white px-5 py-7 text-center shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+        className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-center"
       >
         <div className="flex flex-col items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E7F5EE] text-[#00674F]">
+          {/* Circular Icon Container */}
+          <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white mx-auto">
             {factor.icon}
           </div>
-          <h3 className="text-sm font-bold leading-snug text-[#0f172a] sm:text-base">
-            {factor.title}
-          </h3>
-          <p className="text-xs sm:text-sm leading-relaxed text-slate-600">
-            {factor.description}
-          </p>
+          
+          <div className="flex flex-col pt-0.5">
+            {/* Centered Title */}
+            <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">
+              {factor.title}
+            </h3>
+
+            {/* Centered Description */}
+            <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">
+              {factor.description}
+            </p>
+          </div>
         </div>
+
+        {/* Bottom green dash */}
+        <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
       </div>
     ))}
   </div>
@@ -614,7 +624,9 @@ const CryptocurrencyPage = () => {
                     className="bg-white p-6 border border-[#D3D3D3] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col items-center text-center h-full rounded-2xl"
                   >
                     <div className="flex justify-center mb-4 text-[#00674F]">
-                      {feature.icon}
+                      <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white mx-auto">
+                        {feature.icon}
+                      </div>
                     </div>
                     <h3 className="mb-2.5 text-lg font-bold text-[#0f172a]">
                       {feature.title}

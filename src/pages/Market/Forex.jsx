@@ -513,21 +513,28 @@ function FeatureGrid() {
           const Icon = item.icon;
           return (
             <StaggeredCard key={item.title} index={index}>
-              <div className="relative flex h-full min-h-[220px] sm:min-h-[240px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                {/* Centered Icon Container */}
-                <div className="relative z-10 mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#D3D3D3] text-[#00674F] transition-all duration-300 sm:h-13 sm:w-13">
-                  <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.2} />
+              <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-left">
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center gap-4">
+                    {/* Circular Icon Container */}
+                    <div className="flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white">
+                      <Icon size={22} strokeWidth={2.2} />
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-[16px] sm:text-[17px] font-semibold leading-snug text-[#1e293b] m-0 text-left font-sans tracking-tight">
+                      {item.title}
+                    </h3>
+                  </div>
+                  
+                  {/* Description */}
+                  <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#64748b] font-medium text-left mt-1.5">
+                    {item.desc}
+                  </p>
                 </div>
-                
-                {/* Centered Title */}
-                <h3 className="relative z-10 text-base font-bold leading-snug text-gray-800 sm:text-lg mb-3">
-                  {item.title}
-                </h3>
-                
-                {/* Centered Description */}
-                <p className="relative z-10 text-sm leading-relaxed text-gray-500">
-                  {item.desc}
-                </p>
+
+                {/* Bottom green dash */}
+                <div className="mt-8 h-[3px] w-8 bg-[#00674F] rounded-full"></div>
               </div>
             </StaggeredCard>
           );
@@ -616,17 +623,28 @@ function FundingSection() {
           const Icon = method.icon;
           return (
             <StaggeredCard key={method.name} index={index}>
-              <div className="group relative flex h-full min-h-[200px] flex-col items-center justify-start overflow-hidden rounded-2xl border border-gray-200 bg-white px-4 py-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[210px] sm:px-5 lg:min-h-[220px]">
-                <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#D3D3D3] text-[#00674F] transition-all duration-300 group-hover:scale-110 sm:h-14 sm:w-14">
-                  <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.3} />
+              <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-center">
+                <div className="flex flex-col items-center gap-4">
+                  {/* Circular Icon Container */}
+                  <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white mx-auto">
+                    <Icon size={24} strokeWidth={2.3} />
+                  </div>
+                  
+                  <div className="flex flex-col pt-0.5 items-center">
+                    {/* Centered Title */}
+                    <h3 className="text-[16px] sm:text-[17px] font-semibold leading-snug text-[#1e293b] mb-1.5 text-center font-sans tracking-tight">
+                      {method.name}
+                    </h3>
+                    
+                    {/* Centered Description */}
+                    <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#64748b] font-medium text-center mt-1.5">
+                      {method.desc}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="relative z-10 mt-3 flex min-h-[42px] items-center justify-center text-sm font-bold leading-snug text-slate-900 sm:min-h-[48px] sm:text-base lg:text-lg">
-                  {method.name}
-                </h3>
-                <div className="relative z-10 mt-2 h-[3px] w-9 rounded-full bg-[#D3D3D3]" />
-                <p className="relative z-10 mt-3 text-sm leading-6 text-slate-600">
-                  {method.desc}
-                </p>
+
+                {/* Bottom green dash */}
+                <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
               </div>
             </StaggeredCard>
           );
@@ -642,14 +660,16 @@ function ToolsSection() {
       <div className="grid items-stretch gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
         {tools.map((tool, index) => (
           <StaggeredCard key={tool.title} index={index}>
-            <div className={`flex min-h-[155px] flex-col items-center justify-start rounded-2xl border border-gray-100 bg-white px-5 py-6 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[175px] lg:min-h-[190px] lg:px-6`}>
-              <h3 className="flex min-h-[44px] items-center justify-center text-base font-bold leading-snug text-gray-800 sm:min-h-[56px] sm:text-lg">
-                {tool.title}
-              </h3>
-              <div className="mt-2 h-[3px] w-10 rounded-full bg-[#D3D3D3]" />
-              <p className="mt-3 text-sm leading-6 text-gray-500">
-                {tool.desc}
-              </p>
+            <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-left">
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] text-left">
+                  {tool.title}
+                </h3>
+                <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#64748b] font-medium text-left mt-1.5">
+                  {tool.desc}
+                </p>
+              </div>
+              <div className="mt-8 h-[3px] w-8 bg-[#00674F] rounded-full"></div>
             </div>
           </StaggeredCard>
         ))}
