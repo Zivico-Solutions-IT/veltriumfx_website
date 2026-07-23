@@ -621,19 +621,29 @@ const CryptocurrencyPage = () => {
                 {promoFeatures.map((feature, index) => (
                   <div
                     key={index}
-                    className="bg-white p-6 border border-[#D3D3D3] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col items-center text-center h-full rounded-2xl"
+                    className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-center"
                   >
-                    <div className="flex justify-center mb-4 text-[#00674F]">
+                    <div className="flex flex-col items-center gap-4">
+                      {/* Circular Icon Container */}
                       <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#00674F] text-white mx-auto">
                         {feature.icon}
                       </div>
+                      
+                      <div className="flex flex-col pt-0.5 items-center">
+                        {/* Centered Title */}
+                        <h3 className="text-[16px] sm:text-[17px] font-semibold leading-snug text-[#1e293b] mb-1.5 text-center font-sans tracking-tight">
+                          {feature.title}
+                        </h3>
+
+                        {/* Centered Description */}
+                        <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#64748b] font-medium text-center mt-1.5">
+                          {feature.description}
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="mb-2.5 text-lg font-bold text-[#0f172a]">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-gray-600">
-                      {feature.description}
-                    </p>
+
+                    {/* Bottom green dash */}
+                    <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
                   </div>
                 ))}
               </div>
