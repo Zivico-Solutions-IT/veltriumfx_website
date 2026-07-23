@@ -873,17 +873,9 @@ header.sticky > div {
   border-radius: 0 !important;
 }
 
-.nav-link {
-  border-radius: 0 !important;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
+/* Removed .nav-link override to allow Tailwind pill styling */
 
-.nav-link::after {
-  bottom: -2px;
-  height: 1px;
-  background: #00674F;
-}
+/* Removed .nav-link::after override */
 
 .nav-dropdown {
   border-radius: 0 !important;
@@ -1013,29 +1005,21 @@ header.sticky > div {
 }
 
 .button-shine,
-.mobile-shine-button,
-button[class*="bg-[#00674F]"],
-a[class*="bg-[#00674F]"] {
-  border-radius: 4px !important;
-  box-shadow: 0 14px 28px rgb(0 103 79 / 0.16) !important;
-  text-transform: uppercase;
+.mobile-shine-button {
+  box-shadow: 0 14px 28px rgb(0 103 79 / 0.16);
   letter-spacing: 0.08em;
 }
 
 .button-shine:hover,
-.mobile-shine-button:hover,
-button[class*="bg-[#00674F]"]:hover,
-a[class*="bg-[#00674F]"]:hover {
+.mobile-shine-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 42px rgb(0 103 79 / 0.22) !important;
+  box-shadow: 0 18px 42px rgb(0 103 79 / 0.22);
 }
 
 .interactive-card,
 .process-card,
 .deposit-feature-card,
 .account-plan-card,
-div[class*="rounded-2xl"][class*="bg-white"],
-div[class*="rounded-3xl"][class*="bg-white"],
 section article {
   border-radius: 6px !important;
 }
@@ -1063,30 +1047,8 @@ section article {
     inset 0 1px 0 rgb(255 255 255 / 0.95) !important;
 }
 
-div[class*="rounded-xl"][class*="bg-white"],
-div[class*="rounded-2xl"][class*="bg-white"],
-div[class*="rounded-3xl"][class*="bg-white"],
-article[class*="bg-white"],
-a[class*="bg-white"],
-button[class*="bg-white"] {
-  border: 1px solid rgb(0 103 79 / 0.13);
-  outline: 1px solid rgb(255 255 255 / 0.95);
-  box-shadow:
-    0 14px 30px rgb(15 23 42 / 0.09),
-    0 5px 0 rgb(0 103 79 / 0.07),
-    inset 0 1px 0 rgb(255 255 255 / 0.9);
-}
-
-div[class*="rounded-xl"][class*="bg-white"]:hover,
-div[class*="rounded-2xl"][class*="bg-white"]:hover,
-div[class*="rounded-3xl"][class*="bg-white"]:hover,
-article[class*="bg-white"]:hover,
-a[class*="bg-white"]:hover,
-button[class*="bg-white"]:hover {
-  box-shadow:
-    0 22px 48px rgb(0 103 79 / 0.14),
-    0 7px 0 rgb(0 103 79 / 0.08),
-    inset 0 1px 0 rgb(255 255 255 / 0.95);
+article.bg-white-override-removed {
+  /* Removed destructive generic attribute selectors */
 }
 
 section[class*="bg-[#f5"],

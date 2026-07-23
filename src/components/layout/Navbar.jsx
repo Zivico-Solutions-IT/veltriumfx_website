@@ -73,13 +73,13 @@ export default function Navbar() {
   const menuItems = Object.keys(dropdownContent);
 
   const isMenuActive = (item) => {
-    if (item === "Home") {
-      return location.pathname === "/";
+    if (item === "Home" && location.pathname === "/") {
+      return true;
     }
 
-    return dropdownContent[item].some(
+    return dropdownContent[item]?.some(
       (option) => optionRoutes[option] === location.pathname
-    );
+    ) || false;
   };
 
   // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -120,9 +120,9 @@ export default function Navbar() {
 
   // ─── Render ──────────────────────────────────────────────────────────────────
   return (
-    <header className="sticky top-0 z-50 border-b border-[#D3D3D3] bg-white/95 px-4 py-2 shadow-sm backdrop-blur-xl sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 border-b border-[#D3D3D3] bg-white/95 px-4 shadow-sm backdrop-blur-xl sm:px-6 lg:px-8">
       <div
-        className="mx-auto flex min-h-[76px] w-full max-w-7xl items-center justify-between gap-6"
+        className="mx-auto flex h-[76px] w-full max-w-7xl items-center justify-between gap-6"
       >
 
         {/* ── Logo ──────────────────────────────────────────────────────────── */}
@@ -145,17 +145,17 @@ export default function Navbar() {
             >
               <button
                 type="button"
-                className={`nav-link flex min-w-[96px] cursor-pointer items-center justify-center border border-[#D3D3D3] bg-white px-4 py-3 text-center shadow-[0_7px_0_rgba(0,103,79,0.08),0_14px_30px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00674F] hover:bg-[#00674F] hover:text-[#D3D3D3] hover:shadow-[0_9px_0_rgba(0,103,79,0.10),0_20px_40px_rgba(0,103,79,0.12)] ${
+                className={`relative flex cursor-pointer items-center justify-center px-2 py-2 text-center transition-all duration-300 ${
                   isMenuActive(item)
                     ? "font-bold text-[#00674F]"
-                    : "text-gray-700"
+                    : "font-medium text-gray-600 hover:text-[#00674F] hover:-translate-y-0.5"
                 }`}
                 onClick={() => {
-                  // if (item === "Home") {
-                  //   goHome();
-                  //   return;
-                  // }
-                  setHoveredMenu((prev) => (prev === item ? null : item));
+                  if (item === "Home") {
+                    goHome();
+                  } else {
+                    setHoveredMenu((prev) => (prev === item ? null : item));
+                  }
                 }}
               >
                 <span className="block w-full text-center">{item}</span>
@@ -190,11 +190,7 @@ export default function Navbar() {
               navigate("/signup");
               scrollPageTop();
             }}
-            className="button-shine px-4 py-2 rounded-full text-xs font-medium
-              bg-white/80 backdrop-blur-md border border-gray-300 text-gray-700
-              shadow-sm transition-all duration-300 ease-out
-              hover:-translate-y-0.5 hover:border-[#00674F] hover:bg-[#00674F] hover:text-[#D3D3D3] hover:shadow-md
-              active:translate-y-0"
+            className="px-4 py-2 rounded-md text-[13px] font-bold border border-gray-200 text-gray-700 bg-white shadow-sm transition-all duration-300 hover:border-gray-300 hover:bg-gray-50 hover:shadow active:scale-95"
           >
             Sign up
           </button>
@@ -205,11 +201,7 @@ export default function Navbar() {
               navigate("/login");
               scrollPageTop();
             }}
-            className="button-shine px-6 py-2 rounded-full text-xs font-medium
-              bg-[#00674F] text-white
-              shadow-md transition-all duration-300 ease-out
-              hover:-translate-y-0.5 hover:bg-[#D3D3D3] hover:text-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20
-              active:translate-y-0"
+            className="px-5 py-2 rounded-md text-[13px] font-bold bg-[#00674F] text-white shadow-[0_4px_14px_rgba(0,103,79,0.39)] transition-all duration-300 hover:shadow-[0_6px_20px_rgba(0,103,79,0.23)] hover:bg-[#005a45] hover:-translate-y-0.5 active:scale-95"
           >
             Login
           </button>
@@ -297,7 +289,7 @@ export default function Navbar() {
                       closeMobileMenu();
                       scrollPageTop();
                     }}
-                    className="flex-1 py-2 rounded-full text-xs font-medium border border-gray-300 text-gray-700 transition-colors hover:border-[#00674F] hover:bg-[#00674F] hover:text-[#D3D3D3]"
+                    className="flex-1 py-2 rounded-md text-xs font-medium border border-gray-300 text-gray-700 transition-colors hover:border-[#00674F] hover:bg-[#00674F] hover:text-[#D3D3D3]"
                   >
                     Sign up
                   </button>
@@ -308,7 +300,7 @@ export default function Navbar() {
                       closeMobileMenu();
                       scrollPageTop();
                     }}
-                    className="flex-1 py-2 rounded-full text-xs font-medium bg-[#00674F] text-white transition-colors hover:bg-[#D3D3D3] hover:text-[#00674F]"
+                    className="flex-1 py-2 rounded-md text-xs font-medium bg-[#00674F] text-white transition-colors hover:bg-[#D3D3D3] hover:text-[#00674F]"
                   >
                     Login
                   </button>
