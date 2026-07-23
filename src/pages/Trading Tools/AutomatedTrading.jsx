@@ -11,7 +11,7 @@ import {
   Users,
 } from "lucide-react";
 import heroBg from "../../assets/images/automatedTrading.png";
-import heroBg1 from "../../../public/Auto 2.jpg";
+import bannerImg from "../../assets/images/banner_automated.jpg";
 
 // Fade In Up Animation Component
 const FadeInUp = ({ children, delay = 0, threshold = 0.2 }) => {
@@ -188,9 +188,14 @@ export default function AutomatedTradingPage() {
             ))}
           </div>
 
-          {/* IS AUTOMATED TRADING FOR EVERYONE? - Dark Banner */}
+        </div>
+      </section>
+
+      {/* ================= DARK INFO BANNER ================= */}
+      <section className="px-4 pb-4 pt-0 sm:px-6 md:px-8 lg:px-16 bg-white">
+        <div className="max-w-7xl mx-auto">
           <FadeInUp delay={450}>
-            <div className="mt-10 overflow-hidden bg-[#0d1b16] sm:mt-12 rounded-xl text-white shadow-xl relative">
+            <div className="overflow-hidden bg-[#0d1b16] rounded-xl text-white shadow-xl relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b16] via-[#0d1b16]/90 to-transparent z-10 hidden md:block"></div>
               <div className="grid items-center gap-0 lg:grid-cols-2 relative z-20">
                 {/* CONTENT */}
@@ -211,7 +216,7 @@ export default function AutomatedTradingPage() {
                 {/* IMAGE */}
                 <div className="relative h-[250px] w-full sm:h-[350px] lg:h-[100%] order-first lg:order-last">
                   <img
-                    src={heroBg1}
+                    src={bannerImg}
                     alt="Automated Trading for Everyone"
                     className="h-full w-full object-cover object-center lg:absolute lg:inset-0"
                   />

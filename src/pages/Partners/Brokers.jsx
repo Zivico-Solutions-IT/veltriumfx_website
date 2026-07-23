@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import heroBg from "../../assets/images/intoBro.png";
+import bannerImg from "../../assets/images/banner_brokers.jpg";
 import {
   ChevronRight,
   Headphones,
@@ -294,7 +295,7 @@ export default function IntroducingBrokers() {
                 {/* IMAGE */}
                 <div className="relative h-[250px] w-full sm:h-[350px] lg:h-[100%] order-first lg:order-last">
                   <img
-                    src={heroBg}
+                    src={bannerImg}
                     alt="Introducing Brokers Network"
                     className="h-full w-full object-cover object-center lg:absolute lg:inset-0"
                   />
