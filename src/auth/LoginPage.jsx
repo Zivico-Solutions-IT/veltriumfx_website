@@ -71,11 +71,11 @@ const LoginPage = ({ onSignUpClick }) => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(211,211,211,0.18),transparent_26%),radial-gradient(circle_at_72%_46%,rgba(211,211,211,0.32),transparent_28%),linear-gradient(135deg,rgba(211,211,211,0.96),rgba(211,211,211,0.78),rgba(211,211,211,0.96))]" />
         </div>
 
-        <section className="relative z-10 grid w-full max-w-4xl overflow-hidden rounded-lg border border-[#D3D3D3]/25 bg-[#00674F]/85 shadow-[0_28px_90px_rgba(0,0,0,0.42)] backdrop-blur-xl lg:min-h-[520px] lg:grid-cols-[0.44fr_0.56fr]">
-          <div className="relative border-r border-[#D3D3D3]/15 bg-[#00674F]/88 px-5 py-7 text-white sm:px-8 lg:px-9 lg:py-10">
+        <section className="relative z-10 grid w-full max-w-6xl overflow-hidden rounded-lg border border-[#D3D3D3]/25 bg-[#00674F]/85 shadow-[0_28px_90px_rgba(0,0,0,0.42)] backdrop-blur-xl lg:min-h-[640px] lg:grid-cols-[0.53fr_0.47fr]">
+          <div className="relative border-r border-[#D3D3D3]/15 bg-[#00674F]/88 px-5 py-8 text-white sm:px-9 lg:px-12 lg:py-11">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_10%,rgba(211,211,211,0.14),transparent_28%),radial-gradient(circle_at_0%_70%,rgba(0,103,79,0.26),transparent_36%)]" />
 
-          <div className="relative">
+          <div className="relative mx-auto w-full max-w-lg">
             <h1 className="text-2xl font-extrabold text-white">
               Sign in
             </h1>
@@ -92,7 +92,7 @@ const LoginPage = ({ onSignUpClick }) => {
           </div>
 
           <form
-            className="relative mt-7 space-y-3.5 text-left"
+            className="relative mx-auto mt-7 w-full max-w-lg space-y-3.5 text-left"
             onSubmit={handleSubmit}
           >
             {/* Email Field */}
@@ -103,7 +103,7 @@ const LoginPage = ({ onSignUpClick }) => {
               <input
                 type="email"
                 placeholder="example@gmail.com"
-                className="h-9 w-full rounded-md border border-white/15 bg-white/95 px-3 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
+                className="h-10 w-full rounded-md border border-white/15 bg-white/95 px-3.5 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -119,7 +119,7 @@ const LoginPage = ({ onSignUpClick }) => {
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="****"
-                  className="h-9 w-full rounded-md border border-white/15 bg-white/95 px-3 pr-10 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
+                  className="h-10 w-full rounded-md border border-white/15 bg-white/95 px-3.5 pr-10 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -165,7 +165,7 @@ const LoginPage = ({ onSignUpClick }) => {
           </form>
 
           {/* Footer Link */}
-          <p className="relative mt-6 border-t border-[#D3D3D3]/15 pt-5 text-sm text-white/65">
+          <p className="relative mx-auto mt-6 w-full max-w-lg border-t border-[#D3D3D3]/15 pt-5 text-sm text-white/65">
             Don't have an account?{" "}
             <button
               type="button"
@@ -177,7 +177,7 @@ const LoginPage = ({ onSignUpClick }) => {
           </p>
           </div>
 
-          <div className="relative hidden min-h-[620px] overflow-hidden lg:block">
+          <div className="relative hidden min-h-[640px] overflow-hidden lg:block">
             <img
               src="/platform.png"
               alt=""

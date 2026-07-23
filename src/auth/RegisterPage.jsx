@@ -83,7 +83,7 @@ const RegisterPage = ({ onLoginClick }) => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(211,211,211,0.18),transparent_26%),radial-gradient(circle_at_72%_46%,rgba(211,211,211,0.32),transparent_28%),linear-gradient(135deg,rgba(211,211,211,0.96),rgba(211,211,211,0.78),rgba(211,211,211,0.96))]" />
         </div>
 
-        <section className="relative z-10 grid w-full max-w-5xl overflow-hidden rounded-lg border border-[#D3D3D3]/25 bg-[#00674F]/85 shadow-[0_28px_90px_rgba(0,0,0,0.42)] backdrop-blur-xl lg:min-h-[620px] lg:grid-cols-[0.5fr_0.5fr]">
+        <section className="relative z-10 grid w-full max-w-6xl overflow-hidden rounded-lg border border-[#D3D3D3]/25 bg-[#00674F]/85 shadow-[0_28px_90px_rgba(0,0,0,0.42)] backdrop-blur-xl lg:min-h-[640px] lg:grid-cols-[0.47fr_0.53fr]">
           <div className="relative hidden min-h-full overflow-hidden border-r border-[#D3D3D3]/15 lg:block">
             <img
               src="/platform.png"
@@ -103,10 +103,10 @@ const RegisterPage = ({ onLoginClick }) => {
             </div>
           </div>
 
-          <div className="relative bg-[#00674F]/88 px-5 py-7 text-white sm:px-8 lg:px-9 lg:py-10">
+          <div className="relative bg-[#00674F]/88 px-5 py-8 text-white sm:px-9 lg:px-12 lg:py-11">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_10%,rgba(211,211,211,0.14),transparent_28%),radial-gradient(circle_at_100%_70%,rgba(211,211,211,0.12),transparent_36%)]" />
 
-            <div className="relative">
+            <div className="relative mx-auto w-full max-w-lg">
               <h1 className="text-2xl font-extrabold text-white">
                 Create account
               </h1>
@@ -122,8 +122,8 @@ const RegisterPage = ({ onLoginClick }) => {
               </p>
             </div>
 
-            <form className="relative mt-7 space-y-3.5 text-left" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+            <form className="relative mx-auto mt-7 w-full max-w-lg space-y-3.5 text-left" onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <label className="block">
                   <span className="mb-1.5 block text-[11px] font-semibold text-white/75">
                     First Name
@@ -131,7 +131,7 @@ const RegisterPage = ({ onLoginClick }) => {
                   <input
                     type="text"
                     placeholder="First Name"
-                    className="h-9 w-full rounded-md border border-[#D3D3D3]/20 bg-white/95 px-3 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
+                    className="h-10 w-full rounded-md border border-[#D3D3D3]/20 bg-white/95 px-3.5 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
                     value={firstName}
                     onChange={(event) => setFirstName(event.target.value)}
                     required
@@ -145,7 +145,7 @@ const RegisterPage = ({ onLoginClick }) => {
                   <input
                     type="text"
                     placeholder="Last Name"
-                    className="h-9 w-full rounded-md border border-[#D3D3D3]/20 bg-white/95 px-3 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
+                    className="h-10 w-full rounded-md border border-[#D3D3D3]/20 bg-white/95 px-3.5 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
                     value={lastName}
                     onChange={(event) => setLastName(event.target.value)}
                     required
@@ -160,7 +160,7 @@ const RegisterPage = ({ onLoginClick }) => {
                 <input
                   type="email"
                   placeholder="example@gmail.com"
-                  className="h-9 w-full rounded-md border border-[#D3D3D3]/20 bg-white/95 px-3 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
+                  className="h-10 w-full rounded-md border border-[#D3D3D3]/20 bg-white/95 px-3.5 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   required
@@ -175,7 +175,7 @@ const RegisterPage = ({ onLoginClick }) => {
                   <input
                     type={showPassword ? "text" : "password"}
                     placeholder="********"
-                    className="h-9 w-full rounded-md border border-[#D3D3D3]/20 bg-white/95 px-3 pr-10 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
+                    className="h-10 w-full rounded-md border border-[#D3D3D3]/20 bg-white/95 px-3.5 pr-10 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
                     required
@@ -218,7 +218,7 @@ const RegisterPage = ({ onLoginClick }) => {
                 <input
                   type="text"
                   placeholder="Country"
-                  className="h-9 w-full rounded-md border border-[#D3D3D3]/20 bg-white/95 px-3 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
+                  className="h-10 w-full rounded-md border border-[#D3D3D3]/20 bg-white/95 px-3.5 text-xs text-gray-800 outline-none transition focus:border-[#D3D3D3] focus:ring-2 focus:ring-[#D3D3D3]/25"
                   value={country}
                   onChange={(event) => setCountry(event.target.value)}
                   required
@@ -254,7 +254,7 @@ const RegisterPage = ({ onLoginClick }) => {
               </button>
             </form>
 
-            <p className="relative mt-6 border-t border-[#D3D3D3]/15 pt-5 text-sm text-white/65">
+            <p className="relative mx-auto mt-6 w-full max-w-lg border-t border-[#D3D3D3]/15 pt-5 text-sm text-white/65">
               Already have an account?{" "}
               <button
                 type="button"
