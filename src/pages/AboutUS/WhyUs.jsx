@@ -105,9 +105,11 @@ const WhyUs = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: institutionalEasing }}
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 overflow-hidden"
         >
-          <img src={whyUsImg} alt="Corporate" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 animate-[slowZoom_20s_ease-in-out_infinite]" style={{ transformOrigin: 'center' }}>
+            <img src={whyUsImg} alt="Corporate" className="w-full h-full object-cover" />
+          </div>
           <div className="absolute inset-0 bg-black/50"></div>
         </motion.div>
 

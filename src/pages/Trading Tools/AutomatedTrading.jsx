@@ -83,12 +83,17 @@ export default function AutomatedTradingPage() {
       
       {/* HERO SECTION */}
       <section className="relative min-h-[calc(100svh-72px)] w-full overflow-hidden bg-[#00674F] sm:min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-84px)]">
-        <div className="absolute inset-0 hero-parallax">
-          <img
-            src={heroBg}
-            alt="Automated Trading Hero"
-            className="h-full w-full object-cover object-center hero-image blur-md brightness-[0.20]"
-          />
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute inset-0 animate-[slowZoom_20s_ease-in-out_infinite]"
+            style={{ transformOrigin: 'center' }}
+          >
+            <img
+              src={heroBg}
+              alt="Automated Trading Hero"
+              className="h-full w-full object-cover object-center blur-md brightness-[0.20]"
+            />
+          </div>
         </div>
 
         <div className="relative z-10 flex min-h-[calc(100svh-72px)] flex-col items-center justify-center px-4 py-14 text-center hero-content sm:min-h-[calc(100vh-80px)] md:px-6 lg:min-h-[calc(100vh-84px)]">
@@ -288,14 +293,6 @@ export default function AutomatedTradingPage() {
       </section>
 
       <style>{`
-        @keyframes automatedHeroZoom {
-          from {
-            transform: scale(1.08);
-          }
-          to {
-            transform: scale(1);
-          }
-        }
 
         @keyframes fadeDown {
           from {
@@ -343,9 +340,7 @@ export default function AutomatedTradingPage() {
           left: 100%;
         }
 
-        .hero-image {
-          animation: automatedHeroZoom 1.5s ease-out both;
-        }
+
 
         .hero-content {
           animation: fadeUp 0.8s ease-out both;
