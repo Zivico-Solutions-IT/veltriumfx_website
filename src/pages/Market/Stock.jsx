@@ -257,7 +257,7 @@ const StockLiveTicker = () => {
                 type="button"
                 key={`${item.symbol}-${index}`}
                 onClick={() => window.open(`https://www.tradingview.com/chart/?symbol=${encodeURIComponent(item.tradingViewSymbol)}`, "_blank", "noopener,noreferrer")}
-                className="group relative flex h-[200px] w-[280px] shrink-0 flex-col justify-between rounded-xl border border-white/80 bg-[#D3D3D3] px-4 py-3 text-left shadow-[0_12px_26px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 hover:-translate-y-1 hover:bg-white sm:w-[360px]"
+                className="group relative flex h-[200px] w-[280px] shrink-0 flex-col justify-between rounded-xl border border-white/80 bg-[#D3D3D3] px-4 py-3 text-center shadow-[0_12px_26px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 hover:-translate-y-1 hover:bg-white sm:w-[360px]"
               >
                 <div>
                   <div className="flex items-center justify-between gap-3">
@@ -490,12 +490,12 @@ const Stock = () => {
               
               <div className="flex flex-col pt-0.5">
                 {/* Centered Title */}
-                <h4 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">
+                <h4 className="text-[16px] sm:text-[17px] font-semibold leading-snug text-[#1e293b] mb-1.5 text-center font-sans tracking-tight">
                   {item.name}
                 </h4>
 
                 {/* Centered Description */}
-                <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">
+                <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#64748b] font-medium text-center mt-1.5">
                   {item.desc}
                 </p>
               </div>
@@ -522,7 +522,7 @@ const Stock = () => {
 
             <div className="mt-3 h-1 w-20 rounded-full bg-[#D3D3D3]"></div>
 
-            <p className="mt-4 text-justify text-sm leading-7 sm:text-left sm:text-base sm:leading-7 lg:text-lg">
+            <p className="mt-4 text-justify text-sm leading-7 sm:text-center sm:text-base sm:leading-7 lg:text-lg">
               Stock trading offers access to a broad range of companies across
               various sectors, allowing you to diversify your investment strategy
               and manage risk. With the right stock trading approach, you can
@@ -544,7 +544,7 @@ const Stock = () => {
 
             <div className="mt-3 h-1 w-20 rounded-full bg-[#D3D3D3]"></div>
 
-            <p className="mt-4 text-justify text-sm leading-7 text-gray-700 sm:text-left sm:text-base sm:leading-8 lg:text-lg">
+            <p className="mt-4 text-justify text-sm leading-7 text-gray-700 sm:text-center sm:text-base sm:leading-8 lg:text-lg">
               Stock trading involves buying and selling shares of companies on
               exchanges. You can also trade stocks CFDs (Contracts for Difference),
               which allow you to speculate on price movements with leverage. Many

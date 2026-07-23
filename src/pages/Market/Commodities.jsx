@@ -288,8 +288,8 @@ export default function CommoditiesSection() {
                     </div>
                     
                     <div className="flex flex-col pt-0.5">
-                      <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">Diversification</h3>
-                      <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">Adding commodities to your portfolio can provide exposure to different markets.</p>
+                      <h3 className="text-[16px] sm:text-[17px] font-semibold leading-snug text-[#1e293b] mb-1.5 text-center font-sans tracking-tight">Diversification</h3>
+                      <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#64748b] font-medium text-center mt-1.5">Adding commodities to your portfolio can provide exposure to different markets.</p>
                     </div>
                   </div>
                   <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
@@ -305,8 +305,8 @@ export default function CommoditiesSection() {
                     </div>
                     
                     <div className="flex flex-col pt-0.5">
-                      <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">Hedging</h3>
-                      <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">Commodities can act as a hedge against inflation and currency fluctuations.</p>
+                      <h3 className="text-[16px] sm:text-[17px] font-semibold leading-snug text-[#1e293b] mb-1.5 text-center font-sans tracking-tight">Hedging</h3>
+                      <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#64748b] font-medium text-center mt-1.5">Commodities can act as a hedge against inflation and currency fluctuations.</p>
                     </div>
                   </div>
                   <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
@@ -322,8 +322,8 @@ export default function CommoditiesSection() {
                     </div>
                     
                     <div className="flex flex-col pt-0.5">
-                      <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">Market Dynamics</h3>
-                      <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">Commodity prices are highly responsive to supply and demand changes.</p>
+                      <h3 className="text-[16px] sm:text-[17px] font-semibold leading-snug text-[#1e293b] mb-1.5 text-center font-sans tracking-tight">Market Dynamics</h3>
+                      <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#64748b] font-medium text-center mt-1.5">Commodity prices are highly responsive to supply and demand changes.</p>
                     </div>
                   </div>
                   <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
@@ -353,8 +353,8 @@ export default function CommoditiesSection() {
             <item.icon size={24} />
           </div>
           <div className="flex flex-col pt-0.5">
-            <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">{item.title}</h3>
-            <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">{item.desc}</p>
+            <h3 className="text-[16px] sm:text-[17px] font-semibold leading-snug text-[#1e293b] mb-1.5 text-center font-sans tracking-tight">{item.title}</h3>
+            <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#64748b] font-medium text-center mt-1.5">{item.desc}</p>
           </div>
         </div>
         <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>
@@ -390,8 +390,8 @@ export default function CommoditiesSection() {
                       <item.icon size={24} />
                     </div>
                     <div className="flex flex-col pt-0.5">
-                      <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">{item.title}</h3>
-                      <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">{item.desc}</p>
+                      <h3 className="text-[16px] sm:text-[17px] font-semibold leading-snug text-[#1e293b] mb-1.5 text-center font-sans tracking-tight">{item.title}</h3>
+                      <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#64748b] font-medium text-center mt-1.5">{item.desc}</p>
                     </div>
                   </div>
                   <div className="mt-8 h-[3px] w-6 bg-[#00674F] rounded-full mx-auto"></div>

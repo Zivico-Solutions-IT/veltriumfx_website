@@ -517,12 +517,12 @@ const CryptocurrencyPage = () => {
           
           <div className="flex flex-col pt-0.5">
             {/* Centered Title */}
-            <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] mb-1.5 text-center">
+            <h3 className="text-[16px] sm:text-[17px] font-semibold leading-snug text-[#1e293b] mb-1.5 text-center font-sans tracking-tight">
               {factor.title}
             </h3>
 
             {/* Centered Description */}
-            <p className="text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 text-center">
+            <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#64748b] font-medium text-center mt-1.5">
               {factor.description}
             </p>
           </div>

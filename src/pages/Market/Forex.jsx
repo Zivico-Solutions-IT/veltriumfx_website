@@ -662,7 +662,7 @@ function ToolsSection() {
           <StaggeredCard key={tool.title} index={index}>
             <div className="group relative h-full flex flex-col justify-between overflow-hidden rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md text-left">
               <div className="flex flex-col gap-2">
-                <h3 className="text-[15px] font-bold leading-snug text-[#0f172a] text-left">
+                <h3 className="text-[16px] sm:text-[17px] font-semibold leading-snug text-[#1e293b] text-left font-sans tracking-tight">
                   {tool.title}
                 </h3>
                 <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#64748b] font-medium text-left mt-1.5">
