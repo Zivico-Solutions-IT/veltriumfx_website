@@ -522,7 +522,7 @@ const Stock = () => {
 
             <div className="mt-3 h-1 w-20 rounded-full bg-[#D3D3D3]"></div>
 
-            <p className="mt-4 text-justify text-sm leading-7 sm:text-center sm:text-base sm:leading-7 lg:text-lg">
+            <p className="mt-4 text-left text-sm leading-7 sm:text-base sm:leading-7 lg:text-lg">
               Stock trading offers access to a broad range of companies across
               various sectors, allowing you to diversify your investment strategy
               and manage risk. With the right stock trading approach, you can
@@ -544,7 +544,7 @@ const Stock = () => {
 
             <div className="mt-3 h-1 w-20 rounded-full bg-[#D3D3D3]"></div>
 
-            <p className="mt-4 text-justify text-sm leading-7 text-gray-700 sm:text-center sm:text-base sm:leading-8 lg:text-lg">
+            <p className="mt-4 text-left text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 lg:text-lg">
               Stock trading involves buying and selling shares of companies on
               exchanges. You can also trade stocks CFDs (Contracts for Difference),
               which allow you to speculate on price movements with leverage. Many
