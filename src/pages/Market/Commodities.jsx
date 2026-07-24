@@ -178,20 +178,20 @@ export default function CommoditiesSection() {
 
       {/* About Section */}
       <section className="px-4 pb-5 pt-8 mx-auto max-w-7xl sm:px-6 sm:pb-6 sm:pt-10 lg:pb-7 lg:pt-12">
-        <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-10">
+        <div className="grid items-center gap-6 md:grid-cols-2 md:gap-10">
             {/* Left Image */}
             <ScrollReveal delay={0} threshold={0.3} direction="left">
-              <div className="order-2 lg:order-1 about-image">
+              <div className="order-2 md:order-1 about-image">
                 <img
                   src="/Commodities1.png.jpeg"
                   alt="Commodities Trading"
-                  className="h-[210px] w-full rounded-2xl object-cover shadow-xl transition-all duration-500 hover:scale-105 sm:h-[280px] lg:h-[330px]"
+                  className="h-[220px] w-full rounded-2xl object-cover shadow-xl transition-all duration-500 hover:scale-105 sm:h-[300px] md:h-[330px] lg:h-[360px]"
                 />
               </div>
             </ScrollReveal>
 
             {/* Right Content */}
-            <div className="order-1 lg:order-2">
+            <div className="order-1 md:order-2 flex flex-col justify-center">
               <ScrollReveal delay={100} threshold={0.3} direction="up">
                 <h2 className="leading-tight">
                   <p className="text-xs font-semibold uppercase tracking-wide text-[#D3D3D3] sm:text-sm sm:normal-case sm:tracking-normal">      

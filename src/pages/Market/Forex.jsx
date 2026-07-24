@@ -433,7 +433,7 @@ function HeroSection() {
       
       <div className="market-hero-content relative z-10 mx-auto flex min-h-[calc(100svh-72px)] max-w-4xl flex-col items-center justify-center px-4 py-14 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
         <h1 className="market-hero-title text-4xl font-bold leading-tight text-white animate-[fadeInUp_0.8s_ease-out] sm:text-5xl md:text-6xl">Forex</h1>
-       <p className="mt-4 text-justify text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
+       <p className="mt-4 text-justify text-sm leading-7 text-white sm:text-base lg:leading-8">
           Access major, minor and exotic currency pairs through VeltriumFX.
         </p>
         <div className="mt-8 animate-[fadeInUp_1.2s_ease-out]">
@@ -452,12 +452,12 @@ function HeroSection() {
 function AboutSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16 lg:py-20">
-      <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-14">
+      <div className="grid items-center gap-6 md:grid-cols-2 md:gap-10">
         <ScrollReveal delay={0} threshold={0.3} direction="left">
           <img
             src="\src\assets\images\shutterstock_2159962175.jpg"
             alt="forex"
-            className="h-[210px] w-full rounded-3xl object-cover shadow-xl transition-all duration-500 hover:scale-105 sm:h-[320px] sm:rounded-3xl lg:h-[350px] lg:rounded-3xl"
+            className="h-[220px] w-full rounded-2xl object-cover shadow-xl transition-all duration-500 hover:scale-105 sm:h-[300px] md:h-[330px] lg:h-[360px]"
           />
         </ScrollReveal>
         

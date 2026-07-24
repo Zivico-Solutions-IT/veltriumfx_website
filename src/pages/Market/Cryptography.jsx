@@ -393,21 +393,21 @@ const CryptocurrencyPage = () => {
       {/* Content Section */}
       <div className="px-3 py-4 mx-auto max-w-7xl sm:py-6 md:py-8 sm:px-5 md:py-14 lg:px-6">
         {/* About Crypto Section */}
-        <div className="grid items-center gap-8 mb-12 md:mb-16 md:grid-cols-2 md:gap-12 lg:gap-16">
+        <div className="grid items-center gap-6 mb-12 md:mb-16 md:grid-cols-2 md:gap-10">
   
           {/* IMAGE - Slide from Left */}
           <ScrollReveal delay={0} threshold={0.3} direction="left">
-            <div className="order-2 md:order-1 flex items-center justify-center group overflow-hidden rounded-2xl md:rounded-3xl">
+            <div className="order-2 md:order-1 flex items-center justify-center group overflow-hidden rounded-2xl">
               <img
                 src={cryptoHero}
                 alt="crypto"
-                className="h-[220px] w-full rounded-2xl object-cover shadow-lg transition-all duration-500 group-hover:scale-105 sm:h-[300px] md:h-[330px] md:rounded-3xl lg:h-[360px]"
+                className="h-[220px] w-full rounded-2xl object-cover shadow-xl transition-all duration-500 group-hover:scale-105 sm:h-[300px] md:h-[330px] lg:h-[360px]"
               />
             </div>
           </ScrollReveal>
 
           {/* TEXT CONTENT */}
-          <div className="order-1 md:order-2 md:pl-2 lg:pl-4 flex flex-col justify-center">
+          <div className="order-1 md:order-2 flex flex-col justify-center">
             <ScrollReveal delay={100} threshold={0.3} direction="up">
               <p className="text-xs font-semibold uppercase tracking-wide text-[#D3D3D3] sm:text-sm sm:normal-case sm:tracking-normal">
                 Digital Markets, Practical Risk Control
