@@ -157,13 +157,6 @@ const WhyUs = () => {
                   className="w-full h-[300px] lg:h-auto object-cover rounded-sm" 
                 />
               </div>
-              <motion.div 
-                variants={fadeUpVariants}
-                className="absolute -bottom-6 -right-6 bg-[#00674F] text-white p-6 rounded-sm shadow-sm border border-[#005541] hidden md:block"
-              >
-                <div className="text-2xl font-bold mb-1">10+</div>
-                <div className="text-[10px] font-semibold uppercase tracking-widest text-white/80">Years Experience</div>
-              </motion.div>
             </motion.div>
 
             <motion.div 
