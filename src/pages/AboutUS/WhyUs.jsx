@@ -120,10 +120,10 @@ const WhyUs = () => {
             variants={containerVariants}
             className="max-w-2xl flex flex-col items-center"
           >
-            <motion.h1 variants={fadeUpVariants} className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5 text-white">
+            <motion.h1 variants={fadeUpVariants} className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl mb-5">
               Trade With VeltriumFX
             </motion.h1>
-            <motion.p variants={fadeUpVariants} className="text-sm lg:text-base text-gray-300 leading-relaxed mb-8 max-w-xl mx-auto">
+            <motion.p variants={fadeUpVariants} className="text-gray-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-6 md:leading-7">
               VeltriumFX combines secure infrastructure, practical trading tools, and responsive support for a more disciplined market experience.
             </motion.p>
             <motion.div variants={fadeUpVariants}>

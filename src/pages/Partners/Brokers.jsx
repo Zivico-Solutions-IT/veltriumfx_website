@@ -204,7 +204,7 @@ export default function IntroducingBrokers() {
           </ScrollReveal>
 
           <ScrollReveal delay={200} threshold={0.1} direction="up">
-            <p className="market-hero-copy mt-6 text-base font-regular font-light leading-relaxed text-white/90">
+            <p className="market-hero-copy mt-4 max-w-3xl px-2 text-sm leading-6 text-white/90 sm:text-base md:mt-5 md:leading-7">
               Build a powerful passive income stream by referring traders
               to VeltriumFX and earning commissions from every successful trade.
             </p>

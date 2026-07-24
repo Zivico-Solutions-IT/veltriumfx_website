@@ -200,7 +200,7 @@ export default function EconomicCalendar() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center hero-content md:px-6">
-          <h1 className="text-4xl font-bold text-white animate-[fadeInUp_0.8s_ease-out] sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-bold leading-tight text-white animate-[fadeInUp_0.8s_ease-out] sm:text-5xl md:text-6xl">
             Economic Calendar
           </h1>
 

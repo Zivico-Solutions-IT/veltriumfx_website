@@ -97,11 +97,11 @@ export default function AutomatedTradingPage() {
         </div>
 
         <div className="relative z-10 flex min-h-[calc(100svh-72px)] flex-col items-center justify-center px-4 py-14 text-center hero-content sm:min-h-[calc(100vh-80px)] md:px-6 lg:min-h-[calc(100vh-84px)]">
-          <h1 className="animate-fade-down text-3xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-bold leading-tight text-white animate-fade-down sm:text-5xl md:text-6xl">
             Automated Trading
           </h1>
 
-          <p className="mt-4 max-w-3xl px-1 text-sm leading-6 text-white animate-fade-up sm:px-2 sm:text-base md:mt-5 md:leading-7">
+          <p className="mt-4 max-w-3xl px-2 text-sm leading-6 text-white animate-fade-up sm:text-base md:mt-5 md:leading-7">
             Revolutionizing financial markets with precision-driven
             algorithmic strategies, intelligent market analysis, and
             lightning-fast execution designed for modern traders.

@@ -293,14 +293,14 @@ export default function FaqPage() {
         <div className="relative z-10 mx-auto flex w-full max-w-7xl justify-center text-center">
           <div className="max-w-2xl text-center text-white flex flex-col items-center">
 
-            <h1 className="animate-[fadeInUp_0.8s_ease-out] text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl">
+            <h1 className="animate-[fadeInUp_0.8s_ease-out] text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
               Frequently Asked <br />
-              <span className="text-[#00674F] text-2xl md:text-4xl">
+              <span className="text-[#00674F] text-3xl sm:text-4xl md:text-5xl">
                 Questions
               </span>
             </h1>
 
-            <p className="animate-[fadeInUp_1s_ease-out] mt-6 max-w-xl mx-auto text-base leading-relaxed text-gray-200 md:text-lg">
+            <p className="animate-[fadeInUp_1s_ease-out] mt-6 max-w-xl mx-auto text-sm sm:text-base leading-6 md:leading-7 text-gray-200">
               Browse practical answers for accounts, platforms, payments and trading services.
             </p>
 

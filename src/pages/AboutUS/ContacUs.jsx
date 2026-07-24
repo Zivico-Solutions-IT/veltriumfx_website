@@ -98,10 +98,10 @@ export default function ContactPage() {
               transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
               className="flex flex-col items-center"
             >
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5 sm:mb-6 leading-tight">
+              <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl mb-5 sm:mb-6">
                 Speak With <span className="text-[#D3D3D3]">VeltriumFX</span>
               </h1>
-              <p className="text-gray-300 text-sm lg:text-base max-w-xl mx-auto mb-10 sm:mb-12 leading-relaxed">
+              <p className="text-gray-300 text-sm sm:text-base max-w-xl mx-auto mb-10 sm:mb-12 leading-6 md:leading-7">
                 Get practical assistance from our team through the channel that suits you best. We are available 24/5 to support your trading journey.
               </p>
 
