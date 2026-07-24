@@ -102,9 +102,7 @@ export default function AutomatedTradingPage() {
           </h1>
 
           <p className="mt-4 max-w-3xl px-2 text-sm leading-6 text-white animate-fade-up sm:text-base md:mt-5 md:leading-7">
-            Revolutionizing financial markets with precision-driven
-            algorithmic strategies, intelligent market analysis, and
-            lightning-fast execution designed for modern traders.
+            Advanced algorithmic trading, intelligent market analysis, and ultra-fast execution for modern traders.
           </p>
           <button
             onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}

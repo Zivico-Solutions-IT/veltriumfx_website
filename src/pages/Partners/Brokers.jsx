@@ -192,9 +192,7 @@ export default function IntroducingBrokers() {
         {/* Hero Content */}
         <div className="market-hero-content relative z-10 mx-auto max-w-5xl text-center">
           <ScrollReveal delay={0} threshold={0.1} direction="up">
-            <p className="market-hero-copy mb-5 text-sm font-semibold uppercase tracking-[6px] text-[#D3D3D3] md:text-base">
-              VeltriumFX Partnership Program
-            </p>
+            
           </ScrollReveal>
 
           <ScrollReveal delay={100} threshold={0.1} direction="up">
@@ -205,8 +203,7 @@ export default function IntroducingBrokers() {
 
           <ScrollReveal delay={200} threshold={0.1} direction="up">
             <p className="market-hero-copy mt-4 max-w-3xl px-2 text-sm leading-6 text-white/90 sm:text-base md:mt-5 md:leading-7">
-              Build a powerful passive income stream by referring traders
-              to VeltriumFX and earning commissions from every successful trade.
+              Earn passive income by referring traders and receiving commissions on every successful trade.
             </p>
           </ScrollReveal>
 
