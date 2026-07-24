@@ -66,7 +66,7 @@ function MainLayout({ children }) {
   return (
     <>
       <Header />
-      {children}
+      <main className="site-content">{children}</main>
     </>
   );
 }

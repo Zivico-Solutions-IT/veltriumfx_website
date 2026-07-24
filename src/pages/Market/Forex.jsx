@@ -433,7 +433,7 @@ function HeroSection() {
       
       <div className="market-hero-content relative z-10 mx-auto flex min-h-[calc(100svh-72px)] max-w-4xl flex-col items-center justify-center px-4 py-14 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
         <h1 className="market-hero-title text-4xl font-bold leading-tight text-white animate-[fadeInUp_0.8s_ease-out] sm:text-5xl md:text-6xl">Forex</h1>
-        <p className="market-hero-copy mt-4 max-w-2xl text-sm leading-6 text-gray-200 animate-[fadeInUp_1s_ease-out] sm:text-base sm:leading-7">
+       <p className="mt-4 text-justify text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
           Access major, minor and exotic currency pairs through VeltriumFX.
         </p>
         <div className="mt-8 animate-[fadeInUp_1.2s_ease-out]">
@@ -463,15 +463,15 @@ function AboutSection() {
         
         <div>
           <ScrollReveal delay={100} threshold={0.3} direction="up">
-            <p className="mb-3 text-sm font-semibold text-[#00674F] sm:mb-4">Forex Trading</p>
+           <p className="text-xs font-semibold uppercase tracking-wide text-[#D3D3D3] sm:text-sm sm:normal-case sm:tracking-normal">Forex Trading</p>
           </ScrollReveal>
           <ScrollReveal delay={200} threshold={0.3} direction="up">
-            <h2 className="text-2xl font-bold leading-tight text-[#1f1f1f] sm:text-4xl">
-              Currency Trading with a Sharper Edge
+            <h2 className="mt-2 text-3xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+              Your Edge in Forex
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={300} threshold={0.3} direction="up">
-            <h3 className="mt-2 text-2xl font-bold text-[#00674F] sm:mt-3 sm:text-3xl">VeltriumFX</h3>
+            <h2 className="mt-2 text-3xl font-black leading-tight tracking-tight text-[#00674F] sm:text-4xl lg:text-5xl">VeltriumFX</h2>
           </ScrollReveal>
           <ScrollReveal delay={400} threshold={0.3} direction="up">
             <p className="mt-4 text-justify text-sm leading-7 text-gray-600 sm:mt-5 sm:text-left sm:text-base lg:leading-8">
@@ -684,13 +684,13 @@ function SecuritySection() {
         <div className={`mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[#00674F] shadow-md transition-all duration-300 hover:shadow-xl`}>
           <div className="grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
             <div className="px-5 py-6 sm:px-8 sm:py-8 lg:px-10">
-              <p className="text-xs font-semibold uppercase tracking-wide text-white sm:text-sm">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#D3D3D3] sm:text-sm">
                 Client Protection
               </p>
               <h2 className="mt-2 text-2xl font-bold leading-tight text-[#D3D3D3] sm:text-3xl">
                 Security & Compliance
               </h2>
-              <p className="mt-5 max-w-4xl text-justify text-sm leading-7 text-white sm:text-left sm:text-base">
+              <p className="mt-4 max-w-4xl text-left text-sm leading-7 text-[#D3D3D3] sm:text-base sm:leading-8">
                 VeltriumFX is committed to the highest standards of financial security
                 and regulatory compliance. We follow strict anti-money laundering
                 (AML) policies and implement robust Know Your Customer (KYC)
@@ -699,12 +699,12 @@ function SecuritySection() {
             </div>
 
             {/* Centered compliance points */}
-            <div className="flex items-center justify-center border-t border-white/30 bg-[#00674F] px-5 py-6 sm:px-8 sm:py-8 lg:border-l lg:border-t-0 lg:px-10">
+            <div className="flex items-center justify-center border-t border-[#D3D3D3]/30 bg-[#00674F] px-5 py-6 sm:px-8 sm:py-8 lg:border-l lg:border-t-0 lg:px-10">
               <div className="w-full max-w-md space-y-4">
                 {compliancePoints.map((point) => (
                   <div key={point} className="flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-white" strokeWidth={2.4} />
-                    <span className="font-semibold text-white">{point}</span>
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-[#D3D3D3]" strokeWidth={2.4} />
+                    <span className="font-semibold text-[#D3D3D3]">{point}</span>
                   </div>
                 ))}
               </div>

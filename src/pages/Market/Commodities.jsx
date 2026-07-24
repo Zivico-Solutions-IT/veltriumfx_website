@@ -194,12 +194,12 @@ export default function CommoditiesSection() {
             <div className="order-1 lg:order-2">
               <ScrollReveal delay={100} threshold={0.3} direction="up">
                 <h2 className="leading-tight">
-                  <span className="block text-base font-bold text-[#111827] sm:text-lg">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[#D3D3D3] sm:text-sm sm:normal-case sm:tracking-normal">      
                     Trade Essential Global Resources
-                  </span>
-                  <span className="mt-2 block text-2xl font-semibold text-[#00674F] sm:text-3xl">
+                  </p>
+                  <h2 className="mt-2 text-3xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">  
                     Metals, Energy and More with VeltriumFX
-                  </span>
+                  </h2>
                 </h2>
               </ScrollReveal>
 
@@ -236,11 +236,11 @@ export default function CommoditiesSection() {
           <ScrollReveal delay={0} threshold={0.2} direction="up">
             <div className="bg-white px-5 sm:px-8 lg:px-12 py-8 sm:py-10 rounded-2xl border border-gray-100 shadow-sm sm:rounded-3xl">
               <div className="max-w-5xl border-l-4 border-[#00674F] pl-5 sm:pl-7">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-black">
+                <h2 className="text-2xl font-bold leading-tight text-black sm:text-3xl">
                   What are{" "}
                   <span className="text-[#00674F]">Commodities?</span>
                 </h2>
-                <p className="mt-6 text-justify text-sm font-regular leading-7 text-gray-600 sm:mt-8 sm:text-left sm:text-base">
+                <p className="mt-4 text-left text-sm leading-7 text-gray-700 sm:text-base sm:leading-8">
                   Commodities are basic goods used in commerce and they can be
                   classified into two main categories:
                 </p>

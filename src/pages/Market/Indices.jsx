@@ -13,6 +13,7 @@ import {
   Landmark,
   TrendingUp,
   Briefcase,
+  Check,
 } from "lucide-react";
 
 // Scroll Animation Component
@@ -489,7 +490,7 @@ const IndicesPage = () => {
       ========================================= */}
 
       <section className="px-4 pb-5 pt-8 mx-auto max-w-7xl sm:px-6 sm:pb-6 sm:pt-10 lg:pb-7 lg:pt-12">
-        <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-10">
+        <div className="grid items-center gap-6 md:grid-cols-2 md:gap-10">
 
           {/* IMAGE */}
           <ScrollReveal delay={0} threshold={0.3} direction="left">
@@ -497,42 +498,44 @@ const IndicesPage = () => {
               <img
                 src={heroBg2}
                 alt="Indices"
-                className="h-[220px] w-full rounded-2xl object-cover shadow-xl transition-all duration-500 group-hover:scale-105 sm:h-[300px] lg:h-[360px]"
+                className="h-[220px] w-full rounded-2xl object-cover shadow-xl transition-all duration-500 group-hover:scale-105 sm:h-[300px] md:h-[330px] lg:h-[360px]"
               />
             </div>
           </ScrollReveal>
 
           {/* TEXT */}
-          <div>
+          <div className="flex flex-col justify-center">
             <ScrollReveal delay={100} threshold={0.3} direction="up">
-              <h2 className="leading-tight">
-                <span className="block text-base font-bold text-[#111827] sm:text-lg">
-                  Elevate Your Trading Experience with
-                </span>
-                <span className="mt-2 block text-2xl font-semibold text-[#00674F] sm:text-3xl">
-                  Key Global Indices at VeltriumFX
-                </span>
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#D3D3D3] sm:text-sm sm:normal-case sm:tracking-normal">
+                Elevate Your Trading Experience with
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={200} threshold={0.3} direction="up">
+              <h2 className="mt-2 text-3xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+                Key Global Indices <br className="hidden sm:block" />
+                <span className="text-[#00674F]">at VeltriumFX</span>
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={200} threshold={0.3} direction="up">
-              <p className="mt-4 text-sm text-justify leading-7 text-gray-600 sm:text-base lg:leading-8">
+              <p className="mt-4 text-justify text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
                 Stock market indices provide a clear snapshot of a market's performance by calculating the combined value of a selected group of stocks. These indices offer valuable insight into market trends and economic health, representing sectors or entire stock markets. Whether it's the NASDAQ or a country's top corporations like the S&P 500, indices help investors gauge the broader market dynamics.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={300} threshold={0.3} direction="up">
-              <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4 lg:flex-nowrap">
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4 lg:flex-nowrap">
                 <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
-                  <span className="text-[#00674F] text-xl">✔</span>
+                  <Check className="shrink-0 text-[#00674F]" size={20} strokeWidth={3} />
                   Market Exposure
                 </div>
                 <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
-                  <span className="text-[#00674F] text-xl">✔</span>
+                  <Check className="shrink-0 text-[#00674F]" size={20} strokeWidth={3} />
                   Simplicity
                 </div>
                 <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
-                  <span className="text-[#00674F] text-xl">✔</span>
+                  <Check className="shrink-0 text-[#00674F]" size={20} strokeWidth={3} />
                   High Liquidity
                 </div>
               </div>

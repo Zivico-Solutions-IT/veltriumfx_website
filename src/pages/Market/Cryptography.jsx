@@ -393,7 +393,7 @@ const CryptocurrencyPage = () => {
       {/* Content Section */}
       <div className="px-3 py-4 mx-auto max-w-7xl sm:py-6 md:py-8 sm:px-5 md:py-14 lg:px-6">
         {/* About Crypto Section */}
-        <div className="grid items-start gap-8 mb-12 md:mb-16 md:grid-cols-2 md:gap-12 lg:gap-16">
+        <div className="grid items-center gap-8 mb-12 md:mb-16 md:grid-cols-2 md:gap-12 lg:gap-16">
   
           {/* IMAGE - Slide from Left */}
           <ScrollReveal delay={0} threshold={0.3} direction="left">
@@ -401,33 +401,28 @@ const CryptocurrencyPage = () => {
               <img
                 src={cryptoHero}
                 alt="crypto"
-                className="h-[240px] w-full rounded-2xl object-cover shadow-lg transition-all duration-500 group-hover:scale-105 sm:h-[320px] md:h-[420px] md:rounded-3xl lg:h-[450px]"
+                className="h-[220px] w-full rounded-2xl object-cover shadow-lg transition-all duration-500 group-hover:scale-105 sm:h-[300px] md:h-[330px] md:rounded-3xl lg:h-[360px]"
               />
             </div>
           </ScrollReveal>
 
           {/* TEXT CONTENT */}
-          <div className="order-1 md:order-2 md:pl-2 lg:pl-4">
+          <div className="order-1 md:order-2 md:pl-2 lg:pl-4 flex flex-col justify-center">
             <ScrollReveal delay={100} threshold={0.3} direction="up">
-              <h3 className="mb-2 text-base text-gray-700 md:text-lg">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#D3D3D3] sm:text-sm sm:normal-case sm:tracking-normal">
                 Digital Markets, Practical Risk Control
-              </h3>
+              </p>
             </ScrollReveal>
             
             <ScrollReveal delay={200} threshold={0.3} direction="up">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#00674F] mb-4">
-                Explore Crypto CFDs through
+              <h2 className="mt-2 text-3xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+                Explore Crypto CFDs <br className="hidden sm:block" />
+                <span className="text-[#00674F]">through VeltriumFX</span>
               </h2>
             </ScrollReveal>
             
             <ScrollReveal delay={300} threshold={0.3} direction="up">
-              <p className="text-[#D3D3D3] font-bold mb-4 text-2xl">
-                VeltriumFX
-              </p>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={400} threshold={0.3} direction="up">
-              <p className="mb-6 text-sm leading-7 text-justify text-gray-600 md:text-base">
+              <p className="mt-4 text-justify text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
                 Gain exposure to leading digital assets such as Bitcoin, Ethereum,
                 Ripple and more through CFD trading. Use market analysis, live price
                 tracking and secure platform access to evaluate opportunities, manage
@@ -435,7 +430,7 @@ const CryptocurrencyPage = () => {
               </p>
             </ScrollReveal>
             
-            <div className="mt-5 flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4">
+            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4 lg:flex-nowrap">
               <ScrollReveal delay={500} threshold={0.3} direction="up">
                 <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
                   <Check className="shrink-0 text-[#00674F] transition-transform duration-300 group-hover:scale-110" size={20} strokeWidth={3} />
@@ -451,7 +446,7 @@ const CryptocurrencyPage = () => {
               </ScrollReveal>
              
               <ScrollReveal delay={700} threshold={0.3} direction="up">
-                <div className="flex basis-full items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
+                <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
                   <Check className="shrink-0 text-[#00674F] transition-transform duration-300 group-hover:scale-110" size={20} strokeWidth={3} />
                   Portfolio Diversification
                 </div>
@@ -466,22 +461,24 @@ const CryptocurrencyPage = () => {
 
       {/* What are Crypto CFDs Section */}
       <div className="px-3 py-6 sm:px-5 lg:px-6">
-        <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="mx-auto max-w-6xl rounded-2xl border border-[#00674F] bg-[#00674F] p-8 text-white shadow-sm transition-all duration-300 sm:p-10 md:p-12">
-            <h2 className="mb-5 text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
-              What are Crypto CFDs?
-            </h2>
-            <p className="mb-4 text-sm leading-relaxed text-emerald-50/90 sm:text-base md:text-lg md:leading-8">
-              Cryptocurrencies, since Bitcoin's introduction in 2009, have
-              redefined the financial landscape. These digital assets function on
-              a decentralized online ledger secured by cryptography, making them
-              one of the safest online payment methods.
-            </p>
-            <p className="text-sm leading-relaxed text-emerald-50/90 sm:text-base md:text-lg md:leading-8">
-              While cryptocurrencies like Bitcoin have gained significant
-              recognition globally, they operate outside the traditional banking
-              system and remain unaffected by conventional economic factors.
-            </p>
+        <ScrollReveal delay={100} threshold={0.2} direction="up">
+          <div className="mx-auto mt-8 max-w-7xl rounded-2xl border border-gray-100 bg-white px-5 py-6 shadow-sm sm:mt-10 sm:px-8 sm:py-8 lg:px-12">
+            <div className="max-w-5xl border-l-4 border-[#00674F] pl-5 sm:pl-7">
+              <h2 className="text-2xl font-bold leading-tight text-[#00674F] sm:text-3xl">
+                What are Crypto CFDs?
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-gray-700 sm:text-base sm:leading-8">
+                Cryptocurrencies, since Bitcoin's introduction in 2009, have
+                redefined the financial landscape. These digital assets function on
+                a decentralized online ledger secured by cryptography, making them
+                one of the safest online payment methods.
+              </p>
+              <p className="mt-3 text-sm leading-7 text-gray-500 sm:text-base sm:leading-8">
+                While cryptocurrencies like Bitcoin have gained significant
+                recognition globally, they operate outside the traditional banking
+                system and remain unaffected by conventional economic factors.
+              </p>
+            </div>
           </div>
         </ScrollReveal>
       </div>
