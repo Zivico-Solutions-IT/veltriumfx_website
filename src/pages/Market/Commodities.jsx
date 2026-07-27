@@ -33,6 +33,7 @@ import {
 import {
   TbCurrencyDollar,
 } from "react-icons/tb";
+import commoditiesHeroImage from "../../assets/images/cmd.png";
 
 // Scroll Animation Component
 const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
@@ -147,7 +148,7 @@ export default function CommoditiesSection() {
             style={{ transformOrigin: 'center' }}
           >
             <img
-              src="\src\assets\images\cmd.png"
+              src={commoditiesHeroImage}
               alt="Commodities Hero"
               className="object-cover object-center w-full h-full market-hero-image"
             />

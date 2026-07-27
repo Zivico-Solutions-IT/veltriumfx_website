@@ -16,10 +16,10 @@ import {
 const accounts = [
   {
     title: "Standard Account",
-    price: "$200",
+    price: "$500",
     Icon: FaMedal,
     features: [
-      "Minimum Deposit $200",
+      "Minimum Deposit $500",
       "Spreads from 1.3 pips",
       "No Commission",
       "Leverage up to 1:400",

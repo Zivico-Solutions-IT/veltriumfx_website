@@ -162,10 +162,10 @@ export default function DepositWithdrawSection() {
       title: "Bank Transfer",
       icon: <FaUniversity className="text-white" />,
       image: "/Deposits4.png",
-      currencies: "USD/YEN",
+      currencies: "USD/INR",
       type: "Local Bank Wire",
       fees: "0%",
-      time: "24 - 72 hours",
+      time: "1 to 3 hours",
     },
     {
       title: "Cryptocurrency",

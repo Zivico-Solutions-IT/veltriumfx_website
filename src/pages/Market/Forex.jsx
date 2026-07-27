@@ -13,6 +13,8 @@ import {
   MonitorSmartphone,
   WalletCards,
 } from "lucide-react";
+import forexHeroImage from "../../assets/images/frx.png";
+import forexContentImage from "../../assets/images/shutterstock_2159962175.jpg";
 
 // Scroll Animation Component
 const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
@@ -422,7 +424,7 @@ function HeroSection() {
           style={{ transformOrigin: 'center' }}
         >
           <img
-            src="\src\assets\images\frx.png"
+            src={forexHeroImage}
             alt="Forex Hero"
             className="h-full w-full object-cover object-center market-hero-image"
           />
@@ -455,7 +457,7 @@ function AboutSection() {
       <div className="grid items-center gap-6 md:grid-cols-2 md:gap-10">
         <ScrollReveal delay={0} threshold={0.3} direction="left">
           <img
-            src="\src\assets\images\shutterstock_2159962175.jpg"
+            src={forexContentImage}
             alt="forex"
             className="h-[220px] w-full rounded-2xl object-cover shadow-xl transition-all duration-500 hover:scale-105 sm:h-[300px] md:h-[330px] lg:h-[360px]"
           />

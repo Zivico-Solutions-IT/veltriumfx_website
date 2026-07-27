@@ -6,7 +6,7 @@ import {
   Landmark,
   Torus,
 } from "lucide-react";
-import imagePng from "../../assets/images/istockphoto.jpg";
+import imagePng from "../../assets/images/stk.png";
 
 // Scroll Animation Component
 const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
@@ -323,7 +323,7 @@ const Stock = () => {
             style={{ transformOrigin: 'center' }}
           >
             <img
-              src="\src\assets\images\stk.png"
+              src={imagePng}
               alt="Stock Hero"
               className="market-hero-image h-full w-full object-cover object-center"
             />
