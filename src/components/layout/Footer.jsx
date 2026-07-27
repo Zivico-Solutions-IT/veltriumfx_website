@@ -148,7 +148,7 @@ const Footer = () => {
                 rel="noreferrer"
                 className="leading-6 hover:text-[#00674F]"
               >
-                Global Tech Hub, London
+                PO Box 4385, Cardiff, CF14 8LH
               </a>
             </p>
           </div>
@@ -159,8 +159,25 @@ const Footer = () => {
       <div className="mx-auto mt-10 max-w-7xl border-t border-gray-400 pt-5 text-left text-xs leading-relaxed text-gray-700">
         <div className="mt-5 space-y-4 text-base text-justify">
           <p>
-            VeltriumFX is operated under Veltrium Capital Markets Ltd, Registered with the Financial Services Authority (FSA) of
-            EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC. 
+            VeltriumFX is operated by VELTRUM LTD, registered in the United Kingdom under Company No.{" "}
+            <a
+              href="https://find-and-update.company-information.service.gov.uk/company/16916325"
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold underline underline-offset-2 hover:text-[#00674F]"
+            >
+              16916325
+            </a>
+            . Company information is available on the{" "}
+            <a
+              href="https://find-and-update.company-information.service.gov.uk/company/16916325"
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold underline underline-offset-2 hover:text-[#00674F]"
+            >
+              GOV.UK
+            </a>
+            .
           </p>
           <p>
             Risk Statement: Trading derivatives, CFDs, forex, commodities, stocks and other financial instruments carries a high level of risk and may not be suitable for all investors. Investors may lose part or all of their invested capital and in some cases losses may exceed the original investment amount. Before engaging in trading activities, clients should carefully consider their investment objectives, level of experience and risk appetite. It is strongly recommended to seek independent financial, legal and tax advice before making any investment decisions.
@@ -169,7 +186,7 @@ const Footer = () => {
             Trading in financial markets offers potential rewards but also involves significant risk. Do not trade with funds you cannot afford to lose. Certain financial products or services may not be permitted in some jurisdictions. It is the responsibility of each client to ensure that trading activities comply with their local laws and regulations.
           </p>
           <p>
-            Nothing contained on this website should be considered as financial advice, investment advice or a recommendation by VeltriumFX, Veltrium Capital Markets Ltd or any of its affiliates, directors, officers, employees or representatives.
+            Nothing contained on this website should be considered as financial advice, investment advice or a recommendation by VeltriumFX, VELTRUM LTD or any of its affiliates, directors, officers, employees or representatives.
           </p>
           <p>
             Restricted Regions: VeltriumFX does not provide services to citizens or residents of jurisdictions where such services would violate local laws or regulations, including but not limited to the United States, Cuba, Iraq, Myanmar, North Korea and Sudan.

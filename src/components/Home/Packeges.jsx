@@ -9,7 +9,7 @@ const plans = [
     deposit: "min. deposit",
     features: [
       "Spreads from 1.3 pips",
-      "No Commission",
+      "Low Commission",
       "Leverage Up to 1:400",
       "24/7 Support",
     ],
@@ -17,11 +17,11 @@ const plans = [
   },
   {
     name: "Gold Account",
-    price: "$5,000",
+    price: "$15,000",
     deposit: "min. deposit",
     features: [
       "Spreads from 0.8 pips",
-      "No Commission",
+      "Low Commission",
       "Leverage Up to 1:500",
       "24/7 Support",
     ],
@@ -30,11 +30,11 @@ const plans = [
   },
   {
     name: "VVIP Account",
-    price: "$15,000",
+    price: "$50,000",
     deposit: "min. deposit",
     features: [
       "Spreads from 0.2 pips",
-      "No Commission",
+      "Low Commission",
       "Leverage Up to 1:500",
       "24/7 Support",
     ],
