@@ -22,7 +22,7 @@ const accounts = [
       "Minimum Deposit $200",
       "Spreads from 1.3 pips",
       "Low Commission",
-      "Leverage up to 1:400",
+      "Leverage up to 1:500",
       "Support 24/7",
     ],
   },

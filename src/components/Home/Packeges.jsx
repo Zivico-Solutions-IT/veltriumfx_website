@@ -10,7 +10,7 @@ const plans = [
     features: [
       "Spreads from 1.3 pips",
       "Low Commission",
-      "Leverage Up to 1:400",
+      "Leverage Up to 1:500",
       "24/7 Support",
     ],
     highlight: false,
