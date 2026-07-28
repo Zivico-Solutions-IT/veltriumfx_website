@@ -6,7 +6,8 @@ import {
   Landmark,
   Torus,
 } from "lucide-react";
-import imagePng from "../../assets/images/stk.png";
+import heroImage from "../../assets/images/stk.png";
+import introImage from "../../assets/images/istockphoto.jpg";
 
 // Scroll Animation Component
 const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
@@ -323,7 +324,7 @@ const Stock = () => {
             style={{ transformOrigin: 'center' }}
           >
             <img
-              src={imagePng}
+              src={heroImage}
               alt="Stock Hero"
               className="market-hero-image h-full w-full object-cover object-center"
             />
@@ -360,7 +361,7 @@ const Stock = () => {
         
         <ScrollReveal delay={0} threshold={0.3} direction="left">
           <img
-            src={imagePng}
+            src={introImage}
             alt="Build Equity Exposure"
             className="h-[220px] w-full rounded-xl object-cover shadow-lg transition-all duration-500 hover:scale-105 sm:h-[300px] sm:rounded-xl md:h-[330px] lg:h-[360px]"
           />
