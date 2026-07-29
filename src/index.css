@@ -1027,6 +1027,32 @@ header.sticky > div {
   color: white !important;
 }
 
+@media (max-width: 767px) {
+  #hero.hero-with-custom-banner {
+    min-height: calc(100svh - 64px);
+    background:
+      linear-gradient(to bottom, rgb(0 50 39 / 0.12), rgb(0 50 39 / 0.04)),
+      url("/home-hero-banner-mobile.png") center bottom / cover no-repeat !important;
+  }
+
+  #hero.hero-with-custom-banner > .relative {
+    align-self: flex-start;
+    margin-top: clamp(3rem, 9svh, 5.5rem);
+  }
+
+  #hero.hero-with-custom-banner .hero-trust-badge {
+    margin-bottom: 1rem;
+  }
+
+  #hero.hero-with-custom-banner h1 span {
+    text-shadow: 0 2px 18px rgb(0 0 0 / 0.38);
+  }
+
+  #hero.hero-with-custom-banner p {
+    text-shadow: 0 1px 10px rgb(0 0 0 / 0.5);
+  }
+}
+
 @media (min-width: 768px) {
   #hero.hero-with-custom-banner {
     min-height: calc(100svh - 76px);
