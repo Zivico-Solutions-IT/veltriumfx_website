@@ -152,7 +152,7 @@ export default function DepositWithdrawSection() {
     {
       title: "Credit/Debit Card",
       icon: <FaCreditCard className="text-white" />,
-      image: "/Deposits3.png",
+      image: "/payment-card-premium.png",
       currencies: "USD, EUR, GBP",
       type: "Card Payment",
       fees: "0%",
@@ -161,7 +161,7 @@ export default function DepositWithdrawSection() {
     {
       title: "Bank Transfer",
       icon: <FaUniversity className="text-white" />,
-      image: "/Deposits4.png",
+      image: "/bank-transfer-premium.png",
       currencies: "USD/INR",
       type: "Local Bank Wire",
       fees: "0%",
@@ -170,7 +170,7 @@ export default function DepositWithdrawSection() {
     {
       title: "Cryptocurrency",
       icon: <FaBitcoin className="text-white" />,
-      image: "/Deposits5.png",
+      image: "/crypto-wallet-premium.png",
       currencies: "All Popular Crypto",
       type: "Wallet to wallet",
       fees: "0%",
@@ -311,30 +311,31 @@ export default function DepositWithdrawSection() {
         </ScrollRevealUp>
 
         {/* FEATURE CARDS - All Fade In Up */}
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="hidden">
           
           {/* CARD 1 */}
           <FeatureCardReveal index={0} delay={100}>
-            <div className="deposit-feature-card group relative overflow-hidden rounded-2xl border border-[#00674F]/20 border-b-[4px] border-b-[#00674F] bg-white px-5 pb-5 pt-6 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-8 sm:pt-7">
-              <div className="deposit-feature-icon mx-auto mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-[#00674F] text-sm text-white transition-all duration-300 group-hover:scale-110">
+            <div className="deposit-feature-card group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/20 bg-gradient-to-br from-[#003f30] via-[#00674F] to-[#078463] px-5 pb-5 pt-6 text-left shadow-[0_18px_45px_rgba(0,70,53,0.24)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_28px_60px_rgba(0,70,53,0.34)] sm:px-7 sm:pt-7">
+              <div className="pointer-events-none absolute -right-16 -top-20 h-48 w-48 rounded-full bg-[#d6a400]/25 blur-3xl" />
+              <div className="deposit-feature-icon relative mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/15 text-sm text-white backdrop-blur-sm transition-all duration-300 group-hover:-rotate-6 group-hover:scale-110">
                 <FaBolt className="text-white" />
               </div>
-              <h2 className="text-xl font-bold leading-snug text-[#0b1f16] sm:text-2xl">
+              <h2 className="relative text-xl font-bold leading-tight text-white sm:text-2xl">
                 Fast, Flexible
                 <br />
-                <span className="text-[#00674F]">
+                <span className="text-[#f2d36b]">
                   Money Movement
                 </span>
               </h2>
-              <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-gray-700">
+              <p className="relative mt-3 max-w-sm text-sm leading-relaxed text-emerald-50/80">
                 Experience trading without limits—fast, flexible, and completely
                 fee-free. With VeltriumFX, your money moves as quickly as your ideas.
               </p>
-              <div className="mt-5 flex h-32 items-end justify-center overflow-hidden rounded-b-xl sm:mt-6 sm:h-36">
+              <div className="relative mt-6 overflow-hidden rounded-2xl border border-white/30 bg-white p-1.5 shadow-2xl">
                 <img
-                  src="/Deposits1-veltriumfx.png"
+                  src="/funding-fast-premium.png"
                   alt="Fast deposits and withdrawals illustration"
-                  className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                  className="aspect-[2/1] w-full rounded-xl object-cover object-center transition duration-700 group-hover:scale-105"
                 />
               </div>
             </div>
@@ -342,27 +343,91 @@ export default function DepositWithdrawSection() {
 
           {/* CARD 2 */}
           <FeatureCardReveal index={1} delay={250}>
-            <div className="deposit-feature-card group relative overflow-hidden rounded-2xl border border-[#00674F]/20 border-b-[4px] border-b-[#00674F] bg-white px-5 pb-5 pt-6 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-8 sm:pt-7">
-              <div className="deposit-feature-icon mx-auto mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-[#00674F] text-sm text-white transition-all duration-300 group-hover:scale-110">
+            <div className="deposit-feature-card group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-[#00674F]/15 bg-gradient-to-br from-[#f8fbf9] via-white to-[#e2f2ec] px-5 pb-5 pt-6 text-left shadow-[0_18px_45px_rgba(11,31,22,0.14)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_28px_60px_rgba(0,103,79,0.22)] sm:px-7 sm:pt-7">
+              <div className="pointer-events-none absolute -right-14 -top-16 h-44 w-44 rounded-full bg-[#d6a400]/20 blur-3xl" />
+              <div className="deposit-feature-icon relative mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[#00674F] text-sm text-white shadow-[0_8px_18px_rgba(0,103,79,0.22)] transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
                 <FaLock className="text-white" />
               </div>
-              <h2 className="text-xl font-bold leading-snug text-[#0b1f16] sm:text-2xl">
+              <h2 className="text-xl font-bold leading-tight text-[#0b1f16] sm:text-2xl">
                 Protected Payments,
                 <br />
                 <span className="text-[#00674F]">
                   Clear Controls
                 </span>
               </h2>
-              <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-gray-700">
+              <p className="relative mt-3 max-w-sm text-sm leading-relaxed text-gray-600">
                 VeltriumFX applies strong protection standards to help keep every
                 payment request, account movement and transaction record secure.
               </p>
-              <div className="mt-5 flex h-32 items-end justify-center overflow-hidden rounded-b-xl sm:mt-6 sm:h-36">
+              <div className="relative mt-6 overflow-hidden rounded-2xl border border-[#00674F]/15 bg-white p-1.5 shadow-xl">
                 <img
-                  src="/Deposits2.png.PNG"
+                  src="/funding-secure-premium.png"
                   alt="Secure transactions illustration"
-                  className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                  className="aspect-[2/1] w-full rounded-xl object-cover object-center transition duration-700 group-hover:scale-105"
                 />
+              </div>
+            </div>
+          </FeatureCardReveal>
+        </div>
+
+        {/* Unified Funding Experience Showcase */}
+        <div className="mx-auto max-w-5xl">
+          <FeatureCardReveal index={0} delay={100}>
+            <div className="group relative overflow-hidden rounded-[32px] bg-[#003f30] p-1 shadow-[0_24px_65px_rgba(0,70,53,0.22)]">
+              <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#d6a400]/20 blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-28 -right-20 h-80 w-80 rounded-full bg-[#1aa57d]/30 blur-3xl" />
+
+              <div className="relative grid overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#004c39] via-[#00674F] to-[#003b2d] lg:grid-cols-[0.9fr_1.25fr_0.9fr]">
+                <div className="flex flex-col justify-center px-6 py-8 text-white sm:px-8 lg:py-10">
+                  <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-[#f2d36b] backdrop-blur-sm">
+                    <FaBolt />
+                  </span>
+                  <p className="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-[#f2d36b]">
+                    Built for speed
+                  </p>
+                  <h2 className="text-2xl font-bold leading-tight sm:text-3xl">
+                    Fast, Flexible
+                    <br />
+                    Money Movement
+                  </h2>
+                  <p className="mt-4 text-sm leading-6 text-emerald-50/75">
+                    Move funds quickly with a practical, fee-free experience designed
+                    around your trading pace.
+                  </p>
+                </div>
+
+                <div className="relative min-h-[300px] overflow-hidden border-y border-white/10 bg-[#f7f4ec] lg:min-h-[390px] lg:border-x lg:border-y-0">
+                  <img
+                    src="/funding-fast-premium.png"
+                    alt="Fast and flexible money movement"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#003f30]/30 via-transparent to-white/10" />
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 rounded-2xl border border-white/40 bg-white/75 px-4 py-3 shadow-lg backdrop-blur-md">
+                    <span className="text-xs font-bold text-[#0b1f16]">Smart funding flow</span>
+                    <span className="rounded-full bg-[#00674F] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
+                      Always ready
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col justify-center bg-white/[0.06] px-6 py-8 text-white sm:px-8 lg:py-10">
+                  <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f2d36b] text-[#004c39] shadow-lg">
+                    <FaLock />
+                  </span>
+                  <p className="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-[#f2d36b]">
+                    Protected by design
+                  </p>
+                  <h2 className="text-2xl font-bold leading-tight sm:text-3xl">
+                    Secure Payments,
+                    <br />
+                    Clear Controls
+                  </h2>
+                  <p className="mt-4 text-sm leading-6 text-emerald-50/75">
+                    Strong safeguards help protect payment requests, account movement
+                    and every transaction record.
+                  </p>
+                </div>
               </div>
             </div>
           </FeatureCardReveal>
@@ -411,29 +476,29 @@ export default function DepositWithdrawSection() {
           </ScrollRevealUp>
 
           {/* Payment Method Cards - All Fade In Up */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-5">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {paymentMethods.map((item, index) => (
               <PaymentCardReveal key={index} index={index}>
-                <div className=" home-package-card relative rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:p-6">
+                <div className="home-package-card group relative flex h-full flex-col overflow-hidden rounded-[22px] border border-[#00674F]/15 bg-white shadow-[0_14px_35px_rgba(11,31,22,0.1)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_50px_rgba(0,103,79,0.22)]">
                   
-                  <div className="mb-4 flex items-center gap-3">
-                    <div className="account-plan-icon flex h-9 w-9 items-center justify-center rounded-md bg-[#00674F] text-sm text-white transition-all duration-300 hover:scale-110">
+                  <div className="flex items-center gap-3 bg-gradient-to-r from-[#003f30] to-[#00785b] px-5 py-4 text-white">
+                    <div className="account-plan-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/15 text-sm text-white backdrop-blur-sm transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
                       {item.icon}
                     </div>
-                    <h2 className="text-lg font-bold leading-snug text-[#0b1f16] sm:text-xl">
+                    <h2 className="text-lg font-bold leading-snug text-white sm:text-xl">
                       {item.title}
                     </h2>
                   </div>
 
-                  <div className="mb-5 flex justify-center sm:mb-6">
+                  <div className="m-5 mb-3 flex min-h-36 items-center justify-center overflow-hidden rounded-2xl border border-[#00674F]/10 bg-gradient-to-br from-[#eef8f4] via-white to-[#fff8e5] px-4">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="h-28 w-36 object-contain transition duration-300 hover:scale-105 sm:h-32 sm:w-40"
+                      className="h-36 w-full object-contain drop-shadow-lg transition duration-700 group-hover:scale-110"
                     />
                   </div>
 
-                  <div className="space-y-2.5">
+                  <div className="mb-5 space-y-2.5 px-5">
                     <div className="flex items-start justify-between gap-3 border-b border-gray-100 pb-3 text-xs sm:text-sm">
                       <span className="max-w-[52%] text-gray-500">Supported Currencies</span>
                       <span className="max-w-[48%] text-right font-semibold text-[#00674F]">
@@ -463,7 +528,7 @@ export default function DepositWithdrawSection() {
                   <button
                     type="button"
                     onClick={() => navigate("/signup")}
-                    className="button-shine mt-5 w-full rounded-md border border-[#00674F] bg-[#00674F] py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#00674F] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0"
+                    className="button-shine mx-5 mb-5 mt-auto w-[calc(100%-2.5rem)] rounded-xl border border-[#00674F] bg-[#00674F] py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#005741] hover:shadow-lg hover:shadow-[#00674F]/20 active:translate-y-0"
                   >
                     Open Your Account
                   </button>
