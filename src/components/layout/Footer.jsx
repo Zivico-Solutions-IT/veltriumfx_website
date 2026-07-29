@@ -69,7 +69,10 @@ const Footer = () => {
 
         {/* ── Brand ─────────────────────────────────────────────────────────── */}
         <div className="flex flex-col items-start">
-          <button onClick={() => handleNav("/")} className="mt-3 sm:mt-10">
+          <button
+            onClick={() => handleNav("/")}
+            className="mt-3 rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm transition-shadow duration-300 hover:shadow-md sm:mt-10"
+          >
             <BrandLogo />
           </button>
 
