@@ -129,10 +129,10 @@ const Footer = () => {
             <p className="grid grid-cols-[18px_1fr] items-center gap-2">
               <MailIcon />
               <a
-                href="mailto:support@fxtrade.com"
+                href="mailto:support@veltriumfx.com"
                 className="break-all leading-6 hover:text-[#00674F]"
               >
-                support@fxtrade.com
+                support@veltriumfx.com
               </a>
             </p>
 
