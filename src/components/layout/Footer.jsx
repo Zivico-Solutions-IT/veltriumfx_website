@@ -138,8 +138,8 @@ const Footer = () => {
 
             <p className="grid grid-cols-[18px_1fr] items-center gap-2">
               <PhoneIcon />
-              <a href="tel:+15551234567" className="leading-6 hover:text-[#00674F]">
-                +1 (555) 123-4567
+              <a href="tel:+447849536363" className="leading-6 hover:text-[#00674F]">
+                +44 7849 536363  
               </a>
             </p>
 
