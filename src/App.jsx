@@ -97,6 +97,13 @@ function HomePage() {
 }
 
 
+function ExternalRedirect({ url }) {
+  useEffect(() => {
+    window.location.href = url;
+  }, [url]);
+  return null;
+}
+
 // ─── App ─────────────────────────────────────────────────────────────────────
 
 function App() {
@@ -104,31 +111,24 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        {/* ── Auth routes (no header) ── */}
+        {/* ── Auth routes (redirect directly to external platform) ── */}
         <Route
           path="/login"
-          element={
-            <AuthLayout>
-                   <LoginPage onSignUpClick={() => window.location.href = "/signup"} />
-
-            </AuthLayout>
-          }
+          element={<ExternalRedirect url="https://platform.veltriumfx.com/login" />}
         />
         <Route
           path="/signup"
-          element={
-            <AuthLayout>
-            <RegisterPage onLoginClick={() => window.location.href = "/login"} />
-
-            </AuthLayout>
-          }
+          element={<ExternalRedirect url="https://platform.veltriumfx.com/register" />}
         />
-         <Route
+        <Route
+          path="/register"
+          element={<ExternalRedirect url="https://platform.veltriumfx.com/register" />}
+        />
+        <Route
           path="/profile"
           element={
             <AuthLayout>
-            <Profile/>
-
+              <Profile />
             </AuthLayout>
           }
         />
