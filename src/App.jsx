@@ -20,6 +20,8 @@ import Quiz from "./components/Home/Quiz";
 
 // Pages
 import Profile from "./auth/profile";
+import LoginPage from "./auth/LoginPage";
+import RegisterPage from "./auth/RegisterPage";
 import AccountType from "./pages/Trading/AccountType";
 import TermsConditions from "./pages/Trading/Terms&Conditions";
 import WhyUs from "./pages/AboutUS/WhyUs";
@@ -103,9 +105,24 @@ function App() {
       <ScrollToTop />
       <Routes>
         {/* ── Auth routes (no header) ── */}
-        {/* Public authentication is currently disabled. */}
-        <Route path="/login" element={<Navigate to="/" replace />} />
-        <Route path="/signup" element={<Navigate to="/" replace />} />
+        <Route
+          path="/login"
+          element={
+            <AuthLayout>
+                   <LoginPage onSignUpClick={() => window.location.href = "/signup"} />
+
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <AuthLayout>
+            <RegisterPage onLoginClick={() => window.location.href = "/login"} />
+
+            </AuthLayout>
+          }
+        />
          <Route
           path="/profile"
           element={
