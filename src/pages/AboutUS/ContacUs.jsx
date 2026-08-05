@@ -200,7 +200,7 @@ export default function ContactPage() {
             <p className="text-emerald-100/80 mb-6 min-h-[50px]">Visit our headquarters for scheduled corporate inquiries.</p>
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3 text-sm text-emerald-50"><MapPin className="text-[#D3D3D3] w-5 h-5 shrink-0" /> <span>PO Box 4385, Cardiff, CF14 8LH</span></div>
-              <div className="flex items-center gap-3 text-sm text-emerald-50"><Clock className="text-[#D3D3D3] w-5 h-5 shrink-0" /> <span>Mon-Fri, 9am-6pm GMT</span></div>
+              
             </div>
             <a href="https://www.google.com/maps/search/?api=1&query=PO+Box+4385+Cardiff+CF14+8LH" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full gap-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 py-3 text-sm font-bold text-white transition-colors hover:bg-white hover:text-[#00674F]">
               View on Maps
